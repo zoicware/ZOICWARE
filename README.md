@@ -10,6 +10,8 @@ Or you can choose to download the installer ps1 script and this will always down
 
 
 
+Some of the options from the main script:
+
 
 ![Capture1](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/956c013d-e8e6-4b46-95b2-0076f272c8a8)
 ![Capture2](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/8868ca16-5a20-4964-a1a6-254a440c2dbb)

@@ -26,7 +26,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
 
 
 $url = "https://api.github.com/repos/zoicware/ZOICWAREWIN10/releases/latest"
-$pat = "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"
+$pat = "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"
 
 # Create a header for authentication
 $headers = @{

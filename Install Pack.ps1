@@ -25,20 +25,16 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
 
 
 
-$url = "https://api.github.com/repos/zoicware/ZOICWAREWIN10/releases/latest"
-$pat = "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"
+$url = "https://github.com/zoicware/ZOICWAREWIN10/releases/latest"
+$page=Invoke-WebRequest -Uri $url
+# Define a regular expression pattern to match the URL
+$pattern = "https://drive.google.com/file/d/([A-Za-z0-9_-]+)/view\?usp=sharing"
 
-# Create a header for authentication
-$headers = @{
-    "Authorization" = "Bearer $pat"
-    "User-Agent" = "PowerShell"
-}
-$latestRelease = Invoke-RestMethod -Uri $url -Headers $headers -UseBasicParsing
-$dURL = $latestRelease.body
+# Use regex to find the URL and extract the FILE_ID
+if ($page -match $pattern) {
+    $fileId = $matches[1]
+ }
 
-
-# Use a regular expression to extract the file ID
-$fileID = [regex]::Match($dURL, "/d/([^/]+)/").Groups[1].Value
 
 
 
@@ -48,8 +44,7 @@ cls
 Write-host "---------- DOWNLOADING PLEASE WAIT ----------"
 
 $ProgressPreference = 'SilentlyContinue'
-Invoke-WebRequest -Uri "https://drive.google.com/uc?export=download&confirm=&id=$fileID" -UseBasicParsing -OutFile $download 
-
+Invoke-WebRequest -Uri "https://drive.google.com/uc?export=download&confirm=&id=$fileId" -UseBasicParsing -OutFile $download 
 
 
 

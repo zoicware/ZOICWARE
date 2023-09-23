@@ -1,3 +1,5 @@
+#THIS SCRIPT IS UNDER CONSTRUCTION
+
 Write-Host "----------- CHOOSE DOWNLOAD LOCATION ----------"
 
 # Load the Windows.Forms assembly

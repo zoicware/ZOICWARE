@@ -1,5 +1,3 @@
-#THIS SCRIPT IS UNDER CONSTRUCTION
-
 Write-Host "----------- CHOOSE DOWNLOAD LOCATION ----------"
 
 # Load the Windows.Forms assembly
@@ -37,7 +35,16 @@ if ($page -match $pattern) {
     $fileId = $matches[1]
  }
 
+ # Download the Virus Warning into _tmp.txt
+Invoke-WebRequest -Uri "https://drive.google.com/uc?export=download&id=$fileId" -OutFile "_tmp.txt" -SessionVariable googleDriveSession
 
+# Get confirmation code from _tmp.txt
+$searchString = Select-String -Path "_tmp.txt" -Pattern "confirm="
+$searchString -match "confirm=(?<content>.*)&amp;id="
+$confirmCode = $matches['content']
+
+# Delete _tmp.txt
+Remove-Item "_tmp.txt"
 
 
 $download = $selectedFolder+"\ZOICWARE.zip"
@@ -45,13 +52,30 @@ $download = $selectedFolder+"\ZOICWARE.zip"
 cls 
 Write-host "---------- DOWNLOADING PLEASE WAIT ----------"
 
-$ProgressPreference = 'SilentlyContinue'
-Invoke-WebRequest -Uri "https://drive.google.com/uc?export=download&confirm=&id=$fileId" -UseBasicParsing -OutFile $download 
+
+$retryCount = 0
+$maxRetries = 100
 
 
+do {
+    try {
+    $ProgressPreference = 'SilentlyContinue'
+        $response = Invoke-WebRequest -Uri "https://drive.google.com/uc?export=download&confirm=${confirmCode}&id=$fileId" -UseBasicParsing -OutFile $download -WebSession $googleDriveSession -Verbose
+         
+    } catch {
+        if ($_.Exception.Response -and $_.Exception.Response.StatusCode -eq 500) {
+            Write-Host "Received a 500 Internal Server Error. Retrying in 1 second..."
+            Start-Sleep -Seconds 1
+            $retryCount++
+        } else {
+            Write-Host "Request failed with error: $($_.Exception.Message)"
+            break
+        }
+    }
 
+    
+} while ($retryCount -ne 0 -and $retryCount -lt $maxRetries)
 
-
-
-
-
+if ($retryCount -gt $maxRetries) {
+    Write-Host "Maximum number of retries reached. Request still failed."
+}

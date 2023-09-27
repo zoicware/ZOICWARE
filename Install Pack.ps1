@@ -26,7 +26,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
 
 
 $url = "https://github.com/zoicware/ZOICWAREWIN10/releases/latest"
-$page=Invoke-WebRequest -Uri $url
+$page=Invoke-WebRequest -Uri $url -UseBasicParsing
 # Define a regular expression pattern to match the URL
 $pattern = "https://drive.google.com/file/d/([A-Za-z0-9_-]+)/view\?usp=sharing"
 

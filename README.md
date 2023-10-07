@@ -18,3 +18,11 @@ Some of the options from the main script:
 ![Capture3](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/bcb6bf0a-6fad-4e30-94a0-6c917701ddd9)
 ![Capture4](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/ea339f72-ca67-49b9-a8ec-6c9e1f09b6be)
 ![Capture5](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/38cd8dd1-072c-4ee1-a7b2-c5ed849b37d4)
+
+
+
+------- UPDATE NOTES --------
+
+-added the ablility to skip around in the script
+
+![image](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/bf8df34c-2139-41ea-b696-be04d300660a)

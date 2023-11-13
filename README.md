@@ -8,7 +8,8 @@ Or you can choose to download the installer ps1 script and this will always down
 
 JOIN THE DISCORD
 
-[<img src="https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/95fc9b31-4a22-4bc0-a661-5c5060b747ee" width="100" height="100">](https://discord.gg/VsC7XS5vgA)
+[![Discord](https://discordapp.com/api/guilds/1173717737017716777/widget.png?style=banner1)](https://discord.gg/VsC7XS5vgA)
+
 
 
 ------- UPDATES WILL BE POSTED AT THE BOTTOM OF THIS PAGE --------

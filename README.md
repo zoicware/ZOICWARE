@@ -7,8 +7,8 @@ To download you can either download it manually by going to releases on the bott
 Or you can choose to download the installer ps1 script and this will always download the latest pack
 
 JOIN THE DISCORD
-[![Discord](![image](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/2bc78ec0-b04b-41ef-b68e-f416ae69a57d)
-)](https://discord.gg/VsC7XS5vgA)
+
+[<img src="https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/95fc9b31-4a22-4bc0-a661-5c5060b747ee" width="100" height="100">](https://discord.gg/VsC7XS5vgA)
 
 
 ------- UPDATES WILL BE POSTED AT THE BOTTOM OF THIS PAGE --------

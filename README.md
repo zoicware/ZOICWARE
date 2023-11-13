@@ -7,7 +7,7 @@ To download you can either download it manually by going to releases on the bott
 Or you can choose to download the installer ps1 script and this will always download the latest pack
 
 JOIN THE DISCORD
-https://discord.gg/VsC7XS5vgA
+[![Discord](https://discordapp.com/api/guilds/994887453599076422/widget.png?style=shield)](https://discord.gg/VsC7XS5vgA)
 
 
 ------- UPDATES WILL BE POSTED AT THE BOTTOM OF THIS PAGE --------

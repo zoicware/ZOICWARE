@@ -6,6 +6,10 @@ Youtube does not like a particular part of my video so this is where you can fin
 To download you can either download it manually by going to releases on the bottom right
 Or you can choose to download the installer ps1 script and this will always download the latest pack
 
+JOIN THE DISCORD
+https://discord.gg/VsC7XS5vgA
+
+
 ------- UPDATES WILL BE POSTED AT THE BOTTOM OF THIS PAGE --------
 
 

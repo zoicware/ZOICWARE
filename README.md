@@ -37,9 +37,19 @@ v1.0.2
 
 v1.0.3
 -added the option to remove the windows backup app (warning this may break some other windows features/apps so for now it will be under optional tweaks)
+
 ![Captvcbvcbure](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/b87e729b-11a2-4f7d-b9ae-253f8eaf8ab5)
 
 
 v1.0.4
 -added restore changes button to main script to restore Updates, Defender, Services, and install the store
 ![image](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/8289d168-ca65-4b4b-a525-ea5e23e8ace9)
+
+v1.0.5
+
+-added AMD Plan script to other scripts folder
+  this will give you the option to edit ur current power plan for amd settings to try and improve idle stablity when using an agressive undervolt
+  
+  you can also just import my plan made for amd 
+  
+-added the correct way to remove hello face and quick assist as well as steps recorder app and narrator app to all debloat options

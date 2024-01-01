@@ -53,3 +53,18 @@ v1.0.5
   you can also just import my plan made for amd 
   
 -added the correct way to remove hello face and quick assist as well as steps recorder app and narrator app to all debloat options
+
+
+v1.0.6
+
+-removed sound and mouse scheme being removed in registry tweaks and is now in optional tweaks
+
+-added classic black theme option to give most windows a classic look
+  
+-added win 11 sounds option to optional tweaks, note this will create a backup of the windows 10 sounds on your desktop
+
+Classic Theme Ex.
+
+![image](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/bf41ca6e-9d5c-41b4-86d0-cd805ea9a8fa)
+
+

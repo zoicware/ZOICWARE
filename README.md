@@ -70,7 +70,8 @@ Classic Theme Ex.
 
 v1.0.7
 
-After installing packages
+After installing packages:
+
   -added recomplie images that have been invalidated to speed up start up performance of some apps
   -added remove superseded components, this may take a minute or few please wait
 

@@ -68,3 +68,18 @@ Classic Theme Ex.
 ![image](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/bf41ca6e-9d5c-41b4-86d0-cd805ea9a8fa)
 
 
+v1.0.7
+
+After installing packages
+  -added recomplie images that have been invalidated to speed up start up performance of some apps
+  -added remove superseded components, this may take a minute or few please wait
+
+-added remove recycle bin name to optional tweaks
+
+![image](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/3c6486eb-09d4-4282-af06-8e3004efbd9a)
+
+
+-removed gaming services from debloat (keep xbox) to avoid dependency issues
+
+-fixed some code logic that was broken in a previous update
+

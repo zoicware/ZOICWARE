@@ -84,3 +84,13 @@ After installing packages:
 
 -fixed some code logic that was broken in a previous update
 
+
+v1.0.8
+
+-updated Install Pack script to allow the user to install the latest C++ Packages, DirectX, and Internet Driver
+      Note: the pack has been moved to dropbox as it is no longer possible to download files from Google Drive with Powershell
+
+-updated install packages option in main script to attempt to install them if they are not found
+
+-updated disable defender option to properly disable SecurityHealthService and Smartscreen
+

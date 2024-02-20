@@ -79,3 +79,21 @@ v1.0.8
 
 -updated disable defender option to properly disable SecurityHealthService and Smartscreen
 
+
+v1.0.9
+
+ZOICWARE HAS BEEN UPDATED FOR WIN 11!
+
+-removed firewall+
+
+-added win 11 reg tweaks
+
+-updated disable defender for win 11
+
+-updated debloat for win 11
+	 | added uninstall health update tools and installed windows updates
+	 | added uninstall remote desktop connection for 23h2 builds
+ 
+-added explorer patcher tweaks for win 11
+
+-added set all services to manual tweak for win 11

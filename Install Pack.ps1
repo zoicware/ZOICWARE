@@ -117,8 +117,8 @@ if($packages){
 Write-Host "Moving Packages into Pack..."
 $zoicware = "$selectedFolder\ZOICWARE.zip"
 Expand-Archive -Path $zoicware -DestinationPath "$selectedFolder\ZOICWARE" -Force 
-Move-Item -Path "$selectedFolder\DX" -Destination "$selectedFolder\ZOICWARE\W10 22h2 Gaming OS\_FOLDERMUSTBEONCDRIVE" -Force
-Move-Item -Path "$selectedFolder\VisualCppRedist_AIO_x86_x64.exe" -Destination "$selectedFolder\ZOICWARE\W10 22h2 Gaming OS\_FOLDERMUSTBEONCDRIVE" -Force
+Move-Item -Path "$selectedFolder\DX" -Destination "$selectedFolder\ZOICWARE\zoicwareOS\_FOLDERMUSTBEONCDRIVE" -Force
+Move-Item -Path "$selectedFolder\VisualCppRedist_AIO_x86_x64.exe" -Destination "$selectedFolder\ZOICWARE\zoicwareOS\_FOLDERMUSTBEONCDRIVE" -Force
 Remove-Item -Path $zoicware -Force
 
 }

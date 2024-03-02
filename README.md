@@ -14,12 +14,6 @@ JOIN THE DISCORD
 
 ------- UPDATE NOTES --------
 
-v1.0.2
--added the ablility to skip around in the script
-
-![image](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/bf8df34c-2139-41ea-b696-be04d300660a)
-
-
 v1.0.3
 -added the option to remove the windows backup app (warning this may break some other windows features/apps so for now it will be under optional tweaks)
 

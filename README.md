@@ -14,15 +14,24 @@ JOIN THE DISCORD
 
 ------- UPDATE NOTES --------
 
+
+
 v1.0.3
 -added the option to remove the windows backup app (warning this may break some other windows features/apps so for now it will be under optional tweaks)
 
 ![Captvcbvcbure](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/b87e729b-11a2-4f7d-b9ae-253f8eaf8ab5)
 
 
+----------------------------------------------------------------------------------------------
+
+
 v1.0.4
 -added restore changes button to main script to restore Updates, Defender, Services, and install the store
 ![image](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/8289d168-ca65-4b4b-a525-ea5e23e8ace9)
+
+
+----------------------------------------------------------------------------------------------
+
 
 v1.0.5
 
@@ -32,6 +41,10 @@ v1.0.5
   you can also just import my plan made for amd 
   
 -added the correct way to remove hello face and quick assist as well as steps recorder app and narrator app to all debloat options
+
+
+
+----------------------------------------------------------------------------------------------
 
 
 v1.0.6
@@ -45,6 +58,11 @@ v1.0.6
 Classic Theme Ex.
 
 ![image](https://github.com/zoicware/ZOICWAREWIN10/assets/118035521/bf41ca6e-9d5c-41b4-86d0-cd805ea9a8fa)
+
+
+
+
+----------------------------------------------------------------------------------------------
 
 
 v1.0.7
@@ -64,6 +82,11 @@ After installing packages:
 -fixed some code logic that was broken in a previous update
 
 
+
+----------------------------------------------------------------------------------------------
+
+
+
 v1.0.8
 
 -updated Install Pack script to allow the user to install the latest C++ Packages, DirectX, and Internet Driver
@@ -72,6 +95,11 @@ v1.0.8
 -updated install packages option in main script to attempt to install them if they are not found
 
 -updated disable defender option to properly disable SecurityHealthService and Smartscreen
+
+
+
+----------------------------------------------------------------------------------------------
+
 
 
 v1.0.9
@@ -91,3 +119,23 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 -added explorer patcher tweaks for win 11
 
 -added set all services to manual tweak for win 11
+
+
+
+----------------------------------------------------------------------------------------------
+
+
+
+
+v1.1.0
+
+-added config to speed up the install process
+
+-each setting you choose will be tracked by the ZCONFIG.cfg file in your temp directory 
+
+-use the export tweaks button to save your settings for next time
+
+-importing tweaks will run all tweaks set to 1 in the config without any prompts
+
+-install net 3.5 installer rewritten to powershell
+

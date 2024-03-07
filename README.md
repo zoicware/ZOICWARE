@@ -139,3 +139,28 @@ v1.1.0
 
 -install net 3.5 installer rewritten to powershell
 
+
+
+
+----------------------------------------------------------------------------------------------
+
+
+
+v1.1.1
+
+
+-install pack script displays a progressbar and downloads much faster
+
+-removed enable xbox game bar from optional tweaks (no longer needed)
+
+-added slight translucent effect and welcome title to console window
+
+-replaced all file searching functions with a faster custom file searching method
+
+-functions now imported as a powershell module instead of using dot sourcing
+
+-fixed snipping tool context menu on windows 11
+
+-removed original snipping tool option from optional tweaks
+
+-minor bug fixes and code improvement

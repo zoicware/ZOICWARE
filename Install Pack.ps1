@@ -247,7 +247,7 @@ function Get-FileFromWeb {
     }
 }
 #get latest download link from github releases
-$apiUrl = "https://api.github.com/repos/zoicware/ZOICWAREWIN10/releases/latest"
+$apiUrl = "https://api.github.com/repos/zoicware/ZOICWARE/releases/latest"
 $response = Invoke-RestMethod -Uri $apiUrl -UseBasicParsing
 $downloadLink = $response.body
 

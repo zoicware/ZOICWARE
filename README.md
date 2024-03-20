@@ -128,3 +128,22 @@ v1.1.2
   	 - OpenShell pinned shortcut directory: [C:\Users\*USERNAME*\AppData\Roaming\OpenShell\Pinned]
 
 
+
+
+
+----------------------------------------------------------------------------------------------
+
+
+
+v1.1.3
+
+
+- added restore windows 10 recycle bin icon to windows 11 tweaks
+
+- improved file searching function to now search in _FOLDERMUSTBEONCDRIVE first
+
+- changed all gui menus to dark theme
+
+- added removed pinned items in windows 11 sound flyout
+	- NOTE: if you have never opened the sound flyout (from the taskbar icon) the reg tweak will not apply, if this happens simply open the flyout and then run the reg file on your desktop again 
+

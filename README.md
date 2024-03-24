@@ -145,5 +145,26 @@ v1.1.3
 - changed all gui menus to dark theme
 
 - added removed pinned items in windows 11 sound flyout
-	- NOTE: if you have never opened the sound flyout (from the taskbar icon) the reg tweak will not apply, if this happens simply open the flyout and then run the reg file on your desktop again 
+	- NOTE: if you have never opened the sound flyout (from the taskbar icon) the reg tweak will not apply, if this happens simply open the flyout and then run the reg file on your desktop again
+
+
+----------------------------------------------------------------------------------------------
+
+
+v.1.1.4
+
+
+- switched zoicware.bat to exe file using ps2exe (powershell module)
+
+- added following apps to debloat Microsoft.OutlookForWindows, MicrosoftCorporationII.MicrosoftFamily, Microsoft.Windows.DevHome, Microsoft.Services.Store.Engagement
+
+- disabling rounded edges will now apply on startup 
+
+- added disable show copilot button on taskbar (reg tweaks)
+
+- added fix to dx installer bug 
+	- if the command is not correct it will close the window immediately and run with other command 
+
+- fixed Powershell File not showing up on Windows 11 in context menu when selecting additional files to new menu (optional tweaks)
+
 

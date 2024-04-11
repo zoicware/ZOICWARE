@@ -167,4 +167,23 @@ v.1.1.4
 
 - fixed Powershell File not showing up on Windows 11 in context menu when selecting additional files to new menu (optional tweaks)
 
+----------------------------------------------------------------------------------------------
+
+v1.1.5
+
+- added minor gui style update
+
+- added remove nofication bell icon from taskbar (Win 11)
+	- NOTE: this will break the calendar flyout when clicking on the date and time
+
+- added new tweaks to ultimate context menu in optional tweaks
+	- add take ownership of any file/folder
+	- remove from context menu : Add to favorites, Customize this folder, Give access to, Open in Terminal, Restore Previous Versions, Print, Send to, Share, Personalize and Display (Desktop Menu)
+
+- removed remove backup app as its not possible to uninstall via dism anymore
+
+- fixed remote desktop connection not uninstalling
+
+- added revert registry tweaks to restore changes
+
 

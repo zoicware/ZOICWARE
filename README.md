@@ -186,4 +186,32 @@ v1.1.5
 
 - added revert registry tweaks to restore changes
 
+--------------------------------------------------------------------------------------------------
 
+v1.1.6
+
+- zoicware will now work on systems using a letter other than C for their system drive 
+
+- cleaned up errors at the end of debloating and fixed DISM from getting stuck
+
+- added Network Installer to main script 
+	- if the script detects no internet connection it will run the local installer
+	- if there is internet connection the script will search google for your network adapter's driver
+
+- added Nvidia Autoinstall to main script
+	- this will require internet connection as the script will be downloaded from github
+
+- added activate windows to main script
+	- updated kms server
+	- this will install a generic pro key that works with Windows 10 and 11 Pro
+
+- script adds _FOLDERMUSTBEONCDRIVE and zoicwareOS to defender exclusions to evade false positive
+
+- fixed disable defender
+	- with the latest defender update tamper protection has to be turned off before disabling
+	- the script will open the security app and automatically navigate to disable tamper protection
+	- if you dont want or need the script to do it for you feel free to manually disable before runnning the tweak
+	- updated enable defender 
+
+- added ultimate cleanup to main script
+	- this combines the old UltimateCleanup.bat and Clear Event Viewer Logs.bat

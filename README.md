@@ -215,3 +215,15 @@ v1.1.6
 
 - added ultimate cleanup to main script
 	- this combines the old UltimateCleanup.bat and Clear Event Viewer Logs.bat
+
+ --------------------------------------------------------------------------------------------------
+
+ v1.1.7
+
+ - added restore old snipping tool to windows 11 tweaks
+
+ - removed nsudo to avoid defender detection
+
+ - fixed edge not being uninstalled with newest windows 11 update
+
+ - various other bug fixes

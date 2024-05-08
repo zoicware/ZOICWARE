@@ -13,14 +13,13 @@ JOIN THE DISCORD
 
 
 
-
-![usage](https://github.com/zoicware/ZOICWARE/assets/118035521/776dd4ba-f139-4171-a75f-969452a32427)
-
+![image](https://github.com/zoicware/ZOICWARE/assets/118035521/8f1c29c0-d374-4930-a831-778d7f607140)
 
 
 
 
-------- UPDATE NOTES --------
+
+# ------- UPDATE NOTES --------
 
 
 

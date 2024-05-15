@@ -225,4 +225,11 @@ v1.1.6
 
  - fixed edge not being uninstalled with newest windows 11 update
 
+ - added security updates only in optional tweaks
+   	- this tweak will prevent windows update from installing optional and feature updates
+
+ - reworked debloat to dynamically attempt to uninstall all appx packages and speed up the amount of time the process takes
+   	- the option "Debloat All" will now also remove some locked appx packages
+   	- NOTE: the other debloat options have not been changed
+
  - various other bug fixes

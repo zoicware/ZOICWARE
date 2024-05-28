@@ -210,3 +210,20 @@ v1.1.6
    	- NOTE: the other debloat options have not been changed
 
  - various other bug fixes
+
+--------------------------------------------------------------------------------------------------
+
+ v1.1.8
+
+ - updated show all app icons on windows 11 taskbar to update for new apps upon restarting
+	- a scheduled task will be created to run at startup to show new apps by default 
+	- any apps that are manually disabled from showing on the taskbar will be skipped
+
+- fixed registry tweaks from breaking search indexer on windows 10
+
+- updated debloat to allow users custom debloat options
+	- legacy debloat options will be under "debloat presets"
+
+	- NOTE: Locked Packages may break some features when removed use with caution
+	- NOTE: the extra debloat options are apart of the debloat presets
+	- NOTE: some appx packages are excluded from the list to preserve os functionality

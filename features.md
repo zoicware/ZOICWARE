@@ -6,7 +6,7 @@
 ### Disable Updates
 - This tweak will disable automatic windows updates and the related services
 ### Disable Windows Defender
-- CAUTION: Disabling Windows Defender could leave you vaulnarble to malicous attacks! 
+- CAUTION: Disabling Windows Defender could leave you vulnerable to malicous attacks! 
 - This tweak will disable windows defender and all releated services
 ### Disable Windows Telemetry
 - This tweak will disable telemetry with group policy however, this only applies to server and ltsc builds

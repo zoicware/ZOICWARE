@@ -1,0 +1,148 @@
+## Registry Tweaks Listed
+
+### Windows 10
+
+- Disable UAC
+- Disable Edge Hardware Accel,Run in background, updater services
+- Disable Chrome Hardware Accel, updater services, enable memory saver
+- Remove chat from taskbar
+- Remove task view from taskbar
+- Remove search from taskbar
+- Remove meet now
+- Remove action center
+- Remove news and interests
+- Show all taskbar icons
+- Always hide most used list in start menu
+- Disable show recently added apps
+- Disable show recently opened items in start, jump lists and file explorer
+- Open file explorer to this pc
+- Hide frequent folders in quick access
+- Show file name extensions
+- Disable Search histroy
+- Disable menu show delay
+- Dark theme
+- Disable windows widgets
+- Set 100% Scaling
+- Disable Transparency
+- Sound communications do nothing
+- Disable startup sound
+- Turn off enhance pointer precision
+- Remove logon tasks
+- Disable lock
+- Disable sleep
+- Disable hibernate
+- Disable power throttling
+- Disable Network throttling 
+- Set System responsiveness 0
+- Games scheduling to high priority
+- Turn off hardware accelerated gpu scheduling
+- On Battery optimize video quality
+- Disable animate controls and elements inside windows
+- Disable fade or slide menus into view
+- Disable fade or slide tooltips into view
+- Disable fade out menu items after clicking
+- Disable show shadows under mouse pointer
+- Disable show shadows under windows
+- Disable slide open combo boxes
+- Disable smooth-scroll list boxes
+- Disable animate windows when minimizing and maximizing
+- Disable animations in the taskbar
+- Disable enable Peek
+- Disable save taskbar thumbnail previews
+- Enable show thumbnails instead of icons
+- Disable show translucent selection rectangle
+- Disable show window contents while dragging
+- Enable smooth edges of screen fonts
+- Disable use drop shadows for icon labels on the desktop
+- Adjust for best performance of programs
+- Disable remote assistance
+- Disable game bar
+- Disable enable open xbox game bar using game controller
+- Enable game mode
+- Privacy Deny Location
+- Privacy Deny Camera
+- Privacy Deny Voice activation
+- Privacy Deny Notifications
+- Privacy Deny Account info
+- Privacy Deny Contacts
+- Privacy Deny Calendar
+- Privacy Deny Phone calls
+- Privacy Deny Call history
+- Privacy Deny Email
+- Privacy Deny Tasks
+- Privacy Deny Messaging
+- Privacy Deny Radios
+- Privacy Deny Other devices
+- Privacy Deny App diagnostics
+- Privacy Deny Automatic file downloads
+- Privacy Deny Documents
+- Privacy Deny Downloads folder
+- Privacy Deny Music library
+- Privacy Deny Pictures
+- Privacy Deny Videos
+- Privacy Deny File system
+- Privacy Deny Screenshot borders
+- Privacy Deny Screenshots and apps
+- Disable let websites show me locally relevant content by accessing my language list
+- Disable let windows improve start and search results by tracking app launches
+- Disable personal inking and typing dictionary
+- Feedback frequency never
+- Disable store my activity history on this device
+- Safe search off
+- Disable cloud content search for work or school account
+- Disable cloud content search for microsoft account
+- Disable notifications
+- Disable focus assist
+- Disable magnifier 
+- Disable narrator 
+- Disable driver searching
+- Disable nvidia tray icon
+- Disable automatic maintenance
+- Disable use my sign in info after restart
+- Disable automatically update maps
+- Alt tab open windows only
+- Show Hidden Files
+- Set wallpaper black
+- Disable Finish Setting Up Your Device
+- Disable Input Switch Noti
+- Disable Lock Screen Noti
+- Disable Lang Hotkey
+- Disable Auto Play Noti
+- Disable Lang Bar
+- Disable Lock Screen Image
+- Disable Search Web Results
+- Disable AutoPlay
+- Remove Delayed Start From Indexer
+- Prevent MSDT Exploit
+- Remove 3D Objects Folder
+- Task Manager Always On Top
+- Disable Windows Automatic Folder Type
+- Disable background apps
+
+### Windows 11
+
+**Note:** added keys if using windows 11
+- Restore the classic context menu
+- Disable core isolation
+- Disable suggested actions
+- Disable search highlights
+- Disable storage sense
+- Leftmost taskbar
+- Disable OneDrive noti
+- Disable show whats new after update
+- Enable action center
+- Disable snap layout
+- Disable suggested content in settings
+- Disable account noti
+- Remove gallery shortcut from file explorer
+- Remove home shortcut from file explorer
+- Open file explorer to this pc
+- Disable win 11 system requirements
+- Disable pre installed apps
+- Disable start menu tips and recommendations
+- Show more pins in startmenu
+- Disable show recently added apps and recommendations
+- Disable ai insights
+- Remove pinned items in network and sound flyout
+- Disable show copilot button on task bar
+- Disable background apps win 11

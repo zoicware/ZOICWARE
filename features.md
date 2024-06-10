@@ -2,6 +2,8 @@
 ## Registry Tweaks
 - Apply the registry tweaks to automate most windows quality of life and performance settings
 - A registry file will be created on the desktop containing all the reigstry keys including a comment describing the function of each
+
+[Registry Tweaks Listed](registrytweaks.md)
 ## Group Policy Tweaks
 ### Disable Updates
 - This tweak will disable automatic windows updates and the related services

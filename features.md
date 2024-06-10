@@ -1,15 +1,15 @@
 # All zoicware features
 ## Registry Tweaks
 - Apply the registry tweaks to automate most windows quality of life and performance settings
-- A registry file will be created on the desktop containing all the reigstry keys including a comment describing the function of each
+- A registry file will be created on the desktop containing all the registry keys including a comment describing the function of each
 
 [Registry Tweaks Listed](registrytweaks.md)
 ## Group Policy Tweaks
 ### Disable Updates
 - This tweak will disable automatic windows updates and the related services
 ### Disable Windows Defender
-- CAUTION: Disabling Windows Defender could leave you vulnerable to malicous attacks! 
-- This tweak will disable windows defender and all releated services
+- CAUTION: Disabling Windows Defender could leave you vulnerable to malicious attacks! 
+- This tweak will disable windows defender and all related services
 ### Disable Windows Telemetry
 - This tweak will disable telemetry with group policy however, this only applies to server and ltsc builds
 - **Note:** other telemetry services and settings are disabled as well
@@ -27,7 +27,7 @@
 - Phone 
 - Defrag 
 - Delivery Optimization 
-- Radio Mangement
+- Radio Management 
 - Windows Insider
 - Tablet Input
 
@@ -138,7 +138,7 @@
 - **Replace Startmenu and Search with OpenShell** - this tweak will disable windows search and indexing to replace it with OpenShell and import a custom config for a minimal black startmenu, any current pinned shortcuts will be moved to the OpenShell pinned directory
 - **Restore Windows 10 Recycle Bin Icon** - this tweak will replace the windows 11 recycle bin icon with the old windows 10 icon
 - **Disable Bell Icon on Taskbar** - hide the notification bell icon on the taskbar
-     - **Note:** this will break the calender flyout when clicking the date and time
+     - **Note:** this will break the calendar flyout when clicking the date and time
 - **Restore Windows 10 Snipping Tool** - remove uwp snipping tool (screen sktech) and enable windows 10 snipping tool
 
 ## Install Network Driver

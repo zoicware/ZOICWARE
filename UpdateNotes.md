@@ -3,7 +3,7 @@
 
 
 
-v1.0.8
+**v1.0.8**
 
 - updated Install Pack script to allow the user to install the latest C++ Packages, DirectX, and Internet Driver
       Note: the pack has been moved to dropbox as it is no longer possible to download files from Google Drive with Powershell
@@ -18,7 +18,7 @@ v1.0.8
 
 
 
-v1.0.9
+**v1.0.9**
 
 ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
@@ -43,7 +43,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
 
 
-v1.1.0
+**v1.1.0**
 
 - added config to speed up the install process
 
@@ -62,7 +62,7 @@ v1.1.0
 
 
 
-v1.1.1
+**v1.1.1**
 
 
 - install pack script displays a progressbar and downloads much faster
@@ -86,7 +86,7 @@ v1.1.1
 
 ----------------------------------------------------------------------------------------------
 
-v1.1.2
+**v1.1.2**
 
 - added winfetch to display system info in powershell console
 
@@ -111,7 +111,7 @@ v1.1.2
 
 
 
-v1.1.3
+**v1.1.3**
 
 
 - added restore windows 10 recycle bin icon to windows 11 tweaks
@@ -127,7 +127,7 @@ v1.1.3
 ----------------------------------------------------------------------------------------------
 
 
-v.1.1.4
+**v1.1.4**
 
 
 - switched zoicware.bat to exe file using ps2exe (powershell module)
@@ -145,7 +145,7 @@ v.1.1.4
 
 ----------------------------------------------------------------------------------------------
 
-v1.1.5
+**v1.1.5**
 
 - added minor gui style update
 
@@ -164,7 +164,7 @@ v1.1.5
 
 --------------------------------------------------------------------------------------------------
 
-v1.1.6
+**v1.1.6**
 
 - zoicware will now work on systems using a letter other than C for their system drive 
 
@@ -194,7 +194,7 @@ v1.1.6
 
  --------------------------------------------------------------------------------------------------
 
- v1.1.7
+ **v1.1.7**
 
  - added restore old snipping tool to windows 11 tweaks
 
@@ -213,7 +213,7 @@ v1.1.6
 
 --------------------------------------------------------------------------------------------------
 
- v1.1.8
+ **v1.1.8**
 
  - updated show all app icons on windows 11 taskbar to update for new apps upon restarting
 	- a scheduled task will be created to run at startup to show new apps by default 
@@ -228,3 +228,11 @@ v1.1.6
 	- NOTE: the extra debloat options are apart of the debloat presets
 	- NOTE: some appx packages are excluded from the list to preserve os functionality
 
+--------------------------------------------------------------------------------------------------
+
+
+**v1.1.9**
+
+- updated disable defender to no longer need to disable tamper protection before disabling
+
+- added check for updates when launching zoicware, if an old version is detected it will prompt to install the newest version

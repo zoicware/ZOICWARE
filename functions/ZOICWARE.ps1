@@ -440,14 +440,32 @@ do {
     # Create a form
     $form = New-Object Windows.Forms.Form
     $form.Text = 'ZOICWARE'
-    $form.Size = New-Object Drawing.Size(500, 520)
-    $form.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $form.Size = New-Object Drawing.Size(500, 580)
+    $form.BackColor = 'Black'
+   
+
+    #group boxes
+    $groupBox = New-Object System.Windows.Forms.GroupBox
+    $groupBox.Text = 'Windows Tweaks'
+    $groupBox.Size = New-Object System.Drawing.Size(450, 280)
+    $groupBox.Location = New-Object System.Drawing.Point(15, 10)
+    $groupBox.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $groupBox.ForeColor = 'White'
+    $form.Controls.Add($groupBox)
+
+    $groupBox2 = New-Object System.Windows.Forms.GroupBox
+    $groupBox2.Text = 'Post Tweak Setup'
+    $groupBox2.Size = New-Object System.Drawing.Size(300, 200)
+    $groupBox2.Location = New-Object System.Drawing.Point(15, 320)
+    $groupBox2.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $groupBox2.ForeColor = 'White'
+    $form.Controls.Add($groupBox2)
 
     # Create 9 buttons and add them to the form
     $button1 = New-Object Windows.Forms.Button
     $button1.Text = 'Install Necessary Packages'
     $button1.Location = New-Object Drawing.Point(20, 20)
-    $button1.Size = New-Object Drawing.Size(200, 40)
+    $button1.Size = New-Object Drawing.Size(150, 33)
     $button1.Add_Click({
 
             $form.Visible = $false
@@ -455,19 +473,18 @@ do {
             $form.Visible = $true
 
         })
-    $button1.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $button1.ForeColor = [System.Drawing.Color]::White
-    $button1.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $button1.FlatAppearance.BorderSize = 0
-    $button1.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $button1.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($button1)
-
+    $button1.BackColor = 'Gray'
+    $button1.ForeColor = 'White'
+    # $button1.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    # $button1.FlatAppearance.BorderSize = 0
+    # $button1.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    # $button1.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox.Controls.Add($button1)
 
     $button2 = New-Object Windows.Forms.Button
     $button2.Text = 'Import Registry Tweaks'
     $button2.Location = New-Object Drawing.Point(20, 80)
-    $button2.Size = New-Object Drawing.Size(200, 40)
+    $button2.Size = New-Object Drawing.Size(150, 33)
     $button2.Add_Click({
 
             $form.Visible = $false
@@ -475,18 +492,18 @@ do {
             $form.Visible = $true
 
         })
-    $button2.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $button2.ForeColor = [System.Drawing.Color]::White
-    $button2.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $button2.FlatAppearance.BorderSize = 0
-    $button2.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $button2.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($button2)
+    $button2.BackColor = 'Gray'
+    $button2.ForeColor = 'White'
+    # $button2.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    # $button2.FlatAppearance.BorderSize = 0
+    # $button2.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    # $button2.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox.Controls.Add($button2)
 
     $button3 = New-Object Windows.Forms.Button
     $button3.Text = 'Remove Scheduled Tasks'
     $button3.Location = New-Object Drawing.Point(20, 140)
-    $button3.Size = New-Object Drawing.Size(200, 40)
+    $button3.Size = New-Object Drawing.Size(150, 33)
     $button3.Add_Click({
 
             $form.Visible = $false
@@ -494,18 +511,18 @@ do {
             $form.Visible = $true
 
         })
-    $button3.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $button3.ForeColor = [System.Drawing.Color]::White
-    $button3.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $button3.FlatAppearance.BorderSize = 0
-    $button3.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $button3.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($button3)
+    $button3.BackColor = 'Gray'
+    $button3.ForeColor = 'White'
+    #$button3.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$button3.FlatAppearance.BorderSize = 0
+    #$button3.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$button3.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox.Controls.Add($button3)
 
     $button4 = New-Object Windows.Forms.Button
     $button4.Text = 'Group Policy Tweaks'
     $button4.Location = New-Object Drawing.Point(20, 200)
-    $button4.Size = New-Object Drawing.Size(200, 40)
+    $button4.Size = New-Object Drawing.Size(150, 33)
     $button4.Add_Click({
 
             $form.Visible = $false
@@ -513,18 +530,18 @@ do {
             $form.Visible = $true
 
         })
-    $button4.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $button4.ForeColor = [System.Drawing.Color]::White
-    $button4.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $button4.FlatAppearance.BorderSize = 0
-    $button4.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $button4.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($button4)
+    $button4.BackColor = 'Gray'
+    $button4.ForeColor = 'White'
+    #$button4.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$button4.FlatAppearance.BorderSize = 0
+    #$button4.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$button4.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox.Controls.Add($button4)
 
     $button5 = New-Object Windows.Forms.Button
     $button5.Text = 'Disable Services'
     $button5.Location = New-Object Drawing.Point(250, 20)
-    $button5.Size = New-Object Drawing.Size(200, 40)
+    $button5.Size = New-Object Drawing.Size(150, 33)
     $button5.Add_Click({
 
             $form.Visible = $false
@@ -532,18 +549,18 @@ do {
             $form.Visible = $true
 
         })
-    $button5.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $button5.ForeColor = [System.Drawing.Color]::White
-    $button5.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $button5.FlatAppearance.BorderSize = 0
-    $button5.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $button5.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($button5)
+    $button5.BackColor = 'Gray'
+    $button5.ForeColor = 'White'
+    #$button5.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$button5.FlatAppearance.BorderSize = 0
+    #$button5.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$button5.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox.Controls.Add($button5)
 
     $button6 = New-Object Windows.Forms.Button
     $button6.Text = 'Debloat'
     $button6.Location = New-Object Drawing.Point(250, 80)
-    $button6.Size = New-Object Drawing.Size(200, 40)
+    $button6.Size = New-Object Drawing.Size(150, 33)
     $button6.Add_Click({
 
             $form.Visible = $false
@@ -551,18 +568,18 @@ do {
             $form.Visible = $true
 
         })
-    $button6.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $button6.ForeColor = [System.Drawing.Color]::White
-    $button6.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $button6.FlatAppearance.BorderSize = 0
-    $button6.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $button6.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($button6)
+    $button6.BackColor = 'Gray'
+    $button6.ForeColor = 'White'
+    #$button6.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$button6.FlatAppearance.BorderSize = 0
+    #$button6.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$button6.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox.Controls.Add($button6)
 
     $button7 = New-Object Windows.Forms.Button
     $button7.Text = 'Optional Tweaks'
     $button7.Location = New-Object Drawing.Point(250, 140)
-    $button7.Size = New-Object Drawing.Size(200, 40)
+    $button7.Size = New-Object Drawing.Size(150, 33)
     $button7.Add_Click({
 
             $form.Visible = $false
@@ -570,18 +587,18 @@ do {
             $form.Visible = $true
 
         })
-    $button7.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $button7.ForeColor = [System.Drawing.Color]::White
-    $button7.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $button7.FlatAppearance.BorderSize = 0
-    $button7.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $button7.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($button7)
+    $button7.BackColor = 'Gray'
+    $button7.ForeColor = 'White'
+    #$button7.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$button7.FlatAppearance.BorderSize = 0
+    #$button7.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$button7.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox.Controls.Add($button7)
 
     $button8 = New-Object Windows.Forms.Button
     $button8.Text = 'Import/Remove Power Plans'
     $button8.Location = New-Object Drawing.Point(250, 200)
-    $button8.Size = New-Object Drawing.Size(200, 40)
+    $button8.Size = New-Object Drawing.Size(150, 33)
     $button8.Add_Click({
 
             $form.Visible = $false
@@ -589,18 +606,18 @@ do {
             $form.Visible = $true
 
         })
-    $button8.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $button8.ForeColor = [System.Drawing.Color]::White
-    $button8.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $button8.FlatAppearance.BorderSize = 0
-    $button8.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $button8.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($button8)
+    $button8.BackColor = 'Gray'
+    $button8.ForeColor = 'White'
+    #$button8.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$button8.FlatAppearance.BorderSize = 0
+    #$button8.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$button8.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox.Controls.Add($button8)
 
     $button9 = New-Object Windows.Forms.Button
     $button9.Text = 'Run Tweaks in Order'
-    $button9.Location = New-Object Drawing.Point(150, 260)
-    $button9.Size = New-Object Drawing.Size(180, 30)
+    $button9.Location = New-Object Drawing.Point(120, 245)
+    $button9.Size = New-Object Drawing.Size(180, 25)
     $button9.Add_Click({
             $form.Visible = $false
             install-packs
@@ -613,29 +630,29 @@ do {
             import-powerplan
             restart-pc
         })
-    $button9.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $button9.ForeColor = [System.Drawing.Color]::White
-    $button9.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $button9.FlatAppearance.BorderSize = 0
-    $button9.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $button9.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($button9)
+    $button9.BackColor = 'Gray'
+    $button9.ForeColor = 'White'
+    #$button9.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$button9.FlatAppearance.BorderSize = 0
+    #$button9.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$button9.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox.Controls.add($button9)
 
 
     $restartButton = New-Object Windows.Forms.Button
     $restartButton.Text = 'Restart PC'
-    $restartButton.Location = New-Object Drawing.Point(130, 300)
-    $restartButton.Size = New-Object Drawing.Size(100, 30)
+    $restartButton.Location = New-Object Drawing.Point(345, 490)
+    $restartButton.Size = New-Object Drawing.Size(130, 30)
     $restartButton.Add_Click({
             $form.Visible = $false
             restart-pc
         })
-    $restartButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $restartButton.ForeColor = [System.Drawing.Color]::White
-    $restartButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $restartButton.FlatAppearance.BorderSize = 0
-    $restartButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $restartButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $restartButton.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $restartButton.ForeColor = 'White'
+    #$restartButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$restartButton.FlatAppearance.BorderSize = 0
+    #$restartButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$restartButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $form.Controls.Add($restartButton)
 
 
@@ -661,42 +678,42 @@ do {
 
     $cleanup = New-Object Windows.Forms.Button
     $cleanup.Text = 'Ultimate Cleanup'
-    $cleanup.Location = New-Object Drawing.Point(240, 300)
-    $cleanup.Size = New-Object Drawing.Size(100, 30)
+    $cleanup.Location = New-Object Drawing.Point(15, 80)
+    $cleanup.Size = New-Object Drawing.Size(130, 30)
     $cleanup.Add_Click({
             $form.Visible = $false
             UltimateCleanup
             $form.Visible = $true
         })
-    $cleanup.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $cleanup.ForeColor = [System.Drawing.Color]::White
-    $cleanup.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $cleanup.FlatAppearance.BorderSize = 0
-    $cleanup.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $cleanup.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($cleanup)
+    $cleanup.BackColor = 'Gray'
+    $cleanup.ForeColor = 'White'
+    #$cleanup.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$cleanup.FlatAppearance.BorderSize = 0
+    #$cleanup.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$cleanup.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox2.Controls.add($cleanup)
 
 
     $win11tweaks = New-Object Windows.Forms.Button
-    $win11tweaks.Text = 'Windows 11 Tweaks >'
-    $win11tweaks.Location = New-Object Drawing.Point(320, 430)
+    $win11tweaks.Text = 'Windows 11 Tweaks'
+    $win11tweaks.Location = New-Object Drawing.Point(150, 80)
     $win11tweaks.Size = New-Object Drawing.Size(130, 30)
     $win11tweaks.Add_Click({
             $form.Visible = $false
             W11Tweaks
             $form.Visible = $true
         })
-    $win11tweaks.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $win11tweaks.ForeColor = [System.Drawing.Color]::White
-    $win11tweaks.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $win11tweaks.FlatAppearance.BorderSize = 0
-    $win11tweaks.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $win11tweaks.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($win11tweaks)
+    $win11tweaks.BackColor = 'Gray'
+    $win11tweaks.ForeColor = 'White'
+    #$win11tweaks.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$win11tweaks.FlatAppearance.BorderSize = 0
+    #$win11tweaks.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$win11tweaks.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox2.Controls.add($win11tweaks)
 
     $nvtweaks = New-Object Windows.Forms.Button
-    $nvtweaks.Text = 'Install Nvidia Driver >'
-    $nvtweaks.Location = New-Object Drawing.Point(320, 390)
+    $nvtweaks.Text = 'Install Nvidia Driver'
+    $nvtweaks.Location = New-Object Drawing.Point(150, 30)
     $nvtweaks.Size = New-Object Drawing.Size(130, 30)
     $nvtweaks.Add_Click({
             $form.Visible = $false
@@ -704,17 +721,17 @@ do {
             &$nvscript
             $form.Visible = $true
         })
-    $nvtweaks.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $nvtweaks.ForeColor = [System.Drawing.Color]::White
-    $nvtweaks.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $nvtweaks.FlatAppearance.BorderSize = 0
-    $nvtweaks.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $nvtweaks.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($nvtweaks)
+    $nvtweaks.BackColor = 'Gray'
+    $nvtweaks.ForeColor = 'White'
+    #$nvtweaks.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$nvtweaks.FlatAppearance.BorderSize = 0
+    #$nvtweaks.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$nvtweaks.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox2.Controls.add($nvtweaks)
 
     $networkdriver = New-Object Windows.Forms.Button
-    $networkdriver.Text = 'Install Network Driver >'
-    $networkdriver.Location = New-Object Drawing.Point(320, 350)
+    $networkdriver.Text = 'Install Network Driver'
+    $networkdriver.Location = New-Object Drawing.Point(15, 30)
     $networkdriver.Size = New-Object Drawing.Size(130, 30)
     $networkdriver.Add_Click({
             $form.Visible = $false
@@ -722,36 +739,36 @@ do {
             &$networkInstaller
             $form.Visible = $true
         })
-    $networkdriver.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $networkdriver.ForeColor = [System.Drawing.Color]::White
-    $networkdriver.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $networkdriver.FlatAppearance.BorderSize = 0
-    $networkdriver.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $networkdriver.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($networkdriver)
+    $networkdriver.BackColor = 'Gray'
+    $networkdriver.ForeColor = 'White'
+    #$networkdriver.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$networkdriver.FlatAppearance.BorderSize = 0
+    #$networkdriver.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$networkdriver.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox2.Controls.add($networkdriver)
 
 
     $activate = New-Object Windows.Forms.Button
     $activate.Text = 'Activate Windows'
-    $activate.Location = New-Object Drawing.Point(30, 430)
+    $activate.Location = New-Object Drawing.Point(80, 120)
     $activate.Size = New-Object Drawing.Size(130, 30)
     $activate.Add_Click({
             $form.Visible = $false
             install-key
             $form.Visible = $true
         })
-    $activate.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $activate.ForeColor = [System.Drawing.Color]::White
-    $activate.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $activate.FlatAppearance.BorderSize = 0
-    $activate.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $activate.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
-    $form.Controls.Add($activate)
+    $activate.BackColor = 'Gray'
+    $activate.ForeColor = 'White'
+    #$activate.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$activate.FlatAppearance.BorderSize = 0
+    #$activate.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$activate.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox2.Controls.Add($activate)
 
 
     $configButton = New-Object Windows.Forms.Button
-    $configButton.Text = 'Import/Export Config'
-    $configButton.Location = New-Object Drawing.Point(30, 390)
+    $configButton.Text = 'Import && Export Config'
+    $configButton.Location = New-Object Drawing.Point(345, 445)
     $configButton.Size = New-Object Drawing.Size(130, 30)
     $configButton.Add_Click({
             $form.Visible = $false
@@ -759,12 +776,12 @@ do {
             &$configUI
             $form.Visible = $true
         })
-    $configButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $configButton.ForeColor = [System.Drawing.Color]::White
-    $configButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $configButton.FlatAppearance.BorderSize = 0
-    $configButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $configButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $configButton.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $configButton.ForeColor = 'White'
+    #$configButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$configButton.FlatAppearance.BorderSize = 0
+    #$configButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$configButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $form.Controls.Add($configButton)
 
     $result = $form.ShowDialog()

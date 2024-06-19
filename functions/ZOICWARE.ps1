@@ -449,7 +449,8 @@ do {
     $groupBox.Text = 'Windows Tweaks'
     $groupBox.Size = New-Object System.Drawing.Size(450, 280)
     $groupBox.Location = New-Object System.Drawing.Point(15, 10)
-    $groupBox.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    #$groupBox.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
+    $groupBox.BackColor = [System.Drawing.Color]::FromArgb(75, 75, 75)
     $groupBox.ForeColor = 'White'
     $form.Controls.Add($groupBox)
 
@@ -457,7 +458,8 @@ do {
     $groupBox2.Text = 'Post Tweak Setup'
     $groupBox2.Size = New-Object System.Drawing.Size(300, 200)
     $groupBox2.Location = New-Object System.Drawing.Point(15, 320)
-    $groupBox2.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    #$groupBox2.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
+    $groupBox2.BackColor = [System.Drawing.Color]::FromArgb(75, 75, 75)
     $groupBox2.ForeColor = 'White'
     $form.Controls.Add($groupBox2)
 
@@ -473,7 +475,7 @@ do {
             $form.Visible = $true
 
         })
-    $button1.BackColor = 'Gray'
+    $button1.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $button1.ForeColor = 'White'
     # $button1.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     # $button1.FlatAppearance.BorderSize = 0
@@ -492,7 +494,7 @@ do {
             $form.Visible = $true
 
         })
-    $button2.BackColor = 'Gray'
+    $button2.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $button2.ForeColor = 'White'
     # $button2.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     # $button2.FlatAppearance.BorderSize = 0
@@ -511,7 +513,7 @@ do {
             $form.Visible = $true
 
         })
-    $button3.BackColor = 'Gray'
+    $button3.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $button3.ForeColor = 'White'
     #$button3.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$button3.FlatAppearance.BorderSize = 0
@@ -530,7 +532,7 @@ do {
             $form.Visible = $true
 
         })
-    $button4.BackColor = 'Gray'
+    $button4.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $button4.ForeColor = 'White'
     #$button4.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$button4.FlatAppearance.BorderSize = 0
@@ -549,7 +551,7 @@ do {
             $form.Visible = $true
 
         })
-    $button5.BackColor = 'Gray'
+    $button5.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $button5.ForeColor = 'White'
     #$button5.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$button5.FlatAppearance.BorderSize = 0
@@ -568,7 +570,7 @@ do {
             $form.Visible = $true
 
         })
-    $button6.BackColor = 'Gray'
+    $button6.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $button6.ForeColor = 'White'
     #$button6.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$button6.FlatAppearance.BorderSize = 0
@@ -587,7 +589,7 @@ do {
             $form.Visible = $true
 
         })
-    $button7.BackColor = 'Gray'
+    $button7.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $button7.ForeColor = 'White'
     #$button7.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$button7.FlatAppearance.BorderSize = 0
@@ -606,7 +608,7 @@ do {
             $form.Visible = $true
 
         })
-    $button8.BackColor = 'Gray'
+    $button8.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $button8.ForeColor = 'White'
     #$button8.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$button8.FlatAppearance.BorderSize = 0
@@ -630,7 +632,7 @@ do {
             import-powerplan
             restart-pc
         })
-    $button9.BackColor = 'Gray'
+    $button9.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $button9.ForeColor = 'White'
     #$button9.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$button9.FlatAppearance.BorderSize = 0
@@ -647,7 +649,7 @@ do {
             $form.Visible = $false
             restart-pc
         })
-    $restartButton.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $restartButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $restartButton.ForeColor = 'White'
     #$restartButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$restartButton.FlatAppearance.BorderSize = 0
@@ -658,8 +660,8 @@ do {
 
 
     $restoreButton = New-Object Windows.Forms.Button
-    $restoreButton.Text = 'Restore Changes'
-    $restoreButton.Location = New-Object Drawing.Point(30, 350)
+    $restoreButton.Text = 'Restore Tweaks'
+    $restoreButton.Location = New-Object Drawing.Point(345, 400)
     $restoreButton.Size = New-Object Drawing.Size(130, 30)
     $restoreButton.Add_Click({
             $form.Visible = $false
@@ -668,11 +670,11 @@ do {
             $form.Visible = $true
         })
     $restoreButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
-    $restoreButton.ForeColor = [System.Drawing.Color]::White
-    $restoreButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $restoreButton.FlatAppearance.BorderSize = 0
-    $restoreButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $restoreButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $restoreButton.ForeColor = 'White'
+    # $restoreButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    # $restoreButton.FlatAppearance.BorderSize = 0
+    # $restoreButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    # $restoreButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $form.Controls.Add($restoreButton)
 
 
@@ -685,7 +687,7 @@ do {
             UltimateCleanup
             $form.Visible = $true
         })
-    $cleanup.BackColor = 'Gray'
+    $cleanup.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $cleanup.ForeColor = 'White'
     #$cleanup.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$cleanup.FlatAppearance.BorderSize = 0
@@ -703,7 +705,7 @@ do {
             W11Tweaks
             $form.Visible = $true
         })
-    $win11tweaks.BackColor = 'Gray'
+    $win11tweaks.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $win11tweaks.ForeColor = 'White'
     #$win11tweaks.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$win11tweaks.FlatAppearance.BorderSize = 0
@@ -721,7 +723,7 @@ do {
             &$nvscript
             $form.Visible = $true
         })
-    $nvtweaks.BackColor = 'Gray'
+    $nvtweaks.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $nvtweaks.ForeColor = 'White'
     #$nvtweaks.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$nvtweaks.FlatAppearance.BorderSize = 0
@@ -739,7 +741,7 @@ do {
             &$networkInstaller
             $form.Visible = $true
         })
-    $networkdriver.BackColor = 'Gray'
+    $networkdriver.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $networkdriver.ForeColor = 'White'
     #$networkdriver.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$networkdriver.FlatAppearance.BorderSize = 0
@@ -757,7 +759,7 @@ do {
             install-key
             $form.Visible = $true
         })
-    $activate.BackColor = 'Gray'
+    $activate.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $activate.ForeColor = 'White'
     #$activate.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$activate.FlatAppearance.BorderSize = 0
@@ -776,7 +778,7 @@ do {
             &$configUI
             $form.Visible = $true
         })
-    $configButton.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $configButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30) 
     $configButton.ForeColor = 'White'
     #$configButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
     #$configButton.FlatAppearance.BorderSize = 0

@@ -15,7 +15,8 @@
 #### [Update Notes](UpdateNotes.md)
 
 
-
+## View Code
+#### [Functions](https://github.com/zoicware/ZOICWARE/tree/main/functions)
 
 ### JOIN THE DISCORD
 

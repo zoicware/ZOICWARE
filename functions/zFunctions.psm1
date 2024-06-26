@@ -624,22 +624,39 @@ function debloat {
 
     $form = New-Object System.Windows.Forms.Form
     $form.Text = 'Debloat'
-    $form.Size = New-Object System.Drawing.Size(570, 530)
+    $form.Size = New-Object System.Drawing.Size(570, 580)
     $form.StartPosition = 'CenterScreen'
-    $form.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $form.BackColor = 'Black'
   
+    $groupBox = New-Object System.Windows.Forms.GroupBox
+    $groupBox.Text = 'Debloat Presets'
+    $groupBox.Size = New-Object System.Drawing.Size(240, 215)
+    $groupBox.Location = New-Object System.Drawing.Point(10, 10)
+    $groupBox.BackColor = [System.Drawing.Color]::FromArgb(75, 75, 75)
+    $groupBox.ForeColor = 'White'
+    $form.Controls.Add($groupBox)
+
+    $groupBox2 = New-Object System.Windows.Forms.GroupBox
+    $groupBox2.Text = 'Custom Debloat Extras'
+    $groupBox2.Size = New-Object System.Drawing.Size(240, 235)
+    $groupBox2.Location = New-Object System.Drawing.Point(10, 280)
+    $groupBox2.BackColor = [System.Drawing.Color]::FromArgb(75, 75, 75)
+    $groupBox2.ForeColor = 'White'
+    $form.Controls.Add($groupBox2)
+
     $applyPreset = New-Object System.Windows.Forms.Button
-    $applyPreset.Location = New-Object System.Drawing.Point(25, 190)
-    $applyPreset.Size = New-Object System.Drawing.Size(120, 25)
+    $applyPreset.Location = New-Object System.Drawing.Point(18, 190)
+    $applyPreset.Size = New-Object System.Drawing.Size(200, 25)
     $applyPreset.Text = 'Apply Preset'
     $applyPreset.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $applyPreset.ForeColor = [System.Drawing.Color]::White
-    $applyPreset.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $applyPreset.FlatAppearance.BorderSize = 0
-    $applyPreset.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $applyPreset.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$applyPreset.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$applyPreset.FlatAppearance.BorderSize = 0
+    #$applyPreset.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$applyPreset.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $applyPreset.DialogResult = [System.Windows.Forms.DialogResult]::OK
-    $form.Controls.Add($applyPreset)
+    $groupBox.Controls.Add($applyPreset)
+    #$form.Controls.Add($applyPreset)
 
     $removeAppxPackages = {
       if ($checkedListBox.CheckedItems.Count -eq 0) { Write-Host 'No Packages Selected' }
@@ -667,15 +684,15 @@ function debloat {
 
 
     $removeAppx = New-Object System.Windows.Forms.Button
-    $removeAppx.Location = New-Object System.Drawing.Point(10, 290)
+    $removeAppx.Location = New-Object System.Drawing.Point(423, 465)
     $removeAppx.Size = New-Object System.Drawing.Size(120, 35)
     $removeAppx.Text = 'Remove Appx Packages'
     $removeAppx.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $removeAppx.ForeColor = [System.Drawing.Color]::White
-    $removeAppx.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $removeAppx.FlatAppearance.BorderSize = 0
-    $removeAppx.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $removeAppx.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$removeAppx.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$removeAppx.FlatAppearance.BorderSize = 0
+    #$removeAppx.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$removeAppx.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $removeAppx.Add_Click({
         &$removeAppxPackages
       })
@@ -726,32 +743,33 @@ function debloat {
     }
     
     $removeLocked = New-Object System.Windows.Forms.Button
-    $removeLocked.Location = New-Object System.Drawing.Point(140, 290)
+    $removeLocked.Location = New-Object System.Drawing.Point(270, 465)
     $removeLocked.Size = New-Object System.Drawing.Size(120, 35)
     $removeLocked.Text = 'Remove Locked Packages'
     $removeLocked.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $removeLocked.ForeColor = [System.Drawing.Color]::White
-    $removeLocked.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $removeLocked.FlatAppearance.BorderSize = 0
-    $removeLocked.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $removeLocked.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$removeLocked.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$removeLocked.FlatAppearance.BorderSize = 0
+    #$removeLocked.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$removeLocked.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $removeLocked.Add_Click({
         &$removeLockedPackages
       })
     $form.Controls.Add($removeLocked)
 
     $applyExtras = New-Object System.Windows.Forms.Button
-    $applyExtras.Location = New-Object System.Drawing.Point(45, 455)
-    $applyExtras.Size = New-Object System.Drawing.Size(120, 25)
+    $applyExtras.Location = New-Object System.Drawing.Point(18, 210)
+    $applyExtras.Size = New-Object System.Drawing.Size(200, 25)
     $applyExtras.Text = 'Apply Extras'
     $applyExtras.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $applyExtras.ForeColor = [System.Drawing.Color]::White
-    $applyExtras.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $applyExtras.FlatAppearance.BorderSize = 0
-    $applyExtras.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $applyExtras.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$applyExtras.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$applyExtras.FlatAppearance.BorderSize = 0
+    #$applyExtras.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$applyExtras.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $applyExtras.DialogResult = [System.Windows.Forms.DialogResult]::OK
-    $form.Controls.Add($applyExtras)
+    $groupBox2.Controls.Add($applyExtras)
+    #$form.Controls.Add($applyExtras)
 
     $checkAllBoxes = {
       if ($checkAll.BackColor -eq [System.Drawing.Color]::Black) {
@@ -775,31 +793,31 @@ function debloat {
     }
 
     $checkAll = New-Object System.Windows.Forms.Button
-    $checkAll.Location = New-Object System.Drawing.Point(450, 455)
+    $checkAll.Location = New-Object System.Drawing.Point(450, 20)
     $checkAll.Size = New-Object System.Drawing.Size(90, 25)
     $checkAll.Text = 'Check All'
-    $checkAll.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
+    $checkAll.BackColor = [System.Drawing.Color]::FromArgb(65, 65, 65)
     $checkAll.ForeColor = [System.Drawing.Color]::White
-    $checkAll.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $checkAll.FlatAppearance.BorderSize = 0
-    $checkAll.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $checkAll.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$checkAll.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$checkAll.FlatAppearance.BorderSize = 0
+    #$checkAll.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$checkAll.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $checkAll.Add_Click({
         &$checkAllBoxes
       })
     $form.Controls.Add($checkAll)
   
   
-    $label = New-Object System.Windows.Forms.Label
-    $label.Location = New-Object System.Drawing.Point(10, 10)
-    $label.Size = New-Object System.Drawing.Size(200, 20)
-    $label.Text = 'Debloat Presets:'
-    $label.ForeColor = 'White'
-    $label.Font = New-Object System.Drawing.Font('Segoe UI', 11) 
-    $form.Controls.Add($label)
+    #$label = New-Object System.Windows.Forms.Label
+    #$label.Location = New-Object System.Drawing.Point(10, 10)
+    #$label.Size = New-Object System.Drawing.Size(200, 20)
+    #$label.Text = 'Debloat Presets:'
+    #$label.ForeColor = 'White'
+    #$label.Font = New-Object System.Drawing.Font('Segoe UI', 11) 
+    #$form.Controls.Add($label)
 
     $label2 = New-Object System.Windows.Forms.Label
-    $label2.Location = New-Object System.Drawing.Point(270, 10)
+    $label2.Location = New-Object System.Drawing.Point(269, 18)
     $label2.Size = New-Object System.Drawing.Size(280, 20)
     $label2.Text = 'Installed Appx Packages:'
     $label2.ForeColor = 'White'
@@ -814,57 +832,62 @@ function debloat {
     $label3.Font = New-Object System.Drawing.Font('Segoe UI', 11) 
     $form.Controls.Add($label3)
 
-    $label4 = New-Object System.Windows.Forms.Label
-    $label4.Location = New-Object System.Drawing.Point(10, 335)
-    $label4.Size = New-Object System.Drawing.Size(200, 20)
-    $label4.Text = 'Remove Extras:'
-    $label4.ForeColor = 'White'
-    $label4.Font = New-Object System.Drawing.Font('Segoe UI', 11) 
-    $form.Controls.Add($label4)
+    #$label4 = New-Object System.Windows.Forms.Label
+    #$label4.Location = New-Object System.Drawing.Point(10, 335)
+    #$label4.Size = New-Object System.Drawing.Size(200, 20)
+    #$label4.Text = 'Remove Extras:'
+    #$label4.ForeColor = 'White'
+    #$label4.Font = New-Object System.Drawing.Font('Segoe UI', 11) 
+    #$form.Controls.Add($label4)
   
       
-    $checkbox2.Location = new-object System.Drawing.Size(15, 40)
+    $checkbox2.Location = new-object System.Drawing.Size(15, 30)
     $checkbox2.Size = new-object System.Drawing.Size(150, 20)
     $checkbox2.Text = 'Debloat All'
     $checkbox2.ForeColor = 'White'
     $checkbox2.Checked = $false
-    $Form.Controls.Add($checkbox2)  
+    $groupBox.Controls.Add($checkbox2)
+    #$Form.Controls.Add($checkbox2)  
       
   
       
-    $checkbox3.Location = new-object System.Drawing.Size(15, 70)
+    $checkbox3.Location = new-object System.Drawing.Size(15, 60)
     $checkbox3.Size = new-object System.Drawing.Size(170, 20)
     $checkbox3.Text = 'Keep Store,Xbox and Edge'
     $checkbox3.ForeColor = 'White'
     $checkbox3.Checked = $false
-    $Form.Controls.Add($checkbox3)
+    $groupBox.Controls.Add($checkbox3)
+    #$Form.Controls.Add($checkbox3)
       
   
       
-    $checkbox4.Location = new-object System.Drawing.Size(15, 100)
+    $checkbox4.Location = new-object System.Drawing.Size(15, 90)
     $checkbox4.Size = new-object System.Drawing.Size(170, 20)
     $checkbox4.Text = 'Keep Store and Xbox'
     $checkbox4.ForeColor = 'White'
     $checkbox4.Checked = $false
-    $Form.Controls.Add($checkbox4)
+    $groupBox.Controls.Add($checkbox4)
+    #$Form.Controls.Add($checkbox4)
      
   
       
-    $checkbox5.Location = new-object System.Drawing.Size(15, 130)
+    $checkbox5.Location = new-object System.Drawing.Size(15, 120)
     $checkbox5.Size = new-object System.Drawing.Size(200, 20)
     $checkbox5.Text = 'Debloat All Keep Edge'
     $checkbox5.ForeColor = 'White'
     $checkbox5.Checked = $false
-    $Form.Controls.Add($checkbox5)
+    $groupBox.Controls.Add($checkbox5)
+    #$Form.Controls.Add($checkbox5)
       
   
       
-    $checkbox6.Location = new-object System.Drawing.Size(15, 160)
+    $checkbox6.Location = new-object System.Drawing.Size(15, 150)
     $checkbox6.Size = new-object System.Drawing.Size(200, 20)
     $checkbox6.Text = 'Debloat All Keep Store'
     $checkbox6.ForeColor = 'White'
     $checkbox6.Checked = $false
-    $Form.Controls.Add($checkbox6)
+    $groupBox.Controls.Add($checkbox6)
+    #$Form.Controls.Add($checkbox6)
 
 
     $showLocked = {
@@ -902,58 +925,64 @@ function debloat {
     $Form.Controls.Add($showLockedPackages)
 
     $extraEdge = New-Object System.Windows.Forms.CheckBox
-    $extraEdge.Location = new-object System.Drawing.Size(15, 355)
-    $extraEdge.Size = new-object System.Drawing.Size(70, 20)
-    $extraEdge.Text = 'Edge'
+    $extraEdge.Location = new-object System.Drawing.Size(15, 25)
+    $extraEdge.Size = new-object System.Drawing.Size(120, 20)
+    $extraEdge.Text = 'Microsoft Edge'
     $extraEdge.ForeColor = 'White'
     $extraEdge.Checked = $false
-    $Form.Controls.Add($extraEdge)
+    $groupBox2.Controls.Add($extraEdge)
+    #$Form.Controls.Add($extraEdge)
 
     $extraTeamsOneDrive = New-Object System.Windows.Forms.CheckBox
-    $extraTeamsOneDrive.Location = new-object System.Drawing.Size(95, 355)
+    $extraTeamsOneDrive.Location = new-object System.Drawing.Size(15, 55)
     $extraTeamsOneDrive.Size = new-object System.Drawing.Size(150, 20)
     $extraTeamsOneDrive.Text = 'Teams and OneDrive'
     $extraTeamsOneDrive.ForeColor = 'White'
     $extraTeamsOneDrive.Checked = $false
-    $Form.Controls.Add($extraTeamsOneDrive)
+    $groupBox2.Controls.Add($extraTeamsOneDrive)
+    #$Form.Controls.Add($extraTeamsOneDrive)
 
     $extraUpdateTools = New-Object System.Windows.Forms.CheckBox
-    $extraUpdateTools.Location = new-object System.Drawing.Size(15, 375)
+    $extraUpdateTools.Location = new-object System.Drawing.Size(15, 85)
     $extraUpdateTools.Size = new-object System.Drawing.Size(150, 20)
     $extraUpdateTools.Text = 'Windows Update Tools'
     $extraUpdateTools.ForeColor = 'White'
     $extraUpdateTools.Checked = $false
-    $Form.Controls.Add($extraUpdateTools)
+    $groupBox2.Controls.Add($extraUpdateTools)
+    #$Form.Controls.Add($extraUpdateTools)
 
 
     $extraRemoveRemote = New-Object System.Windows.Forms.CheckBox
-    $extraRemoveRemote.Location = new-object System.Drawing.Size(15, 395)
+    $extraRemoveRemote.Location = new-object System.Drawing.Size(15, 115)
     $extraRemoveRemote.Size = new-object System.Drawing.Size(170, 20)
     $extraRemoveRemote.Text = 'Remote Desktop Connection'
     $extraRemoveRemote.ForeColor = 'White'
     $extraRemoveRemote.Checked = $false
-    $Form.Controls.Add($extraRemoveRemote)
+    $groupBox2.Controls.Add($extraRemoveRemote)
+    #$Form.Controls.Add($extraRemoveRemote)
 
     $extraDISM = New-Object System.Windows.Forms.CheckBox
-    $extraDISM.Location = new-object System.Drawing.Size(15, 415)
-    $extraDISM.Size = new-object System.Drawing.Size(250, 20)
+    $extraDISM.Location = new-object System.Drawing.Size(15, 145)
+    $extraDISM.Size = new-object System.Drawing.Size(220, 27)
     $extraDISM.Text = 'Hello Face, Quick-Assist and Steps Recorder'
     $extraDISM.ForeColor = 'White'
     $extraDISM.Checked = $false
-    $Form.Controls.Add($extraDISM)
+    $groupBox2.Controls.Add($extraDISM)
+    #$Form.Controls.Add($extraDISM)
 
     $extraStartMenu = New-Object System.Windows.Forms.CheckBox
-    $extraStartMenu.Location = new-object System.Drawing.Size(15, 435)
-    $extraStartMenu.Size = new-object System.Drawing.Size(250, 20)
+    $extraStartMenu.Location = new-object System.Drawing.Size(15, 175)
+    $extraStartMenu.Size = new-object System.Drawing.Size(220, 20)
     $extraStartMenu.Text = 'Clean Start Menu Icons'
     $extraStartMenu.ForeColor = 'White'
     $extraStartMenu.Checked = $false
-    $Form.Controls.Add($extraStartMenu)
+    $groupBox2.Controls.Add($extraStartMenu)
+    #$Form.Controls.Add($extraStartMenu)
 
 
 
     $checkedListBox = New-Object System.Windows.Forms.CheckedListBox
-    $checkedListBox.Location = New-Object System.Drawing.Point(270, 40)
+    $checkedListBox.Location = New-Object System.Drawing.Point(270, 50)
     $checkedListBox.Size = New-Object System.Drawing.Size(270, 415)
     $checkedListBox.BackColor = 'Black'
     $checkedListBox.ForeColor = 'White'

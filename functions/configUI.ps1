@@ -10,7 +10,7 @@ $form.Text = 'Import/Export Tweak Config'
 $form.Size = New-Object System.Drawing.Size(500, 250)
 $form.StartPosition = 'CenterScreen'
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedSingle
-$form.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+$form.BackColor = 'Black'
 
 
 $dconfiglabel = New-Object System.Windows.Forms.Label
@@ -49,12 +49,13 @@ $filebrowsebttn = New-Object System.Windows.Forms.Button
 $filebrowsebttn.Location = New-Object System.Drawing.Point(440, 60)
 $filebrowsebttn.Size = New-Object System.Drawing.Size(40, 20)
 $filebrowsebttn.Text = '...'
-$filebrowsebttn.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
+$filebrowsebttn.Font = New-Object System.Drawing.Font($filebrowsebttn.Font.Name, 10, [System.Drawing.FontStyle]::Bold)
+$filebrowsebttn.BackColor = [System.Drawing.Color]::FromArgb(75, 75, 75)
 $filebrowsebttn.ForeColor = [System.Drawing.Color]::White
 $filebrowsebttn.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-$filebrowsebttn.FlatAppearance.BorderSize = 0
-$filebrowsebttn.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-$filebrowsebttn.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+$filebrowsebttn.FlatAppearance.BorderSize = 1
+#$filebrowsebttn.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+#$filebrowsebttn.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
 $filebrowsebttn.Add_Click({
         $fileDialog = New-Object System.Windows.Forms.OpenFileDialog
         $fileDialog.Filter = 'CFG Files (*.cfg)|*.cfg|All Files (*.*)|*.*'
@@ -70,14 +71,14 @@ $form.Controls.Add($filebrowsebttn)
 
 $resetConfigBttn = New-Object System.Windows.Forms.Button
 $resetConfigBttn.Location = New-Object System.Drawing.Point(10, 100)
-$resetConfigBttn.Size = New-Object System.Drawing.Size(130, 20)
+$resetConfigBttn.Size = New-Object System.Drawing.Size(130, 25)
 $resetConfigBttn.Text = 'Reset Current Config'
 $resetConfigBttn.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
 $resetConfigBttn.ForeColor = [System.Drawing.Color]::White
-$resetConfigBttn.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-$resetConfigBttn.FlatAppearance.BorderSize = 0
-$resetConfigBttn.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-$resetConfigBttn.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+#$resetConfigBttn.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+#$resetConfigBttn.FlatAppearance.BorderSize = 0
+#$resetConfigBttn.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+#$resetConfigBttn.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
 $resetConfigBttn.Add_Click({
         [reflection.assembly]::loadwithpartialname('System.Windows.Forms') | Out-Null 
         $msgBoxInput = [System.Windows.Forms.MessageBox]::Show('Are you sure you want to reset your current config?', 'zoicware', 'YesNo', 'Question')
@@ -118,10 +119,10 @@ $runConfig.Size = New-Object System.Drawing.Size(120, 30)
 $runConfig.Text = 'Run Tweaks'
 $runConfig.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
 $runConfig.ForeColor = [System.Drawing.Color]::White
-$runConfig.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-$runConfig.FlatAppearance.BorderSize = 0
-$runConfig.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-$runConfig.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+#$runConfig.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+#$runConfig.FlatAppearance.BorderSize = 0
+#$runConfig.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+#$runConfig.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
 $runConfig.Add_Click({
         $importedConfig = Get-Content $Global:selectedFile -Force -ErrorAction SilentlyContinue
         if ($importedConfig -eq $null) {
@@ -152,10 +153,10 @@ $exportConfig.Size = New-Object System.Drawing.Size(120, 30)
 $exportConfig.Text = 'Export Tweaks'
 $exportConfig.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
 $exportConfig.ForeColor = [System.Drawing.Color]::White
-$exportConfig.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-$exportConfig.FlatAppearance.BorderSize = 0
-$exportConfig.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-$exportConfig.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+#$exportConfig.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+#$exportConfig.FlatAppearance.BorderSize = 0
+#$exportConfig.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+#$exportConfig.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
 $exportConfig.Add_Click({
         if (Test-Path "$env:USERPROFILE\ZCONFIG.cfg" -ErrorAction SilentlyContinue) {
             Write-Host 'Choose a Destination Directory:'

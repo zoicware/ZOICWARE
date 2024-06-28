@@ -1388,7 +1388,7 @@ function gpTweaks {
     $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
     $form.MaximizeBox = $false
     $form.StartPosition = [System.Windows.Forms.FormStartPosition]::CenterScreen
-    $form.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $form.BackColor = 'Black'
     
     # Create the checkboxes
     
@@ -1419,10 +1419,10 @@ function gpTweaks {
     $OKButton.Text = 'OK'
     $OKButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $OKButton.ForeColor = [System.Drawing.Color]::White
-    $OKButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $OKButton.FlatAppearance.BorderSize = 0
-    $OKButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $OKButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$OKButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$OKButton.FlatAppearance.BorderSize = 0
+    #$OKButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$OKButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
     $form.AcceptButton = $OKButton
     $form.Controls.Add($OKButton)
@@ -1433,10 +1433,10 @@ function gpTweaks {
     $CancelButton.Text = 'Cancel'
     $CancelButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $CancelButton.ForeColor = [System.Drawing.Color]::White
-    $CancelButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $CancelButton.FlatAppearance.BorderSize = 0
-    $CancelButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $CancelButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$CancelButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$CancelButton.FlatAppearance.BorderSize = 0
+    #$CancelButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$CancelButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
     $form.CancelButton = $CancelButton
     $form.Controls.Add($CancelButton)
@@ -1876,7 +1876,7 @@ function import-powerplan {
     $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
     $form.MaximizeBox = $false
     $form.StartPosition = [System.Windows.Forms.FormStartPosition]::CenterScreen
-    $form.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $form.BackColor = 'Black'
       
     # Create the checkboxes
       
@@ -1911,10 +1911,10 @@ function import-powerplan {
     $OKButton.Text = 'OK'
     $OKButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $OKButton.ForeColor = [System.Drawing.Color]::White
-    $OKButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $OKButton.FlatAppearance.BorderSize = 0
-    $OKButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $OKButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$OKButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$OKButton.FlatAppearance.BorderSize = 0
+    #$OKButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$OKButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
     $form.AcceptButton = $OKButton
     $form.Controls.Add($OKButton)
@@ -1925,10 +1925,10 @@ function import-powerplan {
     $CancelButton.Text = 'Cancel'
     $CancelButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $CancelButton.ForeColor = [System.Drawing.Color]::White
-    $CancelButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $CancelButton.FlatAppearance.BorderSize = 0
-    $CancelButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $CancelButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$CancelButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$CancelButton.FlatAppearance.BorderSize = 0
+    #$CancelButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$CancelButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
     $form.CancelButton = $CancelButton
     $form.Controls.Add($CancelButton)
@@ -2414,20 +2414,20 @@ function OptionalTweaks {
     $TabControl = New-Object System.Windows.Forms.TabControl
     $TabControl.Location = New-Object System.Drawing.Size(10, 10)
     $TabControl.Size = New-Object System.Drawing.Size(570, 500) 
-    $TabControl.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
-        
+    $TabControl.BackColor = [System.Drawing.Color]::FromArgb(65, 65, 65)
+    
         
     $TabPage1 = New-Object System.Windows.Forms.TabPage
     $TabPage1.Text = 'General'
-    $TabPage1.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $TabPage1.BackColor = [System.Drawing.Color]::FromArgb(65, 65, 65)
         
     $TabPage2 = New-Object System.Windows.Forms.TabPage
     $TabPage2.Text = 'Ultimate Context Menu'
-    $TabPage2.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $TabPage2.BackColor = [System.Drawing.Color]::FromArgb(65, 65, 65)
         
     $TabPage3 = New-Object System.Windows.Forms.TabPage
     $TabPage3.Text = 'Legacy Win Store'
-    $TabPage3.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $TabPage3.BackColor = [System.Drawing.Color]::FromArgb(65, 65, 65)
            
            
     $TabControl.Controls.Add($TabPage1)
@@ -2811,15 +2811,15 @@ function OptionalTweaks {
     $TabPage1.Controls.Add($checkBox45)
         
     $OKButton = New-Object System.Windows.Forms.Button
-    $OKButton.Location = New-Object System.Drawing.Point(200, 510)
+    $OKButton.Location = New-Object System.Drawing.Point(195, 510)
     $OKButton.Size = New-Object System.Drawing.Size(100, 23)
     $OKButton.Text = 'OK'
     $OKButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $OKButton.ForeColor = [System.Drawing.Color]::White
-    $OKButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $OKButton.FlatAppearance.BorderSize = 0
-    $OKButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $OKButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$OKButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$OKButton.FlatAppearance.BorderSize = 0
+    #$OKButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$OKButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
     $form.AcceptButton = $OKButton
     $form.Controls.Add($OKButton)
@@ -2830,10 +2830,10 @@ function OptionalTweaks {
     $CancelButton.Text = 'Cancel'
     $CancelButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $CancelButton.ForeColor = [System.Drawing.Color]::White
-    $CancelButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $CancelButton.FlatAppearance.BorderSize = 0
-    $CancelButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $CancelButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$CancelButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$CancelButton.FlatAppearance.BorderSize = 0
+    #$CancelButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$CancelButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
     $form.CancelButton = $CancelButton
     $form.Controls.Add($CancelButton)
@@ -3154,7 +3154,8 @@ function OptionalTweaks {
       
       
       Add-Type -AssemblyName System.Windows.Forms
-      
+      [System.Windows.Forms.Application]::EnableVisualStyles()
+
       # Retrieve the number of CPU cores
       $cpuCores = (Get-WmiObject -Class Win32_Processor).NumberOfCores
       
@@ -3165,10 +3166,12 @@ function OptionalTweaks {
       $form.Text = 'PBO2 Tuner'
       $form.Size = New-Object System.Drawing.Size(400, $size)
       $form.StartPosition = 'CenterScreen'
+      $form.BackColor = 'Black'
       
       # Create a checkbox
       $checkBox = New-Object System.Windows.Forms.CheckBox
       $checkBox.Text = 'Custom Limits'
+      $checkBox.ForeColor = 'White'
       $checkBox.Location = New-Object System.Drawing.Point(200, 140)
       
       # Create three textboxes
@@ -3194,16 +3197,19 @@ function OptionalTweaks {
       $label1 = New-Object System.Windows.Forms.Label
       $label1.Text = 'PPT'
       $label1.Location = New-Object System.Drawing.Point(190, 170)
+      $label1.ForeColor = 'White'
       $label1.Visible = $false
       
       $label2 = New-Object System.Windows.Forms.Label
       $label2.Text = 'TDC'
       $label2.Location = New-Object System.Drawing.Point(190, 200)
+      $label2.ForeColor = 'White'
       $label2.Visible = $false
       
       $label3 = New-Object System.Windows.Forms.Label
       $label3.Text = 'EDC'
       $label3.Location = New-Object System.Drawing.Point(190, 230)
+      $label3.ForeColor = 'White'
       $label3.Visible = $false
       
       # Add event handler for checkbox checked event
@@ -3240,6 +3246,7 @@ function OptionalTweaks {
       $label.Location = [System.Drawing.Point]::new(10, 20)
       $label.Size = [System.Drawing.Size]::new(380, 20)
       $label.Text = 'Enter the Undervolt for each core:'
+      $label.ForeColor = 'White'
       $form.Controls.Add($label)
       
       # Create the radio buttons
@@ -3249,6 +3256,7 @@ function OptionalTweaks {
         $radioButton = New-Object System.Windows.Forms.RadioButton
         $radioButton.Location = [System.Drawing.Point]::new(200, 40 + $i * 30)
         $radioButton.Size = [System.Drawing.Size]::new(60, 20)
+        $radioButton.ForeColor = 'White'
         $radioButton.Text = $values[$i].ToString()
       
         # Create a closure to capture the correct radio button object
@@ -3276,6 +3284,7 @@ function OptionalTweaks {
         $coreLabelControl.Location = [System.Drawing.Point]::new(10, 40 + $i * 30)
         $coreLabelControl.Size = [System.Drawing.Size]::new(60, 20)
         $coreLabelControl.Text = $coreLabel
+        $coreLabelControl.ForeColor = 'White'
         $form.Controls.Add($coreLabelControl)
           
         # Create the text box
@@ -3291,6 +3300,8 @@ function OptionalTweaks {
       $button = New-Object System.Windows.Forms.Button
       $button.Location = [System.Drawing.Point]::new(150, 40 + $cpuCores * 30)
       $button.Size = [System.Drawing.Size]::new(100, 30)
+      $button.ForeColor = 'White'
+      $button.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
       $button.Text = 'Apply'
       $button.Add_Click({
   
@@ -3810,11 +3821,11 @@ function W11Tweaks {
     $form = New-Object Windows.Forms.Form
     $form.Text = 'Windows 11 Tweaks'
     $form.Size = New-Object Drawing.Size(450, 450)
-    $form.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+    $form.BackColor = 'Black'
       
     $label1 = New-Object System.Windows.Forms.Label
     $label1.Location = New-Object System.Drawing.Point(10, 10)
-    $label1.Size = New-Object System.Drawing.Size(200, 20)
+    $label1.Size = New-Object System.Drawing.Size(200, 25)
     $label1.Text = 'Patch Explorer:'
     $label1.ForeColor = 'White'
     $label1.Font = New-Object System.Drawing.Font('Segoe UI', 13)  
@@ -3909,15 +3920,15 @@ function W11Tweaks {
     
     
     $OKButton = New-Object System.Windows.Forms.Button
-    $OKButton.Location = New-Object System.Drawing.Point(120, 380)
+    $OKButton.Location = New-Object System.Drawing.Point(112, 380)
     $OKButton.Size = New-Object System.Drawing.Size(100, 23)
     $OKButton.Text = 'OK'
     $OKButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $OKButton.ForeColor = [System.Drawing.Color]::White
-    $OKButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $OKButton.FlatAppearance.BorderSize = 0
-    $OKButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $OKButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$OKButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$OKButton.FlatAppearance.BorderSize = 0
+    #$OKButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$OKButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
     $form.AcceptButton = $OKButton
     $form.Controls.Add($OKButton)
@@ -3928,10 +3939,10 @@ function W11Tweaks {
     $CancelButton.Text = 'Cancel'
     $CancelButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $CancelButton.ForeColor = [System.Drawing.Color]::White
-    $CancelButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $CancelButton.FlatAppearance.BorderSize = 0
-    $CancelButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    $CancelButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    #$CancelButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    #$CancelButton.FlatAppearance.BorderSize = 0
+    #$CancelButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$CancelButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
     $form.CancelButton = $CancelButton
     $form.Controls.Add($CancelButton)

@@ -146,3 +146,4 @@
 - Remove pinned items in network and sound flyout
 - Disable show copilot button on task bar
 - Disable background apps win 11
+- Enable End Task in Taskbar context menu

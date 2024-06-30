@@ -32,6 +32,9 @@
 - Tablet Input
 
 ## Debloat
+
+<img width="380" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/f8f626c5-a16d-480d-8364-fa2447399272">
+
 - This tweak will allow you to debloat all windows appx packages and other preinstalled apps
 ### Debloat Presets
 - **Debloat All** 
@@ -54,8 +57,15 @@
      - Remote Desktop Connection
      - Hello Face, Quick Assist, Steps Recorder
      - Clean Start Menu Icons
-
+ 
 ## Optional Tweaks
+<img width="250" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/5ccbda0e-0793-45b1-b41c-4819a3d59b16">
+
+<img width="250" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/8461f5a7-f565-45a8-ba79-bbe1713c694a">
+
+<img width="250" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/90973fd8-6ca3-4263-b9fe-63490edeb096">
+
+
 ### General
 - **Black Theme** - apply a black color to the taskbar and startmenu
      - Classic theme will apply a old windows insider theme to enable a retro effect on some windows
@@ -116,6 +126,9 @@
   - Remove any default windows plans to prevent windows from automatically switching back to balanced
 
   ## Windows 11 Tweaks
+
+<img width="300" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/cb3213af-0677-43fd-9c26-9c05f5f5d67f">
+
 
   ### Patch Explorer
   - **Remove Rounded Edges** - remove rounded edges using [toggle-rounded-corners](https://github.com/oberrich/win11-toggle-rounded-corners) and run at startup

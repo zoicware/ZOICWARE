@@ -5,7 +5,7 @@
 
 
 
-![image](https://github.com/zoicware/ZOICWARE/assets/118035521/8f1c29c0-d374-4930-a831-778d7f607140)
+![image](https://github.com/zoicware/ZOICWARE/assets/118035521/6eaeaaf9-05c0-44e0-8321-f4c09191b1d7)
 
 
 ## All Zoicware Features

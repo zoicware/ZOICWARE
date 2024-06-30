@@ -236,3 +236,11 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 - updated disable defender to no longer need to disable tamper protection before disabling
 
 - added check for updates when launching zoicware, if an old version is detected it will prompt to install the newest version
+
+
+--------------------------------------------------------
+**v1.2.0**
+
+- updated ui to be more modern and improve readability 
+- added end task in context menu when right clicking apps on the taskbar for windows 11 (registry tweaks)
+- improved run zoicware.exe to launch the script much faster 

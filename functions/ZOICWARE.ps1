@@ -181,9 +181,14 @@ Write-Host $fullTitle -BackgroundColor White -ForegroundColor Black
 
 #get system drive letter
 $Global:sysDrive = $env:SystemDrive + '\'
-
-Write-Host "Searching for functions in $sysDrive"
-$Global:folder = (Get-ChildItem -Path $sysDrive -Filter '_FOLDERMUSTBEONCDRIVE' -Recurse -Directory -ErrorAction SilentlyContinue -Force | Where-Object Name -NotIn '$Recycle.Bin' | Select-Object -First 1).FullName
+#search on system drive if zoicware.ps1 is not in _FOLDERMUSTBEONCDRIVE
+if ($PSScriptRoot -like '*_FOLDERMUSTBEONCDRIVE') {
+    $Global:folder = $PSScriptRoot
+}
+else {
+    Write-Host "Searching for functions in $sysDrive"
+    $Global:folder = (Get-ChildItem -Path $sysDrive -Filter '_FOLDERMUSTBEONCDRIVE' -Recurse -Directory -ErrorAction SilentlyContinue -Force | Where-Object Name -NotIn '$Recycle.Bin' | Select-Object -First 1).FullName
+}
 $pack = $folder -replace '\\_FOLDERMUSTBEONCDRIVE' , ''
 #add _FOLDERMUSTBEONCDRIVE and zoicwareOS to defender exclusions
 Add-MpPreference -ExclusionPath $folder -Force -ErrorAction SilentlyContinue

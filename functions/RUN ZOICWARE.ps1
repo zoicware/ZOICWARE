@@ -14,7 +14,9 @@ else {
 }
 
 #check if script is in pack
-$path = $PSScriptRoot -replace '1 Setup', '_FOLDERMUSTBEONCDRIVE\ZOICWARE.ps1'
+$exePath = [System.Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
+$root = Split-Path -Path $exePath -Parent
+$path = $root -replace '1 Setup', '_FOLDERMUSTBEONCDRIVE\ZOICWARE.ps1'
 if (Test-Path $path) {
     $script = $path
 }

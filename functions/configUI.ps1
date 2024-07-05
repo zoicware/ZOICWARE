@@ -113,8 +113,88 @@ $resetConfigBttn.Add_Click({
     })
 $form.Controls.Add($resetConfigBttn)
 
+
+$customConfig = New-Object System.Windows.Forms.Button
+$customConfig.Location = New-Object System.Drawing.Point(10, 130)
+$customConfig.Size = New-Object System.Drawing.Size(130, 25)
+$customConfig.Text = 'Build Custom Config'
+$customConfig.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
+$customConfig.ForeColor = [System.Drawing.Color]::White
+$customConfig.Add_Click({
+        $form.Visible = $false
+
+        $tweakNames = @()
+        $configContentArray = $configContent -split "`n"
+        foreach ($line in $configContentArray) {
+            if ($line -notlike '#*') {
+                $settingName = $line -split '='
+                $tweakNames += $settingName[0].Trim()
+            }
+        }
+
+        $form3 = New-Object System.Windows.Forms.Form
+        $form3.Text = 'Build Config'
+        $form3.Size = New-Object System.Drawing.Size(400, 550)
+        $form3.StartPosition = 'CenterScreen'
+        $form3.BackColor = 'Black'
+
+        $label2 = New-Object System.Windows.Forms.Label
+        $label2.Location = New-Object System.Drawing.Point(10, 10)
+        $label2.Size = New-Object System.Drawing.Size(280, 20)
+        $label2.Text = 'Select Tweaks:'
+        $label2.ForeColor = 'White'
+        $label2.Font = New-Object System.Drawing.Font('Segoe UI', 11) 
+        $form3.Controls.Add($label2)
+
+        $checkedListBox = New-Object System.Windows.Forms.CheckedListBox
+        $checkedListBox.Location = New-Object System.Drawing.Point(55, 35)
+        $checkedListBox.Size = New-Object System.Drawing.Size(270, 415)
+        $checkedListBox.BackColor = 'Black'
+        $checkedListBox.ForeColor = 'White'
+        $checkedListBox.ScrollAlwaysVisible = $true
+        $Form3.Controls.Add($checkedListBox)
+
+        foreach ($name in $tweakNames) {
+            $checkedListBox.Items.Add($name, $false) | Out-Null
+        }
+
+        $saveConfig = New-Object System.Windows.Forms.Button
+        $saveConfig.Location = New-Object System.Drawing.Point(130, 455)
+        $saveConfig.Size = New-Object System.Drawing.Size(120, 35)
+        $saveConfig.Text = 'Save'
+        $saveConfig.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
+        $saveConfig.ForeColor = [System.Drawing.Color]::White
+        #$removeLocked.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+        #$removeLocked.FlatAppearance.BorderSize = 0
+        #$removeLocked.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+        #$removeLocked.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+        $saveConfig.Add_Click({
+                $fileDialog = New-Object System.Windows.Forms.SaveFileDialog
+                $fileDialog.Filter = 'CFG Files (*.cfg)|*.cfg|All Files (*.*)|*.*'
+                if ($fileDialog.ShowDialog() -eq 'OK') {
+                    $values = @()
+                    foreach ($line in $checkedListBox.CheckedItems.GetEnumerator()) {
+                        $values += "$line = 1"
+                    }
+                    $date = Get-Date -Format 'MM-dd-yy'
+                    New-Item -path $fileDialog.FileName -Force -Value "#Custom Config Created $($date) `n"
+                    foreach ($value in $values) {
+                        Add-Content -Path $fileDialog.FileName -Value $value
+                    }
+                    $form3.Close()
+                }
+            })
+        $form3.Controls.Add($saveConfig)
+
+        $form3.ShowDialog() | Out-Null
+
+        $form.Visible = $true
+
+    })
+$form.Controls.Add($customConfig)
+
 $runConfig = New-Object System.Windows.Forms.Button
-$runConfig.Location = New-Object System.Drawing.Point(130, 160)
+$runConfig.Location = New-Object System.Drawing.Point(130, 170)
 $runConfig.Size = New-Object System.Drawing.Size(120, 30)
 $runConfig.Text = 'Run Tweaks'
 $runConfig.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
@@ -148,7 +228,7 @@ $runConfig.Add_Click({
 $form.Controls.Add($runConfig)
 
 $exportConfig = New-Object System.Windows.Forms.Button
-$exportConfig.Location = New-Object System.Drawing.Point(250, 160)
+$exportConfig.Location = New-Object System.Drawing.Point(250, 170)
 $exportConfig.Size = New-Object System.Drawing.Size(120, 30)
 $exportConfig.Text = 'Export Tweaks'
 $exportConfig.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)

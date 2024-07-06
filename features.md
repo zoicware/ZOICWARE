@@ -1,5 +1,7 @@
 # All zoicware features
 ## Registry Tweaks
+<img width="300" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/d10d6701-6b68-41ce-875e-82329b880f94">
+
 - Apply the registry tweaks to automate most windows quality of life and performance settings
 - A registry file will be created on the desktop containing all the registry keys including a comment describing the function of each
 

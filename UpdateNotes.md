@@ -242,5 +242,17 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 **v1.2.0**
 
 - updated ui to be more modern and improve readability 
+
 - added end task in context menu when right clicking apps on the taskbar for windows 11 (registry tweaks)
+
 - improved run zoicware.exe to launch the script much faster 
+
+---------------------------------------------------------------
+
+**v1.2.1**
+
+- further improved script startup speed
+
+- added option to build a custom config to automate tweaks
+
+- upgraded registry tweaks option to now allow you to remove any tweaks before running

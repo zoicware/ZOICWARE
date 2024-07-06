@@ -194,6 +194,9 @@
           - Net 3.5 from the bootable media used to install windows
 - After they are finished Ngen.exe and DISM are ran to cleanup **Note:** this may take some time be patient
 ## Importing and Exporting Tweaks
+<img width="330" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/1979c64e-c67a-47a5-823d-2446eb9ba006">
+<img width="250" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/a7f90f3b-e0b1-4dbc-9ab9-35c6fbf279bf">
+
 - Upon launching the script for the first time a file ZCONFIG.cfg will be created in [C:\Users\Username\]
 
 ### Features

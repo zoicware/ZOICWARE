@@ -197,6 +197,7 @@
 - Upon launching the script for the first time a file ZCONFIG.cfg will be created in [C:\Users\Username\]
 
 ### Features
+- Build Custom Config with Selected Tweaks
 - All tweaks will be updated in the config upon selecting 
 - Export the config for automated use
 - Import configs and run tweaks automatically with no prompts

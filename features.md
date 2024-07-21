@@ -1,7 +1,5 @@
 # All zoicware features
 ### Table of Contents
-- [All zoicware features](#all-zoicware-features)
-    - [Table of Contents](#table-of-contents)
   - [Registry Tweaks](#registry-tweaks)
   - [Group Policy Tweaks](#group-policy-tweaks)
     - [Disable Updates](#disable-updates)

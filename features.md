@@ -126,12 +126,12 @@
 - **Security Updates Only** - defers feature updates for 365 days and optional updates for 30 days [MAX]
 - **Remove Quick Access From File Explorer** - remove the quick access icon from file explorer
  - **Block Razer and ASUS Donwload Servers** - this tweak adds all razer and ASUS servers to the hosts file to prevent the download of their bloat software
-   - **Note:** the hosts file is located [C:\Windows\System32\drivers\etc\hosts]
+   - **Note:** the hosts file is located `[C:\Windows\System32\drivers\etc\hosts]`
 - **Remove Network Icon From File Explorer** - remove the network icon from file explorer (bottom left)
  - **Apply PBO Curve on Startup** - this tweak will prompt you to enter your pbo curve oc and will apply this when your pc starts up using PBO Tuner
  - **Do Not Include Drivers in Windows Update** - prevent drivers from being downloaded when checking for updates
  - **Enable Windows 11 Sounds** - replace windows 10 default sounds with windows 11 sounds, a backup folder of the windows 10 sounds will be placed on your desktop 
-   - **Note:** Sounds Folder [C:\Windows\Media]
+   - **Note:** Sounds Folder `[C:\Windows\Media]`
 - **Remove Recycle Bin Name** - remove the "Recycle Bin" text from under the icon on the desktop
 
 ### Ultimate Context Menu
@@ -241,7 +241,7 @@
 <img width="330" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/1979c64e-c67a-47a5-823d-2446eb9ba006">
 <img width="250" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/a7f90f3b-e0b1-4dbc-9ab9-35c6fbf279bf">
 
-- Upon launching the script for the first time a file ZCONFIG.cfg will be created in [C:\Users\Username\]
+- Upon launching the script for the first time a file ZCONFIG.cfg will be created in `[C:\Users\Username\]`
 
 ### Features
 - Build Custom Config with Selected Tweaks
@@ -258,7 +258,8 @@
 ### Install Microsoft Store
 - installs the windows 10 store for windows 11 use `wsreset -i`
 ### Revert Registry Tweaks
-- this will revert most registry tweaks **Note:** not all registry tweaks can be reverted/should be 
+- this will revert most registry tweaks   
+  **Note:** not all registry tweaks can be reverted/should be 
 ## Ultimate Cleanup
 - cleans temp files and event logs
 

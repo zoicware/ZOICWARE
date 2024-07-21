@@ -1,9 +1,25 @@
 # ------- UPDATE NOTES --------
 
+**ALL Versions**
+- [------- UPDATE NOTES --------](#--------update-notes---------)
+		- [v1.0.8](#v108)
+		- [v1.0.9](#v109)
+		- [v1.1.0](#v110)
+		- [v1.1.1](#v111)
+		- [v1.1.2](#v112)
+		- [v1.1.3](#v113)
+		- [v1.1.4](#v114)
+		- [v1.1.5](#v115)
+		- [v1.1.6](#v116)
+		- [v1.1.7](#v117)
+		- [v1.1.8](#v118)
+		- [v1.1.9](#v119)
+		- [v1.2.0](#v120)
+		- [v1.2.1](#v121)
 
+---
 
-
-**v1.0.8**
+### v1.0.8
 
 - updated Install Pack script to allow the user to install the latest C++ Packages, DirectX, and Internet Driver
       Note: the pack has been moved to dropbox as it is no longer possible to download files from Google Drive with Powershell
@@ -17,8 +33,7 @@
 ----------------------------------------------------------------------------------------------
 
 
-
-**v1.0.9**
+### v1.0.9
 
 ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
@@ -43,7 +58,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
 
 
-**v1.1.0**
+### v1.1.0
 
 - added config to speed up the install process
 
@@ -62,7 +77,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
 
 
-**v1.1.1**
+### v1.1.1
 
 
 - install pack script displays a progressbar and downloads much faster
@@ -86,7 +101,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
 ----------------------------------------------------------------------------------------------
 
-**v1.1.2**
+### v1.1.2
 
 - added winfetch to display system info in powershell console
 
@@ -111,7 +126,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
 
 
-**v1.1.3**
+### v1.1.3
 
 
 - added restore windows 10 recycle bin icon to windows 11 tweaks
@@ -127,7 +142,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 ----------------------------------------------------------------------------------------------
 
 
-**v1.1.4**
+### v1.1.4
 
 
 - switched zoicware.bat to exe file using ps2exe (powershell module)
@@ -145,7 +160,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
 ----------------------------------------------------------------------------------------------
 
-**v1.1.5**
+### v1.1.5
 
 - added minor gui style update
 
@@ -164,7 +179,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
 --------------------------------------------------------------------------------------------------
 
-**v1.1.6**
+### v1.1.6
 
 - zoicware will now work on systems using a letter other than C for their system drive 
 
@@ -194,7 +209,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
  --------------------------------------------------------------------------------------------------
 
- **v1.1.7**
+ ### v1.1.7
 
  - added restore old snipping tool to windows 11 tweaks
 
@@ -213,7 +228,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
 --------------------------------------------------------------------------------------------------
 
- **v1.1.8**
+ ### v1.1.8
 
  - updated show all app icons on windows 11 taskbar to update for new apps upon restarting
 	- a scheduled task will be created to run at startup to show new apps by default 
@@ -231,7 +246,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 --------------------------------------------------------------------------------------------------
 
 
-**v1.1.9**
+### v1.1.9
 
 - updated disable defender to no longer need to disable tamper protection before disabling
 
@@ -239,7 +254,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
 
 --------------------------------------------------------
-**v1.2.0**
+### v1.2.0
 
 - updated ui to be more modern and improve readability 
 
@@ -249,7 +264,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
 ---------------------------------------------------------------
 
-**v1.2.1**
+### v1.2.1
 
 - further improved script startup speed
 

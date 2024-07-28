@@ -21,6 +21,7 @@
   - [Import and Remove Power Plans](#import-and-remove-power-plans)
     - [Import Plan](#import-plan)
     - [Remove Plans](#remove-plans)
+    - [Enable Hidden Plans](#enable-hidden-plans)
   - [Windows 11 Tweaks](#windows-11-tweaks)
     - [Patch Explorer](#patch-explorer)
     - [Misc Tweaks](#misc-tweaks)
@@ -169,7 +170,12 @@
  ### Import Plan
   - Custom power plan for removing power saving features and core parking
   ### Remove Plans
-  - Remove any default windows plans to prevent windows from automatically switching back to balanced
+  - A list of current power plans will allow you to remove any and prevent windows from switching back to balanced/other recommended plans
+  
+  ### Enable Hidden Plans
+  - there are 3 hidden power plans in windows `Ultimate Performance`
+  `Max Performance Overlay` and `High Performance Overlay` 
+  - this tweak will allow you to enable any of these to try out
 
   ## Windows 11 Tweaks
 

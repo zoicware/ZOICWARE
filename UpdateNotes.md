@@ -14,7 +14,8 @@
 		- [v1.1.8](#v118)  
 		- [v1.1.9](#v119)  
 		- [v1.2.0](#v120)  
-		- [v1.2.1](#v121)  
+		- [v1.2.1](#v121)   
+		- [v1.2.2](#v122)   
 
 ---
 
@@ -270,3 +271,14 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 - added option to build a custom config to automate tweaks
 
 - upgraded registry tweaks option to now allow you to remove any tweaks before running
+
+---
+
+### v1.2.2
+
+- fixed remote desktop not uninstalling on newer builds  
+   
+- replaced trusted installer function with Run-Trusted  
+- fixed disable defender not working  
+- added list of current power plans to remove  
+- added built-in hidden powerplans to enable *[Ultimate Performance, Max Performance Overlay, High Performance Overlay]*   

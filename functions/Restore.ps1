@@ -13,11 +13,11 @@ Add-Type -AssemblyName System.Windows.Forms
 # Create the form
 $form = New-Object System.Windows.Forms.Form
 $form.Text = 'Restore Changes'
-$form.Size = New-Object System.Drawing.Size(300, 300)
+$form.Size = New-Object System.Drawing.Size(300, 270)
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
 $form.MaximizeBox = $false
 $form.StartPosition = [System.Windows.Forms.FormStartPosition]::CenterScreen
-$form.BackColor = [System.Drawing.Color]::FromArgb(45, 45, 48)
+$form.BackColor = 'Black'
 
 # Create the checkboxes
 $checkbox1 = New-Object System.Windows.Forms.CheckBox
@@ -58,29 +58,29 @@ $form.Controls.Add($checkbox5)
 
 
 $OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(70, 190)
+$OKButton.Location = New-Object System.Drawing.Point(60, 190)
 $OKButton.Size = New-Object System.Drawing.Size(75, 23)
 $OKButton.Text = 'OK'
 $OKButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
 $OKButton.ForeColor = [System.Drawing.Color]::White
-$OKButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-$OKButton.FlatAppearance.BorderSize = 0
-$OKButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-$OKButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+#$OKButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+#$OKButton.FlatAppearance.BorderSize = 0
+#$OKButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+#$OKButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
 $OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
 $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
   
 $CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(150, 190)
+$CancelButton.Location = New-Object System.Drawing.Point(140, 190)
 $CancelButton.Size = New-Object System.Drawing.Size(75, 23)
 $CancelButton.Text = 'Cancel'
 $CancelButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
 $CancelButton.ForeColor = [System.Drawing.Color]::White
-$CancelButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-$CancelButton.FlatAppearance.BorderSize = 0
-$CancelButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-$CancelButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+#$CancelButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+#$CancelButton.FlatAppearance.BorderSize = 0
+#$CancelButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+#$CancelButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
 $CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
 $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)

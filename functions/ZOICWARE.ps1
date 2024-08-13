@@ -152,7 +152,7 @@ function Get-FileFromWeb {
 
 
 
-$currentVersion = 'v1.1.9'
+$currentVersion = 'v1.2.3'
 
 
 $host.ui.RawUI.WindowTitle = 'ZOICWARE ', $currentVersion  
@@ -247,8 +247,8 @@ if ($folder -ne $null) {
     if (Test-Path "$folder\$currentVersion" -PathType Leaf) {
         $modulePath = "$folder\zFunctions.psm1"
         $winfetchModule = "$folder\winfetch.psm1"
-        Import-Module -Name $modulePath -Force -Global 
-        Import-Module -Name $winfetchModule -Force
+        Import-Module -Name $modulePath -Force -Global *>$null
+        Import-Module -Name $winfetchModule -Force *>$null
     }
     else {
         Write-Host "Latest Functions NOT Found...Make sure you do not have older versions of zoicware on $sysDrive"
@@ -290,11 +290,10 @@ debloatSX = 0
 debloatE = 0
 debloatS = 0
 usePowerPlan = 0
-# (0-4) 1:Remove all 2:Power saver 3:Balanced 4:High performance
-removeallPlans = 0 
-rPowersaver = 0
-rBalanced = 0
-rHighPerformance = 0
+removeallPlans = 0
+enableUltimate = 0
+enableMaxOverlay = 0
+enableHighOverlay = 0 
 #OPTIONAL TWEAKS
 # (0-2) 1:enabled 2:classic enabled
 opblackTheme = 0 
@@ -350,6 +349,8 @@ enableOpenShell = 0
 win10Recycle = 0
 disableBellIcon = 0
 win10Snipping = 0
+win10TaskMgr = 0
+win10Notepad = 0
 '@
 
 
@@ -790,6 +791,33 @@ do {
     #$configButton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
     #$configButton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
     $form.Controls.Add($configButton)
+
+
+    #info button
+    $urlfeatures = 'https://github.com/zoicware/ZOICWARE/blob/main/features.md'
+    $infobutton = New-Object Windows.Forms.Button
+    $infobutton.Location = New-Object Drawing.Point(410, 10)
+    $infobutton.Size = New-Object Drawing.Size(30, 30)
+    $infobutton.Add_Click({
+            try {
+                Start-Process $urlfeatures -ErrorAction Stop
+            }
+            catch {
+                Write-Host 'No Internet Connected...' -ForegroundColor Red
+            }
+            
+        })
+    $infobutton.BackColor = [System.Drawing.Color]::FromArgb(75, 75, 75)
+    $image = [System.Drawing.Image]::FromFile('C:\Windows\System32\SecurityAndMaintenance.png')
+    $resizedImage = New-Object System.Drawing.Bitmap $image, 24, 25
+    $infobutton.Image = $resizedImage
+    $infobutton.ImageAlign = [System.Drawing.ContentAlignment]::MiddleCenter
+    $infobutton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    $infobutton.FlatAppearance.BorderSize = 0
+    $infobutton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    $infobutton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $groupBox.Controls.Add($infobutton)
+
 
     $result = $form.ShowDialog()
 } while ($result -ne [System.Windows.Forms.DialogResult]::Cancel)

@@ -32,14 +32,14 @@ function RunTweaks($enabledSettings) {
             'removeallPlans' {
                 import-powerplan -Autorun 1 -removeAllPlans 1
             }
-            'rPowersaver' {
-                import-powerplan -Autorun 1 -rPowersaver 1
+            'enableUltimate' {
+                import-powerplan -Autorun 1 -enableUltimate 1
             }
-            'rBalanced' {
-                import-powerplan -Autorun 1 -rBalanced 1
+            'enableMaxOverlay' {
+                import-powerplan -Autorun 1 -enableMaxOverlay 1
             }
-            'rHighPerformance' {
-                import-powerplan -Autorun 1 -rHighPerformance 1
+            'enableHighOverlay' {
+                import-powerplan -Autorun 1 -enableHighOverlay 1
             }
             'op*' {
                 $command = "OptionalTweaks -Autorun 1 -$setting 1"

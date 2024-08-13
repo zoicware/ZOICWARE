@@ -12,6 +12,29 @@ $form.StartPosition = 'CenterScreen'
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedSingle
 $form.BackColor = 'Black'
 
+$url = 'https://github.com/zoicware/ZOICWARE/blob/main/features.md#importing-and-exporting-tweaks'
+$infobutton = New-Object Windows.Forms.Button
+$infobutton.Location = New-Object Drawing.Point(450, 0)
+$infobutton.Size = New-Object Drawing.Size(30, 27)
+$infobutton.Add_Click({
+        try {
+            Start-Process $url -ErrorAction Stop
+        }
+        catch {
+            Write-Host 'No Internet Connected...' -ForegroundColor Red
+        }
+            
+    })
+$infobutton.BackColor = 'Black'
+$image = [System.Drawing.Image]::FromFile('C:\Windows\System32\SecurityAndMaintenance.png')
+$resizedImage = New-Object System.Drawing.Bitmap $image, 24, 25
+$infobutton.Image = $resizedImage
+$infobutton.ImageAlign = [System.Drawing.ContentAlignment]::MiddleCenter
+$infobutton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+$infobutton.FlatAppearance.BorderSize = 1
+#$infobutton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+#$infobutton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+$form.Controls.Add($infobutton)
 
 $dconfiglabel = New-Object System.Windows.Forms.Label
 $dconfiglabel.Location = New-Object System.Drawing.Point(10, 20)

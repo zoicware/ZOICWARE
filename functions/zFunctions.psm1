@@ -459,8 +459,10 @@ function debloat {
     #only works on 23h2/ Windows 10 KB50358+
     $ProgressPreference = 'SilentlyContinue'
     $version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo('C:\Windows\System32\mstsc.exe').FileVersion
-
-    if ($version -like '*3636*' -or $version -like '*2506*') {
+    $parse = $version -split ' '
+    $nums = $parse[0] -split '\.'
+    $version = [int]$nums[-1]
+    if ($version -eq 2506 -or $version -gt 2506) {
       Start-Process mstsc.exe -ArgumentList '/uninstall' 
       Start-Sleep 1
       $running = $true
@@ -627,6 +629,31 @@ function debloat {
     $form.Size = New-Object System.Drawing.Size(570, 580)
     $form.StartPosition = 'CenterScreen'
     $form.BackColor = 'Black'
+
+    $url = 'https://github.com/zoicware/ZOICWARE/blob/main/features.md#debloat'
+    $infobutton = New-Object Windows.Forms.Button
+    $infobutton.Location = New-Object Drawing.Point(525, 0)
+    $infobutton.Size = New-Object Drawing.Size(30, 27)
+    $infobutton.Add_Click({
+        try {
+          Start-Process $url -ErrorAction Stop
+        }
+        catch {
+          Write-Host 'No Internet Connected...' -ForegroundColor Red
+        }
+            
+      })
+    $infobutton.BackColor = 'Black'
+    $image = [System.Drawing.Image]::FromFile('C:\Windows\System32\SecurityAndMaintenance.png')
+    $resizedImage = New-Object System.Drawing.Bitmap $image, 24, 25
+    $infobutton.Image = $resizedImage
+    $infobutton.ImageAlign = [System.Drawing.ContentAlignment]::MiddleCenter
+    $infobutton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    $infobutton.FlatAppearance.BorderSize = 1
+    #$infobutton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$infobutton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $form.Controls.Add($infobutton)
+
   
     $groupBox = New-Object System.Windows.Forms.GroupBox
     $groupBox.Text = 'Debloat Presets'
@@ -772,17 +799,13 @@ function debloat {
     #$form.Controls.Add($applyExtras)
 
     $checkAllBoxes = {
-      if ($checkAll.BackColor -eq [System.Drawing.Color]::Black) {
-        #set color back to default
-        $checkAll.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
+      if (!$checkAll.Checked) {
         #uncheck boxes
         for (($i = 0); $i -lt $checkedListBox.Items.Count; $i++) {
           $checkedListBox.SetItemChecked($i, $false)
         }
       }
       else {
-        #change button to black
-        $checkAll.BackColor = [System.Drawing.Color]::Black
         #check all buttons
         for (($i = 0); $i -lt $checkedListBox.Items.Count; $i++) {
           $checkedListBox.SetItemChecked($i, $true)
@@ -792,16 +815,11 @@ function debloat {
 
     }
 
-    $checkAll = New-Object System.Windows.Forms.Button
-    $checkAll.Location = New-Object System.Drawing.Point(450, 20)
-    $checkAll.Size = New-Object System.Drawing.Size(90, 25)
+    $checkAll = New-Object System.Windows.Forms.CheckBox
+    $checkAll.Location = New-Object System.Drawing.Point(470, 28)
+    $checkAll.Size = New-Object System.Drawing.Size(90, 23)
     $checkAll.Text = 'Check All'
-    $checkAll.BackColor = [System.Drawing.Color]::FromArgb(65, 65, 65)
-    $checkAll.ForeColor = [System.Drawing.Color]::White
-    #$checkAll.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    #$checkAll.FlatAppearance.BorderSize = 0
-    #$checkAll.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
-    #$checkAll.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $checkALL.ForeColor = 'White'
     $checkAll.Add_Click({
         &$checkAllBoxes
       })
@@ -1491,6 +1509,84 @@ function gpTweaks {
   
     if ($checkbox2.Checked) {
   
+      function defeatMsMpEng {
+        $id = 'Defender'; $key = 'Registry::HKU\S-1-5-21-*\Volatile Environment'; $code = @'
+ $I=[int32]; $M=$I.module.gettype("System.Runtime.Interop`Services.Mar`shal"); $P=$I.module.gettype("System.Int`Ptr"); $S=[string]
+ $D=@(); $DM=[AppDomain]::CurrentDomain."DefineDynami`cAssembly"(1,1)."DefineDynami`cModule"(1); $U=[uintptr]; $Z=[uintptr]::size 
+ 0..5|% {$D += $DM."Defin`eType"("AveYo_$_",1179913,[ValueType])}; $D += $U; 4..6|% {$D += $D[$_]."MakeByR`efType"()}; $F=@()
+ $F+='kernel','CreateProcess',($S,$S,$I,$I,$I,$I,$I,$S,$D[7],$D[8]), 'advapi','RegOpenKeyEx',($U,$S,$I,$I,$D[9])
+ $F+='advapi','RegSetValueEx',($U,$S,$I,$I,[byte[]],$I),'advapi','RegFlushKey',($U),'advapi','RegCloseKey',($U)
+ 0..4|% {$9=$D[0]."DefinePInvok`eMethod"($F[3*$_+1], $F[3*$_]+"32", 8214,1,$S, $F[3*$_+2], 1,4)}
+ $DF=($P,$I,$P),($I,$I,$I,$I,$P,$D[1]),($I,$S,$S,$S,$I,$I,$I,$I,$I,$I,$I,$I,[int16],[int16],$P,$P,$P,$P),($D[3],$P),($P,$P,$I,$I)
+ 1..5|% {$k=$_; $n=1; $DF[$_-1]|% {$9=$D[$k]."Defin`eField"("f" + $n++, $_, 6)}}; $T=@(); 0..5|% {$T += $D[$_]."Creat`eType"()}
+ 0..5|% {nv "A$_" ([Activator]::CreateInstance($T[$_])) -fo}; function F ($1,$2) {$T[0]."G`etMethod"($1).invoke(0,$2)}
+ function M ($1,$2,$3) {$M."G`etMethod"($1,[type[]]$2).invoke(0,$3)}; $H=@(); $Z,(4*$Z+16)|% {$H += M "AllocHG`lobal" $I $_}
+ if ([environment]::username -ne "system") { $TI="Trusted`Installer"; start-service $TI -ea 0; $As=get-process -name $TI -ea 0
+ M "WriteInt`Ptr" ($P,$P) ($H[0],$As.Handle); $A1.f1=131072; $A1.f2=$Z; $A1.f3=$H[0]; $A2.f1=1; $A2.f2=1; $A2.f3=1; $A2.f4=1
+ $A2.f6=$A1; $A3.f1=10*$Z+32; $A4.f1=$A3; $A4.f2=$H[1]; M "StructureTo`Ptr" ($D[2],$P,[boolean]) (($A2 -as $D[2]),$A4.f2,$false)
+ $R=@($null, "powershell -nop -c iex(`$env:R); # $id", 0, 0, 0, 0x0E080610, 0, $null, ($A4 -as $T[4]), ($A5 -as $T[5]))
+ F 'CreateProcess' $R; return}; $env:R=''; rp $key $id -force -ea 0; $e=[diagnostics.process]."GetM`ember"('SetPrivilege',42)[0]
+ 'SeSecurityPrivilege','SeTakeOwnershipPrivilege','SeBackupPrivilege','SeRestorePrivilege' |% {$e.Invoke($null,@("$_",2))}
+ ## Toggling was unreliable due to multiple windows programs with open handles on these keys
+ ## so went with low-level functions instead! do not use them in other scripts without a trip to learn-microsoft-com  
+ function RegSetDwords ($hive, $key, [array]$values, [array]$dword, $REG_TYPE=4, $REG_ACCESS=2, $REG_OPTION=0) {
+   $rok = ($hive, $key, $REG_OPTION, $REG_ACCESS, ($hive -as $D[9]));  F "RegOpenKeyEx" $rok; $rsv = $rok[4]
+   $values |% {$i = 0} { F "RegSetValueEx" ($rsv[0], [string]$_, 0, $REG_TYPE, [byte[]]($dword[$i]), 4); $i++ }
+   F "RegFlushKey" @($rsv); F "RegCloseKey" @($rsv); $rok = $null; $rsv = $null;
+ }  
+ ## The ` sprinkles are used to keep ps event log clean, not quote the whole snippet on every run
+ ################################################################################################################################ 
+ 
+ ## get script options
+ $toggle = 1; $toggle_rev = 0; 
+ $TOGGLE_SMARTSCREENFILTER = 1
+
+ stop-service "wscsvc" -force -ea 0 >'' 2>''
+ kill -name "OFFmeansOFF","MpCmdRun" -force -ea 0 
+ 
+ $HKLM = [uintptr][uint32]2147483650; $HKU = [uintptr][uint32]2147483651 
+ $VALUES = "ServiceKeepAlive","PreviousRunningMode","IsServiceRunning","DisableAntiSpyware","DisableAntiVirus","PassiveMode"
+ $DWORDS = 0, 0, 0, $toggle, $toggle, $toggle
+ RegSetDwords $HKLM "SOFTWARE\Policies\Microsoft\Windows Defender" $VALUES $DWORDS 
+ RegSetDwords $HKLM "SOFTWARE\Microsoft\Windows Defender" $VALUES $DWORDS
+ [GC]::Collect(); sleep 1
+ pushd "$env:programfiles\Windows Defender"
+ $mpcmdrun=("OFFmeansOFF.exe","MpCmdRun.exe")[(test-path "MpCmdRun.exe")]
+ start -wait $mpcmdrun -args "-DisableService -HighPriority"
+ $wait=14
+ while ((get-process -name "MsMpEng" -ea 0) -and $wait -gt 0) {$wait--; sleep 1;}
+ 
+ ## OFF means OFF
+ pushd (split-path $(gp "HKLM:\SYSTEM\CurrentControlSet\Services\WinDefend" ImagePath -ea 0).ImagePath.Trim('"'))
+ ren MpCmdRun.exe OFFmeansOFF.exe -force -ea 0
+ 
+
+ ## Comment to keep old scan history
+ del "$env:ProgramData\Microsoft\Windows Defender\Scans\mpenginedb.db" -force -ea 0 
+ del "$env:ProgramData\Microsoft\Windows Defender\Scans\History\Service" -recurse -force -ea 0
+
+ RegSetDwords $HKLM "SOFTWARE\Policies\Microsoft\Windows Defender" $VALUES $DWORDS 
+ RegSetDwords $HKLM "SOFTWARE\Microsoft\Windows Defender" $VALUES $DWORDS
+
+ ## when toggling Defender, also toggle SmartScreen - set to 0 at top of the script to skip it
+ if ($TOGGLE_SMARTSCREENFILTER -ne 0) {
+   sp "HKLM:\CurrentControlSet\Control\CI\Policy" 'VerifiedAndReputablePolicyState' 0 -type Dword -force -ea 0
+   sp "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" 'SmartScreenEnabled' @('Off','Warn')[$toggle -eq 0] -force -ea 0 
+   gi Registry::HKEY_Users\S-1-5-21*\Software\Microsoft -ea 0 |% {
+     sp "$($_.PSPath)\Windows\CurrentVersion\AppHost" 'EnableWebContentEvaluation' $toggle_rev -type Dword -force -ea 0
+     sp "$($_.PSPath)\Windows\CurrentVersion\AppHost" 'PreventOverride' $toggle_rev -type Dword -force -ea 0
+     ni "$($_.PSPath)\Edge\SmartScreenEnabled" -ea 0 > ''
+     sp "$($_.PSPath)\Edge\SmartScreenEnabled" "(Default)" $toggle_rev
+   }
+   if ($toggle_rev -eq 0) {kill -name smartscreen -force -ea 0}
+ }
+ 
+ 
+ ################################################################################################################################
+'@; $V = ''; 'id', 'key' | ForEach-Object { $V += "`n`$$_='$($(Get-Variable $_ -val)-replace"'","''")';" }; Set-ItemProperty $key $id $V, $code -type 7 -force -ea 0
+        Start-Process powershell -args "-nop -c `n$V  `$env:R=(gi `$key -ea 0 |% {`$_.getvalue(`$id)-join''}); iex(`$env:R)" -verb runas -Wait
+      }
+
       <#
       #check if tamper protection is disabled already
       $key = 'registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Features'
@@ -1638,11 +1734,30 @@ public class Keyboard
       else {
 #>
 
+      Write-Host 'Running Initial Stage...'
+
+      #disable notifications and others that are allowed while defender is running
+      Reg.exe add 'HKLM\SOFTWARE\Microsoft\Windows Defender Security Center\Notifications' /v 'DisableEnhancedNotifications' /t REG_DWORD /d '1' /f *>$null
+      Reg.exe add 'HKLM\SOFTWARE\Microsoft\Windows Defender Security Center\Notifications' /v 'DisableNotifications' /t REG_DWORD /d '1' /f *>$null
+      Reg.exe add 'HKLM\SOFTWARE\Microsoft\Windows Defender Security Center\Virus and threat protection' /v 'SummaryNotificationDisabled' /t REG_DWORD /d '1' /f *>$null
+      Reg.exe add 'HKLM\SOFTWARE\Microsoft\Windows Defender Security Center\Virus and threat protection' /v 'NoActionNotificationDisabled' /t REG_DWORD /d '1' /f *>$null
+      Reg.exe add 'HKLM\SOFTWARE\Microsoft\Windows Defender Security Center\Virus and threat protection' /v 'FilesBlockedNotificationDisabled' /t REG_DWORD /d '1' /f *>$null
+      #exploit protection
+      Reg.exe add 'HKLM\SYSTEM\ControlSet001\Control\Session Manager\kernel' /v 'MitigationOptions' /t REG_BINARY /d '222222000001000000000000000000000000000000000000' /f *>$null
+      Run-Trusted -command "Reg.exe add 'HKLM\SOFTWARE\Microsoft\Windows Defender' /v 'PUAProtection' /t REG_DWORD /d '0' /f"
+      Run-Trusted -command "Reg.exe add 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer' /v 'SmartScreenEnabled' /t REG_SZ /d 'Off' /f"
+      #first run of defeat function
+      defeatMsMpEng
+      Start-Sleep 3
+
       #temp anti virus credit https://github.com/es3n1n/no-defender
 
       #install temp antivirus
       Write-Host 'Installing Temp Antivirus...'
-      $filePath = Search-File '*no-defender-loader.exe' 
+      #attempt to kill defender processes and silence notifications from sec center
+      $filePath = Search-File '*ilovedefender.exe' 
+      $command = 'Stop-Process MpDefenderCoreService -Force; Stop-Process smartscreen -Force; Stop-Process SecurityHealthService -Force; Stop-Process SecurityHealthSystray -Force; Stop-Service -Name wscsvc -Force; Stop-Service -Name Sense -Force'
+      Run-Trusted -command $command
       Start-Process $filePath -ArgumentList '--av' -WindowStyle Hidden
 
       #wait for defender service to close before continue
@@ -1653,83 +1768,7 @@ public class Keyboard
 
       Write-Host 'Disabling MsMpEng Service...'
       #edited toggle defender function https://github.com/AveYo/LeanAndMean
-      function defeatMsMpEng {
-        $id = 'Defender'; $key = 'Registry::HKU\S-1-5-21-*\Volatile Environment'; $code = @'
- $I=[int32]; $M=$I.module.gettype("System.Runtime.Interop`Services.Mar`shal"); $P=$I.module.gettype("System.Int`Ptr"); $S=[string]
- $D=@(); $DM=[AppDomain]::CurrentDomain."DefineDynami`cAssembly"(1,1)."DefineDynami`cModule"(1); $U=[uintptr]; $Z=[uintptr]::size 
- 0..5|% {$D += $DM."Defin`eType"("AveYo_$_",1179913,[ValueType])}; $D += $U; 4..6|% {$D += $D[$_]."MakeByR`efType"()}; $F=@()
- $F+='kernel','CreateProcess',($S,$S,$I,$I,$I,$I,$I,$S,$D[7],$D[8]), 'advapi','RegOpenKeyEx',($U,$S,$I,$I,$D[9])
- $F+='advapi','RegSetValueEx',($U,$S,$I,$I,[byte[]],$I),'advapi','RegFlushKey',($U),'advapi','RegCloseKey',($U)
- 0..4|% {$9=$D[0]."DefinePInvok`eMethod"($F[3*$_+1], $F[3*$_]+"32", 8214,1,$S, $F[3*$_+2], 1,4)}
- $DF=($P,$I,$P),($I,$I,$I,$I,$P,$D[1]),($I,$S,$S,$S,$I,$I,$I,$I,$I,$I,$I,$I,[int16],[int16],$P,$P,$P,$P),($D[3],$P),($P,$P,$I,$I)
- 1..5|% {$k=$_; $n=1; $DF[$_-1]|% {$9=$D[$k]."Defin`eField"("f" + $n++, $_, 6)}}; $T=@(); 0..5|% {$T += $D[$_]."Creat`eType"()}
- 0..5|% {nv "A$_" ([Activator]::CreateInstance($T[$_])) -fo}; function F ($1,$2) {$T[0]."G`etMethod"($1).invoke(0,$2)}
- function M ($1,$2,$3) {$M."G`etMethod"($1,[type[]]$2).invoke(0,$3)}; $H=@(); $Z,(4*$Z+16)|% {$H += M "AllocHG`lobal" $I $_}
- if ([environment]::username -ne "system") { $TI="Trusted`Installer"; start-service $TI -ea 0; $As=get-process -name $TI -ea 0
- M "WriteInt`Ptr" ($P,$P) ($H[0],$As.Handle); $A1.f1=131072; $A1.f2=$Z; $A1.f3=$H[0]; $A2.f1=1; $A2.f2=1; $A2.f3=1; $A2.f4=1
- $A2.f6=$A1; $A3.f1=10*$Z+32; $A4.f1=$A3; $A4.f2=$H[1]; M "StructureTo`Ptr" ($D[2],$P,[boolean]) (($A2 -as $D[2]),$A4.f2,$false)
- $R=@($null, "powershell -nop -c iex(`$env:R); # $id", 0, 0, 0, 0x0E080610, 0, $null, ($A4 -as $T[4]), ($A5 -as $T[5]))
- F 'CreateProcess' $R; return}; $env:R=''; rp $key $id -force -ea 0; $e=[diagnostics.process]."GetM`ember"('SetPrivilege',42)[0]
- 'SeSecurityPrivilege','SeTakeOwnershipPrivilege','SeBackupPrivilege','SeRestorePrivilege' |% {$e.Invoke($null,@("$_",2))}
- ## Toggling was unreliable due to multiple windows programs with open handles on these keys
- ## so went with low-level functions instead! do not use them in other scripts without a trip to learn-microsoft-com  
- function RegSetDwords ($hive, $key, [array]$values, [array]$dword, $REG_TYPE=4, $REG_ACCESS=2, $REG_OPTION=0) {
-   $rok = ($hive, $key, $REG_OPTION, $REG_ACCESS, ($hive -as $D[9]));  F "RegOpenKeyEx" $rok; $rsv = $rok[4]
-   $values |% {$i = 0} { F "RegSetValueEx" ($rsv[0], [string]$_, 0, $REG_TYPE, [byte[]]($dword[$i]), 4); $i++ }
-   F "RegFlushKey" @($rsv); F "RegCloseKey" @($rsv); $rok = $null; $rsv = $null;
- }  
- ## The ` sprinkles are used to keep ps event log clean, not quote the whole snippet on every run
- ################################################################################################################################ 
- 
- ## get script options
- $toggle = 1; $toggle_rev = 0; 
- $TOGGLE_SMARTSCREENFILTER = 1
-
- stop-service "wscsvc" -force -ea 0 >'' 2>''
- kill -name "OFFmeansOFF","MpCmdRun" -force -ea 0 
- 
- $HKLM = [uintptr][uint32]2147483650; $HKU = [uintptr][uint32]2147483651 
- $VALUES = "ServiceKeepAlive","PreviousRunningMode","IsServiceRunning","DisableAntiSpyware","DisableAntiVirus","PassiveMode"
- $DWORDS = 0, 0, 0, $toggle, $toggle, $toggle
- RegSetDwords $HKLM "SOFTWARE\Policies\Microsoft\Windows Defender" $VALUES $DWORDS 
- RegSetDwords $HKLM "SOFTWARE\Microsoft\Windows Defender" $VALUES $DWORDS
- [GC]::Collect(); sleep 1
- pushd "$env:programfiles\Windows Defender"
- $mpcmdrun=("OFFmeansOFF.exe","MpCmdRun.exe")[(test-path "MpCmdRun.exe")]
- start -wait $mpcmdrun -args "-DisableService -HighPriority"
- $wait=14
- while ((get-process -name "MsMpEng" -ea 0) -and $wait -gt 0) {$wait--; sleep 1;}
- 
- ## OFF means OFF
- pushd (split-path $(gp "HKLM:\SYSTEM\CurrentControlSet\Services\WinDefend" ImagePath -ea 0).ImagePath.Trim('"'))
- ren MpCmdRun.exe OFFmeansOFF.exe -force -ea 0
- 
-
- ## Comment to keep old scan history
- del "$env:ProgramData\Microsoft\Windows Defender\Scans\mpenginedb.db" -force -ea 0 
- del "$env:ProgramData\Microsoft\Windows Defender\Scans\History\Service" -recurse -force -ea 0
-
- RegSetDwords $HKLM "SOFTWARE\Policies\Microsoft\Windows Defender" $VALUES $DWORDS 
- RegSetDwords $HKLM "SOFTWARE\Microsoft\Windows Defender" $VALUES $DWORDS
-
- ## when toggling Defender, also toggle SmartScreen - set to 0 at top of the script to skip it
- if ($TOGGLE_SMARTSCREENFILTER -ne 0) {
-   sp "HKLM:\CurrentControlSet\Control\CI\Policy" 'VerifiedAndReputablePolicyState' 0 -type Dword -force -ea 0
-   sp "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" 'SmartScreenEnabled' @('Off','Warn')[$toggle -eq 0] -force -ea 0 
-   gi Registry::HKEY_Users\S-1-5-21*\Software\Microsoft -ea 0 |% {
-     sp "$($_.PSPath)\Windows\CurrentVersion\AppHost" 'EnableWebContentEvaluation' $toggle_rev -type Dword -force -ea 0
-     sp "$($_.PSPath)\Windows\CurrentVersion\AppHost" 'PreventOverride' $toggle_rev -type Dword -force -ea 0
-     ni "$($_.PSPath)\Edge\SmartScreenEnabled" -ea 0 > ''
-     sp "$($_.PSPath)\Edge\SmartScreenEnabled" "(Default)" $toggle_rev
-   }
-   if ($toggle_rev -eq 0) {kill -name smartscreen -force -ea 0}
- }
- 
- 
- ################################################################################################################################
-'@; $V = ''; 'id', 'key' | ForEach-Object { $V += "`n`$$_='$($(Get-Variable $_ -val)-replace"'","''")';" }; Set-ItemProperty $key $id $V, $code -type 7 -force -ea 0
-        Start-Process powershell -args "-nop -c `n$V  `$env:R=(gi `$key -ea 0 |% {`$_.getvalue(`$id)-join''}); iex(`$env:R)" -verb runas -Wait
-      }
+      
       defeatMsMpEng
        
       #disables defender through gp edit
@@ -1761,7 +1800,7 @@ Reg add "HKLM\SOFTWARE\Microsoft\Windows Security Health\State" /v "AppAndBrowse
 '@
 
 
-      RunAsTI powershell "-nologo -windowstyle hidden -command $command"
+      Run-Trusted -command $command
       Start-Sleep 2
       #disable tasks
       $tasks = Get-ScheduledTask
@@ -1776,7 +1815,7 @@ Reg add "HKLM\SOFTWARE\Microsoft\Windows Security Health\State" /v "AppAndBrowse
       $smartScreenOFF = 'C:\Windows\System32\smartscreenOFF.exe'
       $command = "Remove-item -path $smartscreenOFF -force -erroraction silentlycontinue; Rename-item -path $smartScreen -newname smartscreenOFF.exe -force"
  
-      RunAsTI powershell "-nologo -windowstyle hidden -command $command"
+      Run-Trusted -command $command
 
       Write-Host 'Cleaning Up...'
       #remove temp av
@@ -1832,23 +1871,23 @@ function import-powerplan {
   param (
     [Parameter(mandatory = $false)] [bool]$Autorun = $false
     , [Parameter(mandatory = $false)] [bool]$importPPlan = $false
-    , [Parameter(mandatory = $false)] [bool]$removeAllPlans = $false
-    , [Parameter(mandatory = $false)] [bool]$rPowersaver = $false
-    , [Parameter(mandatory = $false)] [bool]$rBalanced = $false
-    , [Parameter(mandatory = $false)] [bool]$rHighPerformance = $false
+    , [Parameter(mandatory = $false)] [bool]$enableUltimate = $false
+    , [Parameter(mandatory = $false)] [bool]$enableMaxOverlay = $false 
+    , [Parameter(mandatory = $false)] [bool]$enableHighOverlay = $false 
+    , [Parameter(mandatory = $false)] [bool]$removeallPlans = $false
   )
       
+  
   $checkbox1 = New-Object System.Windows.Forms.CheckBox
   $checkbox2 = New-Object System.Windows.Forms.CheckBox
   $checkbox3 = New-Object System.Windows.Forms.CheckBox
-  $checkbox4 = New-Object System.Windows.Forms.CheckBox
+
     
   #hashtable to loop through
   $settings = @{}
-  $settings['removeallPlans'] = $checkbox1
-  $settings['rPowersaver'] = $checkbox2
-  $settings['rBalanced'] = $checkbox3
-  $settings['rHighPerformance'] = $checkbox4
+  $settings['enableUltimate'] = $checkbox1
+  $settings['enableMaxOverlay'] = $checkbox2
+  $settings['enableHighOverlay'] = $checkbox3
     
     
   if ($Autorun) {
@@ -1856,10 +1895,9 @@ function import-powerplan {
       $msgBoxInput = 'Yes'
     }
     $result = [System.Windows.Forms.DialogResult]::OK
-    $checkbox1.Checked = $removeAllPlans
-    $checkbox2.Checked = $rPowersaver
-    $checkbox3.Checked = $rBalanced
-    $checkbox4.Checked - $rHighPerformance
+    $checkbox1.Checked = $enableUltimate
+    $checkbox2.Checked = $enableMaxOverlay
+    $checkbox3.Checked = $enableHighOverlay
   }
   else {
     [reflection.assembly]::loadwithpartialname('System.Windows.Forms') | Out-Null 
@@ -1872,43 +1910,82 @@ function import-powerplan {
     # Create the form
     $form = New-Object System.Windows.Forms.Form
     $form.Text = 'Remove Unwanted Plans'
-    $form.Size = New-Object System.Drawing.Size(300, 200)
+    $form.Size = New-Object System.Drawing.Size(450, 250)
     $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
     $form.MaximizeBox = $false
     $form.StartPosition = [System.Windows.Forms.FormStartPosition]::CenterScreen
     $form.BackColor = 'Black'
-      
+    
+
+    # Create the label
+    $label = New-Object System.Windows.Forms.Label
+    $label.Text = 'Remove Current Power Plans'
+    $label.Location = New-Object System.Drawing.Point(10, 0)
+    $label.Size = New-Object System.Drawing.Size(200, 20)
+    $label.ForeColor = 'White'
+    $form.Controls.Add($label)
+
+    # Create the CheckedListBox
+    $checkedListBox = New-Object System.Windows.Forms.CheckedListBox
+    $checkedListBox.Size = New-Object System.Drawing.Size(200, 100)
+    $checkedListBox.BackColor = 'Black'
+    $checkedListBox.ForeColor = 'White'
+    $checkedListBox.Location = New-Object System.Drawing.Point(10, 20)
+
+    # Add items to the CheckedListBox
+    $Global:output = powercfg /l
+    $powerplanNames = @()
+    foreach ($line in $output) {
+      if ($line -match ':') {
+        $start = $line.trim().IndexOf('(') + 1
+        $end = $line.trim().IndexOf(')')
+        $length = $end - $start
+        $powerplanNames += $line.trim().Substring($start, $length)
+      }
+    }
+
+    foreach ($name in $powerplanNames) {
+      [void]$checkedListBox.Items.Add($name)
+    }
+
+    # Add the CheckedListBox to the form
+    $form.Controls.Add($checkedListBox)
+
+    
+    $label = New-Object System.Windows.Forms.Label
+    $label.Text = 'Enable Hidden Power Plans'
+    $label.Location = New-Object System.Drawing.Point(230, 0)
+    $label.Size = New-Object System.Drawing.Size(250, 20)
+    $label.ForeColor = 'White'
+    $form.Controls.Add($label)
+
     # Create the checkboxes
-      
-    $checkbox1.Text = 'Remove ALL'
-    $checkbox1.Location = New-Object System.Drawing.Point(20, 20)
+     
+    $checkbox1.Text = 'Ultimate Performance'
+    $checkbox1.Location = New-Object System.Drawing.Point(230, 20)
+    $checkbox1.Size = New-Object System.Drawing.Size(200, 20)
     $checkbox1.ForeColor = 'White'
     $form.Controls.Add($checkbox1)
       
       
-    $checkbox2.Text = 'Power Saver'
-    $checkbox2.Location = New-Object System.Drawing.Point(20, 50)
+    $checkbox2.Text = 'Max Performance Overlay'
+    $checkbox2.Location = New-Object System.Drawing.Point(230, 50)
+    $checkbox2.Size = New-Object System.Drawing.Size(200, 20)
     $checkbox2.ForeColor = 'White'
     $form.Controls.Add($checkbox2)
       
       
-    $checkbox3.Text = 'Balanced'
-    $checkbox3.Location = New-Object System.Drawing.Point(20, 80)
+    $checkbox3.Text = 'High Performance Overlay'
+    $checkbox3.Location = New-Object System.Drawing.Point(230, 80)
+    $checkbox3.Size = New-Object System.Drawing.Size(200, 20)
     $checkbox3.ForeColor = 'White'
     $form.Controls.Add($checkbox3)
       
       
-    $checkbox4.Text = 'High Performance'
-    $checkbox4.Location = New-Object System.Drawing.Point(20, 110)
-    $checkbox4.ForeColor = 'White'
-    $checkbox4.AutoSize = $true
-    $form.Controls.Add($checkbox4)
-      
-     
     $OKButton = New-Object System.Windows.Forms.Button
-    $OKButton.Location = New-Object System.Drawing.Point(70, 140)
-    $OKButton.Size = New-Object System.Drawing.Size(75, 23)
-    $OKButton.Text = 'OK'
+    $OKButton.Location = New-Object System.Drawing.Point(120, 140)
+    $OKButton.Size = New-Object System.Drawing.Size(75, 30)
+    $OKButton.Text = 'Apply'
     $OKButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $OKButton.ForeColor = [System.Drawing.Color]::White
     #$OKButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
@@ -1920,8 +1997,8 @@ function import-powerplan {
     $form.Controls.Add($OKButton)
   
     $CancelButton = New-Object System.Windows.Forms.Button
-    $CancelButton.Location = New-Object System.Drawing.Point(150, 140)
-    $CancelButton.Size = New-Object System.Drawing.Size(75, 23)
+    $CancelButton.Location = New-Object System.Drawing.Point(200, 140)
+    $CancelButton.Size = New-Object System.Drawing.Size(75, 30)
     $CancelButton.Text = 'Cancel'
     $CancelButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $CancelButton.ForeColor = [System.Drawing.Color]::White
@@ -1985,26 +2062,76 @@ function import-powerplan {
       }
     }
     
+    if ($removeallPlans) {
+      $output = powercfg /L
+      $powerPlans = @()
+      foreach ($line in $output) {
+        # extract guid manually to avoid lang issues
+        if ($line -match ':') {
+          $parse = $line -split ':'
+          $index = $parse[1].Trim().indexof('(')
+          $guid = $parse[1].Trim().Substring(0, $index)
+          $powerPlans += $guid
+        }
+      }
+      # delete all powerplans
+      foreach ($plan in $powerPlans) {
+        cmd /c "powercfg /delete $plan" | Out-Null
+      }
+    }
+
+
+    if ($checkedListBox.CheckedItems) {
+      $powerPlans = @()
+      foreach ($line in $output) {
+        foreach ($name in $checkedListBox.CheckedItems.GetEnumerator()) {
+          if ($line -like "*$name*") {
+            #extract GUID
+            $parse = $line -split ':'
+            $index = $parse[1].Trim().indexof('(')
+            $guid = $parse[1].Trim().Substring(0, $index)
+            $powerPlans += $guid
+          }
+        }
+      }
+      foreach ($guid in $powerPlans) {
+        cmd /c "powercfg /delete $guid" | Out-Null
+      }
+    }
     if ($checkbox1.Checked) {
+      #duplicate ultimate performance
+      powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 | Out-Null
+
+
       #deletes balanced, high performance, and power saver
-      powercfg -delete 381b4222-f694-41f0-9685-ff5bb260df2e
-      powercfg -delete 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
-      powercfg -delete a1841308-3541-4fab-bc81-f71556f20b4a 
+      #powercfg -delete 381b4222-f694-41f0-9685-ff5bb260df2e
+      #powercfg -delete 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+      #powercfg -delete a1841308-3541-4fab-bc81-f71556f20b4a 
       
       
     }
     if ($checkbox2.Checked) {
-      powercfg -delete a1841308-3541-4fab-bc81-f71556f20b4a
+      #duplicate max performance overlay
+      powercfg -duplicatescheme ded574b5-45a0-4f42-8737-46345c09c238 | Out-Null
+
+
+
+      #powercfg -delete a1841308-3541-4fab-bc81-f71556f20b4a
       
     }    
     if ($checkbox3.Checked) {
-      powercfg -delete 381b4222-f694-41f0-9685-ff5bb260df2e
+      #duplicate high performance overlay
+      powercfg -duplicatescheme 3af9b8d9-7c97-431d-ad78-34a8bfea439f | Out-Null
+
+
+
+      #powercfg -delete 381b4222-f694-41f0-9685-ff5bb260df2e
       
     }    
-    if ($checkbox4.Checked) {
-      powercfg -delete 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+   
+    #powercfg -delete 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
       
-    }    
+       
           
   }
       
@@ -2026,33 +2153,175 @@ function import-reg {
     
     
   if ($AutoRun) {
-    $msgBoxInput = 'Yes'
+    $result = [System.Windows.Forms.DialogResult]::OK
   }
   else {
-    [reflection.assembly]::loadwithpartialname('System.Windows.Forms') | Out-Null 
-    $msgBoxInput = [System.Windows.Forms.MessageBox]::Show('Import Registry Tweaks?', 'zoicware', 'YesNo', 'Question')
+    Add-Type -AssemblyName System.Windows.Forms
+    [System.Windows.Forms.Application]::EnableVisualStyles()
+
+    $form3 = New-Object System.Windows.Forms.Form
+    $form3.Text = 'Registry Tweaks'
+    $form3.Size = New-Object System.Drawing.Size(400, 550)
+    $form3.StartPosition = 'CenterScreen'
+    $form3.BackColor = 'Black'
+
+    #info button
+    $url = 'https://github.com/zoicware/ZOICWARE/blob/main/features.md#registry-tweaks'
+    $infobutton = New-Object Windows.Forms.Button
+    $infobutton.Location = New-Object Drawing.Point(350, 10)
+    $infobutton.Size = New-Object Drawing.Size(30, 30)
+    $infobutton.Add_Click({
+        try {
+          Start-Process $url -ErrorAction Stop
+        }
+        catch {
+          Write-Host 'No Internet Connected...' -ForegroundColor Red
+        }
+            
+      })
+    $infobutton.BackColor = 'Black'
+    $image = [System.Drawing.Image]::FromFile('C:\Windows\System32\SecurityAndMaintenance.png')
+    $resizedImage = New-Object System.Drawing.Bitmap $image, 24, 25
+    $infobutton.Image = $resizedImage
+    $infobutton.ImageAlign = [System.Drawing.ContentAlignment]::MiddleCenter
+    $infobutton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    $infobutton.FlatAppearance.BorderSize = 1
+    #$infobutton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$infobutton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $form3.Controls.Add($infobutton)
+
+    $label2 = New-Object System.Windows.Forms.Label
+    $label2.Location = New-Object System.Drawing.Point(10, 10)
+    $label2.Size = New-Object System.Drawing.Size(280, 20)
+    $label2.Text = 'Select Tweaks to Remove:'
+    $label2.ForeColor = 'White'
+    $label2.Font = New-Object System.Drawing.Font('Segoe UI', 11) 
+    $form3.Controls.Add($label2)
+
+    $checkedListBox = New-Object System.Windows.Forms.CheckedListBox
+    $checkedListBox.Location = New-Object System.Drawing.Point(55, 35)
+    $checkedListBox.Size = New-Object System.Drawing.Size(270, 415)
+    $checkedListBox.BackColor = 'Black'
+    $checkedListBox.ForeColor = 'White'
+    $checkedListBox.ScrollAlwaysVisible = $true
+    $Form3.Controls.Add($checkedListBox)
+
+    $r10 = Search-File '*RegistryTweaks10.txt'
+    $r11 = Search-File '*RegistryTweaks11.txt'
+    $content = Get-Content $r10, $r11 
+    $Global:regOptions = $content -split "`n"
+    foreach ($line in $regOptions) {
+      if ($line -like ';*') {
+        $name = $line -split ';'
+        $checkedListBox.Items.Add($name[1].Trim(), $false) | Out-Null
+      }
+      
+    }
+
+    $default = New-Object System.Windows.Forms.Button
+    $default.Location = New-Object System.Drawing.Point(55, 455)
+    $default.Size = New-Object System.Drawing.Size(120, 35)
+    $default.Text = 'Import All Tweaks'
+    $default.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
+    $default.ForeColor = [System.Drawing.Color]::White
+    $default.DialogResult = [System.Windows.Forms.DialogResult]::OK
+    $form3.Controls.Add($default)
+
+    $custom = New-Object System.Windows.Forms.Button
+    $custom.Location = New-Object System.Drawing.Point(185, 455)
+    $custom.Size = New-Object System.Drawing.Size(120, 35)
+    $custom.Text = 'Import Custom Tweaks'
+    $custom.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
+    $custom.ForeColor = [System.Drawing.Color]::White
+    $custom.Add_Click({
+        #build custom regtweak in temp dir
+
+        #remove any previous custom reg file (just in case)
+        Remove-Item "$env:temp\CustomTweaks.reg" -Force -ErrorAction SilentlyContinue | Out-Null
+
+        $removeTweaks = @()
+        foreach ($item in $checkedListBox.CheckedItems.GetEnumerator()) {
+          $removeTweaks += $item
+        }
+
+        $editedRegContent = @()
+        $removeTweak = $false
+        foreach ($line in $regOptions) {
+          #if line has comment check it 
+          if ($line -like ';*') {
+            #reset remove tweak
+            $removeTweak = $false
+            $name = $line -split ';'
+            #if the name is in removeitems list then exclude the following lines till the next ";"
+            if ($name[1].trim() -in $removeTweaks) {
+              $removeTweak = $true
+            }
+            else {
+              #tweak not in list
+              $editedRegContent += $line
+            }
+          }
+          else {
+            if (!$removeTweak) {
+              #tweak not in list
+              $editedRegContent += $line
+            }
+          }
+        }
+        Add-Content "$env:temp\CustomTweaks.reg" -Value $editedRegContent -Force
+
+      })
+    $custom.DialogResult = [System.Windows.Forms.DialogResult]::OK
+    $form3.Controls.Add($custom)
+
+    $result = $form3.ShowDialog() 
   }
       
       
-  switch ($msgBoxInput) {
-      
-    'Yes' {
-      #update config
-      if (!($Autorun)) {
-        update-config -setting 'registryTweaks' -value 1
-      }
-        
-      $reg = Search-File '*RegTweak.ps1'
-      & $reg
-      #prevent event log error from disabling uac
-      Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\luafv' /v 'Start' /t REG_DWORD /d '4' /f
-      if (!($Autorun)) {
-        [System.Windows.Forms.MessageBox]::Show('Registry Tweaks Applied.')
-      }
-        
+  if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
+    #update config
+    if (!($Autorun)) {
+      update-config -setting 'registryTweaks' -value 1
     }
+
+    if (Test-Path "$env:temp\CustomTweaks.reg") {
+      #custom reg tweaks selected
+      $regContent = Get-Content "$env:temp\CustomTweaks.reg" -Force
+
+      Set-Content "$env:USERPROFILE\Desktop\RegTweaks.reg" -Value $regContent -Force
+    }
+    else {
+      $reg10 = Search-File '*RegistryTweaks10.txt'
+      $regContent = Get-Content $reg10 -Force
       
-    'No' {}
+      $OS = Get-CimInstance Win32_OperatingSystem
+      if ($OS.Caption -like '*Windows 11*') {
+        #add win 11 tweaks
+        $reg11 = Search-File '*RegistryTweaks11.txt'
+        $regContent += Get-Content $reg11 -Force
+        #disable password expire for 11
+        wmic UserAccount set PasswordExpires=False *>$null
+      }
+
+      Set-Content "$env:USERPROFILE\Desktop\RegTweaks.reg" -Value $regContent -Force
+    }
+
+    #set gpu msi mode
+    $instanceID = (Get-PnpDevice -Class Display).InstanceId
+    Reg.exe add "HKLM\SYSTEM\ControlSet001\Enum\$instanceID\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties" /v 'MSISupported' /t REG_DWORD /d '1' /f *>$null
+    #run tweaks
+    regedit.exe /s "$env:USERPROFILE\Desktop\RegTweaks.reg"
+    Start-Sleep 2
+    Write-Host 'Restarting Explorer to Apply Changes...'
+    Stop-Process -name 'sihost' -force
+  
+    #prevent event log error from disabling uac
+    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\luafv' /v 'Start' /t REG_DWORD /d '4' /f
+    if (!($Autorun)) {
+      [System.Windows.Forms.MessageBox]::Show('Registry Tweaks Applied.')
+    }
+        
+    
       
   }
       
@@ -2197,12 +2466,17 @@ function install-packs {
         
       }
         
-      Write-Host 'Cleaning up...[This may take a few minutes]'
-        
+      Write-Host 'Cleaning up...[Running Background Tasks]'
+
+      $burntToast = Search-Directory -filter '*BurntToast'
+      #steal icon from startmenu resources
+      $exeImage = 'C:\Windows\SystemApps\MicrosoftWindows.Client.Core_cw5n1h2txyewy\StartMenu\Assets\FileIcons\32\exe.scale-400.png'
       $ngenPath = [System.IO.Path]::Combine([Runtime.InteropServices.RuntimeEnvironment]::GetRuntimeDirectory(), 'ngen.exe')
-      Start-process $ngenPath -ArgumentList 'update /silent /nologo' -WindowStyle Hidden 
-          
-      Start-Process dism.exe -ArgumentList '/online /Cleanup-Image /StartComponentCleanup /ResetBase' -WindowStyle Hidden -Wait 
+      $command = "Import-Module -name $burntToast; New-BurntToastNotification  -Text 'Ngen Process' , 'Running' -applogo $exeImage; Start-process $ngenPath -ArgumentList 'update /silent /nologo' -WindowStyle Hidden -Wait; New-BurntToastNotification  -Text 'Ngen Process' , 'Complete' -applogo $exeImage" 
+      Start-Process powershell -ArgumentList "-noprofile -windowstyle hidden -c $command"   
+
+      $command = "Import-Module -name $burntToast; New-BurntToastNotification  -Text 'DISM Process' , 'Running' -applogo $exeImage; Start-Process dism.exe -ArgumentList '/online /Cleanup-Image /StartComponentCleanup /ResetBase' -WindowStyle Hidden -Wait; New-BurntToastNotification  -Text 'DISM Process' , 'Complete' -applogo $exeImage"
+      Start-Process powershell -ArgumentList "-noprofile -windowstyle hidden -c $command" 
           
       if (!($Autorun)) {
         [System.Windows.Forms.MessageBox]::Show('Packages Installed.')
@@ -2216,12 +2490,8 @@ function install-packs {
 }
 Export-ModuleMember -Function install-packs
 
-
-
-
-
-
-
+#New-BurntToastNotification  -Text 'Running Ngen' , 'Complete' -applogo 'C:\Windows\SystemApps\MicrosoftWindows.Client.Core_cw5n1h2txyewy\StartMenu\Assets\FileIcons\32\exe.scale-400.png'
+#New-BurntToastNotification  -Text 'Running DISM' , 'Complete' -applogo 'C:\Windows\SystemApps\MicrosoftWindows.Client.Core_cw5n1h2txyewy\StartMenu\Assets\FileIcons\32\exe.scale-400.png'
 function OptionalTweaks {
   param (
     [Parameter(mandatory = $false)] [bool]$Autorun = $false
@@ -2410,6 +2680,30 @@ function OptionalTweaks {
     $form.Size = New-Object System.Drawing.Size(600, 580)
     $form.StartPosition = 'CenterScreen'
     $form.BackColor = 'Black'
+
+    $url = 'https://github.com/zoicware/ZOICWARE/blob/main/features.md#optional-tweaks'
+    $infobutton = New-Object Windows.Forms.Button
+    $infobutton.Location = New-Object Drawing.Point(555, 0)
+    $infobutton.Size = New-Object Drawing.Size(30, 27)
+    $infobutton.Add_Click({
+        try {
+          Start-Process $url -ErrorAction Stop
+        }
+        catch {
+          Write-Host 'No Internet Connected...' -ForegroundColor Red
+        }
+            
+      })
+    $infobutton.BackColor = 'Black'
+    $image = [System.Drawing.Image]::FromFile('C:\Windows\System32\SecurityAndMaintenance.png')
+    $resizedImage = New-Object System.Drawing.Bitmap $image, 24, 25
+    $infobutton.Image = $resizedImage
+    $infobutton.ImageAlign = [System.Drawing.ContentAlignment]::MiddleCenter
+    $infobutton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    $infobutton.FlatAppearance.BorderSize = 1
+    #$infobutton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$infobutton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $form.Controls.Add($infobutton)
             
     $TabControl = New-Object System.Windows.Forms.TabControl
     $TabControl.Location = New-Object System.Drawing.Size(10, 10)
@@ -2925,7 +3219,7 @@ function OptionalTweaks {
     }
     if ($checkbox5.Checked) {
       $command = 'Remove-item -path C:\Windows\System32\Speech -recurse -force'
-      RunAsTI powershell "-nologo -windowstyle hidden -command $command"
+      Run-Trusted -command $command
       Start-Sleep 2
     }
     if ($checkbox6.Checked) {
@@ -2994,7 +3288,7 @@ function OptionalTweaks {
       Move-Item -Path $folder -Destination 'C:\'
       Rename-Item -Path 'C:\System322' -NewName 'System32'
       $command = 'Remove-item -path C:\Windows\System32\en-US\cacls.exe.mui -force; Remove-item -path C:\Windows\System32\Calc.exe -force'
-      RunAsTI powershell "-nologo -windowstyle hidden -command $command"
+      Run-Trusted -command $command
       Start-Sleep 2
       Move-Item -Path 'C:\System32\en-US\calc.exe.mui' -Destination 'C:\Windows\System32\en-US' -Force 
       Move-Item -Path 'C:\System32\calc.exe' -Destination 'C:\Windows\System32' -Force
@@ -3482,7 +3776,7 @@ function OptionalTweaks {
 `$sounds = Get-ChildItem -Path $path -Recurse -Force | ForEach-Object { `$_.FullName }
 foreach(`$sound in `$sounds){Move-item `$sound -destination C:\Windows\Media -force}
 "@
-      RunAsTI powershell "-noexit -command $command"
+      Run-Trusted -command $command
       
       
       
@@ -3497,12 +3791,22 @@ foreach(`$sound in `$sounds){Move-item `$sound -destination C:\Windows\Media -fo
       
    
     if ($checkbox34.Checked) {
-      $folder = Search-Directory '*UltimateContextMenu'
-      if ($folder -ne 'C:\UltimateContextMenu') {
-        Move-item $folder -Destination 'C:\' -Force
-      }
-      $path = 'C:\UltimateContextMenu\TakeOwnContext.reg'
-      Start-Process -filepath "$env:windir\regedit.exe" -Argumentlist @('/s', $path)
+      Reg.exe add 'HKCR\*\shell\runas' /ve /t REG_SZ /d 'Take Ownership' /f
+      Reg.exe add 'HKCR\*\shell\runas\command' /ve /t REG_SZ /d 'cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F' /f
+      Reg.exe add 'HKCR\*\shell\runas\command' /v 'IsolatedCommand' /t REG_SZ /d 'cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F' /f
+      Reg.exe add 'HKCR\Directory\shell\runas' /ve /t REG_SZ /d 'Take Ownership' /f
+      Reg.exe add 'HKCR\Directory\shell\runas\command' /ve /t REG_SZ /d 'cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t' /f
+      Reg.exe add 'HKCR\Directory\shell\runas\command' /v 'IsolatedCommand' /t REG_SZ /d 'cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t' /f
+
+     
+
+      #$folder = Search-Directory '*UltimateContextMenu'
+      #if ($folder -ne 'C:\UltimateContextMenu') {
+      #  Write-Host 'Moving Context Menu Folder'
+      #  Move-item $folder -Destination 'C:\' -Force
+      #}
+      #$path = 'C:\UltimateContextMenu\TakeOwnContext.reg'
+      #Start-Process "$env:windir\regedit.exe" -Argumentlist $path
 
     }
 
@@ -3587,13 +3891,13 @@ foreach(`$sound in `$sounds){Move-item `$sound -destination C:\Windows\Media -fo
 
     if ($checkbox43.Checked) {
       $command = "Remove-Item -Path 'registry::HKCR\DesktopBackground\Shell\Personalize' -Recurse -Force"
-      RunAsTI powershell "-nologo -windowstyle hidden -command $command"
+      Run-Trusted -command $command
       Start-Sleep 2
     }
 
     if ($checkbox44.Checked) {
       $command = "Remove-Item -Path 'registry::HKCR\DesktopBackground\Shell\Display' -Recurse -Force"
-      RunAsTI powershell "-nologo -windowstyle hidden -command $command"
+      Run-Trusted -command $command
       Start-Sleep 2
     }
 
@@ -3660,9 +3964,8 @@ function remove-tasks {
       foreach ($task in $tasks) {
         if (!($task.TaskName -eq 'SvcRestartTask' -or $task.TaskName -eq 'MsCtfMonitor')) {
           #if the task isnt ctf mon or svcrestarttask then stop it and unregister it
-          Stop-ScheduledTask -TaskName $task.TaskName -ErrorAction SilentlyContinue
           Unregister-ScheduledTask -TaskName $task.TaskName -Confirm:$false -ErrorAction SilentlyContinue
-
+          
         }
 
       }
@@ -3773,6 +4076,8 @@ function W11Tweaks {
     , [Parameter(mandatory = $false)] [bool]$win10Recycle = $false
     , [Parameter(mandatory = $false)] [bool]$disableBell = $false
     , [Parameter(mandatory = $false)] [bool]$win10Snipping = $false
+    , [Parameter(mandatory = $false)] [bool]$win10TaskMgr = $false
+    , [Parameter(mandatory = $false)] [bool]$win10Notepad = $false
   )
       
    
@@ -3786,6 +4091,8 @@ function W11Tweaks {
   $checkbox9 = new-object System.Windows.Forms.checkbox
   $checkbox11 = new-object System.Windows.Forms.checkbox
   $checkbox13 = new-object System.Windows.Forms.checkbox
+  $checkbox15 = new-object System.Windows.Forms.checkbox
+  $checkbox17 = new-object System.Windows.Forms.checkbox
       
   $settings = @{}
     
@@ -3798,6 +4105,8 @@ function W11Tweaks {
   $settings['win10Recycle'] = $checkbox9
   $settings['disableBell'] = $checkbox11
   $settings['win10Snipping'] = $checkbox13
+  $settings['win10TaskMgr'] = $checkbox15
+  $settings['win10Notepad'] = $checkbox17
       
   if ($Autorun) {
     $result = [System.Windows.Forms.DialogResult]::OK
@@ -3810,6 +4119,8 @@ function W11Tweaks {
     $checkbox9.Checked = $win10Recycle
     $checkbox11.Checked = $disableBell
     $checkbox13.Checked = $win10Snipping
+    $checkbox15.Checked = $win10TaskMgr
+    $checkbox17.Checked = $win10Notepad
   }
   else {
       
@@ -3820,8 +4131,32 @@ function W11Tweaks {
     # Create a form
     $form = New-Object Windows.Forms.Form
     $form.Text = 'Windows 11 Tweaks'
-    $form.Size = New-Object Drawing.Size(450, 450)
+    $form.Size = New-Object Drawing.Size(450, 500)
     $form.BackColor = 'Black'
+
+    $url = 'https://github.com/zoicware/ZOICWARE/blob/main/features.md#windows-11-tweaks'
+    $infobutton = New-Object Windows.Forms.Button
+    $infobutton.Location = New-Object Drawing.Point(390, 0)
+    $infobutton.Size = New-Object Drawing.Size(30, 27)
+    $infobutton.Add_Click({
+        try {
+          Start-Process $url -ErrorAction Stop
+        }
+        catch {
+          Write-Host 'No Internet Connected...' -ForegroundColor Red
+        }
+            
+      })
+    $infobutton.BackColor = 'Black'
+    $image = [System.Drawing.Image]::FromFile('C:\Windows\System32\SecurityAndMaintenance.png')
+    $resizedImage = New-Object System.Drawing.Bitmap $image, 24, 25
+    $infobutton.Image = $resizedImage
+    $infobutton.ImageAlign = [System.Drawing.ContentAlignment]::MiddleCenter
+    $infobutton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
+    $infobutton.FlatAppearance.BorderSize = 1
+    #$infobutton.FlatAppearance.MouseOverBackColor = [System.Drawing.Color]::FromArgb(62, 62, 64)
+    #$infobutton.FlatAppearance.MouseDownBackColor = [System.Drawing.Color]::FromArgb(27, 27, 28)
+    $form.Controls.Add($infobutton)
       
     $label1 = New-Object System.Windows.Forms.Label
     $label1.Location = New-Object System.Drawing.Point(10, 10)
@@ -3917,10 +4252,26 @@ function W11Tweaks {
     $checkbox13.ForeColor = 'White'
     $checkbox13.Checked = $false
     $Form.Controls.Add($checkbox13) 
+
+    $checkbox15.Location = new-object System.Drawing.Size(20, 360)
+    $checkbox15.Size = new-object System.Drawing.Size(300, 30)
+    $checkbox15.Text = 'Restore Windows 10 Task Manager'
+    $checkbox15.Font = New-Object System.Drawing.Font('Segoe UI', 9)
+    $checkbox15.ForeColor = 'White'
+    $checkbox15.Checked = $false
+    $Form.Controls.Add($checkbox15) 
+
+    $checkbox17.Location = new-object System.Drawing.Size(20, 390)
+    $checkbox17.Size = new-object System.Drawing.Size(300, 30)
+    $checkbox17.Text = 'Restore Windows 10 Notepad'
+    $checkbox17.Font = New-Object System.Drawing.Font('Segoe UI', 9)
+    $checkbox17.ForeColor = 'White'
+    $checkbox17.Checked = $false
+    $Form.Controls.Add($checkbox17) 
     
     
     $OKButton = New-Object System.Windows.Forms.Button
-    $OKButton.Location = New-Object System.Drawing.Point(112, 380)
+    $OKButton.Location = New-Object System.Drawing.Point(112, 430)
     $OKButton.Size = New-Object System.Drawing.Size(100, 23)
     $OKButton.Text = 'OK'
     $OKButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
@@ -3934,7 +4285,7 @@ function W11Tweaks {
     $form.Controls.Add($OKButton)
       
     $CancelButton = New-Object System.Windows.Forms.Button
-    $CancelButton.Location = New-Object System.Drawing.Point(210, 380)
+    $CancelButton.Location = New-Object System.Drawing.Point(210, 430)
     $CancelButton.Size = New-Object System.Drawing.Size(100, 23)
     $CancelButton.Text = 'Cancel'
     $CancelButton.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
@@ -4374,6 +4725,81 @@ Windows Registry Editor Version 5.00
       $Shortcut.Save()
     }
 
+    if ($checkbox15.Checked) {
+      $win10TaskDir = Search-Directory -filter '*Win10TaskManager'
+      $filesToMove = Get-ChildItem -Path $win10TaskDir -Recurse -File
+
+      #take own of current task manager files
+      $paths = @(
+        'C:\Windows\System32\en-US',
+        'C:\Windows\System32\Taskmgr.exe',
+        'C:\Windows\SystemResources\Taskmgr.exe.mun'
+      )
+      foreach ($path in $paths) {
+        if ((get-item $path).Mode -like '*d*') {
+          takeown /f $path /r /d Y *>$null
+          icacls $path /grant administrators:F /t *>$null
+        }
+        else {
+          takeown /f $path *>$null
+          icacls $path /grant administrators:F /t *>$null
+        }
+        
+      }
+
+      #move files
+      foreach ($file in $filesToMove) {
+        $path = $file.FullName
+        switch -Wildcard ($path) {
+          '*Taskmgr.exe.mun' {  
+            $command = "Move-Item -Path $path -Destination 'C:\Windows\SystemResources' -Force"
+            Run-Trusted -command $command
+          }
+          '*Taskmgr.exe' {
+            Move-Item -Path $path -Destination 'C:\Windows\System32' -Force
+          }
+          '*Taskmgr.exe.mui' {
+            Move-Item -Path $path -Destination 'C:\Windows\System32\en-US' -Force
+          }
+        }
+      }
+      
+      
+    }
+
+    if ($checkbox17.Checked) {
+      #restore win10 notepad
+
+      #uninstall uwp notepad
+      Write-Host 'Uninstalling UWP Notepad (BREAKS PS1 FILE ICONS)'
+      try {
+        Get-AppXPackage '*notepad*' -AllUsers -ErrorAction Stop | ForEach-Object { Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml" -ErrorAction Stop }
+      }
+      catch {}
+      try {
+        Remove-AppxPackage -Package '*notepad*' -AllUsers -ErrorAction Stop
+      }
+      catch {}
+      try {
+        Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like '*notepad*' | Remove-AppxProvisionedPackage -AllUsers -Online -ErrorAction Stop | Out-Null
+      }
+      catch {}   
+
+      #enable win10 notepad
+      Write-Host 'Enabling Windows 10 Notepad'
+      Add-WindowsCapability -Online -Name 'Microsoft.Windows.Notepad.System~~~~0.0.1.0' | Out-Null
+      Add-WindowsCapability -Online -Name 'Microsoft.Windows.Notepad~~~~0.0.1.0' | Out-Null
+      $reg1 = Search-File '*txtfile.reg'
+      $reg2 = Search-File '*newtxt.reg'
+      Start-Process regedit.exe -ArgumentList "/s $reg1" -Wait
+      Start-Process regedit.exe -ArgumentList "/s $reg2" -Wait
+      #create startmenu shortcut
+      $WshShell = New-Object -comObject WScript.Shell
+      $Shortcut = $WshShell.CreateShortcut('C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Notepad.lnk')
+      $Shortcut.TargetPath = ('C:\Windows\System32\Notepad.exe')
+      $Shortcut.Save()
+    }
+
 
   }
       
@@ -4412,27 +4838,32 @@ Export-ModuleMember -Function install-key
 
 
 function UltimateCleanup {
-  [reflection.assembly]::loadwithpartialname('System.Windows.Forms') | Out-Null 
-  $msgBoxInput = [System.Windows.Forms.MessageBox]::Show('Do You Want to Clear All Event Viewer Logs?', 'zoicware', 'YesNo', 'Question')
 
-  switch ($msgBoxInput) {
-    'Yes' {  
-      #clear event viewer logs
-      Write-Host 'Clearing Event Viewer Logs...'
-      wevtutil el | Foreach-Object { wevtutil cl "$_" >$null 2>&1 }   
-    }
-    'No' { }
-  }
-  #cleanup temp files
-  $temp1 = 'C:\Windows\Temp'
-  $temp2 = $env:TEMP
-  Write-Host "Cleaning Temp Files in $temp1 , $temp2"
-  $tempFiles = (Get-ChildItem -Path $temp1 , $temp2 -Recurse -Force).FullName
-  foreach ($file in $tempFiles) {
-    Remove-Item -Path $file -Recurse -Force -ErrorAction SilentlyContinue
-  }
-  Write-Host 'Running Disk Cleanup...'
-  $key = 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches'
+  Add-Type -AssemblyName System.Windows.Forms
+  Add-Type -AssemblyName System.Drawing
+  [System.Windows.Forms.Application]::EnableVisualStyles()
+
+  # Create the form
+  $form = New-Object System.Windows.Forms.Form
+  $form.Text = 'Ultimate Cleanup'
+  $form.Size = New-Object System.Drawing.Size(450, 400)
+  $form.StartPosition = 'CenterScreen'
+  $form.BackColor = 'Black'
+
+  $label = New-Object System.Windows.Forms.Label
+  $label.Location = New-Object System.Drawing.Point(60, 10)
+  $label.Size = New-Object System.Drawing.Size(150, 20)
+  $label.Text = 'Disk Cleanup Options'
+  $label.ForeColor = 'White'
+  $label.Font = New-Object System.Drawing.Font('Segoe UI', 10) 
+  $form.Controls.Add($label)
+
+  # Create the CheckedListBox
+  $checkedListBox = New-Object System.Windows.Forms.CheckedListBox
+  $checkedListBox.Location = New-Object System.Drawing.Point(40, 60)
+  $checkedListBox.Size = New-Object System.Drawing.Size(200, 300)
+  $checkedListBox.BackColor = 'Black'
+  $checkedListBox.ForeColor = 'White'
   $options = @(
     'Active Setup Temp Folders'
     'Thumbnail Cache'
@@ -4459,50 +4890,192 @@ function UltimateCleanup {
     'Device Driver Packages'
   )
   foreach ($option in $options) {
-    reg.exe add "$key\$option" /v StateFlags0069 /t REG_DWORD /d 00000002 /f >$nul 2>&1
+    $checkedListBox.Items.Add($option, $false) | Out-Null
   }
-  #nice
-  Start-Process cleanmgr.exe -ArgumentList '/sagerun:69 /autoclean' 
+
+  # Create the checkboxes
+  $checkBox1 = New-Object System.Windows.Forms.CheckBox
+  $checkBox1.Text = 'Clear Event Viewer Logs'
+  $checkBox1.Location = New-Object System.Drawing.Point(250, 70)
+  $checkBox1.ForeColor = 'White'
+  $checkBox1.AutoSize = $true
+
+  $checkBox2 = New-Object System.Windows.Forms.CheckBox
+  $checkBox2.Text = 'Clear Windows Logs'
+  $checkBox2.Location = New-Object System.Drawing.Point(250, 100)
+  $checkBox2.ForeColor = 'White'
+  $checkBox2.AutoSize = $true
+
+  $checkBox3 = New-Object System.Windows.Forms.CheckBox
+  $checkBox3.Text = 'Clear TEMP Cache'
+  $checkBox3.Location = New-Object System.Drawing.Point(250, 130)
+  $checkBox3.ForeColor = 'White'
+  $checkBox3.AutoSize = $true
+
+  # Create the Clean button
+  $buttonClean = New-Object System.Windows.Forms.Button
+  $buttonClean.Text = 'Clean'
+  $buttonClean.Location = New-Object System.Drawing.Point(250, 200)
+  $buttonClean.Size = New-Object System.Drawing.Size(100, 30)
+  $buttonClean.ForeColor = 'White'
+  $buttonClean.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
+  $buttonClean.DialogResult = [System.Windows.Forms.DialogResult]::OK
+  $buttonClean.Add_MouseEnter({
+      $buttonClean.BackColor = [System.Drawing.Color]::FromArgb(64, 64, 64)
+    })
+
+  $buttonClean.Add_MouseLeave({
+      $buttonClean.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
+    })
+  
+  $checkALL = New-Object System.Windows.Forms.CheckBox
+  $checkALL.Text = 'Check All'
+  $checkALL.Location = New-Object System.Drawing.Point(40, 40)
+  $checkALL.ForeColor = 'White'
+  $checkALL.AutoSize = $true
+  $checkALL.add_CheckedChanged({
+      if ($checkALL.Checked) {
+        $i = 0
+        foreach ($option in $options) {
+          $checkedListBox.SetItemChecked($i, $true)
+          $i++
+        }
+      }
+      else {
+        $i = 0
+        foreach ($option in $options) {
+          $checkedListBox.SetItemChecked($i, $false)
+          $i++
+        }
+      }
+    })
+  $form.Controls.Add($checkALL)
+  
+  # Add controls to the form
+  $form.Controls.Add($checkedListBox)
+  $form.Controls.Add($checkBox1)
+  $form.Controls.Add($checkBox2)
+  $form.Controls.Add($checkBox3)
+  $form.Controls.Add($buttonClean)
+
+  # Show the form
+  $result = $form.ShowDialog()
+
+
+  if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
+    $driveletter = $env:SystemDrive -replace ':', ''
+    $drive = Get-PSDrive $driveletter
+    $usedInGB = [math]::Round($drive.Used / 1GB, 4)
+    Write-Host 'BEFORE CLEANING'
+    Write-Host "Used space on $($drive.Name):\ $usedInGB GB"
+    
+
+
+    if ($checkBox1.Checked) {
+      Write-Host 'Clearing Event Viewer Logs...'
+      wevtutil el | Foreach-Object { wevtutil cl "$_" >$null 2>&1 } 
+    }
+    if ($checkBox2.Checked) {
+      #CLEAR LOGS
+      Write-Host 'Clearing Windows Log Files...'
+      #Clear Distributed Transaction Coordinator logs
+      Remove-Item -Path $env:SystemRoot\DtcInstall.log -Force -ErrorAction SilentlyContinue 
+      #Clear Optional Component Manager and COM+ components logs
+      Remove-Item -Path $env:SystemRoot\comsetup.log -Force -ErrorAction SilentlyContinue 
+      #Clear Pending File Rename Operations logs
+      Remove-Item -Path $env:SystemRoot\PFRO.log -Force -ErrorAction SilentlyContinue 
+      #Clear Windows Deployment Upgrade Process Logs
+      Remove-Item -Path $env:SystemRoot\setupact.log -Force -ErrorAction SilentlyContinue 
+      Remove-Item -Path $env:SystemRoot\setuperr.log -Force -ErrorAction SilentlyContinue 
+      #Clear Windows Setup Logs
+      Remove-Item -Path $env:SystemRoot\setupapi.log -Force -ErrorAction SilentlyContinue 
+      Remove-Item -Path $env:SystemRoot\Panther\* -Force -Recurse -ErrorAction SilentlyContinue 
+      Remove-Item -Path $env:SystemRoot\inf\setupapi.app.log -Force -ErrorAction SilentlyContinue 
+      Remove-Item -Path $env:SystemRoot\inf\setupapi.dev.log -Force -ErrorAction SilentlyContinue 
+      Remove-Item -Path $env:SystemRoot\inf\setupapi.offline.log -Force -ErrorAction SilentlyContinue 
+      #Clear Windows System Assessment Tool logs
+      Remove-Item -Path $env:SystemRoot\Performance\WinSAT\winsat.log -Force -ErrorAction SilentlyContinue 
+      #Clear Password change events
+      Remove-Item -Path $env:SystemRoot\debug\PASSWD.LOG -Force -ErrorAction SilentlyContinue 
+      #Clear DISM (Deployment Image Servicing and Management) Logs
+      Remove-Item -Path $env:SystemRoot\Logs\CBS\CBS.log -Force -ErrorAction SilentlyContinue  
+      Remove-Item -Path $env:SystemRoot\Logs\DISM\DISM.log -Force -ErrorAction SilentlyContinue  
+      #Clear Server-initiated Healing Events Logs
+      Remove-Item -Path "$env:SystemRoot\Logs\SIH\*" -Force -ErrorAction SilentlyContinue 
+      #Common Language Runtime Logs
+      Remove-Item -Path "$env:LocalAppData\Microsoft\CLR_v4.0\UsageTraces\*" -Force -ErrorAction SilentlyContinue 
+      Remove-Item -Path "$env:LocalAppData\Microsoft\CLR_v4.0_32\UsageTraces\*" -Force -ErrorAction SilentlyContinue 
+      #Network Setup Service Events Logs
+      Remove-Item -Path "$env:SystemRoot\Logs\NetSetup\*" -Force -ErrorAction SilentlyContinue 
+      #Disk Cleanup tool (Cleanmgr.exe) Logs
+      Remove-Item -Path "$env:SystemRoot\System32\LogFiles\setupcln\*" -Force -ErrorAction SilentlyContinue 
+      #Clear Windows update and SFC scan logs
+      Remove-Item -Path $env:SystemRoot\Temp\CBS\* -Force -ErrorAction SilentlyContinue 
+      #Clear Windows Update Medic Service logs
+      takeown /f $env:SystemRoot\Logs\waasmedic /r -Value y *>$null
+      icacls $env:SystemRoot\Logs\waasmedic /grant administrators:F /t *>$null
+      Remove-Item -Path $env:SystemRoot\Logs\waasmedic -Recurse -ErrorAction SilentlyContinue 
+      #Clear Cryptographic Services Traces
+      Remove-Item -Path $env:SystemRoot\System32\catroot2\dberr.txt -Force -ErrorAction SilentlyContinue 
+      Remove-Item -Path $env:SystemRoot\System32\catroot2.log -Force -ErrorAction SilentlyContinue 
+      Remove-Item -Path $env:SystemRoot\System32\catroot2.jrs -Force -ErrorAction SilentlyContinue 
+      Remove-Item -Path $env:SystemRoot\System32\catroot2.edb -Force -ErrorAction SilentlyContinue 
+      Remove-Item -Path $env:SystemRoot\System32\catroot2.chk -Force -ErrorAction SilentlyContinue 
+      #Windows Update Logs
+      Remove-Item -Path "$env:SystemRoot\Traces\WindowsUpdate\*" -Force -ErrorAction SilentlyContinue 
+    }
+    if ($checkBox3.Checked) {
+      Write-Host 'Clearing TEMP Files...'
+      #cleanup temp files
+      $temp1 = 'C:\Windows\Temp'
+      $temp2 = $env:TEMP
+      $tempFiles = (Get-ChildItem -Path $temp1 , $temp2 -Recurse -Force).FullName
+      foreach ($file in $tempFiles) {
+        Remove-Item -Path $file -Recurse -Force -ErrorAction SilentlyContinue
+      }
+    }
+    if ($checkedListBox.CheckedItems) {
+      $key = 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches'
+      foreach ($item in $checkedListBox.CheckedItems) {
+        reg.exe add "$key\$item" /v StateFlags0069 /t REG_DWORD /d 00000002 /f >$nul 2>&1
+      }
+      Write-Host 'Running Disk Cleanup...'
+      #nice
+      Start-Process cleanmgr.exe -ArgumentList '/sagerun:69 /autoclean' -Wait
+    }
+
+    $drive = Get-PSDrive $driveletter
+    $usedInGB = [math]::Round($drive.Used / 1GB, 4)
+    Write-Host 'AFTER CLEANING'
+    Write-Host "Used space on $($drive.Name):\ $usedInGB GB"
+    
+  }
+
   
 }
 Export-ModuleMember -Function UltimateCleanup
 
 
 
-#run powershell as trusted installer credit : https://github.com/AveYo/LeanAndMean
-#added -wait to prevent script from continuing too fast
-function RunAsTI($cmd, $arg) {
-  $id = 'RunAsTI'; $key = "Registry::HKU\$(((whoami /user)-split' ')[-1])\Volatile Environment"; $code = @'
- $I=[int32]; $M=$I.module.gettype("System.Runtime.Interop`Services.Mar`shal"); $P=$I.module.gettype("System.Int`Ptr"); $S=[string]
- $D=@(); $T=@(); $DM=[AppDomain]::CurrentDomain."DefineDynami`cAssembly"(1,1)."DefineDynami`cModule"(1); $Z=[uintptr]::size
- 0..5|% {$D += $DM."Defin`eType"("AveYo_$_",1179913,[ValueType])}; $D += [uintptr]; 4..6|% {$D += $D[$_]."MakeByR`efType"()}
- $F='kernel','advapi','advapi', ($S,$S,$I,$I,$I,$I,$I,$S,$D[7],$D[8]), ([uintptr],$S,$I,$I,$D[9]),([uintptr],$S,$I,$I,[byte[]],$I)
- 0..2|% {$9=$D[0]."DefinePInvok`eMethod"(('CreateProcess','RegOpenKeyEx','RegSetValueEx')[$_],$F[$_]+'32',8214,1,$S,$F[$_+3],1,4)}
- $DF=($P,$I,$P),($I,$I,$I,$I,$P,$D[1]),($I,$S,$S,$S,$I,$I,$I,$I,$I,$I,$I,$I,[int16],[int16],$P,$P,$P,$P),($D[3],$P),($P,$P,$I,$I)
- 1..5|% {$k=$_; $n=1; $DF[$_-1]|% {$9=$D[$k]."Defin`eField"('f' + $n++, $_, 6)}}; 0..5|% {$T += $D[$_]."Creat`eType"()}
- 0..5|% {nv "A$_" ([Activator]::CreateInstance($T[$_])) -fo}; function F ($1,$2) {$T[0]."G`etMethod"($1).invoke(0,$2)}
- $TI=(whoami /groups)-like'*1-16-16384*'; $As=0; if(!$cmd) {$cmd='control';$arg='admintools'}; if ($cmd-eq'This PC'){$cmd='file:'}
- if (!$TI) {'TrustedInstaller','lsass','winlogon'|% {if (!$As) {$9=sc.exe start $_; $As=@(get-process -name $_ -ea 0|% {$_})[0]}}
- function M ($1,$2,$3) {$M."G`etMethod"($1,[type[]]$2).invoke(0,$3)}; $H=@(); $Z,(4*$Z+16)|% {$H += M "AllocHG`lobal" $I $_}
- M "WriteInt`Ptr" ($P,$P) ($H[0],$As.Handle); $A1.f1=131072; $A1.f2=$Z; $A1.f3=$H[0]; $A2.f1=1; $A2.f2=1; $A2.f3=1; $A2.f4=1
- $A2.f6=$A1; $A3.f1=10*$Z+32; $A4.f1=$A3; $A4.f2=$H[1]; M "StructureTo`Ptr" ($D[2],$P,[boolean]) (($A2 -as $D[2]),$A4.f2,$false)
- $Run=@($null, "powershell -win 1 -nop -c iex `$env:R; # $id", 0, 0, 0, 0x0E080600, 0, $null, ($A4 -as $T[4]), ($A5 -as $T[5]))
- F 'CreateProcess' $Run; return}; $env:R=''; rp $key $id -force; $priv=[diagnostics.process]."GetM`ember"('SetPrivilege',42)[0]
- 'SeSecurityPrivilege','SeTakeOwnershipPrivilege','SeBackupPrivilege','SeRestorePrivilege' |% {$priv.Invoke($null, @("$_",2))}
- $HKU=[uintptr][uint32]2147483651; $NT='S-1-5-18'; $reg=($HKU,$NT,8,2,($HKU -as $D[9])); F 'RegOpenKeyEx' $reg; $LNK=$reg[4]
- function L ($1,$2,$3) {sp 'HKLM:\Software\Classes\AppID\{CDCBCFCA-3CDC-436f-A4E2-0E02075250C2}' 'RunAs' $3 -force -ea 0
-  $b=[Text.Encoding]::Unicode.GetBytes("\Registry\User\$1"); F 'RegSetValueEx' @($2,'SymbolicLinkValue',0,6,[byte[]]$b,$b.Length)}
- function Q {[int](gwmi win32_process -filter 'name="explorer.exe"'|?{$_.getownersid().sid-eq$NT}|select -last 1).ProcessId}
- $11bug=($((gwmi Win32_OperatingSystem).BuildNumber)-eq'22000')-AND(($cmd-eq'file:')-OR(test-path -lit $cmd -PathType Container))
- if ($11bug) {'System.Windows.Forms','Microsoft.VisualBasic' |% {[Reflection.Assembly]::LoadWithPartialName("'$_")}}
- if ($11bug) {$path='^(l)'+$($cmd -replace '([\+\^\%\~\(\)\[\]])','{$1}')+'{ENTER}'; $cmd='control.exe'; $arg='admintools'}
- L ($key-split'\\')[1] $LNK ''; $R=[diagnostics.process]::start($cmd,$arg); if ($R) {$R.PriorityClass='High'; $R.WaitForExit()}
- if ($11bug) {$w=0; do {if($w-gt40){break}; sleep -mi 250;$w++} until (Q); [Microsoft.VisualBasic.Interaction]::AppActivate($(Q))}
- if ($11bug) {[Windows.Forms.SendKeys]::SendWait($path)}; do {sleep 7} while(Q); L '.Default' $LNK 'Interactive User'
-'@; $V = ''; 'cmd', 'arg', 'id', 'key' | ForEach-Object { $V += "`n`$$_='$($(Get-Variable $_ -val)-replace"'","''")';" }; Set-ItemProperty $key $id $($V, $code) -type 7 -force -ea 0
-  Start-Process powershell -args "-win 1 -nop -c `n$V `$env:R=(gi `$key -ea 0).getvalue(`$id)-join''; iex `$env:R" -verb runas -Wait
-} # lean & mean snippet by AveYo, 2022.01.28
-Export-ModuleMember -Function RunAsTI
+function Run-Trusted([String]$command) {
+
+  Stop-Service -Name TrustedInstaller -Force -ErrorAction SilentlyContinue
+  #get bin path to revert later
+  $service = Get-WmiObject -Class Win32_Service -Filter "Name='TrustedInstaller'"
+  $DefaultBinPath = $service.PathName
+  #convert command to base64 to avoid errors with spaces
+  $bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
+  $base64Command = [Convert]::ToBase64String($bytes)
+  #change bin to command
+  sc.exe config TrustedInstaller binPath= "cmd.exe /c powershell.exe -encodedcommand $base64Command" | Out-Null
+  #run the command
+  sc.exe start TrustedInstaller | Out-Null
+  #set bin back to default
+  sc.exe config TrustedInstaller binpath= "`"$DefaultBinPath`"" | Out-Null
+  Stop-Service -Name TrustedInstaller -Force -ErrorAction SilentlyContinue
+
+}
+Export-ModuleMember -Function Run-Trusted
 
 
 

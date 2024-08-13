@@ -15,7 +15,8 @@
 		- [v1.1.9](#v119)  
 		- [v1.2.0](#v120)  
 		- [v1.2.1](#v121)   
-		- [v1.2.2](#v122)   
+		- [v1.2.2](#v122)  
+		- [v1.2.3](#v123) 
 
 ---
 
@@ -282,3 +283,28 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 - fixed disable defender not working  
 - added list of current power plans to remove  
 - added built-in hidden powerplans to enable *[Ultimate Performance, Max Performance Overlay, High Performance Overlay]*   
+
+---
+
+### v1.2.3
+
+- upgraded ultimate cleanup:
+added option to individually customize most hidden disk cleanup options, added clear windows logs, this will delete almost all log files in various locations
+
+
+- switched the clean up process after installing necessary packages to background tasks, a notification will appear for both tasks when they start and complete
+
+
+- added restore windows 10 task manager to windows 11 tweaks
+
+
+- fixed takeownership context menu tweak
+
+
+- added restore windows 10 notepad to windows 11 tweaks *Note: removing uwp notepad breaks ps1 file icons*
+
+
+- fixed disable defender
+
+
+- added various info icons at the top of menus to open the features readme to the specific tweak

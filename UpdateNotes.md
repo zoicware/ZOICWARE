@@ -16,7 +16,8 @@
 		- [v1.2.0](#v120)  
 		- [v1.2.1](#v121)   
 		- [v1.2.2](#v122)  
-		- [v1.2.3](#v123) 
+		- [v1.2.3](#v123)   
+ 		- [v1.2.4](#v124) 
 
 ---
 
@@ -308,3 +309,24 @@ added option to individually customize most hidden disk cleanup options, added c
 
 
 - added various info icons at the top of menus to open the features readme to the specific tweak
+
+
+### v1.2.4
+
+- added progress bar to removing scheduled tasks
+
+- added disable archive apps to registry tweaks
+
+- explorer patcher is now downloaded from the latest github release to ensure it always works
+
+- split up uninstall edge and edge webview since its needed for some other apps
+
+- changed "restore windows 10 notepad" to use 21h2 W11 notepad because it has the W10 style, this also fixes various other bugs with removing uwp notepad
+
+- added remove extract all context menu to zip,7z,rar,tar,gz files
+
+- removed most of the folders from the pack and moved away from using a dropbox link instead just uploading the zip directly to github
+
+- since download zoicware script is removed install packages requires internet connection 
+
+- various bug fixes

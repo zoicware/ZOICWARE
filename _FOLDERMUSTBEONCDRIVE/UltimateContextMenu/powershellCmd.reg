@@ -1,0 +1,75 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Directory\background\shell\OpenElevatedCmd]
+@="Command Prompt (Administrator)"
+"NoWorkingDirectory"=""
+"NeverDefault"=""
+"Icon"="cmd.exe"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Directory\background\shell\OpenElevatedCmd\command]
+@="PowerShell.exe -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/k,pushd,%V' -Verb RunAs\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Directory\background\shell\OpenElevatedPS]
+@="Windows PowerShell (Run as Administrator)"
+"NoWorkingDirectory"=""
+"NeverDefault"=""
+"Icon"="PowerShell.exe"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Directory\background\shell\OpenElevatedPS\command]
+@="PowerShell.exe -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/c,pushd %V && powershell' -Verb RunAs\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Directory\shell\OpenElevatedCmd]
+@="Command Prompt (Administrator)"
+"NoWorkingDirectory"=""
+"NeverDefault"=""
+"Icon"="cmd.exe"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Directory\shell\OpenElevatedCmd\command]
+@="PowerShell.exe -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/k,pushd,%V' -Verb RunAs\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Directory\shell\OpenElevatedPS]
+@="Windows PowerShell (Run as Administrator)"
+"NoWorkingDirectory"=""
+"NeverDefault"=""
+"Icon"="PowerShell.exe"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Directory\shell\OpenElevatedPS\command]
+@="PowerShell.exe -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/c,pushd %V && powershell' -Verb RunAs\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Drive\shell\OpenElevatedCmd]
+@="Command Prompt (Administrator)"
+"NoWorkingDirectory"=""
+"NeverDefault"=""
+"Icon"="cmd.exe"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Drive\shell\OpenElevatedCmd\command]
+@="PowerShell.exe -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/k,pushd,%V' -Verb RunAs\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Drive\shell\OpenElevatedPS]
+@="Windows PowerShell (Run as Administrator)"
+"Icon"="PowerShell.exe"
+"NeverDefault"=""
+"NoWorkingDirectory"=""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\Drive\shell\OpenElevatedPS\command]
+@="PowerShell.exe -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/c,pushd %V && powershell' -Verb RunAs\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\LibraryFolder\Shell]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\LibraryFolder\Shell\OpenElevatedCmd]
+@="Command Prompt (Administrator)"
+"NoWorkingDirectory"=""
+"NeverDefault"=""
+"Icon"="cmd.exe"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\LibraryFolder\Shell\OpenElevatedCmd\command]
+@="PowerShell.exe -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/k,pushd,%V' -Verb RunAs\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\LibraryFolder\Shell\OpenElevatedPS]
+"Icon"="PowerShell.exe"
+@="Windows PowerShell (Run as Administrator)"
+"NoWorkingDirectory"=""
+"NeverDefault"=""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\LibraryFolder\Shell\OpenElevatedPS\command]
+@="PowerShell.exe -windowstyle hidden -Command \"Start-Process cmd.exe -ArgumentList '/s,/c,pushd %V && powershell' -Verb RunAs\""

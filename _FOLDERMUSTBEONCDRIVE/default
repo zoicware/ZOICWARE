@@ -1,8 +1,0 @@
-[Setup]
-Lang=default
-Dir=C:\Program Files\ClassicTaskmgr
-Group=(Default)
-NoIcons=0
-SetupType=custom
-Components=taskmgr
-Tasks=

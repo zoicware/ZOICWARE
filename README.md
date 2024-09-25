@@ -17,7 +17,7 @@ Want to setup windows like me? Use the pre-made configs [Here](https://github.co
 ---
 
 ## View Code
-#### [Functions](https://github.com/zoicware/ZOICWARE/tree/main/functions)
+#### [Functions](https://github.com/zoicware/ZOICWARE/tree/main/src)
 
 ---
 

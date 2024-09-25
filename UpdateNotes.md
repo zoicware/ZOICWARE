@@ -330,3 +330,15 @@ added option to individually customize most hidden disk cleanup options, added c
 - since download zoicware script is removed install packages requires internet connection 
 
 - various bug fixes
+
+
+### v1.2.5
+- replaced all message boxes with custom WinForms dark theme message boxes
+  
+- added hide recommended section on Windows 11 Startmenu [**NOTE!** this will run a small script on startup to remove it]
+  
+- replaced default WinForms font with DM Mono for a cleaner look
+  
+- added feature to install my other scripts that will create a desktop shortcut running the code directly from github
+  
+- you can now drag and drop your config file onto the Import/Export window

@@ -9,7 +9,7 @@ Want to setup windows like me? Use the pre-made configs [Here](https://github.co
 ---
 
 ## How to Use
-1. Simply click on (releases)[https://github.com/zoicware/ZOICWARE/releases] and click the zip file included under assets
+1. Simply click on [releases](https://github.com/zoicware/ZOICWARE/releases) and click the zip file included under assets
 2. Extract the folder onto your C drive and run "RUN ZOICWARE.exe" in the setup folder
 3. Choose your desired options, once complete you can save these choices to a config for future use
 

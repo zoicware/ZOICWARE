@@ -41,6 +41,7 @@
   - [Ultimate Cleanup](#ultimate-cleanup)
     - [Features](#features-3)
   - [Activate Windows](#activate-windows)
+  - [Install Other Scripts](#install-other-scripts)
 
 ## Registry Tweaks
 <img width="300" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/d10d6701-6b68-41ce-875e-82329b880f94">
@@ -186,6 +187,7 @@
   - **Remove Rounded Edges** - remove rounded edges using [toggle-rounded-corners](https://github.com/oberrich/win11-toggle-rounded-corners) and run at startup
   - **Enable Windows 10 Taskbar and Startmenu** - run ExplorerPatcher and automatically apply settings for windows 10 taskbar and startmenu
   - **Enable Windows 10 File Explorer** - create windows 10 file explorer config on desktop and open explorer patcher menu to import config
+  - **Remove Recommended Section** - this tweak applies a small script on startup to remove the recommended section on the windows 11 startmenu
 
   ### Misc Tweaks
   - **Set all Services to Manual** - this tweak works well on windows 11 to clean up some unnecessary services
@@ -205,6 +207,10 @@
 - **Disable Bell Icon on Taskbar** - hide the notification bell icon on the taskbar
      - **Note:** this will break the calendar flyout when clicking the date and time
 - **Restore Windows 10 Snipping Tool** - remove uwp snipping tool (screen sktech) and enable windows 10 snipping tool
+
+- **Restore Windows 10 Notepad** - this will replace the latest notepad version with 21h2 Windows 11 notepad since it uses the windows 10 style
+
+- **Restore Windows 10 Task Manager** - this will replace the windows 11 task manager with the classic windows 10 one
 
 ## Install Network Driver
 
@@ -234,13 +240,12 @@
 - Apply Digital Vibrance - a slider will allow you to setup digital vibrance on all your monitors, this tweak will apply once restarting
 
 ## Install Packages
- - When installing zoicware if you choose to install packages using the [Download Zoicware Script](https://github.com/zoicware/ZOICWARE/blob/main/Download%20Zoicware.ps1) the script will use the local files 
- - If the script can not find the packages it will attempt to install them from the internet
+ - This will download the latest DirectX and C++ packages from their source
      - Included Packages
           - DirectX
           - All Visual C++ Redistributables and Runtimes
           - Net 3.5 from the bootable media used to install windows
-- After they are finished Ngen.exe and DISM are ran to cleanup **Note:** this may take some time be patient
+- After they are finished Ngen.exe and DISM are ran to cleanup outdated assemblies
 ## Importing and Exporting Tweaks
 <img width="330" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/1979c64e-c67a-47a5-823d-2446eb9ba006">
 <img width="250" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/a7f90f3b-e0b1-4dbc-9ab9-35c6fbf279bf">
@@ -298,3 +303,12 @@
 ## Activate Windows
 - activates windows 10 and 11 with a generic pro key and public kms server for 180 days
 - **Note:** recomend using [Massgravel](https://github.com/massgravel/Microsoft-Activation-Scripts) for permanent activation
+
+
+## Install Other Scripts
+
+- Create a desktop shortcut to some of my other useful scripts for windows tweaking and management 
+  
+- This shortcut will run the code directly from the github so it will always be up to date
+
+- **NOTE: If you do not disable uac you will need to run the shortcuts as admin**

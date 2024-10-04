@@ -18,7 +18,8 @@
 		- [v1.2.2](#v122)  
 		- [v1.2.3](#v123)   
  		- [v1.2.4](#v124)   
-  		- [v1.2.5](#v125) 
+  		- [v1.2.5](#v125)   
+    		- [v1.2.6](#v126) 
 
 ---
 
@@ -311,7 +312,7 @@ added option to individually customize most hidden disk cleanup options, added c
 
 - added various info icons at the top of menus to open the features readme to the specific tweak
 
-
+---
 ### v1.2.4
 
 - added progress bar to removing scheduled tasks
@@ -332,7 +333,7 @@ added option to individually customize most hidden disk cleanup options, added c
 
 - various bug fixes
 
-
+---
 ### v1.2.5
 - replaced all message boxes with custom WinForms dark theme message boxes
   
@@ -343,3 +344,25 @@ added option to individually customize most hidden disk cleanup options, added c
 - added feature to install my other scripts that will create a desktop shortcut running the code directly from github
   
 - you can now drag and drop your config file onto the Import/Export window
+
+---
+### v1.2.6
+
+- remade main menu ui to organize options better
+  
+- fixed snipping tool hotkey not working when using debloat all
+  
+- moved Clipchamp, Microsoft.BingSearch, Microsoft.Services.Store.Engagement, Microsoft.WidgetsPlatformRuntime to locked appxpackages since they can no longer be uninstalled with the normal method
+ (NOTE) debloat all will remove these packages
+
+- integrated nvidiaautoinstall into zoicware instead of downloading it from the repo
+  
+- changed RUN ZOICWARE.ps1 to be a batch script to fix debloating on 24h2 (NOTE: RUN ZOICWARE.exe is still there but instead compiled from a batch script)
+  
+- added disable windows spotlight to registry tweaks
+  
+- added disable snipping tool noti and disable share app experinces for windows 11 regitry tweaks
+  
+- updated disable defender and enable for 24h2
+  
+- some bug fixes for 24h2

@@ -16,17 +16,28 @@ else {
 
 }
 
-#check if script is in pack
-$exePath = [System.Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
-$root = Split-Path -Path $exePath -Parent
-$path = $root + '\_FOLDERMUSTBEONCDRIVE\ZOICWARE.ps1'
+$LocationCache = "$env:USERPROFILE\zLocation.tmp"
+if(test-path $LocationCache){
+    $path = Get-Content $LocationCache
+    if(test-path $path){
+        $script = $path
+    }
+}
+if(!$script){
+$sysDrive = $env:SystemDrive + '\'
+$zoicwareOS = (Get-ChildItem -Path $sysDrive -Filter zoicwareOS* -Recurse -Directory -ErrorAction SilentlyContinue -Force | Where-Object Name -NotIn '$Recycle.Bin' | Select-Object -First 1).FullName
+$path = "$zoicwareOS\_FOLDERMUSTBEONCDRIVE\ZOICWARE.ps1"
 if (Test-Path $path) {
+    New-Item $LocationCache -Value $path -Force | Out-Null
     $script = $path
 }
 else {
     #search on c drive if script isnt found
-    $sysDrive = $env:SystemDrive + '\'
+    #$sysDrive = $env:SystemDrive + '\'
     $script = (Get-ChildItem -Path $sysDrive -Filter ZOICWARE.ps1 -Recurse -File -ErrorAction SilentlyContinue -Force | Where-Object Name -NotIn '$Recycle.Bin' | Select-Object -First 1).FullName
+    if($script){
+      New-Item $LocationCache -Value $script -Force | Out-Null
+    }
 }
 
 if ($script -eq $null) {
@@ -37,4 +48,9 @@ if ($script -eq $null) {
 else {
     &$script
 }
+}
+else{
+    &$script
+}
+
 

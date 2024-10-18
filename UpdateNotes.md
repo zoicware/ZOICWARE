@@ -19,7 +19,8 @@
 		- [v1.2.3](#v123)   
  		- [v1.2.4](#v124)   
   		- [v1.2.5](#v125)   
-    		- [v1.2.6](#v126) 
+    		- [v1.2.6](#v126)   
+  		-  [v1.2.7](#v127)   
 
 ---
 
@@ -366,3 +367,22 @@ added option to individually customize most hidden disk cleanup options, added c
 - updated disable defender and enable for 24h2
   
 - some bug fixes for 24h2
+
+
+### v1.2.7
+
+---
+
+- added dynamic functions to get app icons so its more clear as to what the app is **NOTE** : Not all AppxPackages have an icon
+  
+- split up registry tweaks to show windows 10 and 11 to make it easier to customize 
+  
+- added repair xbox apps to revert tweaks this will download and run the xbox game repair tool
+  
+- added browser installer to post install tweaks to install chrome,brave or firefox
+  
+- the zoicware launcher script will now cache the location of ZOICWARE.ps1 this way it will open instantly after the first time | Location of cache : [C:\Users\Username\zLocation.tmp]
+  
+- added offline mode so that zoicware will skip checking for updates if theres no internet 
+  
+- fixed add new files to context menu on 24h2

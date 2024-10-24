@@ -27,8 +27,8 @@ Want to setup windows like me? Use the pre-made configs [Here](https://github.co
 ---
 
 
-### [USAGE DEMO HERE](https://youtu.be/lHeGY1YfUsQ?list=PLO1RBTJcd5_imH8o0A_Qjzsup1iIB481Z) 
-(needs updating)
+### [USAGE DEMO HERE](https://youtu.be/qtUFZoYkcZ0) 
+
 
 ---
 ### JOIN THE DISCORD

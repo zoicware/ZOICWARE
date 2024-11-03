@@ -21,6 +21,7 @@
   		- [v1.2.5](#v125)   
     		- [v1.2.6](#v126)   
   		-  [v1.2.7](#v127)   
+    		-  [v1.2.8](#v128)     
 
 ---
 
@@ -386,3 +387,18 @@ added option to individually customize most hidden disk cleanup options, added c
 - added offline mode so that zoicware will skip checking for updates if theres no internet 
   
 - fixed add new files to context menu on 24h2
+
+
+### v1.2.8
+
+---
+
+- added additional policies to disable telemetry
+   
+- added pause updates for 1 year to optional tweaks
+  
+- changed windows 10 file explorer tweak to use a registry hack instead of explorer patcher (win 11 tweaks)
+  
+- added restore windows 10 icons this will create a backup of the windows 11 icons on your desktop
+  
+- added dark winver to windows 11 tweaks to replace the standard winver

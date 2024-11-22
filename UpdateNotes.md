@@ -21,7 +21,8 @@
   		- [v1.2.5](#v125)   
     		- [v1.2.6](#v126)   
   		-  [v1.2.7](#v127)   
-    		-  [v1.2.8](#v128)     
+    		-  [v1.2.8](#v128)    
+                -  [v1.2.9](#v129)   
 
 ---
 
@@ -402,3 +403,23 @@ added option to individually customize most hidden disk cleanup options, added c
 - added restore windows 10 icons this will create a backup of the windows 11 icons on your desktop
   
 - added dark winver to windows 11 tweaks to replace the standard winver
+
+
+### v1.2.9
+
+---
+
+- added enable qos for upload to network driver installer, this will cap your upload bandwidth and apply settings to reduce latency under load [Credits @AveYo]
+  
+- revert qos tweak added to restore tweaks
+  
+- added remove troubleshoot compatibility and include in library to context menu tweaks
+  
+- added option to choose between rebar on and off in nvidia autoinstall
+  
+- added install DDU option to nvidia autoinstall, if you choose to run it in safemode the script will reboot you to safemode and ddu will run at startup
+  
+- added release highlights to each of the 4 drivers listed on nvidia autoinstall
+  
+- removed legacy win store from optional tweaks  
+

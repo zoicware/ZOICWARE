@@ -44,7 +44,8 @@
   - [Install Other Scripts](#install-other-scripts)
 
 ## Registry Tweaks
-<img width="300" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/d10d6701-6b68-41ce-875e-82329b880f94">
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/37e6a75c-cc66-4794-a0c1-baad1eeeef43">
 
 - Apply the registry tweaks to automate most windows quality of life and performance settings
 - A registry file will be created on the desktop containing all the registry keys including a comment describing the function of each
@@ -81,7 +82,7 @@
 
 ## Debloat
 
-<img width="380" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/f8f626c5-a16d-480d-8364-fa2447399272">
+<img width="580" alt="image" src="https://github.com/user-attachments/assets/a0aa5afc-2785-4cea-ba52-160ba3a650f7">
 
 - This tweak will allow you to debloat all windows appx packages and other preinstalled apps
 ### Debloat Presets
@@ -107,11 +108,10 @@
      - Clean Start Menu Icons
  
 ## Optional Tweaks
-<img width="250" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/5ccbda0e-0793-45b1-b41c-4819a3d59b16">
 
-<img width="250" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/8461f5a7-f565-45a8-ba79-bbe1713c694a">
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/fd772662-654e-492d-a6b3-83b8fb265e7e">
 
-<img width="250" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/90973fd8-6ca3-4263-b9fe-63490edeb096">
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/520e46ca-11c7-4acf-86d9-9bb7b66f99e6">
 
 
 ### General
@@ -180,8 +180,7 @@
 
   ## Windows 11 Tweaks
 
-<img width="300" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/cb3213af-0677-43fd-9c26-9c05f5f5d67f">
-
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/65b3dccb-000a-4be4-b1ac-98550fcb4788">
 
   ### Patch Explorer
   - **Remove Rounded Edges** - remove rounded edges using [toggle-rounded-corners](https://github.com/oberrich/win11-toggle-rounded-corners) and run at startup
@@ -223,7 +222,9 @@
           - Intel Wifi
 
 ## Install Nvidia Driver
-- This will use [Nvidia Auto Install](https://github.com/zoicware/NvidiaAutoinstall) 
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/84d0ec8a-d07a-4fb4-9a07-8984d55f9445">
+
 ### Features
 - the script will get the 4 latest Nvidia Drivers for the user to choose
 - install older drivers by typing in the version number 

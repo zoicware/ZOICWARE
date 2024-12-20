@@ -23,6 +23,7 @@
   		-  [v1.2.7](#v127)   
     		-  [v1.2.8](#v128)    
                 -  [v1.2.9](#v129)   
+		-  [v1.3.0](#v130)    
 
 ---
 
@@ -423,3 +424,30 @@ added option to individually customize most hidden disk cleanup options, added c
   
 - removed legacy win store from optional tweaks  
 
+
+### v1.3.0
+
+---
+
+- removed debloat locked packages from debloat all preset due to too many bugs on windows 10
+  
+- added check all to remove power plans option
+  
+- all checked list boxes will check on single click
+  
+- added exclusion check before adding zoicware to defender exclusion to speed up the script after the first run
+  
+- added disable ask to allow location for apps (24h2)
+  
+- fixed show all taskbar icons on 24h2
+  
+- fixed hide recommended when using Iot Enterprise
+  
+- added more fancy output
+  
+- nvidia autoinstall will work properly with drivers 566.36 and newer
+  
+- added prevent os upgrade to optional tweaks this will prevent windows update from updating versions Ex. 23h2-24h2
+  
+- added unpause updates, unblock razer and asus, restore default context menu, revert dark winver, enable bell icon to restore tweaks
+  

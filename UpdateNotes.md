@@ -23,7 +23,8 @@
   		-  [v1.2.7](#v127)   
     		-  [v1.2.8](#v128)    
                 -  [v1.2.9](#v129)   
-		-  [v1.3.0](#v130)    
+		-  [v1.3.0](#v130)     
+ 		-  [v1.3.1](#v131)    
 
 ---
 
@@ -450,4 +451,22 @@ added option to individually customize most hidden disk cleanup options, added c
 - added prevent os upgrade to optional tweaks this will prevent windows update from updating versions Ex. 23h2-24h2
   
 - added unpause updates, unblock razer and asus, restore default context menu, revert dark winver, enable bell icon to restore tweaks
+
+
+### v1.3.1
+
+---
+
+- added disable last access time to registry tweaks, this can speed up file explorer on hdds
+  
+- added disable usb power saving for the usb hubs to power tweaks
+  
+- import custom power plan box wont appear if already imported now
+  
+- added remove quick setting tiles above network and volume flyout for 24h2+ (win11 tweaks)
+  
+- added script settings allowing for disabling check for updates, remove scrit location cache, and resetting config
+  
+- added clean nvidia shader cache and remove windows.old folder to ultimate cleanup
+
   

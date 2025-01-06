@@ -939,3 +939,11 @@ E0,F6,C5,D5,0E,CA,50,00,00
 ; Disable background apps win 10
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
 "LetAppsRunInBackground"=dword:00000002
+
+; Disable Windows Spotlight
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\DesktopSpotlight\Settings]
+"EnabledState"=dword:00000000
+
+; Disable Last Access Time
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisableLastAccessUpdate"=dword:00000001

@@ -24,7 +24,8 @@
     		-  [v1.2.8](#v128)    
                 -  [v1.2.9](#v129)   
 		-  [v1.3.0](#v130)     
- 		-  [v1.3.1](#v131)    
+ 		-  [v1.3.1](#v131)   
+   		-  [v1.3.2](#v132)    
  
 ---
 
@@ -468,5 +469,23 @@ added option to individually customize most hidden disk cleanup options, added c
 - added script settings allowing for disabling check for updates, remove scrit location cache, and resetting config
   
 - added clean nvidia shader cache and remove windows.old folder to ultimate cleanup
+
+
+
+### v1.3.2
+
+- updated disable telemetry tweak to disable all autologger providers for diag track
+  
+- added restore default power plans to power tweaks
+  
+- usb power tweaks now displays usb hubs in the correct list as displayed in device manager
+  
+- added fix 3dot flyout in file explorer for 24h2 to win11 reg tweaks
+  
+- added remove system label under start menu apps (win11 tweaks)
+  
+- improved debloat icon algorithm to get icons much faster
+  
+- usb power tweaks now shows devices connected to the hubs
 
   

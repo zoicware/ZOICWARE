@@ -141,3 +141,11 @@
 ; Disable Prompt For Location Privacy
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location]
 "ShowGlobalPrompts"=dword:00000000
+
+;Fix File Explorer 3dot Flyout Bug
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\8\2547961487]
+"EnabledState"=dword:00000001
+"EnabledStateOptions"=dword:00000000
+"Variant"=dword:00000000
+"VariantPayload"=dword:00000000
+"VariantPayloadKind"=dword:00000000

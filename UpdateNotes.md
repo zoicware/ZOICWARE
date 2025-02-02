@@ -25,7 +25,8 @@
                 -  [v1.2.9](#v129)   
 		-  [v1.3.0](#v130)     
  		-  [v1.3.1](#v131)   
-   		-  [v1.3.2](#v132)    
+   		-  [v1.3.2](#v132)  
+     		-  [v1.3.3](#v133)     
  
 ---
 
@@ -473,7 +474,7 @@ added option to individually customize most hidden disk cleanup options, added c
 
 
 ### v1.3.2
-
+---
 - updated disable telemetry tweak to disable all autologger providers for diag track
   
 - added restore default power plans to power tweaks
@@ -487,5 +488,24 @@ added option to individually customize most hidden disk cleanup options, added c
 - improved debloat icon algorithm to get icons much faster
   
 - usb power tweaks now shows devices connected to the hubs
+
+
+
+### v1.3.3
+---
+
+- fixed manually selecting some appxpackages not getting uninstalled
+
+- added run zoicware as trustedinstaller (system priv) to settings options
+
+- added more services to disable: AssignedAccessManager, All Diagnostic Services (breaks troubleshooters), Geolocation and Maps, Netlogon, Parental Controls, Smart Card, Biometric Service, Wallet Service
+
+- updated windows 11 tweaks ui
+
+- removing remote desktop will now continue after 10 seconds if no window is closed
+
+- fixed legacy sharpen not applying sometimes on new drivers
+
+- added search boxes for win 10 and 11 reg tweaks
 
   

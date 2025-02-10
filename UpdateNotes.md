@@ -26,7 +26,8 @@
 		-  [v1.3.0](#v130)     
  		-  [v1.3.1](#v131)   
    		-  [v1.3.2](#v132)  
-     		-  [v1.3.3](#v133)     
+     		-  [v1.3.3](#v133)   
+      		-  [v1.3.4](#v134)    
  
 ---
 
@@ -508,4 +509,29 @@ added option to individually customize most hidden disk cleanup options, added c
 
 - added search boxes for win 10 and 11 reg tweaks
 
-  
+
+
+### v1.3.4
+---
+- fixed wallpaper not changing to black without restart on 24h2 as well as any other visual changes that werent applying before 
+
+- fixed running as trusted installer not working sometimes
+
+- fixed access denied on 3 services in disable services tweak
+
+- updated enable services
+
+- added disable user choice driver to windows 11 reg tweaks, this will allow apps to set themselves as default apps for certain file types
+
+- added black themed user account picture to black theme 
+
+- fixed taskmanager always on top not working on win11
+
+- fixed install microsoft store not working
+
+- hide recommended section now persists even if explorer is restarted and doesnt require a startup task
+
+- added disable powershell logging to optional tweaks this will disable powershell from logging commands ran from the console
+
+- added no gui boot to optional tweaks to disable boot logo, spinning logo, and status messages
+

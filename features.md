@@ -45,7 +45,7 @@
 
 ## Registry Tweaks
 
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/37e6a75c-cc66-4794-a0c1-baad1eeeef43">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/108e6dbb-2c8f-427d-9abc-fbbe93c4c650">
 
 - Apply the registry tweaks to automate most windows quality of life and performance settings
 - A registry file will be created on the desktop containing all the registry keys including a comment describing the function of each
@@ -179,8 +179,13 @@
   - this tweak will allow you to enable any of these to try out
 
   ## Windows 11 Tweaks
+  
+![{51DEC6F8-52C7-4EDE-94F6-CB15A8ECDBF3}](https://github.com/user-attachments/assets/5e1a1ef3-18c1-4349-8bfc-73938ba57436)
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/65b3dccb-000a-4be4-b1ac-98550fcb4788">
+![{134BB0EC-0543-45DC-B269-2FD91B2F8F48}](https://github.com/user-attachments/assets/09b09c97-ef8f-4cd1-afb7-fc1ad099fa83)
+
+![{5A1615D8-1A56-4FC2-BEE4-567F28FAABAB}](https://github.com/user-attachments/assets/dd18e086-44b7-4269-9ec5-6f1349f9a5a7)
+
 
   ### Patch Explorer
   - **Remove Rounded Edges** - remove rounded edges using [toggle-rounded-corners](https://github.com/oberrich/win11-toggle-rounded-corners) and run at startup

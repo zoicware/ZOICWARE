@@ -149,3 +149,7 @@
 "Variant"=dword:00000000
 "VariantPayload"=dword:00000000
 "VariantPayloadKind"=dword:00000000
+
+;Disable User Choice Driver
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\UCPD]
+"Start"=dword:00000004

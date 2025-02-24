@@ -27,7 +27,8 @@
  		-  [v1.3.1](#v131)   
    		-  [v1.3.2](#v132)  
      		-  [v1.3.3](#v133)   
-      		-  [v1.3.4](#v134)    
+      		-  [v1.3.4](#v134)   
+		-  [v1.3.5](#v135)   
  
 ---
 
@@ -534,4 +535,19 @@ added option to individually customize most hidden disk cleanup options, added c
 - added disable powershell logging to optional tweaks this will disable powershell from logging commands ran from the console
 
 - added no gui boot to optional tweaks to disable boot logo, spinning logo, and status messages
+
+
+### v1.3.5
+---
+- added disable windows platform binary table, this prevents laptops and prebuilts from running a set of apps on startup
+
+- win10 task manager now copies the task manager from syswow64 fixing the crash using the previous method
+
+- added run selected reg tweaks and updated the ui, by changing the mode you can either remove certain tweaks from the total list or just run a select few
+
+- added disable notepad tabs and rewrite in win11 tweaks
+
+- added remove old duplicate drivers to ultimate cleanup, if you keep your system clean you likely wont have any
+
+
 

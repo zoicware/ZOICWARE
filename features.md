@@ -45,12 +45,13 @@
 
 ## Registry Tweaks
 
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/108e6dbb-2c8f-427d-9abc-fbbe93c4c650">
+<img width="600" alt="image" src=https://github.com/user-attachments/assets/8fe2786c-b09c-4b51-b513-dda29a3a55b2> 
+
 
 - Apply the registry tweaks to automate most windows quality of life and performance settings
 - A registry file will be created on the desktop containing all the registry keys including a comment describing the function of each
 
-- Build a custom registry file just select any tweaks from the list to remove and import custom tweaks
+- Use the Change Mode button to either remove tweaks from the total list of tweaks ran OR select a few tweaks to run 
 
 **[Registry Tweaks List](registrytweaks.md)**
 ## Group Policy Tweaks

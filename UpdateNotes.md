@@ -28,7 +28,8 @@
    		-  [v1.3.2](#v132)  
      		-  [v1.3.3](#v133)   
       		-  [v1.3.4](#v134)   
-		-  [v1.3.5](#v135)   
+		-  [v1.3.5](#v135)  
+  		-  [v1.3.6](#v136)  
  
 ---
 
@@ -549,5 +550,26 @@ added option to individually customize most hidden disk cleanup options, added c
 
 - added remove old duplicate drivers to ultimate cleanup, if you keep your system clean you likely wont have any
 
+
+
+### v1.3.6
+---
+- improved main ui, optional tweaks, and windows 11 tweaks to be more modern and user friendly (more ui updates to come)
+
+- improved removing scheduled tasks speed 2x as fast now
+
+- updated transparent taskbar to use TranslucentTB NOTE, you may need to restart for the effect to apply
+
+- added disable gamebar popup when xbox app is uninstalled (optional tweaks) [Credits: AveYo]
+
+- fixed disable drivers in windows update not working
+
+- updated disable core isolation in win11 reg tweaks to work properly on 24h2
+
+- windows 10 file explorer ribbon tweak will set the ribbon to be minimized by default now
+
+- added all dependencies to install store so it works for any user
+
+- fixed edge uninstall not working on win10 along with some other improvements 
 
 

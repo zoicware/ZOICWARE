@@ -1,6 +1,7 @@
 # ZOICWARE
 
-![Capture](https://github.com/user-attachments/assets/60a575c7-ac5f-42cb-92d3-e03eaf44a774)
+![zoicware](https://github.com/user-attachments/assets/5cf3c530-0a17-41a3-90d7-140eed3d4295)
+
 
 
 Zoicware is a PowerShell script to customize and tweak Windows 10 and 11. This allows you to choose how you want to setup your Windows installation for productivity and gaming. Zoicware allows for complete control of the tweaks you do to your system and automatically saves these choices to a config that can be saved for future use.

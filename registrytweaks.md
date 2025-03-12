@@ -118,6 +118,8 @@
 - Task Manager Always On Top
 - Disable Windows Automatic Folder Type
 - Disable background apps
+- Disable Windows Spotlight
+- Disable Last Access Time
 
 ### Windows 11
 
@@ -147,3 +149,9 @@
 - Disable show copilot button on task bar
 - Disable background apps win 11
 - Enable End Task in Taskbar context menu
+- Disable Snipping Tool Notification
+- Disable Share App Experiences
+- Set Wallpaper to Solid Color
+- Disable Prompt for Location Privacy
+- Fix File Explorer 3Dot Menu Flyout Bug
+- Disable User Choice Driver

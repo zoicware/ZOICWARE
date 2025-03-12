@@ -80,6 +80,20 @@
 - Radio Management 
 - Windows Insider
 - Tablet Input
+- diagsvc
+- DPS
+- WdiServiceHost
+- WdiSystemHost
+- AssignedAccessManagerSvc
+- MapsBroker
+- lfsvc
+- Netlogon
+- WpcMonSvc
+- SCardSvr
+- ScDeviceEnum
+- SCPolicySvc
+- WbioSrvc
+- WalletService
 
 ## Debloat
 
@@ -122,7 +136,7 @@
 - **Remove Speech Recognition App** - removes the files associated with this app
 - **Enable HAGS** - enable Hardware Accelerated GPU Scheduling, this setting is set to disabled by registry tweaks (recommended)
 - **Transparent Taskbar** - makes the taskbar clear with TaskbarX
-- **Add Double Click to Powershell Files** - enable the ability to double click to run powershell scripts (only works windows 10)
+
 - **Remove Mouse and Sound Schemes** - set the pointer and sound schemes to "None", removes blue loading wheel next to pointer
 - **Security Updates Only** - defers feature updates for 365 days and optional updates for 30 days [MAX]
 - **Remove Quick Access From File Explorer** - remove the quick access icon from file explorer
@@ -134,6 +148,13 @@
  - **Enable Windows 11 Sounds** - replace windows 10 default sounds with windows 11 sounds, a backup folder of the windows 10 sounds will be placed on your desktop 
    - **Note:** Sounds Folder `[C:\Windows\Media]`
 - **Remove Recycle Bin Name** - remove the "Recycle Bin" text from under the icon on the desktop
+- **Security Updates Only** - this will defer cumulative feature updates via group policy so that you only get security updates 
+- **Pause Updates for 1 Year** - this will pause updates for a year as a good alternative to disabling updates completely 
+- **Prevent OS Upgrade** - this will prevent windows update from updating to Windows 11 from Windows 10 or updating a version such as 23h2 -> 24h2
+- **Disable PowerShell Logging** - by default everything put in the powershell terminal is saved in a file in your appdata directory, this will disable that "feature"
+- **Enable No GUI Boot** - this will enable no gui boot in msconfig thus disabling the boot logo, spinning logo, and boot messages
+- **Disable Windows Platform Binary Table** - this is useful for oem prebuilts or laptops where the manufacture has apps that run on startup and install themselves, disabling WPBT prevents this bloat from installing/running
+- **Disable Game Bar Popup** - when uninstalling xbox apps if you plug in a xbox controller an annoying popup will occur, this tweak will disable that [Credit: @AveYo]
 
 ### Ultimate Context Menu
 
@@ -160,12 +181,7 @@
  - **Personalize** - remove the personalize option when right clicking the desktop
  - **Display** - remove the display option when right clicking the desktop
 
- #### Legacy Windows Store
- - **Classic Photo Viewer** - enable the option to view photos when the old photo viewer
- - **Windows 7 Calculator** - enable the windows 7 calculator and remove the uwp one
- - **Windows 7 Task Manager** - enable the windows 7 task manager
- - **Classic Volume Flyout** - enable the old volume controls for Windows 10
- - **Classic Alt Tab** - enable the old Alt tab menu on Windows 10
+ 
 
  ## Import and Remove Power Plans
 
@@ -179,6 +195,10 @@
   `Max Performance Overlay` and `High Performance Overlay` 
   - this tweak will allow you to enable any of these to try out
 
+  ### USB Power Tweaks
+  - this section will display the USB hubs and devices connected
+  - Choose any or all devices to disable power saving
+
   ## Windows 11 Tweaks
   
 ![{51DEC6F8-52C7-4EDE-94F6-CB15A8ECDBF3}](https://github.com/user-attachments/assets/5e1a1ef3-18c1-4349-8bfc-73938ba57436)
@@ -191,8 +211,20 @@
   ### Patch Explorer
   - **Remove Rounded Edges** - remove rounded edges using [toggle-rounded-corners](https://github.com/oberrich/win11-toggle-rounded-corners) and run at startup
   - **Enable Windows 10 Taskbar and Startmenu** - run ExplorerPatcher and automatically apply settings for windows 10 taskbar and startmenu
-  - **Enable Windows 10 File Explorer** - create windows 10 file explorer config on desktop and open explorer patcher menu to import config
-  - **Remove Recommended Section** - this tweak applies a small script on startup to remove the recommended section on the windows 11 startmenu
+  - **Enable Windows 10 File Explorer** - this will use some registry hacks to enable the old Windows 10 File Explorer ribbon when combined with the Enable Windows 10 Icons the full Win10 File Explorer can be restored without having a third party app
+  - **Remove Recommended Section** - this tweak will remove the recommended section from the startmenu by making windows think you are in an education enviroment
+  - **Replace Startmenu and Search with OpenShell** - this tweak will disable windows search and indexing to replace it with OpenShell and import a custom config for a minimal black startmenu, any current pinned shortcuts will be moved to the OpenShell pinned directory
+
+  ### Windows 10 Restore Tweaks
+- **Restore Windows 10 Recycle Bin Icon** - this tweak will replace the windows 11 recycle bin icon with the old windows 10 icon
+
+- **Restore Windows 10 Snipping Tool** - remove uwp snipping tool (screen sktech) and enable windows 10 snipping tool
+
+- **Restore Windows 10 Notepad** - this will enable the legacy windows 10 notepad with the optional feature and automatically set it to be used by default
+
+- **Restore Windows 10 Task Manager** - this will create a fake taskmgr.exe that runs task manager with the -d command thus disabling the new ui, NOTE this tweak works best with UAC disabled due to the fake wrapper needing to be ran as admin
+
+- **Restore Windows 10 Icons** - this tweak will replace all the windows 11 icons in file explorer with windows 10, this tweak works best with the windows 10 file explorer making it look exactly like windows 10 without using a third party app
 
   ### Misc Tweaks
   - **Set all Services to Manual** - this tweak works well on windows 11 to clean up some unnecessary services
@@ -207,15 +239,16 @@
           - WlanSvc
 - **Show all Taskbar Tray Icons** - windows 11 makes it diffcult to show all taskbar tray icons with this tweak all current apps will be shown and and new apps will be enabled upon restarting after installing the app
      - **Note:** this tweak uses a scheduled task to update the registry key responsible for showing the app in the taskbar
-- **Replace Startmenu and Search with OpenShell** - this tweak will disable windows search and indexing to replace it with OpenShell and import a custom config for a minimal black startmenu, any current pinned shortcuts will be moved to the OpenShell pinned directory
-- **Restore Windows 10 Recycle Bin Icon** - this tweak will replace the windows 11 recycle bin icon with the old windows 10 icon
+
+
 - **Disable Bell Icon on Taskbar** - hide the notification bell icon on the taskbar
      - **Note:** this will break the calendar flyout when clicking the date and time
-- **Restore Windows 10 Snipping Tool** - remove uwp snipping tool (screen sktech) and enable windows 10 snipping tool
 
-- **Restore Windows 10 Notepad** - this will replace the latest notepad version with 21h2 Windows 11 notepad since it uses the windows 10 style
+- **Dark Winver** - this will replace winver.exe with a dark themed version view them here -> [Dark Winver](https://github.com/zoicware/WinverDark)
 
-- **Restore Windows 10 Task Manager** - this will replace the windows 11 task manager with the classic windows 10 one
+- **Enable  Edit Quick Setting Tiles** - starting in 24h2 for some reason microsoft disabled editing the quick setting tiles in the volume/network flyout, this tweak will enable the simplfy quick setting tiles setting removing all the useless tiles
+
+- **Remove System Labels From Start Menu Apps** - this tweak will remove the small "System" lables from some apps in the start menu
 
 ## Install Network Driver
 
@@ -226,6 +259,7 @@
           - Intel Lan
           - Killer Lan
           - Intel Wifi
+- After installing the driver a popup will ask if you want to enable QoS for upload, this tweak will enable some network settings to attempt to prioritize game network traffic along with some other networks tweaks to help with bufferbloat [Credit: @AveYo], NOTE: this can be reverted in "Revert Tweaks" if needed
 
 ## Install Nvidia Driver
 
@@ -280,8 +314,12 @@
 - cleans temp files and event logs
 
 ### Features
-- prompt user to clear event viewer logs (yes/no)
+- clear all event viewer logs
 - force deletes files in both temp directories
+- clear all windows logs in places that disk cleanup misses
+- clear nvidia driver shader cache
+- remove the windows.old folder sometimes taking up quite a bit of storage
+- remove old duplicate drivers
 - runs windows disk cleanup util on all drives
      - **Items Cleaned**
           - Active Setup Temp Folders

@@ -30,6 +30,7 @@
       		-  [v1.3.4](#v134)   
 		-  [v1.3.5](#v135)  
   		-  [v1.3.6](#v136)  
+                -  [v1.3.7](#v137)     
  
 ---
 
@@ -572,4 +573,30 @@ added option to individually customize most hidden disk cleanup options, added c
 
 - fixed edge uninstall not working on win10 along with some other improvements 
 
+
+### v1.3.7
+---
+- fixed removing windows.old folder in ultimate cleanup not working
+
+- removed unnecessary dependencies for installing store
+
+- fixed restore windows 10 notepad on newest 24h2 update
+
+- added hide home page in settings to windows 11 tweaks
+
+- switched windows 10 task manager method to a c++ wrapper to run taskmgr -d NOTE: this tweak works best with UAC disabled to avoid the popup 
+
+- fixed disable archive apps getting added multiple times to win11 reg tweaks
+
+- when running all reg tweaks the win10 and win11 reg tweaks will be ran as seperate files now to avoid random keys not applying due to the large reg file
+
+- replaced restart pc button with repair windows, this includes sfc /scannow, dism repair, windows update repair, network repair, icon cache clearing, and check disk repair
+
+- updated nvidia autoinstall ui to use a combobox instead of radio buttons and multiple textbox for patch notes
+
+- fixed nvidia telemetry dll not being deleted
+
+- fixed nvidia settings not importing on new drivers
+
+- updated shader cache size to be 8gb the new default 
 

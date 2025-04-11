@@ -30,7 +30,8 @@
       		-  [v1.3.4](#v134)   
 		-  [v1.3.5](#v135)  
   		-  [v1.3.6](#v136)  
-                -  [v1.3.7](#v137)     
+                -  [v1.3.7](#v137)   
+		-  [v1.3.8](#v138)  
  
 ---
 
@@ -598,5 +599,23 @@ added option to individually customize most hidden disk cleanup options, added c
 
 - fixed nvidia settings not importing on new drivers
 
-- updated shader cache size to be 8gb the new default 
+- updated shader cache size to be 8gb the new default
+
+### v1.3.8
+---
+- added hide ads and useless cards in settings for win11 tweaks [thanks @instead1337 for the help]
+
+- improved install new version of zoicware logic to more reliably launch the new version without errors 
+
+- improved debloat ui
+
+- fixed running debloat option from config removing prohibited packages
+
+- improved power tweaks ui
+
+- added custom amd plan to help with idle pbo stability
+
+- added option to import your own plan from pow file
+
+- show all task tray icons wont popup a powershell window briefly on startup now
 

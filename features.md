@@ -97,7 +97,7 @@
 
 ## Debloat
 
-<img width="580" alt="image" src="https://github.com/user-attachments/assets/a0aa5afc-2785-4cea-ba52-160ba3a650f7">
+<img width="580" alt="image" src="https://github.com/user-attachments/assets/cc0eafa0-e5ab-4ea8-96b5-a99df57bbc7a">
 
 - This tweak will allow you to debloat all windows appx packages and other preinstalled apps
 ### Debloat Presets
@@ -124,9 +124,9 @@
  
 ## Optional Tweaks
 
-<img width="350" alt="image" src="https://github.com/user-attachments/assets/fd772662-654e-492d-a6b3-83b8fb265e7e">
 
-<img width="350" alt="image" src="https://github.com/user-attachments/assets/520e46ca-11c7-4acf-86d9-9bb7b66f99e6">
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/bbf52610-7e97-47b6-aaf2-eca8f10fc9cc">
+
 
 
 ### General
@@ -185,6 +185,10 @@
 
  ## Import and Remove Power Plans
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/9aff0be3-62c9-4e04-8dda-c7c26cd256ac">
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/a50a358b-9ebc-4a74-939c-1224f38997ca">
+
  ### Import Plan
   - Custom power plan for removing power saving features and core parking
   ### Remove Plans
@@ -200,12 +204,7 @@
   - Choose any or all devices to disable power saving
 
   ## Windows 11 Tweaks
-  
-![{51DEC6F8-52C7-4EDE-94F6-CB15A8ECDBF3}](https://github.com/user-attachments/assets/5e1a1ef3-18c1-4349-8bfc-73938ba57436)
-
-![{134BB0EC-0543-45DC-B269-2FD91B2F8F48}](https://github.com/user-attachments/assets/09b09c97-ef8f-4cd1-afb7-fc1ad099fa83)
-
-![{5A1615D8-1A56-4FC2-BEE4-567F28FAABAB}](https://github.com/user-attachments/assets/dd18e086-44b7-4269-9ec5-6f1349f9a5a7)
+  ![{9D9E947F-7893-4161-9E47-5439D18C0AA2}](https://github.com/user-attachments/assets/e530d31b-ffae-4bca-aa26-6cb1275374f6)
 
 
   ### Patch Explorer
@@ -263,7 +262,7 @@
 
 ## Install Nvidia Driver
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/84d0ec8a-d07a-4fb4-9a07-8984d55f9445">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/b8e7c6bb-b3dd-49a1-b861-e776347d1968">
 
 ### Features
 - the script will get the 4 latest Nvidia Drivers for the user to choose
@@ -273,12 +272,18 @@
      - **Note:** Only applies to Strip Driver setting as this file will break geforce experience
 - **Disable HDCP** - disable High-bandwidth Digital Content Protection applies automatically 
 
+
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/2a192877-122a-4fec-be83-c65ea6e03ab8">
+
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/139f87f3-382d-45a9-9540-59f5d0d5a3d7">
+
 #### Post Install Tweaks
 - Import Optimized Nvidia Control Panel Settings
 - Enable Legacy Sharpen to use sharpen without gpu scaling enabled
 - Enable MSI Mode, this tweak also applies when running registry tweaks
 - Disable GPU Idle States only recomended for users that know they need this tweak
 - Apply Digital Vibrance - a slider will allow you to setup digital vibrance on all your monitors, this tweak will apply once restarting
+- Disable Monitor Speakers
 
 ## Install Packages
  - This will download the latest DirectX and C++ packages from their source
@@ -299,6 +304,9 @@
 - Export the config for automated use
 - Import configs and run tweaks automatically with no prompts
 ## Restore Tweaks
+
+![{A4B9511E-A337-41A2-BE46-7699A1DE773A}](https://github.com/user-attachments/assets/01100bfc-3af6-447f-a74c-15d7d903dd62)
+
 ### Enable Updates
 - reverts disable updates tweak and enables all registry keys / services
 ### Enable Defender
@@ -312,6 +320,9 @@
   **Note:** not all registry tweaks can be reverted/should be 
 ## Ultimate Cleanup
 - cleans temp files and event logs
+
+![{A9CC91FB-ADEC-48B0-A17A-BBD0EB67CB22}](https://github.com/user-attachments/assets/b13643f9-017d-456e-81c1-10bdf8d413bb)
+
 
 ### Features
 - clear all event viewer logs

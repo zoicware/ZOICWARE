@@ -32,6 +32,7 @@
   		-  [v1.3.6](#v136)  
                 -  [v1.3.7](#v137)   
 		-  [v1.3.8](#v138)  
+ 		-  [v1.3.9](#v139)   
  
 ---
 
@@ -619,3 +620,21 @@ added option to individually customize most hidden disk cleanup options, added c
 
 - show all task tray icons wont popup a powershell window briefly on startup now
 
+### v1.3.9
+---
+
+- setting services to manual via win11 tweaks will now get more services using registry to set them
+
+- added restart explorer to utilities tab
+
+- added restart to bios to utilities tab
+
+- edge should now not be reinstalled when updating windows
+
+- fixed removing locked packages not working NOTE: there may be a short delay before the locked packages are removed from the list
+
+- added skip install driver button to nvidia autoinstall 
+
+- added disable monitor speakers to nvidia autoinstall
+
+- added way to install hotfix drivers with nvidia autoinstall just add "hf" to the end of the driver version in the text box

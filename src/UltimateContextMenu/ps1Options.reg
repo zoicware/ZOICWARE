@@ -1,0 +1,70 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit]
+"SubCommands"=""
+"MUIVerb"="Run or modify..."
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell]
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\001RunwithPS]
+"MUIVerb"="Run with PowerShell"
+"Icon"="powershell.exe"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\001RunwithPS\Command]
+@="powershell.exe \"-Command\" \"if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & '%1'\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\002RunwithPSElevated]
+"MUIVerb"="Run with PowerShell as administrator"
+"HasLUAShield"=""
+"Icon"="powershell.exe"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\002RunwithPSElevated\Command]
+@="powershell.exe \"-Command\" \"\"& {Start-Process PowerShell.exe -ArgumentList '-ExecutionPolicy RemoteSigned -File \\\"%1\\\"' -Verb RunAs}\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\005EditwithISE]
+"Icon"="powershell_ise.exe"
+"CommandFlags"=dword:00000020
+"MUIVerb"="Open in PowerShell ISE"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\005EditwithISE\Command]
+@="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell_ise.exe \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\006EditwithISEelevated]
+"MUIVerb"="Open in PowerShell ISE as administrator"
+"Icon"="powershell_ise.exe"
+"HasLUAShield"=""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\006EditwithISEelevated\Command]
+@="PowerShell -windowstyle hidden -Command \"Start-Process cmd -ArgumentList '/s,/c,start PowerShell_ISE.exe \"\"%1\"\"'  -Verb RunAs\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\007EditwithISEx86]
+"Icon"="powershell_ise.exe"
+"CommandFlags"=dword:00000020
+"MUIVerb"="Open in PowerShell ISE (x86)"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\007EditwithISEx86\Command]
+@="C:\\Windows\\Syswow64\\WindowsPowerShell\\v1.0\\powershell_ise.exe \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\008EditwithISEx86elevated]
+"MUIVerb"="Open in PowerShell ISE (x86) as administrator"
+"Icon"="powershell_ise.exe"
+"HasLUAShield"=""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\008EditwithISEx86elevated\Command]
+@="PowerShell -windowstyle hidden -Command \"Start-Process cmd -ArgumentList '/s,/c,start %windir%\\syswow64\\WindowsPowerShell\\v1.0\\powershell_ise.exe \"\"%1\"\"'  -Verb RunAs\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\009EditwithNotepad]
+"MUIVerb"="Open in Notepad"
+"Icon"="notepad.exe"
+"CommandFlags"=dword:00000020
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\009EditwithNotepad\Command]
+@="C:\\Windows\\System32\\notepad.exe \"%1\""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\010EditwithNotepadElevated]
+"MUIVerb"="Open in Notepad as administrator"
+"Icon"="notepad.exe"
+"HasLUAShield"=""
+
+[HKEY_LOCAL_MACHINE\Software\Classes\SystemFileAssociations\.ps1\Shell\run_edit\shell\010EditwithNotepadElevated\Command]
+@="PowerShell -windowstyle hidden -Command \"Start-Process cmd -ArgumentList '/s,/c,start notepad.exe \"\"%1\"\"'  -Verb RunAs\""

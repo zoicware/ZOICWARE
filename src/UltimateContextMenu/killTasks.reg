@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\Software\Classes\DesktopBackground\Shell\KillNotResponding]
+"Position"="Top"
+"Icon"="%SystemRoot%\\\\System32\\\\imageres.dll,-98"
+"MUIVerb"="Kill not responding tasks"
+
+[HKEY_LOCAL_MACHINE\Software\Classes\DesktopBackground\Shell\KillNotResponding\Command]
+@="cmd.exe /K taskkill.exe /F /FI \"status eq NOT RESPONDING\""

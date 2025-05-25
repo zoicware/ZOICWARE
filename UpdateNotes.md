@@ -32,7 +32,8 @@
   		-  [v1.3.6](#v136)  
                 -  [v1.3.7](#v137)   
 		-  [v1.3.8](#v138)  
- 		-  [v1.3.9](#v139)   
+ 		-  [v1.3.9](#v139)     
+  		-  [v1.4.0](#v140)   
  
 ---
 
@@ -638,3 +639,20 @@ added option to individually customize most hidden disk cleanup options, added c
 - added disable monitor speakers to nvidia autoinstall
 
 - added way to install hotfix drivers with nvidia autoinstall just add "hf" to the end of the driver version in the text box
+
+### v1.4.0
+---
+- running disk cleanup will now detect if the process is hanging and force close the window [Credits: @instead1337 for the monitoring logic]
+  
+- added use nvidia color for monitor(s) to nvidia autoinstall post tweaks
+  
+- when booting to safe mode to run ddu it will automatically start the cleaning process and restart when done
+  
+- improved windows 10 or 11 detection fixing bugs like windows 11 registry tweaks not applying on server 2025 and others
+  
+- added faster shutdown and restart to optional tweaks, this enables services and apps to be ended sooner when restarting/shutting down
+  
+- improved debloat ui, added removing windows packages,features, and capabilites [NOTE: loading these may take longer than expected on server builds], added removing useless win32 apps
+  
+- added remove windows backup app to optional tweaks NOTE: you will not be able to use a microsoft account to sign into apps such as xbox
+

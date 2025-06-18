@@ -27,6 +27,12 @@ Want to setup windows like me? Use the pre-made configs [Here](https://github.co
 
 ---
 
+> [!NOTE]  
+> The launcher `RUN ZOICWARE.exe` that is included in the zip is [this script](https://github.com/zoicware/ZOICWARE/blob/main/src/RUN%20ZOICWARE.cmd) compressed to an exe using [IExpress.exe](https://en.wikipedia.org/wiki/IExpress)
+> 
+> Anti-viruses will detected this as a trojan due to the nature of compressing a script inside of an exe
+
+
 
 ### [USAGE DEMO HERE](https://youtu.be/qtUFZoYkcZ0) 
 

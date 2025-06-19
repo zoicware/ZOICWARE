@@ -1,6 +1,6 @@
 # ZOICWARE
 
-![zoicware](https://github.com/user-attachments/assets/5cf3c530-0a17-41a3-90d7-140eed3d4295)
+![image](https://github.com/user-attachments/assets/e4b9e6c4-49d9-43a0-821d-892cd83d82d6)
 
 
 

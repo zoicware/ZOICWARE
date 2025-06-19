@@ -34,6 +34,7 @@
 		-  [v1.3.8](#v138)  
  		-  [v1.3.9](#v139)     
   		-  [v1.4.0](#v140)   
+    		-  [v1.4.1](#v141)   
  
 ---
 
@@ -655,4 +656,45 @@ added option to individually customize most hidden disk cleanup options, added c
 - improved debloat ui, added removing windows packages,features, and capabilites [NOTE: loading these may take longer than expected on server builds], added removing useless win32 apps
   
 - added remove windows backup app to optional tweaks NOTE: you will not be able to use a microsoft account to sign into apps such as xbox
+
+
+
+### v1.4.1
+---
+
+ - added hide user tile in start menu to optional tweaks
+   
+ - when uninstalling onedrive any files being backed up by onedrive will be copied to the user folder
+   
+ - added respect power modes to registry tweaks, this will prevent the search indexer from indexing when on battery (for laptops)
+   
+ - added additional registry keys to ensure vbs is disabled (disable vbs in registry tweaks)
+   
+ - added clean outdated store apps to debloat extras and presets, this will remove previous versions of installed appx packages
+   
+ - added disable fault tolerant heap to registry tweaks, this can lower performance on some apps as it is constantly hooked in
+   
+ - added increase max icon cache size to registry tweaks, this will increase the amount of icons that can be cached thus speed up file thumbnail loading
+   
+ - made dark theme in registry tweaks a little darker than the regular dark theme
+    
+ - added show advanced info in BSOD screen to registry tweaks
+   
+ - added block telemetry domains and additional reg keys to disable telemetry
+   
+ - disabling defender will now prevent smart screen from coming back after sfc /scannow
+   
+ - added disable phone companion in start menu to win11 registry tweaks
+   
+ - fixed black theme making text also black this will fix not being able to read certain elements
+    
+ - added enable long paths to registry tweaks
+   
+ - updated disable copilot in win11 reg tweaks to disable all ai features
+   
+ - added use more accurate time server to optional tweaks, this will set the w32tm server to use https://www.pool.ntp.org
+   
+ - updated ngen command to ensure all the current powershell and .net asseblies are installed to a native image (this is ran in the background after installing c++ packages etc..)
+      
+ - added a new theme to the main ui to match the powershell 7 logo, the rest of the ui will be updated in the next update
 

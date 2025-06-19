@@ -34,7 +34,6 @@
 - Disable power throttling
 - Disable Network throttling 
 - Set System responsiveness 0
-- Games scheduling to high priority
 - Turn off hardware accelerated gpu scheduling
 - On Battery optimize video quality
 - Disable animate controls and elements inside windows
@@ -119,13 +118,18 @@
 - Disable Windows Automatic Folder Type
 - Disable background apps
 - Disable Windows Spotlight
-- Disable Last Access Time
+- Disable Last Access Time  
+- Respect Power Modes Search Indexer  
+- Disable Fault Tolerant Heap
+- Increase Icon Cache Size
+- More Info In BSOD Screen
+- Enable Long Paths
 
 ### Windows 11
 
 **Note:** added keys if using windows 11
 - Restore the classic context menu
-- Disable core isolation
+- Disable core isolation (VBS)
 - Disable suggested actions
 - Disable search highlights
 - Disable storage sense
@@ -146,7 +150,7 @@
 - Disable show recently added apps and recommendations
 - Disable ai insights
 - Remove pinned items in network and sound flyout
-- Disable show copilot button on task bar
+- Disable Windows Ai Features
 - Disable background apps win 11
 - Enable End Task in Taskbar context menu
 - Disable Snipping Tool Notification
@@ -155,3 +159,4 @@
 - Disable Prompt for Location Privacy
 - Fix File Explorer 3Dot Menu Flyout Bug
 - Disable User Choice Driver
+- Disable Phone Companion In StartMenu  

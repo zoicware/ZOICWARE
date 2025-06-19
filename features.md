@@ -17,7 +17,6 @@
     - [Ultimate Context Menu](#ultimate-context-menu)
       - [Add to Menu](#add-to-menu)
       - [Remove from Menu](#remove-from-menu)
-      - [Legacy Windows Store](#legacy-windows-store)
   - [Import and Remove Power Plans](#import-and-remove-power-plans)
     - [Import Plan](#import-plan)
     - [Remove Plans](#remove-plans)
@@ -155,6 +154,10 @@
 - **Enable No GUI Boot** - this will enable no gui boot in msconfig thus disabling the boot logo, spinning logo, and boot messages
 - **Disable Windows Platform Binary Table** - this is useful for oem prebuilts or laptops where the manufacture has apps that run on startup and install themselves, disabling WPBT prevents this bloat from installing/running
 - **Disable Game Bar Popup** - when uninstalling xbox apps if you plug in a xbox controller an annoying popup will occur, this tweak will disable that [Credit: @AveYo]
+- **Enable Fast Shutdown and Restart** - this will decrease the delay before sevices and apps are killed to shutdown or restart as well as auto ending open foreground apps without asking
+- **Remove Backup App** - this will disable the backup app that is bundled in the CBS package however you will not be able to use a microsoft account to sign into apps such as xbox
+- **Hide User Tile In Start Menu** - this will hide the user icon in the bottom left of the start menu
+- **User More Accurate Time Server** - this will set the w32tm service to use https://www.pool.ntp.org/ as its time server instead of the default one
 
 ### Ultimate Context Menu
 

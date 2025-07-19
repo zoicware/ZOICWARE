@@ -44,7 +44,9 @@
 
 ## Registry Tweaks
 
-<img width="600" alt="image" src=https://github.com/user-attachments/assets/8fe2786c-b09c-4b51-b513-dda29a3a55b2> 
+<img width="582" height="519" alt="{6B267B8F-C411-46F3-9433-F6715A1B969C}" src="https://github.com/user-attachments/assets/2e4ea222-65ba-48c5-b89f-993ed51dbfe5" />
+
+
 
 
 - Apply the registry tweaks to automate most windows quality of life and performance settings
@@ -96,7 +98,21 @@
 
 ## Debloat
 
-<img width="580" alt="image" src="https://github.com/user-attachments/assets/cc0eafa0-e5ab-4ea8-96b5-a99df57bbc7a">
+<img width="414" height="307" alt="{4B76C016-6329-4B16-9DCA-0779757ED34D}" src="https://github.com/user-attachments/assets/4c4227e2-6578-46c9-acb5-fa8d1a1764f2" />
+
+<img width="414" height="307" alt="{E1589997-2182-4402-AD8F-79B31FF187D9}" src="https://github.com/user-attachments/assets/84255752-1c06-4c83-8aea-b79fbc65b08c" />
+
+<img width="414" height="307" alt="{56231C9E-633D-4519-8DAF-7037EED2FFC4}" src="https://github.com/user-attachments/assets/d6fd5195-5264-40da-89a5-c4d5d9698bcf" />
+
+<img width="414" height="307" alt="{D7D552DA-FA5E-4FC8-B3A8-68CF607F4A72}" src="https://github.com/user-attachments/assets/e6ac4726-381f-48ff-ae95-5ded0189b291" />
+
+
+<img width="414" height="307" alt="{B0D5413E-FFC4-4B79-AAD1-68D7031ADA09}" src="https://github.com/user-attachments/assets/bd398a2d-b619-4e2e-a966-01735c4ab569" />
+
+
+
+
+
 
 - This tweak will allow you to debloat all windows appx packages and other preinstalled apps
 ### Debloat Presets
@@ -123,8 +139,10 @@
  
 ## Optional Tweaks
 
+<img width="589" height="444" alt="{CA823F8D-7283-4868-AAF3-D3A3F3EBBA55}" src="https://github.com/user-attachments/assets/b3b2c54e-12f1-4ef6-83ab-6334fabd6615" />
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/bbf52610-7e97-47b6-aaf2-eca8f10fc9cc">
+
+
 
 
 
@@ -188,9 +206,11 @@
 
  ## Import and Remove Power Plans
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/9aff0be3-62c9-4e04-8dda-c7c26cd256ac">
+ <img width="552" height="407" alt="{C47C20BE-F31F-4D8D-8966-B46980B0BA6B}" src="https://github.com/user-attachments/assets/95233c00-5efb-4a9b-bbca-f49550efa188" />
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/a50a358b-9ebc-4a74-939c-1224f38997ca">
+
+<img width="552" height="407" alt="{57E45D56-8025-4E6D-ABD0-05293850B913}" src="https://github.com/user-attachments/assets/e4e57ffa-b9ab-4831-a405-da0de78c6828" />
+
 
  ### Import Plan
   - Custom power plan for removing power saving features and core parking
@@ -207,7 +227,12 @@
   - Choose any or all devices to disable power saving
 
   ## Windows 11 Tweaks
-  ![{9D9E947F-7893-4161-9E47-5439D18C0AA2}](https://github.com/user-attachments/assets/e530d31b-ffae-4bca-aa26-6cb1275374f6)
+ 
+<img width="402" height="317" alt="{7C5C31D0-67B6-4C5E-974F-8E92DAEAA77E}" src="https://github.com/user-attachments/assets/393e02c1-9920-4f99-b15f-a7ddc40c09b3" />
+
+<img width="402" height="317" alt="{7BCEFFCF-19B3-4B61-ACD0-AA1C68153EB9}" src="https://github.com/user-attachments/assets/3b052d7e-71ec-44e6-86b1-00c18d9788bf" />
+
+<img width="402" height="317" alt="{B015E844-CBB8-4300-B969-9F0174915998}" src="https://github.com/user-attachments/assets/7ef4dc2f-876a-4f71-ac95-6e0481715439" />
 
 
   ### Patch Explorer
@@ -265,7 +290,8 @@
 
 ## Install Nvidia Driver
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/b8e7c6bb-b3dd-49a1-b861-e776347d1968">
+<img width="349" height="294" alt="{DF5532D1-089B-4690-891A-78DFF81512EE}" src="https://github.com/user-attachments/assets/8bfd705a-74ac-472c-b96d-a4c03f8ebfc5" />
+
 
 ### Features
 - the script will get the 4 latest Nvidia Drivers for the user to choose
@@ -296,8 +322,11 @@
           - Net 3.5 from the bootable media used to install windows
 - After they are finished Ngen.exe and DISM are ran to cleanup outdated assemblies
 ## Importing and Exporting Tweaks
-<img width="330" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/1979c64e-c67a-47a5-823d-2446eb9ba006">
-<img width="250" alt="image" src="https://github.com/zoicware/ZOICWARE/assets/118035521/a7f90f3b-e0b1-4dbc-9ab9-35c6fbf279bf">
+
+<img width="365" height="205" alt="{C24651C6-F4FB-4921-A7F9-598E39D8A0EF}" src="https://github.com/user-attachments/assets/c34d7eb6-cf3b-410d-a649-9d073afef286" />
+
+<img width="289" height="407" alt="{0EE377D2-F202-4FE5-AA26-89A21F9D0895}" src="https://github.com/user-attachments/assets/5e977d0d-960f-4964-9cdd-be04967508ef" />
+
 
 - Upon launching the script for the first time a file ZCONFIG.cfg will be created in `[C:\Users\Username\]`
 
@@ -308,7 +337,8 @@
 - Import configs and run tweaks automatically with no prompts
 ## Restore Tweaks
 
-![{A4B9511E-A337-41A2-BE46-7699A1DE773A}](https://github.com/user-attachments/assets/01100bfc-3af6-447f-a74c-15d7d903dd62)
+<img width="496" height="204" alt="{FC59C98B-4849-4066-87F1-AE409422BEC0}" src="https://github.com/user-attachments/assets/7726cd81-7cfc-4d18-ab04-ce3693170a27" />
+
 
 ### Enable Updates
 - reverts disable updates tweak and enables all registry keys / services
@@ -324,7 +354,8 @@
 ## Ultimate Cleanup
 - cleans temp files and event logs
 
-![{A9CC91FB-ADEC-48B0-A17A-BBD0EB67CB22}](https://github.com/user-attachments/assets/b13643f9-017d-456e-81c1-10bdf8d413bb)
+<img width="387" height="309" alt="{9C293C86-4968-4FA2-9B03-4E02564B29AC}" src="https://github.com/user-attachments/assets/fedbb99b-5985-4797-9fd7-f927ce891384" />
+
 
 
 ### Features
@@ -365,6 +396,9 @@
 
 
 ## Install Other Scripts
+
+<img width="252" height="294" alt="{BB7BC9F2-B230-4BBE-B4F6-F141E5C09F46}" src="https://github.com/user-attachments/assets/18757af6-1c7e-4078-a62d-cdd8ca20288a" />
+
 
 - Create a desktop shortcut to some of my other useful scripts for windows tweaking and management 
   

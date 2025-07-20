@@ -35,6 +35,7 @@
  		-  [v1.3.9](#v139)     
   		-  [v1.4.0](#v140)   
     		-  [v1.4.1](#v141)   
+     		-  [v1.4.2](#v142)   
  
 ---
 
@@ -697,4 +698,40 @@ added option to individually customize most hidden disk cleanup options, added c
  - updated ngen command to ensure all the current powershell and .net asseblies are installed to a native image (this is ran in the background after installing c++ packages etc..)
       
  - added a new theme to the main ui to match the powershell 7 logo, the rest of the ui will be updated in the next update
+
+
+### v1.4.2
+---
+- improved debloat appx packages ui to prevent overlapping images
+  
+- fixed disabling defender making context menu and other apps slow
+  
+- excluded windows terminal from debloat presets as its not bloat
+  
+- added black powershell console to registry tweaks to ensure you never get a blue powershell console, if you have terminal this will also remove the tabs
+  
+- added more telemetry domains to block extracted from `ProgramData\Microsoft\Diagnosis\DownloadedSettings\utc.app.json`
+  
+- fixed some html elements in nvidia patch notes
+  
+- added black mouse cursor to black theme
+  
+- added modern cursor scheme to optional tweaks
+  
+- after applying nvidia tweaks the graphics driver will restart to apply color changes
+  
+- some improvements to displaying locked and regular appx packages
+  
+- added disable cross device resume to win11 reg tweaks
+  
+- removed classic theme from optional tweaks
+  
+- added enable dark accents to optional tweaks (assuming you applied dark theme from reg tweaks or black theme already)
+	- this will fix the win32 app controls that still have the default blue color for accents (credits to @krlvm and @WinExperiments)
+   
+- moved disable windows platform binary table tweak to registry tweaks
+  
+- updated all ui's to match the new theme
+  
+- added zUninstaller to debloat this is my take on revo uninstaller written in native powershell NOTE: this is v1.0 so please report any bugs
 

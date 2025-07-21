@@ -124,6 +124,7 @@
 - Increase Icon Cache Size
 - More Info In BSOD Screen
 - Enable Long Paths
+- Disable Windows Platform Binary Table
 
 ### Windows 11
 

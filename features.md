@@ -137,6 +137,14 @@
      - Hello Face, Quick Assist, Steps Recorder
      - Clean Start Menu Icons
  
+### Remove Optional Features
+- Uninstall windows capabilities, optional features, and windows packages.
+
+### zUninstaller
+- Remove installed apps with additional brute force cleaning of leftovers.
+    - The script will search for leftover files and folders after the uninstaller for the app has been ran, since the script could potentially find items that arent related to the app a popup will appear with the found         items allowing for manual selection.
+    - If a item can not be removed with brute force methods and script will run upon the next reboot to remove the file
+ 
 ## Optional Tweaks
 
 <img width="589" height="444" alt="{CA823F8D-7283-4868-AAF3-D3A3F3EBBA55}" src="https://github.com/user-attachments/assets/b3b2c54e-12f1-4ef6-83ab-6334fabd6615" />

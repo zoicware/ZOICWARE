@@ -125,6 +125,7 @@
 - More Info In BSOD Screen
 - Enable Long Paths
 - Disable Windows Platform Binary Table
+- Black PowerShell Console
 
 ### Windows 11
 
@@ -160,4 +161,5 @@
 - Disable Prompt for Location Privacy
 - Fix File Explorer 3Dot Menu Flyout Bug
 - Disable User Choice Driver
-- Disable Phone Companion In StartMenu  
+- Disable Phone Companion In StartMenu
+- Disable Cross Device Resume

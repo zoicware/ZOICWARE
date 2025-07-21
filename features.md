@@ -63,6 +63,7 @@
 - This tweak will disable windows defender and all related services
 ### Disable Windows Telemetry
 - This tweak will disable telemetry with group policy however, this only applies to server and ltsc builds
+- Adds telemetry domains to be blocked via hosts file gathered from official microsoft sources
 - **Note:** other telemetry services and settings are disabled as well
 ## Remove Scheduled Tasks
 - This tweak will remove all scheduled tasks except for SvcRestart and CtfMonitor to avoid issues
@@ -155,8 +156,7 @@
 
 
 ### General
-- **Black Theme** - apply a black color to the taskbar and startmenu
-     - Classic theme will apply a old windows insider theme to enable a retro effect on some windows
+- **Black Theme** - apply a black color to the taskbar and startmenu as well as dark user picture and black themed cursors
 - **Remove Open File Security Warning** - When disabling smart screen windows will default to the old file security warning when opening files from another pc
 - **Remove Speech Recognition App** - removes the files associated with this app
 - **Enable HAGS** - enable Hardware Accelerated GPU Scheduling, this setting is set to disabled by registry tweaks (recommended)
@@ -184,6 +184,8 @@
 - **Remove Backup App** - this will disable the backup app that is bundled in the CBS package however you will not be able to use a microsoft account to sign into apps such as xbox
 - **Hide User Tile In Start Menu** - this will hide the user icon in the bottom left of the start menu
 - **User More Accurate Time Server** - this will set the w32tm service to use https://www.pool.ntp.org/ as its time server instead of the default one
+- **Modern Cursor Theme** - this will add the fluent cursor design from Rectify11
+- **Enable Dark Accents** - this will fix the default blue accents in win32 app controls to match ur theme color
 
 ### Ultimate Context Menu
 

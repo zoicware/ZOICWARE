@@ -1,6 +1,7 @@
 # ZOICWARE
 
-![image](https://github.com/user-attachments/assets/e4b9e6c4-49d9-43a0-821d-892cd83d82d6)
+
+<img width="1917" height="909" alt="Capture" src="https://github.com/user-attachments/assets/f6b049a9-4966-4074-8481-9b5fd25952db" />
 
 
 

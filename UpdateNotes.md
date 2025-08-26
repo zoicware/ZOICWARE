@@ -35,7 +35,8 @@
  		-  [v1.3.9](#v139)     
   		-  [v1.4.0](#v140)   
     		-  [v1.4.1](#v141)   
-     		-  [v1.4.2](#v142)   
+     		-  [v1.4.2](#v142)  
+	   		-  [v1.4.3](#v143)   
  
 ---
 
@@ -735,3 +736,25 @@ added option to individually customize most hidden disk cleanup options, added c
   
 - added zUninstaller to debloat this is my take on revo uninstaller written in native powershell NOTE: this is v1.0 so please report any bugs
 
+
+### v1.4.3
+---
+- fixed webview getting installed after restarting
+
+- added Windows Health and Optimized Experiences service to disabled services
+
+- added disable resume to win11 tweaks this will prevent cross device resume from running forcing windows to fall back to the old startmenu process
+
+- added os install date to winfetch to see how old ur install is
+
+- fixed enabling services not enabling all bluetooth services 
+
+- added small taskbar icons for the latest versions of 11 to win11 tweaks
+
+- added no mouse accel on desktop to optional tweaks, this will get your scaling value and set the mouse settings accordingly NOTE: if you change your scaling without restarting the script will not get the new value
+
+- added automatic ublock origin install and enablement when installing google chrome
+
+- added privacy, telemetry and qol policies to all browsers (chrome, firefox, brave)
+
+- added dlss force latest and enable gsync options to nvidia autoinstall profile settings

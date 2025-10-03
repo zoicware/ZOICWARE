@@ -967,7 +967,7 @@ do {
         $form.Visible = $false
         Restart-Bios
         $form.Visible = $true
-    } -TooltipText 'Repairs various aspects of windows.' -IconPath "$iconDir\BIOS.png"
+    } -TooltipText 'Restarts to BIOS' -IconPath "$iconDir\BIOS.png"
     $utilitiesPanel.Controls.Add($restartBIOS)
 
     # Add panels to main content area
@@ -983,3 +983,4 @@ do {
 
 # Dispose of the form when it's closed
 $form.Dispose()
+

@@ -36,7 +36,8 @@
   		-  [v1.4.0](#v140)   
     		-  [v1.4.1](#v141)   
      		-  [v1.4.2](#v142)  
-	   		-  [v1.4.3](#v143)   
+	   		-  [v1.4.3](#v143)     
+			-  [v1.4.4](#v144)    
  
 ---
 
@@ -758,3 +759,25 @@ added option to individually customize most hidden disk cleanup options, added c
 - added privacy, telemetry and qol policies to all browsers (chrome, firefox, brave)
 
 - added dlss force latest and enable gsync options to nvidia autoinstall profile settings
+
+
+### v1.4.4
+---
+
+- disabling resume will no longer create a scheduled task to kill the process on logon a more simple approach is used now
+
+- fixed black theme not applying on some new builds
+
+- added additional tweaks to reg tweaks (No Web Services In Explorer, No Document History Tracking, Disable Low Disk Space Checks, Disable Publish to Web)
+
+- added additional registry keys to disable telemetry (group policy tweaks)
+
+- added disable dynamic lighting to win11 reg tweaks
+
+- removed pbo tuner files and instead download them when the tweak is ran to avoid defender flagging the driver 
+
+- all local network drivers updated to latest 
+
+- uninstall edge should now work on 25h2 for eu regions
+
+

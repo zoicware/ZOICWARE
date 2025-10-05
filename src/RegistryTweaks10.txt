@@ -953,3 +953,37 @@ E0,F6,C5,D5,0E,CA,50,00,00
 ; Enable Long Paths
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "LongPathsEnabled"=dword:00000001
+
+; Black PowerShell Console
+[HKEY_CURRENT_USER\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe]
+"ColorTable05"=dword:00562401
+"ColorTable06"=dword:00f0edee
+"FaceName"="Consolas"
+"FontFamily"=dword:00000036
+"FontWeight"=dword:00000190
+"PopupColors"=dword:00000087
+"ScreenColors"=dword:00000006
+
+; Disable Windows Platform Binary Table
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
+"DisableWpbtExecution"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager]
+"DisableWpbtExecution"=dword:00000001
+
+; No Web Services In Explorer
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoWebServices"=dword:00000001
+
+; No Document History Tracking
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoRecentDocsHistory"=dword:00000001  
+"ClearRecentDocsOnExit"=dword:00000001
+
+; Disable Low Disk Space Checks
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoLowDiskSpaceChecks"=dword:00000001  
+
+; Disable Publish to Web
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoPublishingWizard"=dword:00000001  

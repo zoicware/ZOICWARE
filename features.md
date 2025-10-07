@@ -402,7 +402,7 @@
           - Device Driver Packages
 ## Activate Windows
 - activates windows 10 and 11 with a generic pro key and public kms server for 180 days
-- **Note:** recomend using [Massgravel](https://github.com/massgravel/Microsoft-Activation-Scripts) for permanent activation
+- **Note:** recommend using [Massgravel](https://github.com/massgravel/Microsoft-Activation-Scripts) for permanent activation
 
 
 ## Install Other Scripts
@@ -415,3 +415,4 @@
 - This shortcut will run the code directly from the github so it will always be up to date
 
 - **NOTE: If you do not disable uac you will need to run the shortcuts as admin**
+

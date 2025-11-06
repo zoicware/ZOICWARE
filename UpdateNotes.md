@@ -37,7 +37,8 @@
     		-  [v1.4.1](#v141)   
      		-  [v1.4.2](#v142)  
 	   		-  [v1.4.3](#v143)     
-			-  [v1.4.4](#v144)    
+			-  [v1.4.4](#v144)      
+			-  [v1.4.5](#v145)    
  
 ---
 
@@ -779,5 +780,30 @@ added option to individually customize most hidden disk cleanup options, added c
 - all local network drivers updated to latest 
 
 - uninstall edge should now work on 25h2 for eu regions
+
+
+### v1.4.5
+---
+
+- added disable webview from running under search host to disable resume tweak (win11 tweaks)
+
+- added deletion of `SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe` for crossdeviceresume and edge updates
+
+- changed all takeown commands to use the universal sid for admin group instead of `Administrators` to avoid lang issues
+
+- added confirmation to remove backup app as many users choose this but use a microsoft account 
+
+- added automatic install of uBlock Lite when installing Google Chrome, its no longer possible to restore MV2 and was causing browser slow-downs anyway
+
+- added Microsoft Usage and Quality Insights service to disable services 
+
+- added set background mouse throttle to 50hz (win11 tweaks), this will increase the background mouse polling rate throttle from 125hz to 50hz 
+
+- added enable new start menu for 25H2
+
+
+
+
+
 
 

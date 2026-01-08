@@ -39,7 +39,8 @@
 	   		-  [v1.4.3](#v143)     
 			-  [v1.4.4](#v144)      
 			-  [v1.4.5](#v145)    
- 
+ 			-  [v1.4.6](#v146)
+			
 ---
 
 ### v1.0.8
@@ -802,6 +803,36 @@ added option to individually customize most hidden disk cleanup options, added c
 - added enable new start menu for 25H2
 
 
+### v1.4.6
+---
+
+- added disable memory compression to registry tweaks (this is just to ensure its forced off as it wasnt active before)
+
+- fixed taskmanager and notepad settings not applying if user has never opened them on the system
+
+- fixed nvcp not being installed on the newest drivers 
+
+- fixed nvcp tray icon not going away after restarting
+
+- fixed uninstalling onedrive on some systems
+
+- fixed adding domains to hosts file not working when its locked
+
+- added disable sleep study to registry tweaks
+
+- moved hide recommended section in start menu to registry tweaks
+
+- moved hide home in settings to registry tweaks
+
+- moved disable resume to registry tweaks
+
+- removed disable bell icon on taskbar (no longer needed) 
+
+- removed windows 10 support
+	- windows 10 registry keys removed from registry tweaks
+	- removed some windows 10 only optional tweaks
+
+- added enable windows 10 sounds on windows 11	
 
 
 

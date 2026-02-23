@@ -39,7 +39,8 @@
 	   		-  [v1.4.3](#v143)     
 			-  [v1.4.4](#v144)      
 			-  [v1.4.5](#v145)    
- 			-  [v1.4.6](#v146)
+ 			-  [v1.4.6](#v146)  
+			-  [v1.4.7](#v147)  
 			
 ---
 
@@ -835,6 +836,43 @@ added option to individually customize most hidden disk cleanup options, added c
 - added enable windows 10 sounds on windows 11	
 
 
+### v1.4.7
+---
+- revert registry tweaks updated
+  
+- added disable use menu and guide buttons in supported apps when using a controller to registry tweaks
+  
+- moved disable hdcp to post install tweaks in nvidia autoinstall (was applied by default before)
+  
+- added disable diag tray in nearby sharing settings to registry tweaks
+  
+- fixed app privacy settings to work on new versions of 25h2 and no longer uses policies
+  
+- fixed disable widgets not working when using a MS account
+  
+- added disable store settings and disable app actions to registry tweaks
+  
+- added disable windows backup settings to registry tweaks (mainly for ms account users)
+  
+- fixed nvcp not downloading for some users
+  
+- updated pause updates for 1 year to really pause by using additional policies, setting services to manual and disabling scheduled tasks NOTE: if you click resume updates in settings only security updates will be installed
+  
+- updated all instances of $env:TEMP to a safer method to avoid errors when user has space(s) in their username
+  
+- added disable device encryption to optional tweaks if you used zISO tweaker this is done properly to the iso
+  
+- added revert new 25h2 start menu to windows 11 tweaks section
+  
+- added disable jumplist when hovering inactive apps in taskbar to registry tweaks
+  
+- added disable do not disturb to registry tweaks as sometimes this is enabled by default on fresh install (bell icon in taskbar)
+  
+- added a few more keys to disable notifications when using a MS account
+  
+- added revert removing backup app, win10 file explorer ribbon, win10 task manager, and enable hvci/vbs
+  
+- classic theme makes a return however now it will not apply a whole theme instead just the classic accents 
 
 
 

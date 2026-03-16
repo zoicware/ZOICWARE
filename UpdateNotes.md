@@ -189,7 +189,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 
 - added minor gui style update
 
-- added remove nofication bell icon from taskbar (Win 11)
+- added remove notification bell icon from taskbar (Win 11)
 	- NOTE: this will break the calendar flyout when clicking on the date and time
 
 - added new tweaks to ultimate context menu in optional tweaks

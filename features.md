@@ -144,7 +144,7 @@
 ### zUninstaller
 - Remove installed apps with additional brute force cleaning of leftovers.
     - The script will search for leftover files and folders after the uninstaller for the app has been ran, since the script could potentially find items that arent related to the app a popup will appear with the found         items allowing for manual selection.
-    - If a item can not be removed with brute force methods and script will run upon the next reboot to remove the file
+    - If an item can not be removed with brute force methods and script will run upon the next reboot to remove the file
  
 ## Optional Tweaks
 
@@ -180,7 +180,7 @@
 - **Enable No GUI Boot** - this will enable no gui boot in msconfig thus disabling the boot logo, spinning logo, and boot messages
 - **Disable Windows Platform Binary Table** - this is useful for oem prebuilts or laptops where the manufacture has apps that run on startup and install themselves, disabling WPBT prevents this bloat from installing/running
 - **Disable Game Bar Popup** - when uninstalling xbox apps if you plug in a xbox controller an annoying popup will occur, this tweak will disable that [Credit: @AveYo]
-- **Enable Fast Shutdown and Restart** - this will decrease the delay before sevices and apps are killed to shutdown or restart as well as auto ending open foreground apps without asking
+- **Enable Fast Shutdown and Restart** - this will decrease the delay before services and apps are killed to shutdown or restart as well as auto ending open foreground apps without asking
 - **Remove Backup App** - this will disable the backup app that is bundled in the CBS package however you will not be able to use a microsoft account to sign into apps such as xbox
 - **Hide User Tile In Start Menu** - this will hide the user icon in the bottom left of the start menu
 - **User More Accurate Time Server** - this will set the w32tm service to use https://www.pool.ntp.org/ as its time server instead of the default one
@@ -249,13 +249,13 @@
   - **Remove Rounded Edges** - remove rounded edges using [toggle-rounded-corners](https://github.com/oberrich/win11-toggle-rounded-corners) and run at startup
   - **Enable Windows 10 Taskbar and Startmenu** - run ExplorerPatcher and automatically apply settings for windows 10 taskbar and startmenu
   - **Enable Windows 10 File Explorer** - this will use some registry hacks to enable the old Windows 10 File Explorer ribbon when combined with the Enable Windows 10 Icons the full Win10 File Explorer can be restored without having a third party app
-  - **Remove Recommended Section** - this tweak will remove the recommended section from the startmenu by making windows think you are in an education enviroment
+  - **Remove Recommended Section** - this tweak will remove the recommended section from the startmenu by making windows think you are in an education environment
   - **Replace Startmenu and Search with OpenShell** - this tweak will disable windows search and indexing to replace it with OpenShell and import a custom config for a minimal black startmenu, any current pinned shortcuts will be moved to the OpenShell pinned directory
 
   ### Windows 10 Restore Tweaks
 - **Restore Windows 10 Recycle Bin Icon** - this tweak will replace the windows 11 recycle bin icon with the old windows 10 icon
 
-- **Restore Windows 10 Snipping Tool** - remove uwp snipping tool (screen sktech) and enable windows 10 snipping tool
+- **Restore Windows 10 Snipping Tool** - remove uwp snipping tool (screen sketch) and enable windows 10 snipping tool
 
 - **Restore Windows 10 Notepad** - this will enable the legacy windows 10 notepad with the optional feature and automatically set it to be used by default
 
@@ -274,7 +274,7 @@
           - WSearch
           - NVDisplay.ContainerLocalSystem
           - WlanSvc
-- **Show all Taskbar Tray Icons** - windows 11 makes it diffcult to show all taskbar tray icons with this tweak all current apps will be shown and and new apps will be enabled upon restarting after installing the app
+- **Show all Taskbar Tray Icons** - windows 11 makes it difficult to show all taskbar tray icons with this tweak all current apps will be shown and and new apps will be enabled upon restarting after installing the app
      - **Note:** this tweak uses a scheduled task to update the registry key responsible for showing the app in the taskbar
 
 
@@ -283,9 +283,9 @@
 
 - **Dark Winver** - this will replace winver.exe with a dark themed version view them here -> [Dark Winver](https://github.com/zoicware/WinverDark)
 
-- **Enable  Edit Quick Setting Tiles** - starting in 24h2 for some reason microsoft disabled editing the quick setting tiles in the volume/network flyout, this tweak will enable the simplfy quick setting tiles setting removing all the useless tiles
+- **Enable  Edit Quick Setting Tiles** - starting in 24h2 for some reason microsoft disabled editing the quick setting tiles in the volume/network flyout, this tweak will enable the simplify quick setting tiles setting removing all the useless tiles
 
-- **Remove System Labels From Start Menu Apps** - this tweak will remove the small "System" lables from some apps in the start menu
+- **Remove System Labels From Start Menu Apps** - this tweak will remove the small "System" labels from some apps in the start menu
 
 ## Install Network Driver
 
@@ -320,7 +320,7 @@
 - Import Optimized Nvidia Control Panel Settings
 - Enable Legacy Sharpen to use sharpen without gpu scaling enabled
 - Enable MSI Mode, this tweak also applies when running registry tweaks
-- Disable GPU Idle States only recomended for users that know they need this tweak
+- Disable GPU Idle States only recommended for users that know they need this tweak
 - Apply Digital Vibrance - a slider will allow you to setup digital vibrance on all your monitors, this tweak will apply once restarting
 - Disable Monitor Speakers
 

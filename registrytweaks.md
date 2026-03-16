@@ -18,7 +18,7 @@
 - Open file explorer to this pc
 - Hide frequent folders in quick access
 - Show file name extensions
-- Disable Search histroy
+- Disable Search history
 - Disable menu show delay
 - Dark theme
 - Disable windows widgets

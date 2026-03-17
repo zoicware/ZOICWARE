@@ -165,7 +165,7 @@
 - **Remove Mouse and Sound Schemes** - set the pointer and sound schemes to "None", removes blue loading wheel next to pointer
 - **Security Updates Only** - defers feature updates for 365 days and optional updates for 30 days [MAX]
 - **Remove Quick Access From File Explorer** - remove the quick access icon from file explorer
- - **Block Razer and ASUS Donwload Servers** - this tweak adds all razer and ASUS servers to the hosts file to prevent the download of their bloat software
+ - **Block Razer and ASUS Download Servers** - this tweak adds all razer and ASUS servers to the hosts file to prevent the download of their bloat software
    - **Note:** the hosts file is located `[C:\Windows\System32\drivers\etc\hosts]`
 - **Remove Network Icon From File Explorer** - remove the network icon from file explorer (bottom left)
  - **Apply PBO Curve on Startup** - this tweak will prompt you to enter your pbo curve oc and will apply this when your pc starts up using PBO Tuner

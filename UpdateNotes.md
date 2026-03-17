@@ -382,7 +382,7 @@ added option to individually customize most hidden disk cleanup options, added c
   
 - added disable windows spotlight to registry tweaks
   
-- added disable snipping tool noti and disable share app experinces for windows 11 regitry tweaks
+- added disable snipping tool noti and disable share app experiences for windows 11 registry tweaks
   
 - updated disable defender and enable for 24h2
   
@@ -700,7 +700,7 @@ added option to individually customize most hidden disk cleanup options, added c
    
  - added use more accurate time server to optional tweaks, this will set the w32tm server to use https://www.pool.ntp.org
    
- - updated ngen command to ensure all the current powershell and .net asseblies are installed to a native image (this is ran in the background after installing c++ packages etc..)
+ - updated ngen command to ensure all the current powershell and .net assemblies are installed to a native image (this is ran in the background after installing c++ packages etc..)
       
  - added a new theme to the main ui to match the powershell 7 logo, the rest of the ui will be updated in the next update
 

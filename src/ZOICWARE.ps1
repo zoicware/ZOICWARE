@@ -149,11 +149,6 @@ function Get-FileFromWeb {
     }
 }
 
-
-
-
-
-
 $currentVersion = 'v1.4.7'
 
 $offlineMode = $false
@@ -171,7 +166,6 @@ if ($offlineMode) {
 else {
     $host.ui.RawUI.WindowTitle = 'ZOICWARE ', $currentVersion  
 }
-
 
 #changes console to black
 function color ($bc, $fc) {
@@ -191,7 +185,6 @@ $padding = ($consoleWidth - 21) / 2
 
 # Create the full title string with padding
 $fullTitle = '~' * [Math]::Floor($padding) + ' ' + 'WELCOME TO ZOICWARE' + ' ' + '~' * [Math]::Ceiling($padding)
-
 
 Write-Host $fullTitle -BackgroundColor White -ForegroundColor Black
 
@@ -229,20 +222,17 @@ catch {
     #defender disabled or stripped
 }
 
-
 #check if settings file is made
 $settingsContent = @'
 #ZOICWARE SCRIPT SETTINGS
 dontCheckUpdates = 0
 '@
   
-  
 $settingsLocation = "$env:USERPROFILE\zSettings.cfg"
 if (!(Test-Path $settingsLocation)) {
     New-Item $settingsLocation -Force | Out-Null
     Set-Content $settingsLocation -Value $settingsContent -Force | Out-Null
 }
-
 
 #read settings file
 $Global:dontCheck4Updates = $false
@@ -306,7 +296,6 @@ if (!$offlineMode -and !$dontCheck4Updates) {
             #no internet
         }
     }
-
 }
 
 if ($null -eq $folder) {
@@ -334,14 +323,10 @@ else {
     exit
 }
    
-
-    
-
 #display neofetch
 winfetch 
 
 #create cfg 
-
 $configContent = @'
 #ZOICWARE TWEAK CONFIG
 installPackages = 0
@@ -438,14 +423,12 @@ newStartMenu = 0
 revertNewStart = 0
 '@
 
-
 $config = "$env:USERPROFILE\ZCONFIG.cfg"
 if (!(Test-Path -Path $config)) {
     Write-Host 'Creating Config to Track User Settings' -NoNewline
     Write-Host " [$config]" -ForegroundColor Yellow
     New-Item -Path $config -ItemType File -Force | Out-Null
     Add-Content -Path $config -Value $configContent -Force
-
 }
 else {
     Write-Host 'Config Location ' -NoNewline
@@ -475,19 +458,11 @@ else {
             }
         }
     }
-
 }
 
-
-
-
-
 function restart-pc {
-
     $msgBoxInput = Custom-MsgBox -message '    Restart PC?' -Type Question
-
     switch ($msgBoxInput) {
-
         'OK' {
             #setting execution policy back to remote signed  
             Reg.exe add 'HKLM\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell' /v 'ExecutionPolicy' /t REG_SZ /d 'RemoteSigned' /f
@@ -495,28 +470,19 @@ function restart-pc {
             #you can guess what this does
             Restart-Computer
         }
-
         'Cancel' {
             Reg.exe add 'HKLM\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell' /v 'ExecutionPolicy' /t REG_SZ /d 'RemoteSigned' /f
             Reg.exe add 'HKLM\SOFTWARE\Wow6432Node\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell' /v 'ExecutionPolicy' /t REG_SZ /d 'RemoteSigned' /f
         }
-
     }
-
 }
-
-
 
 #get icon folder path
 #$Global:iconDir = Search-Directory '*zoicwareIcons'
 $Global:iconDir = "$folder\zoicwareIcons"
 
-
 #do while with gui menu 
-
 do {
-
-
     [void][System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')
     [void][System.Reflection.Assembly]::LoadWithPartialName('System.Drawing')
     [System.Windows.Forms.Application]::EnableVisualStyles()
@@ -548,7 +514,6 @@ do {
             $e.Graphics.FillRectangle($brush, $rect)
             $brush.Dispose()
         })
-
 
     # Add custom form icon
     # $Global:customIcon = Search-File '*Powershell_black.ico'
@@ -591,7 +556,6 @@ do {
             $e.Graphics.FillRectangle($brush, $rect)
             $brush.Dispose()
         })
-
 
     # Create panels for each section (Windows Tweaks, Post Tweak Setup, Utilities)
     $windowsTweaksPanel = New-Object System.Windows.Forms.Panel
@@ -664,8 +628,6 @@ do {
             $e.Graphics.FillRectangle($brush, $rect)
             $brush.Dispose()
         })
-
-
         
     $windowsTweaksButton = Create-ModernButton -Text '  Tweaks' -Location (New-Object Drawing.Point(10, 20)) -Size (New-Object Drawing.Size(130, 40)) -ClickAction {
         $windowsTweaksPanel.Visible = $true
@@ -708,8 +670,6 @@ do {
         $this.Focus()
     } -IconPath "$iconDir\tweaks.png" -borderSize 0 -fontSize 10 -r 47 -g 49 -b 58 
     $sidebarPanel.Controls.Add($utilitiesButton)
-   
-   
 
     # Settings button in sidebar
     $settingsButton = New-Object Windows.Forms.Button
@@ -860,7 +820,7 @@ do {
     $postTweakSetupPanel.Controls.Add($installOptionsLabel)
 
     # Center the buttons
-    $startX = 50
+    $startX = 10
     $button1 = Create-ModernButton -Text '  Install Packages' -Location (New-Object Drawing.Point($startX, 50)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
         $form.Visible = $false
         install-packs
@@ -927,7 +887,7 @@ do {
     $utilitiesLabel.Font = New-Object System.Drawing.Font('Segoe UI', 12, [System.Drawing.FontStyle]::Bold)
     $utilitiesPanel.Controls.Add($utilitiesLabel)
 
-    $restoreButton = Create-ModernButton -Text '  Restore Tweaks' -Location (New-Object Drawing.Point($startX, 50)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
+    $restoreButton = Create-ModernButton -Text '  Restore Tweaks' -Location (New-Object Drawing.Point(10, 50)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
         $form.Visible = $false
         # $restore = Search-File '*Restore.ps1'
         $restore = "$folder\Restore.ps1"
@@ -936,7 +896,7 @@ do {
     } -TooltipText 'Restores previous tweaks.' -IconPath "$iconDir\restore.png"
     $utilitiesPanel.Controls.Add($restoreButton)
 
-    $configButton = Create-ModernButton -Text '  Import/Export Config' -Location (New-Object Drawing.Point(($startX + $buttonWidth + $buttonSpacing), 50)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
+    $configButton = Create-ModernButton -Text '  Import/Export Config' -Location (New-Object Drawing.Point((10 + $buttonWidth + $buttonSpacing), 50)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
         $form.Visible = $false
         # $configUI = Search-File '*configUI.ps1'
         $configUI = "$folder\configUI.ps1"
@@ -945,7 +905,7 @@ do {
     } -TooltipText 'Imports or exports configuration settings.' -IconPath "$iconDir\importExport.png"
     $utilitiesPanel.Controls.Add($configButton)
 
-    $otherscriptsbttn = Create-ModernButton -Text '  Install Scripts' -Location (New-Object Drawing.Point($startX, 90)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
+    $otherscriptsbttn = Create-ModernButton -Text '  Install Scripts' -Location (New-Object Drawing.Point(10, 90)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
         $form.Visible = $false
         # $otherScriptsUI = Search-File '*Install-OtherScripts.ps1'
         $otherScriptsUI = "$folder\Install-OtherScripts.ps1"
@@ -954,21 +914,21 @@ do {
     } -TooltipText 'Installs additional scripts.' -IconPath "$iconDir\scripts.png"
     $utilitiesPanel.Controls.Add($otherscriptsbttn)
 
-    $repairButton = Create-ModernButton -Text '  Repair Windows' -Location (New-Object Drawing.Point(($startX + $buttonWidth + $buttonSpacing), 90)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
+    $repairButton = Create-ModernButton -Text '  Repair Windows' -Location (New-Object Drawing.Point((10 + $buttonWidth + $buttonSpacing), 90)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
         $form.Visible = $false
         Repair-Windows
         $form.Visible = $true
     } -TooltipText 'Repairs various aspects of windows.' -IconPath "$iconDir\repair.png"
     $utilitiesPanel.Controls.Add($repairButton)
 
-    $restartExplorer = Create-ModernButton -Text '  Restart Explorer' -Location (New-Object Drawing.Point(($startX + $buttonWidth + $buttonSpacing), 130)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
+    $restartExplorer = Create-ModernButton -Text '  Restart Explorer' -Location (New-Object Drawing.Point((10 + $buttonWidth + $buttonSpacing), 130)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
         # $form.Visible = $false
         Restart-Explorer
         # $form.Visible = $true
     } -TooltipText 'Restarts Explorer.exe.' -IconPath "$iconDir\explorer.png"
     $utilitiesPanel.Controls.Add($restartExplorer)
 
-    $restartBIOS = Create-ModernButton -Text '  Restart To BIOS' -Location (New-Object Drawing.Point($startX , 130)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
+    $restartBIOS = Create-ModernButton -Text '  Restart To BIOS' -Location (New-Object Drawing.Point(10 , 130)) -Size (New-Object Drawing.Size($buttonWidth, $buttonHeight)) -ClickAction {
         $form.Visible = $false
         Restart-Bios
         $form.Visible = $true
@@ -982,8 +942,6 @@ do {
 
     # Show the form
     $result = $form.ShowDialog()
-
-
 } while ($result -ne [System.Windows.Forms.DialogResult]::Cancel)
 
 # Dispose of the form when it's closed

@@ -124,7 +124,7 @@ $form.Controls.Add($checkbox6)
 
 
 $checkbox7 = New-Object System.Windows.Forms.CheckBox
-$checkbox7.Text = 'Disable Qos for Upload'
+$checkbox7.Text = 'Disable QoS for Upload'
 $checkbox7.ForeColor = 'White'
 $checkbox7.BackColor = [System.Drawing.Color]::Transparent
 $checkbox7.Location = New-Object System.Drawing.Point(190, 80)

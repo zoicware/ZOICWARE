@@ -845,7 +845,7 @@ added option to individually customize most hidden disk cleanup options, added c
   
 - moved disable hdcp to post install tweaks in nvidia autoinstall (was applied by default before)
   
-- added disable diag tray in nearby sharing settings to registry tweaks
+- added disable drag tray in nearby sharing settings to registry tweaks
   
 - fixed app privacy settings to work on new versions of 25h2 and no longer uses policies
   

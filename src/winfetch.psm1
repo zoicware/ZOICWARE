@@ -5,7 +5,7 @@
     <#PSScriptInfo
 .VERSION 2.5.1
 .GUID 27c6f0dd-dbf2-4a3e-90df-a23c3c6c630d
-.AUTHOR Winfetch contributers
+.AUTHOR Winfetch contributors
 .PROJECTURI https://github.com/lptstr/winfetch
 .COMPANYNAME
 .COPYRIGHT

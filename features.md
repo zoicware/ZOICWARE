@@ -128,7 +128,7 @@
      - **Note:** All debloat presets will clean the start menu pinned icons
 
 ### Custom Debloat
-- Choose specfic Appx Packages including locked packages 
+- Choose specific Appx Packages including locked packages 
   - **Note:** locked packages are locked for a reason be careful when removing these
 - Select Additional Options
      - Edge
@@ -183,7 +183,7 @@
 - **Enable Fast Shutdown and Restart** - this will decrease the delay before services and apps are killed to shutdown or restart as well as auto ending open foreground apps without asking
 - **Remove Backup App** - this will disable the backup app that is bundled in the CBS package however you will not be able to use a microsoft account to sign into apps such as xbox
 - **Hide User Tile In Start Menu** - this will hide the user icon in the bottom left of the start menu
-- **User More Accurate Time Server** - this will set the w32tm service to use https://www.pool.ntp.org/ as its time server instead of the default one
+- **Use More Accurate Time Server** - this will set the w32tm service to use https://www.pool.ntp.org/ as its time server instead of the default one
 - **Modern Cursor Theme** - this will add the fluent cursor design from Rectify11
 - **Enable Dark Accents** - this will fix the default blue accents in win32 app controls to match ur theme color
 

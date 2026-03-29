@@ -35,7 +35,7 @@ function Get-FileFromWeb {
                 [Parameter()]
                 [string]$ValueSuffix,
         
-                # Enter bar lengh suffix
+                # Enter bar length suffix
                 [Parameter()]
                 [int]$BarSize = 40,
 

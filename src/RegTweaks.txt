@@ -256,7 +256,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "HideFileExt"=dword:00000000
 
-; Disable Search histroy
+; Disable Search history
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings]
 "IsDeviceSearchHistoryEnabled"=dword:00000000
 

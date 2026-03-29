@@ -227,7 +227,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 - fixed disable defender
 	- with the latest defender update tamper protection has to be turned off before disabling
 	- the script will open the security app and automatically navigate to disable tamper protection
-	- if you dont want or need the script to do it for you feel free to manually disable before runnning the tweak
+	- if you dont want or need the script to do it for you feel free to manually disable before running the tweak
 	- updated enable defender 
 
 - added ultimate cleanup to main script
@@ -266,7 +266,7 @@ ZOICWARE HAS BEEN UPDATED FOR WIN 11!
 	- legacy debloat options will be under "debloat presets"
 
 	- NOTE: Locked Packages may break some features when removed use with caution
-	- NOTE: the extra debloat options are apart of the debloat presets
+	- NOTE: the extra debloat options are a part of the debloat presets
 	- NOTE: some appx packages are excluded from the list to preserve os functionality
 
 --------------------------------------------------------------------------------------------------
@@ -482,7 +482,7 @@ added option to individually customize most hidden disk cleanup options, added c
   
 - added remove quick setting tiles above network and volume flyout for 24h2+ (win11 tweaks)
   
-- added script settings allowing for disabling check for updates, remove scrit location cache, and resetting config
+- added script settings allowing for disabling check for updates, remove script location cache, and resetting config
   
 - added clean nvidia shader cache and remove windows.old folder to ultimate cleanup
 
@@ -599,7 +599,7 @@ added option to individually customize most hidden disk cleanup options, added c
 
 - fixed disable archive apps getting added multiple times to win11 reg tweaks
 
-- when running all reg tweaks the win10 and win11 reg tweaks will be ran as seperate files now to avoid random keys not applying due to the large reg file
+- when running all reg tweaks the win10 and win11 reg tweaks will be ran as separate files now to avoid random keys not applying due to the large reg file
 
 - replaced restart pc button with repair windows, this includes sfc /scannow, dism repair, windows update repair, network repair, icon cache clearing, and check disk repair
 
@@ -660,7 +660,7 @@ added option to individually customize most hidden disk cleanup options, added c
   
 - added faster shutdown and restart to optional tweaks, this enables services and apps to be ended sooner when restarting/shutting down
   
-- improved debloat ui, added removing windows packages,features, and capabilites [NOTE: loading these may take longer than expected on server builds], added removing useless win32 apps
+- improved debloat ui, added removing windows packages,features, and capabilities [NOTE: loading these may take longer than expected on server builds], added removing useless win32 apps
   
 - added remove windows backup app to optional tweaks NOTE: you will not be able to use a microsoft account to sign into apps such as xbox
 
@@ -750,7 +750,7 @@ added option to individually customize most hidden disk cleanup options, added c
 
 - added disable resume to win11 tweaks this will prevent cross device resume from running forcing windows to fall back to the old startmenu process
 
-- added os install date to winfetch to see how old ur install is
+- added os install date to winfetch to see how old your install is
 
 - fixed enabling services not enabling all bluetooth services 
 
@@ -845,7 +845,7 @@ added option to individually customize most hidden disk cleanup options, added c
   
 - moved disable hdcp to post install tweaks in nvidia autoinstall (was applied by default before)
   
-- added disable diag tray in nearby sharing settings to registry tweaks
+- added disable drag tray in nearby sharing settings to registry tweaks
   
 - fixed app privacy settings to work on new versions of 25h2 and no longer uses policies
   

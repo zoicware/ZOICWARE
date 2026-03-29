@@ -124,7 +124,7 @@ $form.Controls.Add($checkbox6)
 
 
 $checkbox7 = New-Object System.Windows.Forms.CheckBox
-$checkbox7.Text = 'Disable Qos for Upload'
+$checkbox7.Text = 'Disable QoS for Upload'
 $checkbox7.ForeColor = 'White'
 $checkbox7.BackColor = [System.Drawing.Color]::Transparent
 $checkbox7.Location = New-Object System.Drawing.Point(190, 80)
@@ -2196,7 +2196,7 @@ Windows Registry Editor Version 5.00
 
 
   if ($checkbox7.Checked) {
-    Write-Status -Message 'Disabling Qos for Upload and Resetting Network Changes...' -Type Output
+    Write-Status -Message 'Disabling QoS for Upload and Resetting Network Changes...' -Type Output
     FixUploadBufferBloat -Disable
   }
 

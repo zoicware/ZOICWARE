@@ -1074,7 +1074,7 @@ function debloat {
   function Remove-ItemForce {
     param($path)
 
-    $isDir = $fase
+    $isDir = $false
     if (Test-Path "$path" -PathType Container) {
       $isDir = $true
     }

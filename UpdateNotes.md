@@ -41,6 +41,7 @@
 			-  [v1.4.5](#v145)    
  			-  [v1.4.6](#v146)  
 			-  [v1.4.7](#v147)  
+			-  [v1.4.8](#v148)  
 			
 ---
 
@@ -872,7 +873,25 @@ added option to individually customize most hidden disk cleanup options, added c
   
 - added revert removing backup app, win10 file explorer ribbon, win10 task manager, and enable hvci/vbs
   
-- classic theme makes a return however now it will not apply a whole theme instead just the classic accents 
+- classic theme makes a return however now it will not apply a whole theme instead just the classic accents
 
 
+
+### v1.4.8
+---
+- added disable dynamic lock to reg tweaks
+- fixed reverting new start menu breaking pinned icons
+- added updated key to restore 24h2 style start menu when using the new builds
+- enabled hags by default in registry tweaks since its no longer buggy for most users
+- updated black powershell console when running with no profile to be properly black and white
+- improved check internet connection function 
+- added disable sticky and filter keys to reg tweaks
+- fixed removing quick setting tiles when user has never opened this flyout before resulting in a broken blank flyout
+- added expand calendar and enable big clock in notification center to reg tweaks
+- added additional reg key to disable useless banner in settings and start menu to hide ads in settings
+- removed remove system labels from start menu apps tweak
+- fixed hiding home from file explorer on new win11 builds 
+- updated disable vbs in reg tweaks to be completely exhaustive (contains all possible keys) 
+- already selected tweaks will now be read from the config and checked in the ui... you can reset the currently read options by resetting them in zoicware settings
+- fixed hosts file being locked when running disable telemetry tweaks (hopefully for the last time)
 

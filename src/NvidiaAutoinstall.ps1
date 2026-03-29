@@ -282,7 +282,7 @@ function Get-FileFromWeb {
                 [Parameter()]
                 [string]$ValueSuffix,
         
-                # Enter bar lengh suffix
+                # Enter bar length suffix
                 [Parameter()]
                 [int]$BarSize = 40,
 
@@ -436,7 +436,7 @@ if (!(Check-Internet)) {
 
     #check if ddu is already installed before asking 
     if (!(Test-Path "$folder\DDU v18.0.8.6\Display Driver Uninstaller.exe")) {
-        Write-Status -message "DDU Not Found in  $folder\DDU v18.0.8.6\Display Driver Uninstaller.exe" -type warning
+        Write-Status -message "DDU Not Found in $folder\DDU v18.0.8.6\Display Driver Uninstaller.exe" -type warning
         #install ddu
         $choice = Custom-MsgBox -message 'Install Display Driver Uninstaller?' -type Question
 
@@ -782,7 +782,7 @@ if (!(Check-Internet)) {
 
 
 
-        #deleting some files from GFExperince folder
+        #deleting some files from GFExperience folder
         if ($stripDriver) {
             Write-Status -Message 'Stripping Driver...'  -Type Output
             if ($selectedDriver -like '*hf*') {

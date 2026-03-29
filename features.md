@@ -144,7 +144,7 @@
 ### zUninstaller
 - Remove installed apps with additional brute force cleaning of leftovers.
     - The script will search for leftover files and folders after the uninstaller for the app has been ran, since the script could potentially find items that arent related to the app a popup will appear with the found         items allowing for manual selection.
-    - If an item can not be removed with brute force methods and script will run upon the next reboot to remove the file
+    - If an item can not be removed with brute force methods a script will run upon the next reboot to remove the file
  
 ## Optional Tweaks
 
@@ -185,7 +185,7 @@
 - **Hide User Tile In Start Menu** - this will hide the user icon in the bottom left of the start menu
 - **Use More Accurate Time Server** - this will set the w32tm service to use https://www.pool.ntp.org/ as its time server instead of the default one
 - **Modern Cursor Theme** - this will add the fluent cursor design from Rectify11
-- **Enable Dark Accents** - this will fix the default blue accents in win32 app controls to match ur theme color
+- **Enable Dark Accents** - this will fix the default blue accents in win32 app controls to match your theme color
 
 ### Ultimate Context Menu
 
@@ -274,7 +274,7 @@
           - WSearch
           - NVDisplay.ContainerLocalSystem
           - WlanSvc
-- **Show all Taskbar Tray Icons** - windows 11 makes it difficult to show all taskbar tray icons with this tweak all current apps will be shown and and new apps will be enabled upon restarting after installing the app
+- **Show all Taskbar Tray Icons** - windows 11 makes it difficult to show all taskbar tray icons with this tweak all current apps will be shown and new apps will be enabled upon restarting after installing the app
      - **Note:** this tweak uses a scheduled task to update the registry key responsible for showing the app in the taskbar
 
 
@@ -283,7 +283,7 @@
 
 - **Dark Winver** - this will replace winver.exe with a dark themed version view them here -> [Dark Winver](https://github.com/zoicware/WinverDark)
 
-- **Enable  Edit Quick Setting Tiles** - starting in 24h2 for some reason microsoft disabled editing the quick setting tiles in the volume/network flyout, this tweak will enable the simplify quick setting tiles setting removing all the useless tiles
+- **Enable Edit Quick Setting Tiles** - starting in 24h2 for some reason microsoft disabled editing the quick setting tiles in the volume/network flyout, this tweak will enable the simplify quick setting tiles setting removing all the useless tiles
 
 - **Remove System Labels From Start Menu Apps** - this tweak will remove the small "System" labels from some apps in the start menu
 

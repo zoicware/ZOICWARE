@@ -1074,7 +1074,7 @@ function debloat {
   function Remove-ItemForce {
     param($path)
 
-    $isDir = $fase
+    $isDir = $false
     if (Test-Path "$path" -PathType Container) {
       $isDir = $true
     }
@@ -1158,7 +1158,7 @@ function debloat {
 
     )
 
-    #less specfic locations takes more time to search but less opportunity for missed files
+    #less specific locations takes more time to search but less opportunity for missed files
     $installDirsBroad = @(
       $env:ProgramData,
       $env:ProgramFiles,
@@ -1168,7 +1168,7 @@ function debloat {
     )
 
     $filter = '*' + ($app.DisplayName -split ' ')[0] + '*'
-    #if the filter is just microsoft it will be too vauge
+    #if the filter is just microsoft it will be too vague
     if ($filter -eq '*Microsoft*') {
       #get the next two words after microsoft
       $filter = '*' + ($app.DisplayName -split ' ', 4)[1..2] + '*'
@@ -1244,7 +1244,7 @@ function debloat {
     )
 
     $name = ($app.DisplayName -split ' ')[0]
-    #if the filter is just microsoft it will be too vauge
+    #if the filter is just microsoft it will be too vague
     if ($name -eq 'Microsoft') {
       #get the next two words after microsoft
       $name = ($app.DisplayName -split ' ', 4)[1..2] -join ''

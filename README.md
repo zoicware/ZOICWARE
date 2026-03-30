@@ -5,9 +5,9 @@
 
 
 
-Zoicware is a PowerShell script to customize and tweak Windows 11. This allows you to choose how you want to setup your Windows installation for productivity and gaming. Zoicware allows for complete control of the tweaks you do to your system and automatically saves these choices to a config that can be saved for future use.
+Zoicware is a PowerShell script to customize and tweak Windows 11. This allows you to choose how you want to set up your Windows installation for productivity and gaming. Zoicware allows for complete control of the tweaks you do to your system and automatically saves these choices to a config that can be saved for future use.
 
-Want to setup windows like me? Use the pre-made configs [Here](https://github.com/zoicware/ZoicwareConfigs)
+Want to set up windows like me? Use the pre-made configs [Here](https://github.com/zoicware/ZoicwareConfigs)
 
 ---
 
@@ -31,7 +31,7 @@ Want to setup windows like me? Use the pre-made configs [Here](https://github.co
 > [!NOTE]  
 > The launcher `RUN ZOICWARE.exe` that is included in the zip is [this script](https://github.com/zoicware/ZOICWARE/blob/main/src/RUN%20ZOICWARE.cmd) compressed to an exe using [IExpress.exe](https://en.wikipedia.org/wiki/IExpress)
 > 
-> Anti-viruses will detected this as a trojan due to the nature of compressing a script inside of an exe
+> Anti-viruses will detect this as a trojan due to the nature of compressing a script inside of an exe
 
 
 

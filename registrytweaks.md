@@ -3,7 +3,7 @@
 ### Windows 10
 
 - Disable UAC
-- Disable Edge Hardware Accel,Run in background, updater services
+- Disable Edge Hardware Accel, Run in background, updater services
 - Disable Chrome Hardware Accel, updater services, enable memory saver
 - Remove chat from taskbar
 - Remove task view from taskbar
@@ -159,7 +159,7 @@
 - Disable Share App Experiences
 - Set Wallpaper to Solid Color
 - Disable Prompt for Location Privacy
-- Fix File Explorer 3Dot Menu Flyout Bug
+- Fix File Explorer 3-Dot Menu Flyout Bug
 - Disable User Choice Driver
 - Disable Phone Companion In StartMenu
 - Disable Cross Device Resume

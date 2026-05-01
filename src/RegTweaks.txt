@@ -53,8 +53,11 @@ Windows Registry Editor Version 5.00
 
 ; Disable snap layout
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"EnableSnapBar"=dword:00000000
+"DITest"=dword:00000000
 "EnableSnapAssistFlyout"=dword:00000000
+"EnableSnapBar"=dword:00000000
+"EnableTaskGroups"=dword:00000000
+"SnapAssist"=dword:00000000
 
 ; Remove gallery shortcut from file explorer
 [-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}]

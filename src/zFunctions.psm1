@@ -6635,7 +6635,7 @@ function OptionalTweaks {
     
     $checkbox8.Location = New-Object System.Drawing.Size(10, 45)
     $checkbox8.Size = New-Object System.Drawing.Size(200, 30)
-    $checkbox8.Text = 'Transparent Task Bar'
+    $checkbox8.Text = 'Transparent Taskbar'
     $checkbox8.ForeColor = 'White'
     $visualGroupBox.Controls.Add($checkbox8)
     
@@ -6662,7 +6662,7 @@ function OptionalTweaks {
     
     $checkbox57.Location = New-Object System.Drawing.Size(10, 145)
     $checkbox57.Size = New-Object System.Drawing.Size(230, 30)
-    $checkbox57.Text = 'Hide User Tile In StartMenu'
+    $checkbox57.Text = 'Hide User Tile In Start Menu'
     $checkbox57.ForeColor = 'White'
     $checkbox57.Checked = $false
     $visualGroupBox.Controls.Add($checkbox57)
@@ -8108,7 +8108,7 @@ function OptionalTweaks {
     
       $drives = Get-BitLockerVolume | Where-Object { $_.ProtectionStatus -eq 'On' -or $_.VolumeStatus -ne 'FullyDecrypted' } 
       if ($drives) {
-        Write-Status -Message 'Bitlocker Enabled... Disabling Bitlocker [This may take a while and Disk Usage WILL be high while decrypting]' -Type Warning
+        Write-Status -Message 'BitLocker Enabled... Disabling BitLocker [This may take a while and Disk Usage WILL be high while decrypting]' -Type Warning
         foreach ($drive in $drives) {
           Disable-BitLocker -MountPoint $drive.MountPoint -ErrorAction SilentlyContinue | Out-Null
         }

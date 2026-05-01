@@ -47,7 +47,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "TaskbarAl"=dword:00000000
 
-
 ; Enable action center
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "DisableNotificationCenter"=-
@@ -56,8 +55,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "EnableSnapBar"=dword:00000000
 "EnableSnapAssistFlyout"=dword:00000000
-
-
 
 ; Remove gallery shortcut from file explorer
 [-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}]
@@ -79,7 +76,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Control Panel\UnsupportedHardwareNotificationCache]
 "SV2"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig] 
+[HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
 "BypassCPUCheck"=dword:00000001
 "BypassRAMCheck"=dword:00000001
 "BypassSecureBootCheck"=dword:00000001
@@ -89,8 +86,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
 "AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
 
-
-; Show more pins
+; Show more pins in start menu
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Start_Layout"=dword:00000001
 
@@ -121,7 +117,7 @@ Windows Registry Editor Version 5.00
 "Microsoft.QuickAction.Cast"=hex(0):
 "Microsoft.QuickAction.ProjectL2"=hex(0):
 
-; Disable Windows AI
+; Disable windows ai
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "ShowCopilotButton"=dword:00000000
 
@@ -144,7 +140,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\WindowsNotepad]
 "DisableAIFeatures"=dword:00000001
 
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced] 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "TaskbarCompanion"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\CopilotKey]
@@ -154,26 +150,25 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDeveloperSettings]
 "TaskbarEndTask"=dword:00000001
 
-
-; Disable Share App Experinces
+; Disable share app experiences
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CDP]
 "RomeSdkChannelUserAuthzPolicy"=dword:00000000
 "NearShareChannelUserAuthzPolicy"=dword:00000000
 "CdpSessionUserAuthzPolicy"=dword:00000000
 
-; Set Wallpaper to Solid Color (11)
+; Set wallpaper to solid color (11)
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers]
 "BackgroundType"=dword:00000001        
 
-; Disable Prompt For Location Privacy
+; Disable prompt for location privacy
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location]
 "ShowGlobalPrompts"=dword:00000000
 
-; Disable User Choice Driver
+; Disable user choice driver
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\UCPD]
 "Start"=dword:00000004
 
-; Disable Phone Companion In StartMenu
+; Disable phone companion in start menu
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start]
 "RightCompanionToggledOpen"=dword:00000000
 
@@ -181,7 +176,7 @@ Windows Registry Editor Version 5.00
 "IsEnabled"=dword:00000000
 "IsAvailable"=dword:00000000
 
-; Disable Cross Device Resume
+; Disable cross device resume
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CrossDeviceResume\Configuration]
 "IsResumeAllowed"=dword:00000000
 "IsOneDriveResumeAllowed"=dword:00000000
@@ -194,20 +189,20 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\8\1694661260]
 "EnabledState"=dword:00000001
 
-; Disable Dynamic Lighting 
+; Disable dynamic lighting
 [HKEY_CURRENT_USER\Software\Microsoft\Lighting]
 "AmbientLightingEnabled"=dword:00000000
 "ControlledByForegroundApp"=dword:00000000
 
-; Disable Memory Compression
+; Disable memory compression
 
-; Disable UAC 
+; Disable user account control
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 "PromptOnSecureDesktop"=dword:00000000
 "EnableLUA"=dword:00000000
 "ConsentPromptBehaviorAdmin"=dword:00000000
 
-; Disable Update apps automatically
+; Disable update apps automatically
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore]
 "AutoDownload"=dword:00000002
 
@@ -244,9 +239,8 @@ Windows Registry Editor Version 5.00
 
 ; Disable show recently opened items in start, jump lists and file explorer
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"Start_TrackDocs"=dword:00000000 
-"Start_TrackProgs"=dword:00000000 
-
+"Start_TrackDocs"=dword:00000000
+"Start_TrackProgs"=dword:00000000
 
 ; Hide frequent folders in quick access
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
@@ -256,7 +250,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "HideFileExt"=dword:00000000
 
-; Disable Search history
+; Disable search history
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings]
 "IsDeviceSearchHistoryEnabled"=dword:00000000
 
@@ -264,7 +258,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "MenuShowDelay"="0"
 
-; Dark theme 
+; Dark theme
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "AppsUseLightTheme"=dword:00000000
 "SystemUsesLightTheme"=dword:00000000
@@ -288,16 +282,16 @@ Windows Registry Editor Version 5.00
 "ColorizationAfterglow"=dword:c4191919
 
 ; Disable windows widgets
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Dsh] 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Dsh]
 "AllowNewsAndInterests"=dword:00000000
 "DisableWidgetsOnLockScreen"=dword:00000000
 "DisableWidgetsBoard"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lock Screen]
-"AutoSelectWidgetsOnLockScreen"=dword:00000000 
-"LockScreenWidgetsEnabled"=dword:00000000 
+"AutoSelectWidgetsOnLockScreen"=dword:00000000
+"LockScreenWidgetsEnabled"=dword:00000000
 
-; 100% DPI Scaling
+; 100% dpi scaling
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "LogPixels"=dword:00000060
 "Win8DpiScaling"=dword:00000000
@@ -311,7 +305,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
 "AppliedDPI"=dword:00000060
 
-; Disable Transparency
+; Disable transparency
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "EnableTransparency"=dword:00000000
 
@@ -341,10 +335,13 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
 "HibernateEnabled"=dword:00000000
 
-; System responsiveness + Network throttling
+; Set system responsiveness to 0
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"SystemResponsiveness"=dword:00000000
+
+; Disable network throttling
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
 "NetworkThrottlingIndex"=dword:ffffffff
-"SystemResponsiveness"=dword:00000000
 
 ; Set appearance options to custom
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
@@ -365,7 +362,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "TaskbarAnimations"=dword:0
 
-; Disable enable Peek
+; Disable enable peek
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
 "EnableAeroPeek"=dword:0
 
@@ -416,7 +413,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\GameBar]
 "AutoGameModeEnabled"=dword:00000001
 
-; Disable Xbox Capture
+; Disable xbox capture
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GameDVR]
 "AudioEncodingBitrate"=dword:0001f400
 "AudioCaptureEnabled"=dword:00000000
@@ -441,141 +438,141 @@ Windows Registry Editor Version 5.00
 "VKMToggleBroadcast"=dword:00000000
 "MicrophoneCaptureEnabled"=dword:00000000
 
-; PRIVACY Location Deny
+; Privacy deny location
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location]
 "Value"="Deny"
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CPSS\Store\UserLocationOverridePrivacySetting]
 "Value"=dword:00000000
 
-; PRIVACY Passkeys Deny
+; Privacy deny passkeys
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\passkeys]
 "Value"="Deny"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\passkeysEnumeration]
 "Value"="Deny"
 
-; PRIVACY Camera Deny
+; Privacy deny camera
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam]
 "Value"="Deny"
 
-; PRIVACY Voice activation Deny
+; Privacy deny voice activation
 [HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps]
 "AgentActivationEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps]
 "AgentActivationLastUsed"=dword:00000000
 
-; PRIVACY Notifications Deny
+; Privacy deny notifications
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userNotificationListener]
 "Value"="Deny"
 
-; PRIVACY Account info Deny
+; Privacy deny account info
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInformation]
 "Value"="Deny"
 
-; PRIVACY Contacts Deny
+; Privacy deny contacts
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\contacts]
 "Value"="Deny"
 
-; PRIVACY Calendar Deny
+; Privacy deny calendar
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appointments]
 "Value"="Deny"
 
-; PRIVACY Phone calls Deny
+; Privacy deny phone calls
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCall]
 "Value"="Deny"
 
-; PRIVACY Call history Deny
+; Privacy deny call history
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCallHistory]
 "Value"="Deny"
 
-; PRIVACY Email Deny
+; Privacy deny email
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\email]
 "Value"="Deny"
 
-; PRIVACY Tasks Deny
+; Privacy deny tasks
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userDataTasks]
 "Value"="Deny"
 
-; PRIVACY Messaging Deny
+; Privacy deny messaging
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\chat]
 "Value"="Deny"
 
-; PRIVACY Radios Deny
+; Privacy deny radios
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\radios]
 "Value"="Deny"
 
-; PRIVACY Deny BluetoothSync and other devices
+; Privacy deny bluetooth sync and other devices
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\bluetoothSync]
 "Value"="Deny"
 
-; PRIVACY App diagnostics Deny
+; Privacy deny app diagnostics
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appDiagnostics]
 "Value"="Deny"
 
-; PRIVACY Documents Deny
+; Privacy deny documents
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\documentsLibrary]
 "Value"="Deny"
 
-; PRIVACY Downloads folder Deny
+; Privacy deny downloads folder
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\downloadsFolder]
 "Value"="Deny"
 
-; PRIVACY Music library Deny
+; Privacy deny music library
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\musicLibrary]
 "Value"="Deny"
 
-; PRIVACY Pictures Deny
+; Privacy deny pictures
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\picturesLibrary]
 "Value"="Deny"
 
-; PRIVACY Videos Deny
+; Privacy deny videos
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\videosLibrary]
 "Value"="Deny"
 
-; PRIVACY File system Deny
+; Privacy deny file system
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\broadFileSystemAccess]
 "Value"="Deny"
 
-; PRIVACY Text and Image Generation Deny
+; Privacy deny text and image generation
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
 "LetAppsAccessSystemAIModels"=dword:00000002
 
-; PRIVACY Human Presence Deny
+; Privacy deny human presence
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
 "LetAppsAccessHumanPresence"=dword:00000002
 
-; PRIVACY BackgroundSpatialPerception Deny
+; Privacy deny background spatial perception
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
 "LetAppsAccessBackgroundSpatialPerception"=dword:00000002
 
-; PRIVACY Eye Tracker Deny
+; Privacy deny eye tracker
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
 "LetAppsAccessGazeInput"=dword:00000002
 
-; PRIVACY GetDiagnosticInfo Deny
+; Privacy deny get diagnostic info
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
 "LetAppsGetDiagnosticInfo"=dword:00000002
 
-; PRIVACY Motion Deny
+; Privacy deny motion
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
 "LetAppsAccessMotion"=dword:00000002
 
-; PRIVACY Background Apps Deny
+; Privacy deny background apps
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
 "LetAppsRunInBackground"=dword:00000002
 
-; Disable Background Apps Global
+; Disable background apps global
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search]
 "BackgroundAppGlobalToggle"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
 
-; Disable let websites show me locally relevant content by accessing my language list 
+; Disable let websites show me locally relevant content by accessing my language list
 [HKEY_CURRENT_USER\Control Panel\International\User Profile]
 "HttpAcceptLanguageOptOut"=dword:00000001
 
-; Disable let windows improve start and search results by tracking app launches  
+; Disable let windows improve start and search results by tracking app launches
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\EdgeUI]
 "DisableMFUTracking"=dword:00000001
 
@@ -598,7 +595,7 @@ Windows Registry Editor Version 5.00
 "NumberOfSIUFInPeriod"=dword:00000000
 "PeriodInNanoSeconds"=-
 
-; Disable store my activity history on this device 
+; Disable store my activity history on this device
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
 "PublishUserActivities"=dword:00000000
 
@@ -665,7 +662,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.LowDisk]
 "Enabled"=dword:00000000
 
-; Disable SubscribedContent
+; Disable subscribed content
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "SubscribedContent-338389Enabled"=dword:00000000
 "SubscribedContent-338388Enabled"=dword:00000000
@@ -705,7 +702,7 @@ Windows Registry Editor Version 5.00
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
 
-; Disable magnifier settings 
+; Disable magnifier settings
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\ScreenMagnifier]
 "FollowCaret"=dword:00000000
 "FollowNarrator"=dword:00000000
@@ -726,7 +723,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Narrator\NoRoam]
 "EchoToggleKeys"=dword:00000000
-
 
 ; Disable narrator
 [HKEY_CURRENT_USER\Software\Microsoft\Narrator\NoRoam]
@@ -759,12 +755,11 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "MultiTaskingAltTabFilter"=dword:00000003
 
-
-; Show Hidden Files
+; Show hidden files
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Hidden"=dword:00000001
 
-; remove picture wallpaper
+; Remove picture wallpaper
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "WallPaper"=""
 
@@ -772,79 +767,77 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Control Panel\Colors]
 "Background"="0 0 0"
 
-; Disable Finish Setting Up Your Device
+; Disable finish setting up your device
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
 "ScoobeSystemSettingEnabled"=dword:00000000
 
-; Disable Lang Hotkey
+; Disable language hotkey
 [HKEY_CURRENT_USER\Keyboard Layout\Toggle]
 "Language Hotkey"="3"
 "Hotkey"="3"
 "Layout Hotkey"="3"
 
-; Disable Lang Bar
+; Disable language bar
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\CTF\LangBar]
 "ShowStatus"=dword:00000003
 
-; Disable Lock Screen Image
+; Disable lock screen image
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
 "DisableLogonBackgroundImage"=dword:00000001
 
-; Disable Search Web Results
+; Disable search web results
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search]
 "BingSearchEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "DisableSearchBoxSuggestions"=dword:00000001
 
-; Disable AutoPlay
+; Disable autoplay
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers]
 "DisableAutoplay"=dword:00000001
 
-; Task Manager Always On Top
+; Task manager always on top
 
-; Disable Web Search
+; Disable web search
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Windows Search]
 "ConnectedSearchUseWeb"=dword:00000000
 "DisableWebSearch"=dword:00000001
 
-; Disable Co Installers
+; Disable co installers
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Installer]
 "DisableCoInstallers"=dword:00000001
 
-; Disable Windows Automatic Folder Type 
+; Disable windows automatic folder type
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
 
-
-; Disable Windows Spotlight
+; Disable windows spotlight
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\DesktopSpotlight\Settings]
 "EnabledState"=dword:00000000
 
-; Disable Last Access Time
+; Disable last access time
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "NtfsDisableLastAccessUpdate"=dword:00000001
 
-; Respect Power Modes Search Indexer
+; Respect power modes search indexer
 
-
-; Disable Fault Tolerant Heap
+; Disable fault tolerant heap
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\FTH]
 "Enabled"=dword:00000000
 
-; Increase Icon Cache Size 
+; Increase icon cache size
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
 "MaxCachedIcons"="4096"
 
-; More Info In BSOD Screen
+; More info on blue screen of death
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl]
 "DisplayParameters"=dword:00000001
 
-; Enable Long Paths
+; Enable long paths
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "LongPathsEnabled"=dword:00000001
 
-; Black PowerShell Console
+; Black powershell console
 [HKEY_CURRENT_USER\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe]
 "ScreenColors"=dword:0000000F
 "ColorTable06"=dword:00ffffff
@@ -855,28 +848,28 @@ Windows Registry Editor Version 5.00
 "ColorTable07"=dword:00ffffff
 "ColorTable00"=dword:00000000
 
-; Disable Windows Platform Binary Table
+; Disable windows platform binary table
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager]
 "DisableWpbtExecution"=dword:00000001
 
-; No Web Services In Explorer
+; No web services in explorer
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "NoWebServices"=dword:00000001
 
-; No Document History Tracking
+; No document history tracking
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
-"NoRecentDocsHistory"=dword:00000001  
+"NoRecentDocsHistory"=dword:00000001
 "ClearRecentDocsOnExit"=dword:00000001
 
-; Disable Low Disk Space Checks
+; Disable low disk space checks
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
-"NoLowDiskSpaceChecks"=dword:00000001  
+"NoLowDiskSpaceChecks"=dword:00000001
 
-; Disable Publish to Web
+; Disable publish to web
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
-"NoPublishingWizard"=dword:00000001  
+"NoPublishingWizard"=dword:00000001
 
-; Disable Home Page in Settings
+; Disable home page in settings
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "SettingsPageVisibility"="hide:home;"
 
@@ -887,18 +880,18 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify]
 "SystemTrayChevronVisibility"=dword:00000000
 
-; Disable Track my Device
+; Disable track my device
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MdmCommon\SettingValues]
 "LocationSyncEnabled"=dword:00000000
 
-; Disable Personalized Offers
+; Disable personalized offers
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy]
 "TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\Store\TailoredExperiencesWithDiagnosticDataEnabled]
 "Value"=dword:00000000
 
-; Disable Data Collection 
+; Disable data collection
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection]
 "AllowTelemetry"=dword:00000001
 "MaxTelemetryAllowed"=dword:00000001
@@ -906,9 +899,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\Store\AllowTelemetry]
 "Value"=dword:00000001
 
-; Disable Startmenu recommendation section
+; Disable start menu recommended section
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"Start_IrisRecommendations"=dword:00000000 
+"Start_IrisRecommendations"=dword:00000000
 "Start_AccountNotifications"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Start]
@@ -920,19 +913,19 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "HideRecommendedSection"=dword:00000001
 
-; Set startmenu apps to list 
+; Set start menu apps view to list
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start]
 "AllAppsViewMode"=dword:00000002
 
-; Disable Explorer Open in New tab
+; Disable explorer open in new tab
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
 "OpenFolderInNewTab"=dword:00000000
 
-; Disable SleepStudy
+; Disable sleep study
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power]
 "SleepStudyDisabled"=dword:00000001
 
-; Disable use view menu as guide button in apps
+; Disable use view and menu as guide button in apps
 [HKEY_CURRENT_USER\Software\Microsoft\GameBar]
 "GamepadNexusChordEnabled"=dword:00000000
 
@@ -943,7 +936,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3895955085]
 "EnabledState"=dword:00000001
 
-; Disable Device Usage
+; Disable device usage
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\business]
 "Intent"=dword:00000000
 
@@ -980,9 +973,9 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\schoolwork]
 "Intent"=dword:00000000
 
-; Disable Store Settings
+; Disable store settings
 
-; Disable App Actions
+; Disable app actions
 
 ; Disable windows backup
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync]
@@ -1011,11 +1004,11 @@ Windows Registry Editor Version 5.00
 "DisableWindowsSettingSyncUserOverride"=dword:00000001
 "EnableWindowsBackup"=dword:00000000
 
-; Disable Jumplist when Hovering Inactive Apps
+; Disable jump list when hovering inactive apps
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "JumplistOnHover"=dword:00000000
 
-; Disable Do Not Disturb
+; Disable do not disturb
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudStore\Store\DefaultAccount\Current\{effb02a5-30db-4615-86e9-4469ac8d51e8}$windows.data.donotdisturb.quiethourssettings\windows.data.donotdisturb.quiethourssettings]
 "Data"=hex(3):43,42,01,00,0A,02,01,00,2A,06,C8,A1,DF,CC,06,2A,2B,0E,5E,43,\
 42,01,00,C2,0A,01,D2,14,28,4D,00,69,00,63,00,72,00,6F,00,73,00,6F,00,66,00,\
@@ -1026,23 +1019,23 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudStore\Store\DefaultAccount\Cloud\{effb02a5-30db-4615-86e9-4469ac8d51e8}$windows.data.donotdisturb.quiethourssettings\windows.data.donotdisturb.quiethourssettings]
 "Data"=hex(3):43,42,01,00,0A,00,26,C8,A1,DF,CC,06,00
 
-; Disable Dynamic Lock
+; Disable dynamic lock
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Winlogon]
 "EnableGoodbye"=dword:00000000
 
-; Disable Sticky Keys
+; Disable sticky keys
 [HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys]
 "Flags"="26"
 
-; Disable Filter Keys
+; Disable filter keys
 [HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
 "AutoRepeatDelay"="0"
 "AutoRepeatRate"="0"
 "DelayBeforeAcceptance"="0"
 "Flags"="26"
 
-; Expand Calendar
+; Expand calendar
 
-; Show Big Clock in Notification Center
+; Show big clock in notification center
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "ShowClockInNotificationCenter"=dword:00000001

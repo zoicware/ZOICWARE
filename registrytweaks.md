@@ -1,52 +1,62 @@
 ## Registry Tweaks Listed
-
-### Windows 10
-
-- Disable UAC
-- Disable Edge Hardware Accel, Run in background, updater services
-- Disable Chrome Hardware Accel, updater services, enable memory saver
+- Restore the classic context menu
+- Disable core isolation (VBS)
+- Disable suggested actions
+- Disable search highlights
+- Disable storage sense
+- Leftmost taskbar
+- Enable action center
+- Disable snap layout
+- Remove gallery shortcut from file explorer
+- Remove home shortcut from file explorer
+- Open file explorer to this pc
+- Disable win 11 system requirements
+- Show more pins in start menu
+- Disable show recently added apps and recommendations
+- Disable ai insights
+- Remove pinned items in network and sound flyout
+- Disable windows ai
+- Enable end task in taskbar right click menu
+- Disable share app experiences
+- Set wallpaper to solid color (11)
+- Disable prompt for location privacy
+- Disable user choice driver
+- Disable phone companion in start menu
+- Disable cross device resume
+- Disable dynamic lighting
+- Disable memory compression
+- Disable user account control
+- Disable update apps automatically
 - Remove chat from taskbar
 - Remove task view from taskbar
 - Remove search from taskbar
 - Remove meet now
-- Remove action center
 - Remove news and interests
-- Show all taskbar icons
 - Always hide most used list in start menu
 - Disable show recently added apps
 - Disable show recently opened items in start, jump lists and file explorer
-- Open file explorer to this pc
 - Hide frequent folders in quick access
 - Show file name extensions
-- Disable Search history
+- Disable search history
 - Disable menu show delay
 - Dark theme
 - Disable windows widgets
-- Set 100% Scaling
-- Disable Transparency
+- 100% dpi scaling
+- Disable fix scaling for apps
+- Disable transparency
 - Sound communications do nothing
 - Disable startup sound
 - Turn off enhance pointer precision
-- Remove logon tasks
 - Disable lock
 - Disable sleep
 - Disable hibernate
-- Disable power throttling
-- Disable Network throttling 
-- Set System responsiveness 0
-- Turn off hardware accelerated gpu scheduling
-- On Battery optimize video quality
-- Disable animate controls and elements inside windows
-- Disable fade or slide menus into view
-- Disable fade or slide tooltips into view
-- Disable fade out menu items after clicking
-- Disable show shadows under mouse pointer
-- Disable show shadows under windows
-- Disable slide open combo boxes
-- Disable smooth-scroll list boxes
+- Set system responsiveness to 0
+- Disable network throttling
+- Set appearance options to custom
 - Disable animate windows when minimizing and maximizing
+- Turn on hardware accelerated gpu scheduling
 - Disable animations in the taskbar
-- Disable enable Peek
+- Disable enable peek
 - Disable save taskbar thumbnail previews
 - Enable show thumbnails instead of icons
 - Disable show translucent selection rectangle
@@ -58,30 +68,37 @@
 - Disable game bar
 - Disable enable open xbox game bar using game controller
 - Enable game mode
-- Privacy Deny Location
-- Privacy Deny Camera
-- Privacy Deny Voice activation
-- Privacy Deny Notifications
-- Privacy Deny Account info
-- Privacy Deny Contacts
-- Privacy Deny Calendar
-- Privacy Deny Phone calls
-- Privacy Deny Call history
-- Privacy Deny Email
-- Privacy Deny Tasks
-- Privacy Deny Messaging
-- Privacy Deny Radios
-- Privacy Deny Other devices
-- Privacy Deny App diagnostics
-- Privacy Deny Automatic file downloads
-- Privacy Deny Documents
-- Privacy Deny Downloads folder
-- Privacy Deny Music library
-- Privacy Deny Pictures
-- Privacy Deny Videos
-- Privacy Deny File system
-- Privacy Deny Screenshot borders
-- Privacy Deny Screenshots and apps
+- Disable xbox capture
+- Privacy deny location
+- Privacy deny passkeys
+- Privacy deny camera
+- Privacy deny voice activation
+- Privacy deny notifications
+- Privacy deny account info
+- Privacy deny contacts
+- Privacy deny calendar
+- Privacy deny phone calls
+- Privacy deny call history
+- Privacy deny email
+- Privacy deny tasks
+- Privacy deny messaging
+- Privacy deny radios
+- Privacy deny bluetooth sync and other devices
+- Privacy deny app diagnostics
+- Privacy deny documents
+- Privacy deny downloads folder
+- Privacy deny music library
+- Privacy deny pictures
+- Privacy deny videos
+- Privacy deny file system
+- Privacy deny text and image generation
+- Privacy deny human presence
+- Privacy deny background spatial perception
+- Privacy deny eye tracker
+- Privacy deny get diagnostic info
+- Privacy deny motion
+- Privacy deny background apps
+- Disable background apps global
 - Disable let websites show me locally relevant content by accessing my language list
 - Disable let windows improve start and search results by tracking app launches
 - Disable personal inking and typing dictionary
@@ -91,75 +108,62 @@
 - Disable cloud content search for work or school account
 - Disable cloud content search for microsoft account
 - Disable notifications
-- Disable focus assist
-- Disable magnifier 
-- Disable narrator 
+- Disable subscribed content
+- Remove logons
+- Disable magnifier settings
+- Disable narrator settings
+- Disable narrator
 - Disable driver searching
-- Disable nvidia tray icon
 - Disable automatic maintenance
 - Disable use my sign in info after restart
 - Disable automatically update maps
 - Alt tab open windows only
-- Show Hidden Files
-- Set wallpaper black
-- Disable Finish Setting Up Your Device
-- Disable Input Switch Noti
-- Disable Lock Screen Noti
-- Disable Lang Hotkey
-- Disable Auto Play Noti
-- Disable Lang Bar
-- Disable Lock Screen Image
-- Disable Search Web Results
-- Disable AutoPlay
-- Remove Delayed Start From Indexer
-- Prevent MSDT Exploit
-- Remove 3D Objects Folder
-- Task Manager Always On Top
-- Disable Windows Automatic Folder Type
-- Disable background apps
-- Disable Windows Spotlight
-- Disable Last Access Time  
-- Respect Power Modes Search Indexer  
-- Disable Fault Tolerant Heap
-- Increase Icon Cache Size
-- More Info In BSOD Screen
-- Enable Long Paths
-- Disable Windows Platform Binary Table
-- Black PowerShell Console
-
-### Windows 11
-
-**Note:** added keys if using windows 11
-- Restore the classic context menu
-- Disable core isolation (VBS)
-- Disable suggested actions
-- Disable search highlights
-- Disable storage sense
-- Leftmost taskbar
-- Disable OneDrive noti
-- Disable show whats new after update
-- Enable action center
-- Disable snap layout
-- Disable suggested content in settings
-- Disable account noti
-- Remove gallery shortcut from file explorer
-- Remove home shortcut from file explorer
-- Open file explorer to this pc
-- Disable win 11 system requirements
-- Disable pre installed apps
-- Disable start menu tips and recommendations
-- Show more pins in startmenu
-- Disable show recently added apps and recommendations
-- Disable ai insights
-- Remove pinned items in network and sound flyout
-- Disable Windows Ai Features
-- Disable background apps win 11
-- Enable End Task in Taskbar context menu
-- Disable Snipping Tool Notification
-- Disable Share App Experiences
-- Set Wallpaper to Solid Color
-- Disable Prompt for Location Privacy
-- Fix File Explorer 3-Dot Menu Flyout Bug
-- Disable User Choice Driver
-- Disable Phone Companion In StartMenu
-- Disable Cross Device Resume
+- Show hidden files
+- Remove picture wallpaper
+- Set background black
+- Disable finish setting up your device
+- Disable language hotkey
+- Disable language bar
+- Disable lock screen image
+- Disable search web results
+- Disable autoplay
+- Task manager always on top
+- Disable web search
+- Disable co installers
+- Disable windows automatic folder type
+- Disable windows spotlight
+- Disable last access time
+- Respect power modes search indexer
+- Disable fault tolerant heap
+- Increase icon cache size
+- More info on blue screen of death
+- Enable long paths
+- Black powershell console
+- Disable windows platform binary table
+- No web services in explorer
+- No document history tracking
+- Disable low disk space checks
+- Disable publish to web
+- Disable home page in settings
+- Show all taskbar icons
+- Disable track my device
+- Disable personalized offers
+- Disable data collection
+- Disable start menu recommended section
+- Set start menu apps view to list
+- Disable explorer open in new tab
+- Disable sleep study
+- Disable use view and menu as guide button in apps
+- Disable drag tray
+- Disable device usage
+- Disable store settings
+- Disable app actions
+- Disable windows backup
+- Disable jump list when hovering inactive apps
+- Disable do not disturb
+- Disable dynamic lock
+- Disable sticky keys
+- Disable filter keys
+- Expand calendar
+- Show big clock in notification center
+- Disable archive apps

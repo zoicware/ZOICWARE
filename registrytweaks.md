@@ -167,3 +167,4 @@
 - Expand calendar
 - Show big clock in notification center
 - Disable archive apps
+- Remove resume from taskbar

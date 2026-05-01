@@ -317,6 +317,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation]
 "DisableStartupSound"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\EditionOverrides]
+"UserSetting_DisableStartupSound"=dword:00000001
+
 ; Turn off enhance pointer precision
 [HKEY_CURRENT_USER\Control Panel\Mouse]
 "MouseSpeed"="0"
@@ -1039,3 +1042,7 @@ Windows Registry Editor Version 5.00
 ; Show big clock in notification center
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "ShowClockInNotificationCenter"=dword:00000001
+
+; Remove resume from taskbar
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"IsEnabled"=dword:00000000

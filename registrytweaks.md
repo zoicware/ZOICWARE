@@ -166,4 +166,5 @@
 - Disable filter keys
 - Expand calendar
 - Show big clock in notification center
+- Remove resume from taskbar
 - Disable archive apps

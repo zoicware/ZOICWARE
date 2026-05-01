@@ -317,6 +317,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation]
 "DisableStartupSound"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\EditionOverrides]
+"UserSetting_DisableStartupSound"=dword:00000001
+
 ; Turn off enhance pointer precision
 [HKEY_CURRENT_USER\Control Panel\Mouse]
 "MouseSpeed"="0"

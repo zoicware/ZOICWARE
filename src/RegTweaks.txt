@@ -1042,3 +1042,7 @@ Windows Registry Editor Version 5.00
 ; Show big clock in notification center
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "ShowClockInNotificationCenter"=dword:00000001
+
+; Remove resume from taskbar
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"IsEnabled"=dword:00000000

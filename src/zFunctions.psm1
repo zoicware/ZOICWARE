@@ -5371,27 +5371,27 @@ function import-reg {
               $Global:blackWallpaper = $true
             }
 
-            if ($name[1].trim() -eq 'Task Manager Always On Top') {
+            if ($name[1].trim() -eq 'Task manager always on top') {
               $Global:taskMgrOnTop = $true
             }
 
-            if ($name[1].trim() -eq 'Respect Power Modes Search Indexer') {
+            if ($name[1].trim() -eq 'Respect power modes search indexer') {
               $Global:PowerModes = $true
             }
 
-            if ($name[1].trim() -eq 'Disable Fault Tolerant Heap') {
+            if ($name[1].trim() -eq 'Disable fault tolerant heap') {
               $Global:FTH = $true
             }
 
-            if ($name[1].trim() -eq 'Black PowerShell Console') {
+            if ($name[1].trim() -eq 'Black powershell console') {
               $Global:Terminal = $true
             }
 
-            if ($name[1].trim() -eq 'Disable Memory Compression') { 
+            if ($name[1].trim() -eq 'Disable memory compression') { 
               $Global:memCompress = $true
             }
 
-            if ($name[1].trim() -eq 'Disable SleepStudy') { 
+            if ($name[1].trim() -eq 'Disable sleep study') { 
               $Global:sleepstudy = $true
             }
 
@@ -5399,11 +5399,11 @@ function import-reg {
               $Global:widgets = $true
             }
 
-            if ($name[1].trim() -eq 'Disable Store Settings') { 
+            if ($name[1].trim() -eq 'Disable store settings') { 
               $Global:storesettings = $true
             }
 
-            if ($name[1].trim() -eq 'Disable App Actions') { 
+            if ($name[1].trim() -eq 'Disable app actions') { 
               $Global:appactions = $true
             }
 
@@ -5411,11 +5411,11 @@ function import-reg {
               $Global:backupsettings = $true
             }
 
-            if ($name[1].trim() -eq 'Disable Windows AI') {   
+            if ($name[1].trim() -eq 'Disable windows ai') {   
               $Global:winai = $true
             }
 
-            if ($name[1].trim() -eq 'Disable Do Not Disturb') {   
+            if ($name[1].trim() -eq 'Disable do not disturb') {   
               $Global:DND = $true
             }
 
@@ -5423,7 +5423,7 @@ function import-reg {
               $Global:hardwareaccel = $true
             }
 
-            if ($name[1].trim() -eq 'Expand Calendar') {    
+            if ($name[1].trim() -eq 'Expand calendar') {    
               $Global:expandCalendar = $true
             }
             
@@ -5474,27 +5474,27 @@ function import-reg {
               $Global:blackWallpaper = $true
             }
 
-            if ($name[1].trim() -eq 'Task Manager Always On Top') {
+            if ($name[1].trim() -eq 'Task manager always on top') {
               $Global:taskMgrOnTop = $true
             }
 
-            if ($name[1].trim() -eq 'Respect Power Modes Search Indexer') {
+            if ($name[1].trim() -eq 'Respect power modes search indexer') {
               $Global:PowerModes = $true
             }
 
-            if ($name[1].trim() -eq 'Disable Fault Tolerant Heap') {
+            if ($name[1].trim() -eq 'Disable fault tolerant heap') {
               $Global:FTH = $true
             }
 
-            if ($name[1].trim() -eq 'Black PowerShell Console') {
+            if ($name[1].trim() -eq 'Black powershell console') {
               $Global:Terminal = $true
             }
 
-            if ($name[1].trim() -eq 'Disable Memory Compression') { 
+            if ($name[1].trim() -eq 'Disable memory compression') { 
               $Global:memCompress = $true
             }
 
-            if ($name[1].trim() -eq 'Disable SleepStudy') { 
+            if ($name[1].trim() -eq 'Disable sleep study') { 
               $Global:sleepstudy = $true
             }
 
@@ -5502,11 +5502,11 @@ function import-reg {
               $Global:widgets = $true
             }
 
-            if ($name[1].trim() -eq 'Disable Store Settings') { 
+            if ($name[1].trim() -eq 'Disable store settings') { 
               $Global:storesettings = $true
             }
 
-            if ($name[1].trim() -eq 'Disable App Actions') { 
+            if ($name[1].trim() -eq 'Disable app actions') { 
               $Global:appactions = $true
             }
 
@@ -5514,11 +5514,11 @@ function import-reg {
               $Global:backupsettings = $true
             }
 
-            if ($name[1].trim() -eq 'Disable Windows AI') {  
+            if ($name[1].trim() -eq 'Disable windows ai') {  
               $Global:winai = $true
             }
 
-            if ($name[1].trim() -eq 'Disable Do Not Disturb') {   
+            if ($name[1].trim() -eq 'Disable do not disturb') {   
               $Global:DND = $true
             }
 
@@ -5526,7 +5526,7 @@ function import-reg {
               $Global:hardwareaccel = $true
             }
 
-            if ($name[1].trim() -eq 'Expand Calendar') {    
+            if ($name[1].trim() -eq 'Expand calendar') {    
               $Global:expandCalendar = $true
             }
           }

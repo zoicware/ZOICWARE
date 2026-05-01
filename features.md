@@ -156,36 +156,31 @@
 
 
 ### General
-- **Black Theme** - apply a black color to the taskbar and startmenu as well as dark user picture and black themed cursors
-- **Remove Open File Security Warning** - When disabling smart screen windows will default to the old file security warning when opening files from another pc
-- **Remove Speech Recognition App** - removes the files associated with this app
-- **Enable HAGS** - enable Hardware Accelerated GPU Scheduling, this setting is set to disabled by registry tweaks (recommended)
-- **Transparent Taskbar** - makes the taskbar clear with TaskbarX
-
-- **Remove Mouse and Sound Schemes** - set the pointer and sound schemes to "None", removes blue loading wheel next to pointer
-- **Security Updates Only** - defers feature updates for 365 days and optional updates for 30 days [MAX]
-- **Remove Quick Access From File Explorer** - remove the quick access icon from file explorer
- - **Block Razer and ASUS Download Servers** - this tweak adds all razer and ASUS servers to the hosts file to prevent the download of their bloat software
-   - **Note:** the hosts file is located `[C:\Windows\System32\drivers\etc\hosts]`
+- **Black Theme** - applies a black color to the taskbar and start menu as well as dark user picture and black themed cursors
+- **Transparent Taskbar** - makes the taskbar clear with TranslucentTB
 - **Remove Network Icon From File Explorer** - remove the network icon from file explorer (bottom left)
- - **Apply PBO Curve on Startup** - this tweak will prompt you to enter your pbo curve oc and will apply this when your pc starts up using PBO Tuner
- - **Do Not Include Drivers in Windows Update** - prevent drivers from being downloaded when checking for updates
- - **Enable Windows 11 Sounds** - replace windows 10 default sounds with windows 11 sounds, a backup folder of the windows 10 sounds will be placed on your desktop 
-   - **Note:** Sounds Folder `[C:\Windows\Media]`
 - **Remove Recycle Bin Name** - remove the "Recycle Bin" text from under the icon on the desktop
-- **Security Updates Only** - this will defer cumulative feature updates via group policy so that you only get security updates 
-- **Pause Updates for 1 Year** - this will pause updates for a year as a good alternative to disabling updates completely 
-- **Prevent OS Upgrade** - this will prevent windows update from updating to Windows 11 from Windows 10 or updating a version such as 23h2 -> 24h2
+- **Remove Mouse and Sound Schemes** - set the pointer and sound schemes to "None", removes blue loading wheel next to pointer
+- **Hide User Tile In Start Menu** - this will hide the user icon in the bottom left of the start menu
+- **Modern Cursor Scheme** - this will add the fluent cursor design from Rectify11
+- **Enable Dark Accents** - this will fix the default blue accents in win32 app controls to match your theme color
+- **Enable Classic Accents** - applies the Windows XP/2000 classic navy blue to win32 app controls like menus, highlights, and hover states
+- **Do Not Include Drivers in Windows Update** - prevent drivers from being downloaded when checking for updates
+- **Security Updates Only** - defers feature updates for 365 days and optional updates for 30 days [MAX]
+- **Pause Updates for 1 Year** - this will pause updates for a year as a good alternative to disabling updates completely
+- **Prevent OS Upgrade** - this will prevent Windows update from updating Windows 10 -> Windows 11 or updating a version such as 24h2 -> 25h2
+- **Remove Open File Security Warning** - When disabling smart screen windows will default to the old file security warning when opening files from another pc
+- **Block Razer and ASUS Download Servers** - this tweak adds all razer and ASUS servers to the hosts file to prevent the download of their bloat software
+   - **Note:** the hosts file is located `[C:\Windows\System32\drivers\etc\hosts]`
+- **Apply PBO Curve on Startup** - this tweak will prompt you to enter your pbo curve oc and will apply this when your pc starts up using PBO Tuner
 - **Disable PowerShell Logging** - by default everything put in the powershell terminal is saved in a file in your appdata directory, this will disable that "feature"
 - **Enable No GUI Boot** - this will enable no gui boot in msconfig thus disabling the boot logo, spinning logo, and boot messages
-- **Disable Windows Platform Binary Table** - this is useful for oem prebuilts or laptops where the manufacture has apps that run on startup and install themselves, disabling WPBT prevents this bloat from installing/running
 - **Disable Game Bar Popup** - when uninstalling xbox apps if you plug in a xbox controller an annoying popup will occur, this tweak will disable that [Credit: @AveYo]
-- **Enable Fast Shutdown and Restart** - this will decrease the delay before services and apps are killed to shutdown or restart as well as auto ending open foreground apps without asking
+- **Enable Fast Shutdown/Restart** - this will decrease the delay before services and apps are killed to shutdown or restart as well as auto ending open foreground apps without asking
 - **Remove Backup App** - this will disable the backup app that is bundled in the CBS package however you will not be able to use a microsoft account to sign into apps such as xbox
-- **Hide User Tile In Start Menu** - this will hide the user icon in the bottom left of the start menu
 - **Use More Accurate Time Server** - this will set the w32tm service to use https://www.pool.ntp.org/ as its time server instead of the default one
-- **Modern Cursor Theme** - this will add the fluent cursor design from Rectify11
-- **Enable Dark Accents** - this will fix the default blue accents in win32 app controls to match your theme color
+- **No Mouse Accel on Desktop** - removes mouse acceleration on the desktop when using scaling above 100% [Credit: @MarkC]
+- **Disable Device Encryption** - this will disable BitLocker and prevent device encryption from being re-enabled
 
 ### Ultimate Context Menu
 
@@ -197,20 +192,23 @@
 - **Run as Admin for ps1,bat,vbs files** - ability to run listed scripts as admin
 - **Powershell and CMD** - add open Powershell or CMD prompt
 - **Kill not Responding Tasks** - add option to kill any not responding tasks
- - **Delete Permanently** - skip the recycle bin and delete file (only works on some files)
- - **Take Ownership** - allow full access to any folder or file that has locked permissions
+- **Delete Permanently** - skip the recycle bin and delete file (only works on some files)
+- **Take Ownership** - allow full access to any folder or file that has locked permissions
 
- #### Remove from Menu
- - **Add to Favorites** - remove add to favorites option for files and folders
- - **Customize this Folder** - remove customize this folder option when right clicking in some folders
- - **Give Access to** - remove give access option from files and folders
- - **Open in Terminal** - removes windows 11 option when right clicking the desktop
- - **Restore to Previous Versions** - remove this option when right clicking some files
- - **Print** - remove the print option when right clicking some files
- - **Send to** - remove the send to option for files and folders
- - **Share** - remove the share option when right clicking some files
- - **Personalize** - remove the personalize option when right clicking the desktop
- - **Display** - remove the display option when right clicking the desktop
+#### Remove from Menu
+- **Add to Favorites** - remove add to favorites option for files and folders
+- **Customize this Folder** - remove customize this folder option when right clicking in some folders
+- **Give Access to** - remove give access option from files and folders
+- **Open in Terminal** - removes windows 11 option when right clicking the desktop
+- **Restore to Previous Versions** - remove this option when right clicking some files
+- **Print** - remove the print option when right clicking some files
+- **Send to** - remove the send to option for files and folders
+- **Share** - remove the share option when right clicking some files
+- **Personalize** - remove the personalize option when right clicking the desktop
+- **Display** - remove the display option when right clicking the desktop
+- **Extract All for Archive Files** - remove the extract all option when right clicking archive files such as .zip
+- **Troubleshoot Compatibility** - remove the troubleshoot compatibility option when right clicking executable files
+- **Include in Library** - remove the include in library option when right clicking folders
 
  
 
@@ -249,7 +247,6 @@
   - **Remove Rounded Edges** - remove rounded edges using [toggle-rounded-corners](https://github.com/oberrich/win11-toggle-rounded-corners) and run at startup
   - **Enable Windows 10 Taskbar and Startmenu** - run ExplorerPatcher and automatically apply settings for windows 10 taskbar and startmenu
   - **Enable Windows 10 File Explorer** - this will use some registry hacks to enable the old Windows 10 File Explorer ribbon when combined with the Enable Windows 10 Icons the full Win10 File Explorer can be restored without having a third party app
-  - **Remove Recommended Section** - this tweak will remove the recommended section from the startmenu by making windows think you are in an education environment
   - **Replace Startmenu and Search with OpenShell** - this tweak will disable windows search and indexing to replace it with OpenShell and import a custom config for a minimal black startmenu, any current pinned shortcuts will be moved to the OpenShell pinned directory
 
   ### Windows 10 Restore Tweaks
@@ -257,11 +254,13 @@
 
 - **Restore Windows 10 Snipping Tool** - remove uwp snipping tool (screen sketch) and enable windows 10 snipping tool
 
-- **Restore Windows 10 Notepad** - this will enable the legacy windows 10 notepad with the optional feature and automatically set it to be used by default
-
 - **Restore Windows 10 Task Manager** - this will create a fake taskmgr.exe that runs task manager with the -d command thus disabling the new ui, NOTE this tweak works best with UAC disabled due to the fake wrapper needing to be ran as admin
 
+- **Restore Windows 10 Notepad** - this will enable the legacy windows 10 notepad with the optional feature and automatically set it to be used by default
+
 - **Restore Windows 10 Icons** - this tweak will replace all the windows 11 icons in file explorer with windows 10, this tweak works best with the windows 10 file explorer making it look exactly like windows 10 without using a third party app
+
+- **Restore Windows 10 Sounds** - replaces the windows 11 sound scheme with the old windows 10 sounds
 
   ### Misc Tweaks
   - **Set all Services to Manual** - this tweak works well on windows 11 to clean up some unnecessary services

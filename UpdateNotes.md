@@ -41,7 +41,8 @@
 			-  [v1.4.5](#v145)    
  			-  [v1.4.6](#v146)  
 			-  [v1.4.7](#v147)  
-			-  [v1.4.8](#v148)  
+			-  [v1.4.8](#v148)   
+			-  [v1.4.9](#v149)   
 			
 ---
 
@@ -880,18 +881,64 @@ added option to individually customize most hidden disk cleanup options, added c
 ### v1.4.8
 ---
 - added disable dynamic lock to reg tweaks
+  
 - fixed reverting new start menu breaking pinned icons
+  
 - added updated key to restore 24h2 style start menu when using the new builds
+  
 - enabled hags by default in registry tweaks since its no longer buggy for most users
+  
 - updated black powershell console when running with no profile to be properly black and white
-- improved check internet connection function 
+  
+- improved check internet connection function
+  
 - added disable sticky and filter keys to reg tweaks
+  
 - fixed removing quick setting tiles when user has never opened this flyout before resulting in a broken blank flyout
+  
 - added expand calendar and enable big clock in notification center to reg tweaks
+  
 - added additional reg key to disable useless banner in settings and start menu to hide ads in settings
+  
 - removed remove system labels from start menu apps tweak
-- fixed hiding home from file explorer on new win11 builds 
-- updated disable vbs in reg tweaks to be completely exhaustive (contains all possible keys) 
+  
+- fixed hiding home from file explorer on new win11 builds
+   
+- updated disable vbs in reg tweaks to be completely exhaustive (contains all possible keys)
+  
 - already selected tweaks will now be read from the config and checked in the ui... you can reset the currently read options by resetting them in zoicware settings
+  
 - fixed hosts file being locked when running disable telemetry tweaks (hopefully for the last time)
 
+
+### v.1.4.9
+---
+- fixed various bugs when running zoicware configs
+  
+- added remove backup app and get started to debloat extras and removed old backup app method from optional tweaks
+  
+- fixed restore reg tweaks not applying
+  
+- added more dlls removed when stripping nvidia driver to save some mem usage
+  
+- fixed enabling new start menu when old one is enabled on new builds
+  
+- added excluded additional packages from debloat presets with a list of installed apps
+  
+- added enable file explorer prelaunch and disable foregroundtext access to reg tweaks
+  
+- added legacy control panel settings and remove scan with defender to ultimate context menu
+  
+- added reset checked options button to each page to quickly reset already selected tweaks
+  
+- fixed black theme not applying the black pfp when user is using a ms account
+  
+- added new dialog section to optional tweaks to hide various dialog popups throughout the system
+  
+- added option to select your own driver file and nip file in nvidia autoinstall
+  
+- added cleanup 3rd party app shortcuts in startmenu to move them out of their sub directory
+  
+- added shortcut to open both startmenu locations
+  
+- changed RUN ZOICWARE.exe to c# since defender now blocks the batch script converted to an exe

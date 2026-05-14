@@ -47,7 +47,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "TaskbarAl"=dword:00000000
 
-
 ; Enable action center
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "DisableNotificationCenter"=-
@@ -59,7 +58,6 @@ Windows Registry Editor Version 5.00
 "EnableSnapBar"=dword:00000000
 "EnableTaskGroups"=dword:00000000
 "SnapAssist"=dword:00000000
-
 
 ; Remove gallery shortcut from file explorer
 [-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}]
@@ -102,7 +100,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
 "AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
-
 
 ; Show more pins in start menu
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
@@ -167,7 +164,6 @@ Windows Registry Editor Version 5.00
 ; Enable end task in taskbar right click menu
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDeveloperSettings]
 "TaskbarEndTask"=dword:00000001
-
 
 ; Disable share app experiences
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CDP]
@@ -260,7 +256,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Start_TrackDocs"=dword:00000000
 "Start_TrackProgs"=dword:00000000
-
 
 ; Hide frequent folders in quick access
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
@@ -751,7 +746,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Narrator\NoRoam]
 "EchoToggleKeys"=dword:00000000
 
-
 ; Disable narrator
 [HKEY_CURRENT_USER\Software\Microsoft\Narrator\NoRoam]
 "DuckAudio"=dword:00000000
@@ -782,7 +776,6 @@ Windows Registry Editor Version 5.00
 ; Alt tab open windows only
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "MultiTaskingAltTabFilter"=dword:00000003
-
 
 ; Show hidden files
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
@@ -840,7 +833,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
 
-
 ; Disable windows spotlight
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\DesktopSpotlight\Settings]
 "EnabledState"=dword:00000000
@@ -850,7 +842,6 @@ Windows Registry Editor Version 5.00
 "NtfsDisableLastAccessUpdate"=dword:00000001
 
 ; Respect power modes search indexer
-
 
 ; Disable fault tolerant heap
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\FTH]

@@ -7065,14 +7065,14 @@ function OptionalTweaks {
 
     $checkbox73.Location = New-Object System.Drawing.Size(270, 145)
     $checkbox73.Size = New-Object System.Drawing.Size(240, 30)
-    $checkbox73.Text = 'Cleanup 3rd Party App Startmenu Shortcuts'
+    $checkbox73.Text = 'Cleanup 3rd Party App Start Menu Shortcuts'
     $checkbox73.ForeColor = 'White'
     $checkbox73.Checked = $false
     $miscGroupBox.Controls.Add($checkbox73)
 
     $checkbox74.Location = New-Object System.Drawing.Size(10, 145)
     $checkbox74.Size = New-Object System.Drawing.Size(240, 30)
-    $checkbox74.Text = 'Create Shortcut to Startmenu Locations'
+    $checkbox74.Text = 'Create Shortcut to Start Menu Locations'
     $checkbox74.ForeColor = 'White'
     $checkbox74.Checked = $false
     $miscGroupBox.Controls.Add($checkbox74)
@@ -8581,7 +8581,7 @@ function OptionalTweaks {
     }
 
     if ($checkbox74.Checked) {
-      Write-Status -Message 'Creating shortcut to both startmenu locations...' -Type Output
+      Write-Status -Message 'Creating shortcut to both start menu locations...' -Type Output
       $vbsScript = @"
 Dim shell,command
 command = "powershell.exe -ep bypass -nop -windowstyle hidden -c ""explorer ""$env:APPDATA\Microsoft\Windows\Start Menu\Programs"";explorer ""$env:ProgramData\Microsoft\Windows\Start Menu\Programs"""
@@ -8592,7 +8592,7 @@ shell.Run command,0
       $file = New-Item "$env:ProgramData\SilentStartMenuDir.vbs" -Value $vbsScript -Force
 
       $WshShell = New-Object -comObject WScript.Shell
-      $Shortcut = $WshShell.CreateShortcut("$env:ProgramData\Microsoft\Windows\Start Menu\Programs\StartMenuLocations.lnk")
+      $Shortcut = $WshShell.CreateShortcut("$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Shortcuts.lnk")
       $Shortcut.TargetPath = 'wscript.exe'
       $Shortcut.Arguments = $file.FullName
       $Shortcut.IconLocation = '%SystemRoot%\System32\SHELL32.dll, -16769'
@@ -11076,6 +11076,7 @@ function Install-Browsers {
       Reg.exe add 'HKLM\SOFTWARE\Policies\Google\Chrome' /v 'HardwareAccelerationModeEnabled' /t REG_DWORD /d '0' /f
       Reg.exe add 'HKLM\SOFTWARE\Policies\Google\Chrome' /v 'BackgroundModeEnabled' /t REG_DWORD /d '0' /f
       Reg.exe add 'HKLM\SOFTWARE\Policies\Google\Chrome' /v 'HighEfficiencyModeEnabled' /t REG_DWORD /d '1' /f
+      Reg.exe add 'HKLM\SOFTWARE\Policies\Google\Chrome' /v 'GenAILocalFoundationalModelSettings' /t REG_DWORD /d '1' /f
 
     
     }

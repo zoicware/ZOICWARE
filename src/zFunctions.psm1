@@ -7433,6 +7433,9 @@ function OptionalTweaks {
       Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP' -Name 'LockScreenImagePath' -Value 'C:\Windows\Black.jpg' -Force
       Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP' -Name 'LockScreenImageStatus' -Value 1
 
+      #disable acrylic background to prevent black image from turning grey
+      Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\System' -Name 'DisableAcrylicBackgroundOnLogon' -Value 1 -Type DWord -Force
+
       #change user pfp to black themed
 
       #if user is using a ms account the method is different to change the pfp

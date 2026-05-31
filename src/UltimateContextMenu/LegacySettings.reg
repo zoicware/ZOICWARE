@@ -1,0 +1,35 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization]
+"Icon"="shell32.dll,-137"
+"MUIVerb"="Legacy settings"
+"Position"="Bottom"
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\005flyout]
+"Icon"="SndVol.exe,-101"
+"MUIVerb"="Sound"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\005flyout\command]
+@="rundll32.exe shell32.dll,Control_RunDLL mmsys.cpl,,0"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\006flyout]
+"Icon"="powercpl.dll,0"
+"MUIVerb"="Power Options"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\006flyout\command]
+@="rundll32.exe shell32.dll,Control_RunDLL powercfg.cpl"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\008flyout]
+"Icon"="main.cpl"
+"MUIVerb"="Mouse Properties"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\008flyout\command]
+@="rundll32.exe shell32.dll,Control_RunDLL main.cpl,,0"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\009flyout]
+"Icon"="desk.cpl"
+"MUIVerb"="Desktop Icon Settings"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\009flyout\command]
+@="rundll32.exe shell32.dll,Control_RunDLL desk.cpl,,0"

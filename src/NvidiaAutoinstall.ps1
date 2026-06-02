@@ -977,7 +977,7 @@ if (!(Check-Internet)) {
     
         if ($stripDriver) {
             #removing a dll file needed to communicate with a telemetry server
-            (Get-ChildItem -Path "$env:windir\System32\DriverStore\FileRepository\nv_dispi*" -Directory).FullName | ForEach-Object { 
+            (Get-ChildItem -Path "$env:windir\System32\DriverStore\FileRepository\nvmdi*" -Directory).FullName | ForEach-Object { 
                 takeown /f "$_\NvTelemetry64.dll" *>$null
                 icacls "$_\NvTelemetry64.dll" /grant *S-1-5-32-544:F /t *>$null
                 Remove-Item "$_\NvTelemetry64.dll" -Force 
@@ -985,7 +985,7 @@ if (!(Check-Internet)) {
 
             #removing NvContainer telemetry/profile plugins that inflate memory usage
             Write-Status -Message 'Removing NvContainer Telemetry Plugins...' -Type Output
-            $pluginPath = (Get-ChildItem -Path "$env:windir\System32\DriverStore\FileRepository\nv_dispi*" -Directory | Select-Object -First 1).FullName + '\Display.NvContainer\plugins'
+            $pluginPath = (Get-ChildItem -Path "$env:windir\System32\DriverStore\FileRepository\nvmdi*" -Directory | Select-Object -First 1).FullName + '\Display.NvContainer\plugins'
             $pluginsToRemove = @(
                 '_DisplayDriverRAS.dll',
                 '_NvMsgBusBroadcast.dll',

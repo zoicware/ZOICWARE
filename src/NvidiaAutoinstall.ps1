@@ -1316,7 +1316,7 @@ if (!(Check-Internet)) {
     $checkbox4 = new-object System.Windows.Forms.checkbox
     $checkbox4.Location = new-object System.Drawing.Size(10, 110)
     $checkbox4.Size = new-object System.Drawing.Size(170, 20)
-    $checkbox4.Text = 'Remove GPU Idle States'
+    $checkbox4.Text = 'Disable Dynamic P-State'
     $checkbox4.ForeColor = 'White'
     $checkbox4.BackColor = [System.Drawing.Color]::Transparent
     $checkbox4.Checked = $false
@@ -1571,8 +1571,8 @@ if (!(Check-Internet)) {
         }
 
         if ($checkbox4.Checked) {
-            Write-Status -Message 'Disabling P0 State...'  -Type Output
-            #disable p0 state
+            Write-Status -Message 'Disabling Dynamic P-State...'  -Type Output
+            #disable dynamic p-state
             $subkeys = (Get-ChildItem -Path 'Registry::HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}' -Force -ErrorAction SilentlyContinue).Name
 
             foreach ($key in $subkeys) {

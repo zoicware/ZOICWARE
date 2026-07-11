@@ -83,11 +83,11 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
 "{679f85cb-0220-4080-b29b-5540cc05aab6}"=dword:00000001
 
-; Open file explorer to this pc
+; Open file explorer to this PC
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
 "HubMode"=dword:00000001
 
-; Disable win 11 system requirements
+; Disable system requirements
 [HKEY_CURRENT_USER\Control Panel\UnsupportedHardwareNotificationCache]
 "SV2"=dword:00000000
 
@@ -120,7 +120,7 @@ Windows Registry Editor Version 5.00
 "HideRecentlyAddedApps"=dword:00000001
 "HideRecommendedPersonalizedSites"=dword:00000001
 
-; Disable ai insights
+; Disable AI insights
 [HKEY_CURRENT_USER\Software\Microsoft\input\Settings]
 "InsightsEnabled"=dword:00000000
 
@@ -132,7 +132,7 @@ Windows Registry Editor Version 5.00
 "Microsoft.QuickAction.Cast"=hex(0):
 "Microsoft.QuickAction.ProjectL2"=hex(0):
 
-; Disable windows ai
+; Disable Windows AI
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "ShowCopilotButton"=dword:00000000
 
@@ -161,7 +161,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\CopilotKey]
 "SetCopilotHardwareKey"=""
 
-; Enable end task in taskbar right click menu
+; Enable end task in taskbar context menu
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDeveloperSettings]
 "TaskbarEndTask"=dword:00000001
 
@@ -171,7 +171,7 @@ Windows Registry Editor Version 5.00
 "NearShareChannelUserAuthzPolicy"=dword:00000000
 "CdpSessionUserAuthzPolicy"=dword:00000000
 
-; Set wallpaper to solid color (11)
+; Set background type to solid color
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers]
 "BackgroundType"=dword:00000001        
 
@@ -252,7 +252,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "HideRecentlyAddedApps"=dword:00000001
 
-; Disable show recently opened items in start, jump lists and file explorer
+; Disable show recently opened items in start, jump lists, and file explorer
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Start_TrackDocs"=dword:00000000
 "Start_TrackProgs"=dword:00000000
@@ -296,7 +296,7 @@ Windows Registry Editor Version 5.00
 "ColorizationColor"=dword:c4191919
 "ColorizationAfterglow"=dword:c4191919
 
-; Disable windows widgets
+; Disable Windows widgets
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Dsh]
 "AllowNewsAndInterests"=dword:00000000
 "DisableWidgetsOnLockScreen"=dword:00000000
@@ -306,7 +306,7 @@ Windows Registry Editor Version 5.00
 "AutoSelectWidgetsOnLockScreen"=dword:00000000
 "LockScreenWidgetsEnabled"=dword:00000000
 
-; 100% dpi scaling
+; 100% DPI scaling
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "LogPixels"=dword:00000060
 "Win8DpiScaling"=dword:00000000
@@ -320,7 +320,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
 "AppliedDPI"=dword:00000060
 
-; Disable Transparency
+; Disable transparency
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "EnableTransparency"=dword:00000000
 
@@ -372,7 +372,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
 "MinAnimate"="0"
 
-; Turn on hardware accelerated gpu scheduling
+; Turn on hardware accelerated GPU scheduling
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
 "HwSchMode"=dword:00000002
 
@@ -423,7 +423,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GameDVR]
 "AppCaptureEnabled"=dword:00000000
 
-; Disable enable open xbox game bar using game controller
+; Disable enable open XBOX game bar using game controller
 [HKEY_CURRENT_USER\Software\Microsoft\GameBar]
 "UseNexusForGameBarEnabled"=dword:00000000
 
@@ -431,7 +431,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\GameBar]
 "AutoGameModeEnabled"=dword:00000001
 
-; Disable Xbox Capture
+; Disable XBOX capture
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GameDVR]
 "AudioEncodingBitrate"=dword:0001f400
 "AudioCaptureEnabled"=dword:00000000
@@ -617,11 +617,11 @@ Windows Registry Editor Version 5.00
 "NumberOfSIUFInPeriod"=dword:00000000
 "PeriodInNanoSeconds"=-
 
-; Disable store my activity history on this device 
+; Disable store my activity history on this device
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
 "PublishUserActivities"=dword:00000000
 
-; Safe search off
+; Disable safe search
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings]
 "SafeSearchMode"=dword:00000000
 
@@ -765,7 +765,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance]
 "MaintenanceDisabled"=dword:00000001
 
-; Disable use my sign in info after restart
+; Disable use my sign-in info after restart
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 "DisableAutomaticRestartSignOn"=dword:00000001
 
@@ -773,7 +773,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\Maps]
 "AutoUpdateEnabled"=dword:00000000
 
-; Alt tab open windows only
+; Alt-tab open windows only
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "MultiTaskingAltTabFilter"=dword:00000003
 
@@ -781,11 +781,11 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Hidden"=dword:00000001
 
-; Remove picture wallpaper
+; Remove wallpaper
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "WallPaper"=""
 
-; Set background black
+; Set background color to black
 [HKEY_CURRENT_USER\Control Panel\Colors]
 "Background"="0 0 0"
 
@@ -829,11 +829,11 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Installer]
 "DisableCoInstallers"=dword:00000001
 
-; Disable windows automatic folder type
+; Disable Windows automatic folder type
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
 
-; Disable windows spotlight
+; Disable Windows spotlight
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\DesktopSpotlight\Settings]
 "EnabledState"=dword:00000000
 
@@ -859,7 +859,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "LongPathsEnabled"=dword:00000001
 
-; Black powershell console
+; Black PowerShell console
 [HKEY_CURRENT_USER\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe]
 "ScreenColors"=dword:0000000F
 "ColorTable06"=dword:00ffffff
@@ -870,7 +870,7 @@ Windows Registry Editor Version 5.00
 "ColorTable07"=dword:00ffffff
 "ColorTable00"=dword:00000000
 
-; Disable windows platform binary table
+; Disable Windows platform binary table
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager]
 "DisableWpbtExecution"=dword:00000001
 
@@ -947,7 +947,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power]
 "SleepStudyDisabled"=dword:00000001
 
-; Disable use view and menu as guide button in apps
+; Disable use view + menu as guide button in apps
 [HKEY_CURRENT_USER\Software\Microsoft\GameBar]
 "GamepadNexusChordEnabled"=dword:00000000
 
@@ -958,7 +958,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3895955085]
 "EnabledState"=dword:00000001
 
-; Disable Device Usage
+; Disable device usage
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\business]
 "Intent"=dword:00000000
 
@@ -999,7 +999,7 @@ Windows Registry Editor Version 5.00
 
 ; Disable app actions
 
-; Disable windows backup
+; Disable Windows backup
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync]
 "DisableAccessibilitySettingSync"=dword:00000002
 "DisableAccessibilitySettingSyncUserOverride"=dword:00000001
@@ -1091,3 +1091,7 @@ Windows Registry Editor Version 5.00
 ; Disable show me suggested apps in share
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CDP]
 "EnablePromotionalAppsForShare"=dword:00000000
+
+; Increase wallpaper quality
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"JPEGImportQuality"=dword:00000064

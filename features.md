@@ -44,25 +44,25 @@
 
 ## Registry Tweaks
 
-<img width="582" height="519" alt="{6B267B8F-C411-46F3-9433-F6715A1B969C}" src="https://github.com/user-attachments/assets/2e4ea222-65ba-48c5-b89f-993ed51dbfe5" />
+<img width="772" height="690" alt="Screenshot 2026-07-11 172949" src="https://github.com/user-attachments/assets/f94587e1-c96b-4724-a403-c8e71ea9a105" />
 
 
 
 
-- Apply the registry tweaks to automate most windows quality of life and performance settings
+- Apply the registry tweaks to automate most Windows quality of life and performance settings
 - A registry file will be created on the desktop containing all the registry keys including a comment describing the function of each
 
-- Use the Change Mode button to either remove tweaks from the total list of tweaks ran OR select a few tweaks to run 
+- Use the `Change Mode` button to either remove tweaks from the total list of tweaks ran OR select only specific tweaks to be applied
 
 **[Registry Tweaks List](registrytweaks.md)**
 ## Group Policy Tweaks
 ### Disable Updates
-- This tweak will disable automatic windows updates and the related services
+- This tweak will disable automatic Windows updates and the related services
 ### Disable Windows Defender
-- CAUTION: Disabling Windows Defender could leave you vulnerable to malicious attacks! 
-- This tweak will disable windows defender and all related services
+- CAUTION: Disabling Windows defender could leave you vulnerable to malicious attacks!
+- This tweak will disable Windows defender and all related services
 ### Disable Windows Telemetry
-- This tweak will disable telemetry with group policy however, this only applies to server and ltsc builds
+- This tweak will disable telemetry with group policy however, this only applies to server and enterprise builds
 - Adds telemetry domains to be blocked via hosts file gathered from official microsoft sources
 - **Note:** other telemetry services and settings are disabled as well
 ## Remove Scheduled Tasks
@@ -99,13 +99,13 @@
 
 ## Debloat
 
-<img width="414" height="307" alt="{4B76C016-6329-4B16-9DCA-0779757ED34D}" src="https://github.com/user-attachments/assets/4c4227e2-6578-46c9-acb5-fa8d1a1764f2" />
+<img width="414" height="307" alt="Screenshot 2026-07-11 174153" src="https://github.com/user-attachments/assets/dd7b61ae-93d2-48e6-9d5c-9d1b32821e70" />
 
 <img width="414" height="307" alt="{E1589997-2182-4402-AD8F-79B31FF187D9}" src="https://github.com/user-attachments/assets/84255752-1c06-4c83-8aea-b79fbc65b08c" />
 
 <img width="414" height="307" alt="{56231C9E-633D-4519-8DAF-7037EED2FFC4}" src="https://github.com/user-attachments/assets/d6fd5195-5264-40da-89a5-c4d5d9698bcf" />
 
-<img width="414" height="307" alt="{D7D552DA-FA5E-4FC8-B3A8-68CF607F4A72}" src="https://github.com/user-attachments/assets/e6ac4726-381f-48ff-ae95-5ded0189b291" />
+<img width="414" height="307" alt="Screenshot 2026-07-11 174239" src="https://github.com/user-attachments/assets/200c0c46-c5cc-4c7e-824d-d6f13344606f" />
 
 
 <img width="414" height="307" alt="{B0D5413E-FFC4-4B79-AAD1-68D7031ADA09}" src="https://github.com/user-attachments/assets/bd398a2d-b619-4e2e-a966-01735c4ab569" />
@@ -115,28 +115,42 @@
 
 
 
-- This tweak will allow you to debloat all windows appx packages and other preinstalled apps
+- This tweak will allow you to debloat all Windows appx packages and other preinstalled apps
 ### Debloat Presets
-- **Debloat All** 
-- **Keep Store Xbox Edge** 
-- **Keep Store Xbox**
+- **Debloat All**
+- **Keep Store, XBOX, and Edge**
+- **Keep Store and XBOX**
 - **Keep Edge**
 - **Keep Store**
 
 ### Features
-- Removes all bloat appx packages, Edge, Teams and OneDrive, Remote Desktop, Health Update tools, Quick Assist, Hello Face, and Steps Recorder
+- Removes all bloat appx packages, Edge, Teams, OneDrive, Remote Desktop, Health Update Tools, Quick Assist, Hello Face, and Steps Recorder
      - **Note:** All debloat presets will clean the start menu pinned icons
 
 ### Custom Debloat
-- Choose specific Appx Packages including locked packages 
+- Choose specific appx packages including locked packages
   - **Note:** locked packages are locked for a reason be careful when removing these
-- Select Additional Options
-     - Edge
-     - Health Update Tools
-     - Teams and OneDrive
-     - Remote Desktop Connection
-     - Hello Face, Quick Assist, Steps Recorder
-     - Clean Start Menu Icons
+
+### Remove Extras
+- Microsoft Edge
+- Edge WebView
+- Teams and OneDrive
+- Windows Update Tools
+- Remote Desktop Connection
+- Clean Start Menu Icons
+- Clean Outdated Store Apps
+- Remove Backup App and Get Started
+
+### Remove Win 32 Apps
+- Speech App
+- Live Captions
+- Magnifier
+- Narrator
+- On-Screen Keyboard
+- Voice Access
+- Steps Recorder
+- Quick Assist
+- Math Input Panel
  
 ### Remove Optional Features
 - Uninstall windows capabilities, optional features, and windows packages.
@@ -148,7 +162,7 @@
  
 ## Optional Tweaks
 
-<img width="589" height="444" alt="{CA823F8D-7283-4868-AAF3-D3A3F3EBBA55}" src="https://github.com/user-attachments/assets/b3b2c54e-12f1-4ef6-83ab-6334fabd6615" />
+<img width="784" height="590" alt="Screenshot 2026-07-11 181630" src="https://github.com/user-attachments/assets/5ae93627-e405-4e09-8888-99a1c4e1ae88" />
 
 
 
@@ -160,7 +174,7 @@
 - **Transparent Taskbar** - makes the taskbar clear with TranslucentTB
 - **Remove Network Icon From File Explorer** - remove the network icon from file explorer (bottom left)
 - **Remove Recycle Bin Name** - remove the "Recycle Bin" text from under the icon on the desktop
-- **Remove Mouse and Sound Schemes** - set the pointer and sound schemes to "None", removes blue loading wheel next to pointer
+- **Remove Mouse and Sound Schemes** - set the pointer and sound schemes to "None", this will disable all Windows sound effects and use the original Windows XP cursor scheme
 - **Hide User Tile In Start Menu** - this will hide the user icon in the bottom left of the start menu
 - **Modern Cursor Scheme** - this will add the fluent cursor design from Rectify11
 - **Enable Dark Accents** - this will fix the default blue accents in win32 app controls to match your theme color
@@ -175,40 +189,43 @@
 - **Apply PBO Curve on Startup** - this tweak will prompt you to enter your pbo curve oc and will apply this when your pc starts up using PBO Tuner
 - **Disable PowerShell Logging** - by default everything put in the powershell terminal is saved in a file in your appdata directory, this will disable that "feature"
 - **Enable No GUI Boot** - this will enable no gui boot in msconfig thus disabling the boot logo, spinning logo, and boot messages
+- **Create Shortcut to Start Menu Locations** - creates a shortcut in the start menu that lets you access both start menu shortcut folders directly to customize the listed apps shown in the start menu
 - **Disable Game Bar Popup** - when uninstalling xbox apps if you plug in a xbox controller an annoying popup will occur, this tweak will disable that [Credit: @AveYo]
 - **Enable Fast Shutdown/Restart** - this will decrease the delay before services and apps are killed to shutdown or restart as well as auto ending open foreground apps without asking
-- **Remove Backup App** - this will disable the backup app that is bundled in the CBS package however you will not be able to use a microsoft account to sign into apps such as xbox
-- **Use More Accurate Time Server** - this will set the w32tm service to use https://www.pool.ntp.org/ as its time server instead of the default one
+- **Use More Accurate Time Server for System Clock** - this will set the w32tm service to use https://www.pool.ntp.org/ as its time server instead of the default one
 - **No Mouse Accel on Desktop** - removes mouse acceleration on the desktop when using scaling above 100% [Credit: @MarkC]
 - **Disable Device Encryption** - this will disable BitLocker and prevent device encryption from being re-enabled
+- **Cleanup 3rd Party App Start Menu Shortcuts** - takes the added 3rd party app shortcuts in the start menu out of their folders and leaves only the shortcut directly
 
 ### Ultimate Context Menu
 
 #### Add to Menu
-- **Additional Files to New Menu** - add the ability to create new Registry Files, Powershell Scripts, and Batch Files
-- **Additional ps1 Options** - open powershell files with Powershell or Powershell ISE as Admin
+- **Additional Files to New Menu** - add the ability to create new registry files, PowerShell scripts, and batch files
+- **Additional ps1 Options** - open PowerShell files with PowerShell or PowerShell ISE as admin
 - **Snipping Tool** - add a shortcut to open the snipping tool or instantly take a snip
-- **Shutdown** - add shutdown button
-- **Run as Admin for ps1,bat,vbs files** - ability to run listed scripts as admin
-- **Powershell and CMD** - add open Powershell or CMD prompt
+- **Shutdown** - add a `Shutdown` button
+- **Run as Admin for ps1,bat,vbs files** - add the ability to run listed scripts as admin
+- **Powershell and CMD** - add open PowerShell or CMD prompt
 - **Kill not Responding Tasks** - add option to kill any not responding tasks
-- **Delete Permanently** - skip the recycle bin and delete file (only works on some files)
+- **Delete Permanently** - skip the recycle bin and delete files directly (only works on some files)
 - **Take Ownership** - allow full access to any folder or file that has locked permissions
+- **Legacy Control Panel Settings** - add a `Legacy settings` flyout to the desktop context menu with quick access to classic Control Panel applets [Credit: @iFryno]
 
 #### Remove from Menu
-- **Add to Favorites** - remove add to favorites option for files and folders
-- **Customize this Folder** - remove customize this folder option when right clicking in some folders
-- **Give Access to** - remove give access option from files and folders
-- **Open in Terminal** - removes windows 11 option when right clicking the desktop
-- **Restore to Previous Versions** - remove this option when right clicking some files
-- **Print** - remove the print option when right clicking some files
-- **Send to** - remove the send to option for files and folders
-- **Share** - remove the share option when right clicking some files
-- **Personalize** - remove the personalize option when right clicking the desktop
-- **Display** - remove the display option when right clicking the desktop
-- **Extract All for Archive Files** - remove the extract all option when right clicking archive files such as .zip
-- **Troubleshoot Compatibility** - remove the troubleshoot compatibility option when right clicking executable files
-- **Include in Library** - remove the include in library option when right clicking folders
+- **Add to Favorites** - remove the `Add to Favorites` option for files and folders
+- **Customize this Folder** - remove the `Customize this Folder` option when right clicking in some folders
+- **Give Access to** - remove the `Give access to` option from files and folders
+- **Open in Terminal** - remove the `Open in Terminal` option when right clicking the desktop
+- **Restore to Previous Versions** - remove the `Restore Previous Versions` option after editing a file
+- **Print** - remove the `Print` option when right clicking some files
+- **Send to** - remove the `Send to` option for files and folders
+- **Share** - remove the `Share` option when right clicking some files
+- **Personalize** - remove the `Personalize` option when right clicking the desktop
+- **Display** - remove the `Display settings` option when right clicking the desktop
+- **Extract All for Archive Files** - remove the `Extract all` option when right clicking archive files such as .zip
+- **Troubleshoot Compatibility** - remove the `Troubleshoot compatibility` option when right clicking executable files
+- **Include in Library** - remove the `Include in Library` option when right clicking folders
+- **Scan with Defender** - remove the `Scan with Microsoft Defender` option for downloaded files
 
  
 
@@ -236,30 +253,25 @@
 
   ## Windows 11 Tweaks
  
-<img width="402" height="317" alt="{7C5C31D0-67B6-4C5E-974F-8E92DAEAA77E}" src="https://github.com/user-attachments/assets/393e02c1-9920-4f99-b15f-a7ddc40c09b3" />
+<img width="500" height="500" alt="Screenshot 2026-07-11 184643" src="https://github.com/user-attachments/assets/6a06ca9a-86fb-4be5-b0aa-5ba95a83067f" />
 
-<img width="402" height="317" alt="{7BCEFFCF-19B3-4B61-ACD0-AA1C68153EB9}" src="https://github.com/user-attachments/assets/3b052d7e-71ec-44e6-86b1-00c18d9788bf" />
+<img width="500" height="500" alt="Screenshot 2026-07-11 184656" src="https://github.com/user-attachments/assets/d0e91933-d65a-4421-87fd-1fdf4be592b6" />
 
-<img width="402" height="317" alt="{B015E844-CBB8-4300-B969-9F0174915998}" src="https://github.com/user-attachments/assets/7ef4dc2f-876a-4f71-ac95-6e0481715439" />
+<img width="500" height="500" alt="Screenshot 2026-07-11 184709" src="https://github.com/user-attachments/assets/a7b18565-c6ff-4194-828b-7db277e12349" />
 
 
   ### Patch Explorer
   - **Remove Rounded Edges** - remove rounded edges using [toggle-rounded-corners](https://github.com/oberrich/win11-toggle-rounded-corners) and run at startup
-  - **Enable Windows 10 Taskbar and Startmenu** - run ExplorerPatcher and automatically apply settings for windows 10 taskbar and startmenu
+  - **Enable Windows 10 Taskbar and Start Menu** - run ExplorerPatcher and automatically apply settings for windows 10 taskbar and startmenu
   - **Enable Windows 10 File Explorer** - this will use some registry hacks to enable the old Windows 10 File Explorer ribbon when combined with the Enable Windows 10 Icons the full Win10 File Explorer can be restored without having a third party app
   - **Replace Startmenu and Search with OpenShell** - this tweak will disable windows search and indexing to replace it with OpenShell and import a custom config for a minimal black startmenu, any current pinned shortcuts will be moved to the OpenShell pinned directory
 
   ### Windows 10 Restore Tweaks
 - **Restore Windows 10 Recycle Bin Icon** - this tweak will replace the windows 11 recycle bin icon with the old windows 10 icon
-
 - **Restore Windows 10 Snipping Tool** - remove uwp snipping tool (screen sketch) and enable windows 10 snipping tool
-
 - **Restore Windows 10 Task Manager** - this will create a fake taskmgr.exe that runs task manager with the -d command thus disabling the new ui, NOTE this tweak works best with UAC disabled due to the fake wrapper needing to be ran as admin
-
 - **Restore Windows 10 Notepad** - this will enable the legacy windows 10 notepad with the optional feature and automatically set it to be used by default
-
 - **Restore Windows 10 Icons** - this tweak will replace all the windows 11 icons in file explorer with windows 10, this tweak works best with the windows 10 file explorer making it look exactly like windows 10 without using a third party app
-
 - **Restore Windows 10 Sounds** - replaces the windows 11 sound scheme with the old windows 10 sounds
 
   ### Misc Tweaks
@@ -277,14 +289,21 @@
      - **Note:** this tweak uses a scheduled task to update the registry key responsible for showing the app in the taskbar
 
 
-- **Disable Bell Icon on Taskbar** - hide the notification bell icon on the taskbar
-     - **Note:** this will break the calendar flyout when clicking the date and time
-
 - **Dark Winver** - this will replace winver.exe with a dark themed version view them here -> [Dark Winver](https://github.com/zoicware/WinverDark)
 
-- **Enable Edit Quick Setting Tiles** - starting in 24h2 for some reason microsoft disabled editing the quick setting tiles in the volume/network flyout, this tweak will enable the simplify quick setting tiles setting removing all the useless tiles
+- **Remove Quick Settings Tiles** - this tweak removes the additional options in the quick settings menu on the taskbar and leaves just the volume slider
 
-- **Remove System Labels From Start Menu Apps** - this tweak will remove the small "System" labels from some apps in the start menu
+- **Disable Notepad Tabs and Rewrite** - this will disable the annoying `Continue previous session` and `Rewrite` features from the modern notepad making it feel more like the legacy one
+
+- **Hide Ads in Settings** - this tweak removes the useless tiles in the settings app
+
+- **Small Taskbar Icons** - makes the icons on the taskbar smaller
+
+- **Set Background Mouse Throttle to 50hz** - by default Windows 11 throttles the polling rate for background listeners to 125hz to reduce unnecessary CPU overhead this tweak lowers that throttle further to 50hz
+
+- **Enable New Start Menu** - this will enable the new start menu layout that has been added to 26200 (25H2) builds
+
+- **Revert New Start Menu** - this restores the old 24H2 start menu layout for those who want to revert the tweak above or simply prefer to use the old layout on 25H2
 
 ## Install Network Driver
 
@@ -295,30 +314,32 @@
           - Intel Lan
           - Killer Lan
           - Intel Wifi
-- After installing the driver a popup will ask if you want to enable QoS for upload, this tweak will enable some network settings to attempt to prioritize game network traffic along with some other networks tweaks to help with bufferbloat [Credit: @AveYo], NOTE: this can be reverted in "Revert Tweaks" if needed
+- After installing the driver a popup will ask if you want to enable QoS for upload, this tweak will enable some network settings to attempt to prioritize game network traffic along with some other network tweaks to help with bufferbloat [Credit: @AveYo], NOTE: this can be reverted in "Revert Tweaks" if needed
 
 ## Install Nvidia Driver
 
-<img width="349" height="294" alt="{DF5532D1-089B-4690-891A-78DFF81512EE}" src="https://github.com/user-attachments/assets/8bfd705a-74ac-472c-b96d-a4c03f8ebfc5" />
+<img width="533" height="457" alt="image" src="https://github.com/user-attachments/assets/46d84ef6-236c-45ad-9181-bd035b76d3b6" />
+
 
 
 ### Features
 - the script will get the 4 latest Nvidia Drivers for the user to choose
-- install older drivers by typing in the version number 
-- **Strip Driver** - remove geforce experience and all other bloat leaving only the bare driver
+- install older drivers by typing in the version number (add "hf" to the end if its a hotfix driver)
+- alternatively you can choose an already downloaded driver file
+- **Strip Driver** - remove the nvidia app and all other bloat leaving only the bare driver
 - **Disable Telemetry** - this tweak runs automatically deleting a dll file preventing telemetry to Nvidias Server
-     - **Note:** Only applies to Strip Driver setting as this file will break geforce experience
-- **Disable HDCP** - disable High-bandwidth Digital Content Protection applies automatically 
+     - **Note:** Only applies to Strip Driver setting as this file will break the nvidia app
+- **Disable HDCP** - disable High-bandwidth Digital Content Protection
 
 
-<img width="350" alt="image" src="https://github.com/user-attachments/assets/2a192877-122a-4fec-be83-c65ea6e03ab8">
+<img width="383" height="419" alt="Screenshot 2026-07-11 200228" src="https://github.com/user-attachments/assets/369e7cdb-7b0c-4ed5-95ca-987d0b98b815" />
 
-<img width="350" alt="image" src="https://github.com/user-attachments/assets/139f87f3-382d-45a9-9540-59f5d0d5a3d7">
+<img width="383" height="421" alt="Screenshot 2026-07-11 200154" src="https://github.com/user-attachments/assets/23c6f8ff-69f2-43b5-8142-4155a2ed915f" />
 
 #### Post Install Tweaks
-- Import Optimized Nvidia Control Panel Settings
-- Enable Legacy Sharpen to use sharpen without gpu scaling enabled
-- Enable MSI Mode, this tweak also applies when running registry tweaks
+- Import Optimized Nvidia Control Panel Settings or alternatively import your own nip file
+- Replace the modern `Image Scaling` option with the much more useful `Image Sharpening`
+- Enable MSI Mode to switch supported devices from legacy line-based interrupts to Message Signaled Interrupts (MSI)
 - Disable GPU Idle States only recommended for users that know they need this tweak
 - Apply Digital Vibrance - a slider will allow you to setup digital vibrance on all your monitors, this tweak will apply once restarting
 - Disable Monitor Speakers

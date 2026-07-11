@@ -115,7 +115,7 @@ $checkbox5.AutoSize = $true
 $form.Controls.Add($checkbox5)
 
 $checkbox6 = New-Object System.Windows.Forms.CheckBox
-$checkbox6.Text = 'Repair Xbox Apps'
+$checkbox6.Text = 'Repair XBOX Apps'
 $checkbox6.ForeColor = 'White'
 $checkbox6.BackColor = [System.Drawing.Color]::Transparent
 $checkbox6.Location = New-Object System.Drawing.Point(20, 110)
@@ -2136,8 +2136,11 @@ Windows Registry Editor Version 5.00
 "SubscribedContentEnabled"=-
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"EnableSnapBar"=-
+"DITest"=-
 "EnableSnapAssistFlyout"=-
+"EnableSnapBar"=-
+"EnableTaskGroups"=-
+"SnapAssist"=-
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SystemSettings\AccountNotifications]
 "EnableAccountNotifications"=-
@@ -2168,6 +2171,23 @@ Windows Registry Editor Version 5.00
 "DragTrayEnabled"=dword:00000001
 
 [-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\FeatureManagement\Overrides\14\3895955085]
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"JumplistOnHover"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowClockInNotificationCenter"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShouldPrelaunchFileExplorer"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"IsEnabled"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CDP]
+"EnablePromotionalAppsForShare"=-
+
+[-HKEY_CURRENT_USER\Control Panel\Desktop\JPEGImportQuality]
 '@
 
     Add-Content -Path $file.FullName -Value $regContent -Force
@@ -2182,7 +2202,7 @@ Windows Registry Editor Version 5.00
   }
 
   if ($checkbox6.Checked) {
-    Write-Status -Message 'Downloading Xbox Game Repair Tool...' -Type Output
+    Write-Status -Message 'Downloading XBOX Game Repair Tool...' -Type Output
     #remove gamebar popup block
     Set-ItemProperty 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR' 'AppCaptureEnabled' 1 -type dword -force -ea 0
     Set-ItemProperty 'HKCU:\System\GameConfigStore' 'GameDVR_Enabled' 1 -type dword -force -ea 0
@@ -2418,11 +2438,13 @@ Windows Registry Editor Version 5.00
     Reg.exe delete 'HKCR\VBEFile\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
     Reg.exe delete 'HKCR\VBSFile\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
     Reg.exe delete 'HKCR\WSFFile\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
-    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{b8cdcb65-b1bf-4b42-9428-1dfdb7ee92af}' /f *>$null 
+    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{b8cdcb65-b1bf-4b42-9428-1dfdb7ee92af}' /f *>$null
     Reg.exe delete 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{b8cdcb65-b1bf-4b42-9428-1dfdb7ee92af}' /f *>$null
     Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{EE07CEF5-3441-4CFB-870A-4002C724783A}' /f *>$null
     Reg.exe delete 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{EE07CEF5-3441-4CFB-870A-4002C724783A}' /f *>$null
     Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{1d27f844-3a1f-4410-85ac-14651078412d}' /f *>$null
+    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{09A47860-11B0-4DA5-AFA5-26D86198A780}' /f *>$null
+	Reg.exe delete 'HKCR\DesktopBackground\Shell\Personalization' /f *>$null
 
     $path = New-Item -Path "$tempDir\RestoreContext.reg" -Value $regFile -Force 
     Start-Process regedit.exe -ArgumentList "/s $($path.FullName)"

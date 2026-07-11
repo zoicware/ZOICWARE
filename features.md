@@ -118,13 +118,13 @@
 - This tweak will allow you to debloat all Windows appx packages and other preinstalled apps
 ### Debloat Presets
 - **Debloat All**
-- **Keep Store, XBOX, and Edge**
+- **Keep Store, XBOX and Edge**
 - **Keep Store and XBOX**
 - **Keep Edge**
 - **Keep Store**
 
 ### Features
-- Removes all bloat appx packages, Edge, Teams, OneDrive, Remote Desktop, Health Update Tools, Quick Assist, Hello Face, and Steps Recorder
+- Removes all bloat appx packages, Edge, Teams, OneDrive, Remote Desktop, Health Update Tools, Quick Assist, Hello Face and Steps Recorder
      - **Note:** All debloat presets will clean the start menu pinned icons
 
 ### Custom Debloat
@@ -153,7 +153,7 @@
 - Math Input Panel
  
 ### Remove Optional Features
-- Uninstall windows capabilities, optional features, and windows packages.
+- Uninstall windows capabilities, optional features and windows packages.
 
 ### zUninstaller
 - Remove installed apps with additional brute force cleaning of leftovers.
@@ -178,7 +178,7 @@
 - **Hide User Tile In Start Menu** - this will hide the user icon in the bottom left of the start menu
 - **Modern Cursor Scheme** - this will add the fluent cursor design from Rectify11
 - **Enable Dark Accents** - this will fix the default blue accents in win32 app controls to match your theme color
-- **Enable Classic Accents** - applies the Windows XP/2000 classic navy blue to win32 app controls like menus, highlights, and hover states
+- **Enable Classic Accents** - applies the Windows XP/2000 classic navy blue to win32 app controls like menus, highlights and hover states
 - **Do Not Include Drivers in Windows Update** - prevent drivers from being downloaded when checking for updates
 - **Security Updates Only** - defers feature updates for 365 days and optional updates for 30 days [MAX]
 - **Pause Updates for 1 Year** - this will pause updates for a year as a good alternative to disabling updates completely
@@ -188,7 +188,7 @@
    - **Note:** the hosts file is located `[C:\Windows\System32\drivers\etc\hosts]`
 - **Apply PBO Curve on Startup** - this tweak will prompt you to enter your pbo curve oc and will apply this when your pc starts up using PBO Tuner
 - **Disable PowerShell Logging** - by default everything put in the powershell terminal is saved in a file in your appdata directory, this will disable that "feature"
-- **Enable No GUI Boot** - this will enable no gui boot in msconfig thus disabling the boot logo, spinning logo, and boot messages
+- **Enable No GUI Boot** - this will enable no gui boot in msconfig thus disabling the boot logo, spinning logo and boot messages
 - **Create Shortcut to Start Menu Locations** - creates a shortcut in the start menu that lets you access both start menu shortcut folders directly to customize the listed apps shown in the start menu
 - **Disable Game Bar Popup** - when uninstalling xbox apps if you plug in a xbox controller an annoying popup will occur, this tweak will disable that [Credit: @AveYo]
 - **Enable Fast Shutdown/Restart** - this will decrease the delay before services and apps are killed to shutdown or restart as well as auto ending open foreground apps without asking
@@ -200,7 +200,7 @@
 ### Ultimate Context Menu
 
 #### Add to Menu
-- **Additional Files to New Menu** - add the ability to create new registry files, PowerShell scripts, and batch files
+- **Additional Files to New Menu** - add the ability to create new registry files, PowerShell scripts and batch files
 - **Additional ps1 Options** - open PowerShell files with PowerShell or PowerShell ISE as admin
 - **Snipping Tool** - add a shortcut to open the snipping tool or instantly take a snip
 - **Shutdown** - add a `Shutdown` button
@@ -435,4 +435,3 @@
 - This shortcut will run the code directly from the github so it will always be up to date
 
 - **NOTE: If you do not disable uac you will need to run the shortcuts as admin**
-

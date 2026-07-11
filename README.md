@@ -5,16 +5,16 @@
 
 
 
-Zoicware is a PowerShell script to customize and tweak Windows 11. This allows you to choose how you want to set up your Windows installation for productivity and gaming. Zoicware allows for complete control of the tweaks you do to your system and automatically saves these choices to a config that can be saved for future use.
+Zoicware is a PowerShell script designed to customize and tweak Windows 11. It allows you to choose how you want to configure your Windows installation for productivity and gaming. Zoicware gives you complete control over the tweaks applied to your system and automatically saves your choices to a config file for future use.
 
-Want to set up windows like me? Use the pre-made configs [Here](https://github.com/zoicware/ZoicwareConfigs)
+Want to set up Windows like me? Use the pre-made configs [here](https://github.com/zoicware/ZoicwareConfigs).
 
 ---
 
 ## How to Use
-1. Simply click on [releases](https://github.com/zoicware/ZOICWARE/releases) and click the zip file included under assets
-2. Extract the folder onto your C drive and run "RUN ZOICWARE.exe" in the setup folder
-3. Choose your desired options, once complete you can save these choices to a config for future use
+1. Simply click on [Releases](https://github.com/zoicware/ZOICWARE/releases) and download `zoicwareOS.zip`.
+2. Extract the folder to your C drive and run `RUN ZOICWARE.exe`.
+3. Choose your desired options. Once complete, you can save these choices to a config file for future use.
 
 ## All Zoicware Features
 #### [Features](features.md)
@@ -29,9 +29,9 @@ Want to set up windows like me? Use the pre-made configs [Here](https://github.c
 ---
 
 > [!NOTE]  
-> The launcher `RUN ZOICWARE.exe` that is included in the zip is [this script](https://github.com/zoicware/ZOICWARE/blob/main/src/RUN%20ZOICWARE.cmd) compressed to an exe using [IExpress.exe](https://en.wikipedia.org/wiki/IExpress)
+> The launcher `RUN ZOICWARE.exe` included in the zip file is this [script](https://github.com/zoicware/ZOICWARE/blob/main/src/RUN%20ZOICWARE.cmd) compressed into an executable using [IExpress.exe](https://en.wikipedia.org/wiki/IExpress).
 > 
-> Anti-viruses will detect this as a trojan due to the nature of compressing a script inside of an exe
+> Antivirus software may detect this as a trojan due to the nature of compressing a script inside an executable.
 
 
 

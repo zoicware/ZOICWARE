@@ -48,7 +48,7 @@
 
 ### v1.0.8
 
-- updated Install Pack script to allow the user to install the latest C++ Packages, DirectX, and Internet Driver
+- updated Install Pack script to allow the user to install the latest C++ Packages, DirectX and Internet Driver
       Note: the pack has been moved to dropbox as it is no longer possible to download files from Google Drive with Powershell
 
 - updated install packages option in main script to attempt to install them if they are not found
@@ -483,7 +483,7 @@ added option to individually customize most hidden disk cleanup options, added c
   
 - added remove quick setting tiles above network and volume flyout for 24h2+ (win11 tweaks)
   
-- added script settings allowing for disabling check for updates, remove script location cache, and resetting config
+- added script settings allowing for disabling check for updates, remove script location cache and resetting config
   
 - added clean nvidia shader cache and remove windows.old folder to ultimate cleanup
 
@@ -548,7 +548,7 @@ added option to individually customize most hidden disk cleanup options, added c
 
 - added disable powershell logging to optional tweaks this will disable powershell from logging commands ran from the console
 
-- added no gui boot to optional tweaks to disable boot logo, spinning logo, and status messages
+- added no gui boot to optional tweaks to disable boot logo, spinning logo and status messages
 
 
 ### v1.3.5
@@ -567,7 +567,7 @@ added option to individually customize most hidden disk cleanup options, added c
 
 ### v1.3.6
 ---
-- improved main ui, optional tweaks, and windows 11 tweaks to be more modern and user friendly (more ui updates to come)
+- improved main ui, optional tweaks and windows 11 tweaks to be more modern and user friendly (more ui updates to come)
 
 - improved removing scheduled tasks speed 2x as fast now
 
@@ -602,7 +602,7 @@ added option to individually customize most hidden disk cleanup options, added c
 
 - when running all reg tweaks the win10 and win11 reg tweaks will be ran as separate files now to avoid random keys not applying due to the large reg file
 
-- replaced restart pc button with repair windows, this includes sfc /scannow, dism repair, windows update repair, network repair, icon cache clearing, and check disk repair
+- replaced restart pc button with repair windows, this includes sfc /scannow, dism repair, windows update repair, network repair, icon cache clearing and check disk repair
 
 - updated nvidia autoinstall ui to use a combobox instead of radio buttons and multiple textbox for patch notes
 
@@ -661,7 +661,7 @@ added option to individually customize most hidden disk cleanup options, added c
   
 - added faster shutdown and restart to optional tweaks, this enables services and apps to be ended sooner when restarting/shutting down
   
-- improved debloat ui, added removing windows packages,features, and capabilities [NOTE: loading these may take longer than expected on server builds], added removing useless win32 apps
+- improved debloat ui, added removing windows packages, features and capabilities [NOTE: loading these may take longer than expected on server builds], added removing useless win32 apps
   
 - added remove windows backup app to optional tweaks NOTE: you will not be able to use a microsoft account to sign into apps such as xbox
 
@@ -872,7 +872,7 @@ added option to individually customize most hidden disk cleanup options, added c
   
 - added a few more keys to disable notifications when using a MS account
   
-- added revert removing backup app, win10 file explorer ribbon, win10 task manager, and enable hvci/vbs
+- added revert removing backup app, win10 file explorer ribbon, win10 task manager and enable hvci/vbs
   
 - classic theme makes a return however now it will not apply a whole theme instead just the classic accents
 

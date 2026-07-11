@@ -1569,7 +1569,7 @@ function debloat {
   $comboBoxPresets = New-Object System.Windows.Forms.ComboBox
   $comboBoxPresets.Items.AddRange(@(
       'Debloat All',
-      'Keep Store, XBOX, and Edge',
+      'Keep Store, XBOX and Edge',
       'Keep Store and XBOX',
       'Keep Edge',
       'Keep Store'
@@ -1578,7 +1578,7 @@ function debloat {
   #hashtable to loop through later for updating the config
   $settings = @{}
   $settings['debloatAll'] = 'Debloat All'
-  $settings['debloatSXE'] = 'Keep Store, XBOX, and Edge'
+  $settings['debloatSXE'] = 'Keep Store, XBOX and Edge'
   $settings['debloatSX'] = 'Keep Store and XBOX'
   $settings['debloatE'] = 'Keep Edge'
   $settings['debloatS'] = 'Keep Store'
@@ -1901,7 +1901,7 @@ function debloat {
     $comboBoxPresets = New-Object System.Windows.Forms.ComboBox
     $comboBoxPresets.Location = New-Object System.Drawing.Point(20, 40)
     $comboBoxPresets.Size = New-Object System.Drawing.Size(480, 25)
-    $comboBoxPresets.Items.AddRange(@('Debloat All', 'Keep Store, XBOX, and Edge', 'Keep Store and XBOX', 'Keep Edge', 'Keep Store'))
+    $comboBoxPresets.Items.AddRange(@('Debloat All', 'Keep Store, XBOX and Edge', 'Keep Store and XBOX', 'Keep Edge', 'Keep Store'))
     $comboBoxPresets.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
     $comboBoxPresets.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $comboBoxPresets.ForeColor = 'White'
@@ -1914,7 +1914,7 @@ function debloat {
     $presetDescriptionLabel.ForeColor = 'White'
     $presetDescriptionLabel.BackColor = [System.Drawing.Color]::Transparent
     $presetDescriptionLabel.Font = New-Object System.Drawing.Font('Segoe UI', 10) 
-    $presetDescriptionLabel.Text = "Removes all non-essential apps, including Store, XBOX, and Edge.`r`nAlso removes Remote Desktop, Health Update Tools, and cleans Start Menu Pinned Icons + Outdated Store Apps."
+    $presetDescriptionLabel.Text = "Removes all non-essential apps, including Store, XBOX and Edge.`r`nAlso removes Remote Desktop, Health Update Tools, and cleans Start Menu Pinned Icons + Outdated Store Apps."
     $presetsPanel.Controls.Add($presetDescriptionLabel)
 
     $listView2 = New-Object System.Windows.Forms.ListView
@@ -2159,11 +2159,11 @@ function debloat {
 
     $comboBoxPresets.Add_SelectedIndexChanged({
         switch ($comboBoxPresets.SelectedIndex) {
-          0 { $presetDescriptionLabel.Text = "Removes all non-essential apps, including Store, XBOX, and Edge.`r`nAlso removes Remote Desktop, Health Update Tools, and cleans Start Menu Pinned Icons + Outdated Store Apps." }
-          1 { $presetDescriptionLabel.Text = "Keeps Microsoft Store, XBOX apps, and Edge browser.`r`nAlong with removing Remote Desktop, Health Update Tools, and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
-          2 { $presetDescriptionLabel.Text = "Keeps Microsoft Store and XBOX apps, removes Edge.`r`nAlong with removing Remote Desktop, Health Update Tools, and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
-          3 { $presetDescriptionLabel.Text = "Removes all non-essential apps except Edge browser.`r`nAlong with removing Remote Desktop, Health Update Tools, and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
-          4 { $presetDescriptionLabel.Text = "Removes all non-essential apps except Microsoft Store.`r`nAlong with removing Remote Desktop, Health Update Tools, and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
+          0 { $presetDescriptionLabel.Text = "Removes all non-essential apps, including Store, XBOX and Edge.`r`nAlso removes Remote Desktop, Health Update Tools, and cleans Start Menu Pinned Icons + Outdated Store Apps." }
+          1 { $presetDescriptionLabel.Text = "Keeps Microsoft Store, XBOX apps and Edge browser.`r`nAlong with removing Remote Desktop, Health Update Tools and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
+          2 { $presetDescriptionLabel.Text = "Keeps Microsoft Store and XBOX apps, removes Edge.`r`nAlong with removing Remote Desktop, Health Update Tools and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
+          3 { $presetDescriptionLabel.Text = "Removes all non-essential apps except Edge browser.`r`nAlong with removing Remote Desktop, Health Update Tools and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
+          4 { $presetDescriptionLabel.Text = "Removes all non-essential apps except Microsoft Store.`r`nAlong with removing Remote Desktop, Health Update Tools and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
         }
       })
 
@@ -7551,7 +7551,7 @@ function OptionalTweaks {
     }
       
     if ($checkbox14.Checked) {
-      Write-Status -Message 'Adding bat,ps1, and reg to New File Menu...' -Type Output
+      Write-Status -Message 'Adding bat, ps1 and reg to New File Menu...' -Type Output
       
       #run both to fix 24h2
       $path = Search-File '*newMenu11.reg'
@@ -8329,7 +8329,7 @@ function OptionalTweaks {
         $scaling = ($dpi / 96) * 100
       }
       Write-Status -Message "Scaling Set to $scaling%..." -Type Output
-      Write-Status -Message 'If This is Not Your Desired Value Change it in Display Settings, Restart PC, and Run this Again' -Type Warning
+      Write-Status -Message 'If This is Not Your Desired Value Change it in Display Settings, Restart PC and Run this Again' -Type Warning
 
       switch ($scaling) {
         100 {

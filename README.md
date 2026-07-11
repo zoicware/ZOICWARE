@@ -12,7 +12,7 @@ Want to set up Windows like me? Use the pre-made configs [here](https://github.c
 ---
 
 ## How to Use
-1. Simply click on [Releases](https://github.com/zoicware/ZOICWARE/releases) and download `zoicwareOS.zip`.
+1. Simply click on [releases](https://github.com/zoicware/ZOICWARE/releases) and download `zoicwareOS.zip`.
 2. Extract the folder to your C drive and run `RUN ZOICWARE.exe`.
 3. Choose your desired options. Once complete, you can save these choices to a config file for future use.
 
@@ -29,9 +29,7 @@ Want to set up Windows like me? Use the pre-made configs [here](https://github.c
 ---
 
 > [!NOTE]  
-> The launcher `RUN ZOICWARE.exe` included in the zip file is this [script](https://github.com/zoicware/ZOICWARE/blob/main/src/RUN%20ZOICWARE.cmd) compressed into an executable using [IExpress.exe](https://en.wikipedia.org/wiki/IExpress).
-> 
-> Antivirus software may detect this as a trojan due to the nature of compressing a script inside an executable.
+> Antivirus software may detect this project as a trojan due to the nature of modifying system components.
 
 
 

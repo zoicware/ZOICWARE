@@ -3106,7 +3106,7 @@ function debloat {
 
     if ($extraEdge.Checked) {
       if ($extraWebview.Checked) {
-        Write-Status -Message 'Uninstalling Edge && WebView...' -Type Output
+        Write-Status -Message 'Uninstalling Edge & WebView...' -Type Output
         $edge = Search-File '*EdgeRemove.ps1'
         &$edge -Webview
       }

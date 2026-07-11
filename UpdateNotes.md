@@ -911,7 +911,7 @@ added option to individually customize most hidden disk cleanup options, added c
 - fixed hosts file being locked when running disable telemetry tweaks (hopefully for the last time)
 
 
-### v.1.4.9
+### v1.4.9
 ---
 - fixed various bugs when running zoicware configs
   

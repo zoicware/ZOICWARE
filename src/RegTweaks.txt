@@ -252,7 +252,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "HideRecentlyAddedApps"=dword:00000001
 
-; Disable show recently opened items in start, jump lists, and file explorer
+; Disable show recently opened items in start, jump lists and file explorer
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Start_TrackDocs"=dword:00000000
 "Start_TrackProgs"=dword:00000000

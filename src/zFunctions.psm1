@@ -1569,19 +1569,19 @@ function debloat {
   $comboBoxPresets = New-Object System.Windows.Forms.ComboBox
   $comboBoxPresets.Items.AddRange(@(
       'Debloat All',
-      'Keep Store, XBOX and Edge',
+      'Keep Store, XBOX, and Edge',
       'Keep Store and XBOX',
-      'Debloat All Keep Edge',
-      'Debloat All Keep Store'
+      'Keep Edge',
+      'Keep Store'
     ))
 
   #hashtable to loop through later for updating the config
   $settings = @{}
   $settings['debloatAll'] = 'Debloat All'
-  $settings['debloatSXE'] = 'Keep Store, XBOX and Edge'
+  $settings['debloatSXE'] = 'Keep Store, XBOX, and Edge'
   $settings['debloatSX'] = 'Keep Store and XBOX'
-  $settings['debloatE'] = 'Debloat All Keep Edge'
-  $settings['debloatS'] = 'Debloat All Keep Store'
+  $settings['debloatE'] = 'Keep Edge'
+  $settings['debloatS'] = 'Keep Store'
 
   <#
   $Global:lockedAppxPackages = @(
@@ -1901,7 +1901,7 @@ function debloat {
     $comboBoxPresets = New-Object System.Windows.Forms.ComboBox
     $comboBoxPresets.Location = New-Object System.Drawing.Point(20, 40)
     $comboBoxPresets.Size = New-Object System.Drawing.Size(480, 25)
-    $comboBoxPresets.Items.AddRange(@('Debloat All', 'Keep Store, XBOX and Edge', 'Keep Store and XBOX', 'Debloat All Keep Edge', 'Debloat All Keep Store'))
+    $comboBoxPresets.Items.AddRange(@('Debloat All', 'Keep Store, XBOX, and Edge', 'Keep Store and XBOX', 'Keep Edge', 'Keep Store'))
     $comboBoxPresets.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
     $comboBoxPresets.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $comboBoxPresets.ForeColor = 'White'
@@ -9189,7 +9189,7 @@ function W11Tweaks {
 
     $checkbox22.Location = New-Object System.Drawing.Point(20, 130)
     $checkbox22.Size = New-Object System.Drawing.Size(300, 30)
-    $checkbox22.Text = 'Remove Quick Setting Tiles (24H2+)'
+    $checkbox22.Text = 'Remove Quick Settings Tiles (24H2+)'
     $checkbox22.Font = New-Object System.Drawing.Font('Segoe UI', 9)
     $checkbox22.ForeColor = 'White'
     $miscPanel.Controls.Add($checkbox22)

@@ -9,16 +9,16 @@
 - Disable snap layout
 - Remove gallery shortcut from file explorer
 - Remove home shortcut from file explorer
-- Open file explorer to this pc
-- Disable win 11 system requirements
+- Open file explorer to this PC
+- Disable system requirements
 - Show more pins in start menu
 - Disable show recently added apps and recommendations
-- Disable ai insights
+- Disable AI insights
 - Remove pinned items in network and sound flyout
-- Disable windows ai
-- Enable end task in taskbar right click menu
+- Disable Windows AI
+- Enable end task in taskbar context menu
 - Disable share app experiences
-- Set wallpaper to solid color (11)
+- Set background type to solid color
 - Disable prompt for location privacy
 - Disable user choice driver
 - Disable phone companion in start menu
@@ -34,14 +34,14 @@
 - Remove news and interests
 - Always hide most used list in start menu
 - Disable show recently added apps
-- Disable show recently opened items in start, jump lists and file explorer
+- Disable show recently opened items in start, jump lists, and file explorer
 - Hide frequent folders in quick access
 - Show file name extensions
 - Disable search history
 - Disable menu show delay
 - Dark theme
-- Disable windows widgets
-- 100% dpi scaling
+- Disable Windows widgets
+- 100% DPI scaling
 - Disable fix scaling for apps
 - Disable transparency
 - Sound communications do nothing
@@ -50,11 +50,11 @@
 - Disable lock
 - Disable sleep
 - Disable hibernate
-- Set system responsiveness to 0
+- Set system responsiveness to 10
 - Disable network throttling
 - Set appearance options to custom
 - Disable animate windows when minimizing and maximizing
-- Turn on hardware accelerated gpu scheduling
+- Turn on hardware accelerated GPU scheduling
 - Disable animations in the taskbar
 - Disable enable peek
 - Disable save taskbar thumbnail previews
@@ -66,9 +66,9 @@
 - Adjust for best performance of programs
 - Disable remote assistance
 - Disable game bar
-- Disable enable open xbox game bar using game controller
+- Disable enable open XBOX game bar using game controller
 - Enable game mode
-- Disable xbox capture
+- Disable XBOX capture
 - Privacy deny location
 - Privacy deny passkeys
 - Privacy deny camera
@@ -91,6 +91,7 @@
 - Privacy deny pictures
 - Privacy deny videos
 - Privacy deny file system
+- Privacy deny foreground text access
 - Privacy deny text and image generation
 - Privacy deny human presence
 - Privacy deny background spatial perception
@@ -104,7 +105,7 @@
 - Disable personal inking and typing dictionary
 - Feedback frequency never
 - Disable store my activity history on this device
-- Safe search off
+- Disable safe search
 - Disable cloud content search for work or school account
 - Disable cloud content search for microsoft account
 - Disable notifications
@@ -115,12 +116,12 @@
 - Disable narrator
 - Disable driver searching
 - Disable automatic maintenance
-- Disable use my sign in info after restart
+- Disable use my sign-in info after restart
 - Disable automatically update maps
-- Alt tab open windows only
+- Alt-tab open windows only
 - Show hidden files
-- Remove picture wallpaper
-- Set background black
+- Remove wallpaper
+- Set background color to black
 - Disable finish setting up your device
 - Disable language hotkey
 - Disable language bar
@@ -130,16 +131,16 @@
 - Task manager always on top
 - Disable web search
 - Disable co installers
-- Disable windows automatic folder type
-- Disable windows spotlight
+- Disable Windows automatic folder type
+- Disable Windows spotlight
 - Disable last access time
 - Respect power modes search indexer
 - Disable fault tolerant heap
 - Increase icon cache size
 - More info on blue screen of death
 - Enable long paths
-- Black powershell console
-- Disable windows platform binary table
+- Black PowerShell console
+- Disable Windows platform binary table
 - No web services in explorer
 - No document history tracking
 - Disable low disk space checks
@@ -153,12 +154,12 @@
 - Set start menu apps view to list
 - Disable explorer open in new tab
 - Disable sleep study
-- Disable use view and menu as guide button in apps
+- Disable use view + menu as guide button in apps
 - Disable drag tray
 - Disable device usage
 - Disable store settings
 - Disable app actions
-- Disable windows backup
+- Disable Windows backup
 - Disable jump list when hovering inactive apps
 - Disable do not disturb
 - Disable dynamic lock
@@ -166,5 +167,7 @@
 - Disable filter keys
 - Expand calendar
 - Show big clock in notification center
+- Enable file explorer prelaunch
 - Remove resume from taskbar
-- Disable archive apps
+- Disable show me suggested apps in share
+- Increase wallpaper quality

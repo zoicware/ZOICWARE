@@ -34,7 +34,7 @@
 - Remove news and interests
 - Always hide most used list in start menu
 - Disable show recently added apps
-- Disable show recently opened items in start, jump lists, and file explorer
+- Disable show recently opened items in start, jump lists and file explorer
 - Hide frequent folders in quick access
 - Show file name extensions
 - Disable search history

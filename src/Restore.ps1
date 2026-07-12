@@ -2187,7 +2187,54 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CDP]
 "EnablePromotionalAppsForShare"=-
 
-[-HKEY_CURRENT_USER\Control Panel\Desktop\JPEGImportQuality]
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"JPEGImportQuality"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsMitigation]
+"UserPreference"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\TabletTip\EmbeddedInkControl]
+"EnableInkingWithTouch"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarSn"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarSd"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"IconSizePreference"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
+"EnableAutocorrection"=-
+"EnableAutoShiftEngage"=-
+"EnableDoubleTapSpace"=-
+"EnableKeyAudioFeedback"=-
+"TouchKeyboardTapInvoke"=-
+"TipbandDesiredVisibility"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\input\Settings]
+"IsVoiceTypingKeyEnabled"=-
+
+[HKEY_CURRENT_USER\Control Panel\Cursors]
+"ContactVisualization"=-
+"GestureVisualization"=-
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\HighContrast]
+"Flags"=-
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility]
+"Sound on Activation"=-
+"Warning Sounds"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Shell\USB]
+"NotifyOnUsbErrors"=-
+
+[HKEY_USERS\S-1-5-20\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Settings]
+"DownloadMode"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GamingConfiguration]
+"GamingHomeApp"=-
 '@
 
     Add-Content -Path $file.FullName -Value $regContent -Force

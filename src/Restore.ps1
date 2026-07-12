@@ -1995,7 +1995,10 @@ Windows Registry Editor Version 5.00
 "Enabled"=-
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\CTF\LangBar]
+"ExtraIconsOnMinimized"=-
+"Label"=-
 "ShowStatus"=-
+"Transparency"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
 "DisableLogonBackgroundImage"=-

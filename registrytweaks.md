@@ -59,8 +59,8 @@
 - Disable enable peek
 - Disable save taskbar thumbnail previews
 - Enable show thumbnails instead of icons
-- Disable show translucent selection rectangle
-- Disable show window contents while dragging
+- Enable show translucent selection rectangle
+- Enable show window contents while dragging
 - Enable smooth edges of screen fonts
 - Disable use drop shadows for icon labels on the desktop
 - Adjust for best performance of programs
@@ -171,3 +171,16 @@
 - Remove resume from taskbar
 - Disable show me suggested apps in share
 - Increase wallpaper quality
+- Disable automatic troubleshooting
+- Disable write with fingertip
+- Disable share window from taskbar
+- Disable desktop preview
+- Disable small taskbar buttons
+- Disable touch keyboard
+- Disable auto correction
+- Disable touch indicator
+- Disable keyboard shortcut for contrast themes
+- Disable notification for sticky, filter or toggle keys
+- Disable USB error notifications
+- Disable delivery optimization
+- Disable XBOX mode

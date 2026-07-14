@@ -96,6 +96,9 @@
 - SCPolicySvc
 - WbioSrvc
 - WalletService
+- Windows Health and Optimized Experiences (whesvc)
+- WSAIFabricSvc
+- Microsoft Usage and Quality Insights (wuqisvc)
 
 ## Debloat
 
@@ -124,12 +127,15 @@
 - **Keep Store**
 
 ### Features
-- Removes all bloat appx packages, Edge, Teams, OneDrive, Remote Desktop, Health Update Tools, Quick Assist, Hello Face and Steps Recorder
-     - **Note:** All debloat presets will clean the start menu pinned icons
+- Removes all bloat appx packages, Edge, Teams, OneDrive, Remote Desktop, Health Update Tools, etc
+     >[!NOTE]
+      All debloat presets will clean the start menu pinned icons and outdated versions of newer installed packages
 
 ### Custom Debloat
 - Choose specific appx packages including locked packages
-  - **Note:** locked packages are locked for a reason be careful when removing these
+  >[!Note] 
+  locked packages are locked for a reason be careful when 
+  > removing these
 
 ### Remove Extras
 - Microsoft Edge
@@ -286,7 +292,8 @@
           - NVDisplay.ContainerLocalSystem
           - WlanSvc
 - **Show all Taskbar Tray Icons** - windows 11 makes it difficult to show all taskbar tray icons with this tweak all current apps will be shown and new apps will be enabled upon restarting after installing the app
-     - **Note:** this tweak uses a scheduled task to update the registry key responsible for showing the app in the taskbar
+     >[!NOTE]
+      this tweak uses a scheduled task to update the registry key responsible for showing the app in the taskbar
 
 
 - **Dark Winver** - this will replace winver.exe with a dark themed version view them here -> [Dark Winver](https://github.com/zoicware/WinverDark)
@@ -327,8 +334,9 @@
 - install older drivers by typing in the version number (add "hf" to the end if its a hotfix driver)
 - alternatively you can choose an already downloaded driver file
 - **Strip Driver** - remove the nvidia app and all other bloat leaving only the bare driver
-- **Disable Telemetry** - this tweak runs automatically deleting a dll file preventing telemetry to Nvidias Server
-     - **Note:** Only applies to Strip Driver setting as this file will break the nvidia app
+- **Disable Telemetry** - this tweak runs automatically deleting dll files preventing telemetry to Nvidias Server and reduces memory usage 
+     >[!NOTE]
+      Only applies to Strip Driver setting as this file will break the nvidia app
 - **Disable HDCP** - disable High-bandwidth Digital Content Protection
 
 
@@ -337,12 +345,15 @@
 <img width="383" height="421" alt="Screenshot 2026-07-11 200154" src="https://github.com/user-attachments/assets/23c6f8ff-69f2-43b5-8142-4155a2ed915f" />
 
 #### Post Install Tweaks
-- Import Optimized Nvidia Control Panel Settings or alternatively import your own nip file
+- Import optimized Nvidia Control Panel settings and optionally choose to enable GSync,Rebar and/or force latest DLSS version
+  >[!NOTE]
+  You can also choose your own NIP file to import
 - Replace the modern `Image Scaling` option with the much more useful `Image Sharpening`
 - Enable MSI Mode to switch supported devices from legacy line-based interrupts to Message Signaled Interrupts (MSI)
 - Disable GPU Idle States only recommended for users that know they need this tweak
 - Apply Digital Vibrance - a slider will allow you to setup digital vibrance on all your monitors, this tweak will apply once restarting
 - Disable Monitor Speakers
+- Enable Nvidia colors to ensure your monitor(s) are running at the highest color depth
 
 ## Install Packages
  - This will download the latest DirectX and C++ packages from their source
@@ -350,7 +361,7 @@
           - DirectX
           - All Visual C++ Redistributables and Runtimes
           - Net 3.5 from the bootable media used to install windows
-- After they are finished Ngen.exe and DISM are ran to cleanup outdated assemblies
+- After they are finished Ngen.exe is ran to cleanup outdated assemblies speeding up some apps launch time
 ## Importing and Exporting Tweaks
 
 <img width="365" height="205" alt="{C24651C6-F4FB-4921-A7F9-598E39D8A0EF}" src="https://github.com/user-attachments/assets/c34d7eb6-cf3b-410d-a649-9d073afef286" />
@@ -422,7 +433,8 @@
           - Device Driver Packages
 ## Activate Windows
 - activates windows 10 and 11 with a generic pro key and public kms server for 180 days
-- **Note:** recommend using [Massgravel](https://github.com/massgravel/Microsoft-Activation-Scripts) for permanent activation
+>[!NOTE] 
+recommend using [Massgravel](https://github.com/massgravel/Microsoft-Activation-Scripts) for permanent activation
 
 
 ## Install Other Scripts
@@ -433,5 +445,3 @@
 - Create a desktop shortcut to some of my other useful scripts for windows tweaking and management 
   
 - This shortcut will run the code directly from the github so it will always be up to date
-
-- **NOTE: If you do not disable uac you will need to run the shortcuts as admin**

@@ -1699,6 +1699,9 @@ Windows Registry Editor Version 5.00
 "SystemAudioGain"=-
 "MicrophoneGain"=-
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\GameDVR]
+"AllowGameDVR"=-
+
 [HKEY_CURRENT_USER\Software\Microsoft\GameBar]
 "UseNexusForGameBarEnabled"=-
 
@@ -2139,7 +2142,6 @@ Windows Registry Editor Version 5.00
 "SubscribedContentEnabled"=-
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"DITest"=-
 "EnableSnapAssistFlyout"=-
 "EnableSnapBar"=-
 "EnableTaskGroups"=-
@@ -2238,6 +2240,12 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GamingConfiguration]
 "GamingHomeApp"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"LastActiveClick"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\DelegateFolders\{F5FB2C77-0E2F-4A16-A381-3E560C68BC83}]
+@="Removable Drives"
 '@
 
     Add-Content -Path $file.FullName -Value $regContent -Force
@@ -2253,7 +2261,9 @@ Windows Registry Editor Version 5.00
 
   if ($checkbox6.Checked) {
     Write-Status -Message 'Downloading XBOX Game Repair Tool...' -Type Output
-    #remove gamebar popup block
+    #remove recording policy
+    Remove-ItemProperty 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR' 'AllowGameDVR' -force -ea 0
+	#remove gamebar popup block
     Set-ItemProperty 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR' 'AppCaptureEnabled' 1 -type dword -force -ea 0
     Set-ItemProperty 'HKCU:\System\GameConfigStore' 'GameDVR_Enabled' 1 -type dword -force -ea 0
     'ms-gamebar', 'ms-gamebarservices', 'ms-gamingoverlay' | ForEach-Object {

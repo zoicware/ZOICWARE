@@ -6,7 +6,7 @@
 - Disable storage sense
 - Leftmost taskbar
 - Enable action center
-- Disable snap layout
+- Disable snap assist and layout
 - Remove gallery shortcut from file explorer
 - Remove home shortcut from file explorer
 - Open file explorer to this PC
@@ -184,3 +184,5 @@
 - Disable USB error notifications
 - Disable delivery optimization
 - Disable XBOX mode
+- Enable last open window in taskbar
+- Hide removable drives from navigation pane

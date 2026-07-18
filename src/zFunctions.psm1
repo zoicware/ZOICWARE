@@ -8033,6 +8033,7 @@ function OptionalTweaks {
 
     if ($checkbox40.Checked) {
       Write-Status -Message 'Removing Print from Context Menu...' -Type Output
+      Reg.exe add 'HKCR\AppX4ztfk9wxr86nxmzzq47px0nh0e58b8fw\Shell\Print' /v 'ProgrammaticAccessOnly' /t REG_SZ /d `"`" /f
       Reg.exe add 'HKCR\SystemFileAssociations\image\shell\print' /v 'ProgrammaticAccessOnly' /t REG_SZ /d `"`" /f
       Reg.exe add 'HKCR\batfile\shell\print' /v 'ProgrammaticAccessOnly' /t REG_SZ /d `"`" /f
       Reg.exe add 'HKCR\cmdfile\shell\print' /v 'ProgrammaticAccessOnly' /t REG_SZ /d `"`" /f

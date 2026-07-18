@@ -2479,6 +2479,7 @@ Windows Registry Editor Version 5.00
 
     Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer' /v 'NoCustomizeThisFolder' /f *>$null
     Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{9F156763-7844-4DC4-B2B1-901F640F5155}' /f *>$null
+	Reg.exe delete 'HKCR\AppX4ztfk9wxr86nxmzzq47px0nh0e58b8fw\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
     Reg.exe delete 'HKCR\SystemFileAssociations\image\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null
     Reg.exe delete 'HKCR\batfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null   
     Reg.exe delete 'HKCR\cmdfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 

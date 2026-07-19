@@ -6,30 +6,37 @@ Windows Registry Editor Version 5.00
 "Position"="Bottom"
 "SubCommands"=""
 
-[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\005flyout]
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\001flyout]
 "Icon"="SndVol.exe,-101"
 "MUIVerb"="Sound"
 
-[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\005flyout\command]
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\001flyout\command]
 @="rundll32.exe shell32.dll,Control_RunDLL mmsys.cpl,,0"
 
-[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\006flyout]
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\002flyout]
 "Icon"="powercpl.dll,0"
 "MUIVerb"="Power Options"
 
-[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\006flyout\command]
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\002flyout\command]
 @="rundll32.exe shell32.dll,Control_RunDLL powercfg.cpl"
 
-[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\008flyout]
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\003flyout]
 "Icon"="main.cpl"
 "MUIVerb"="Mouse Properties"
 
-[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\008flyout\command]
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\003flyout\command]
 @="rundll32.exe shell32.dll,Control_RunDLL main.cpl,,0"
 
-[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\009flyout]
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\004flyout]
+"Icon"="SystemPropertiesAdvanced.exe"
+"MUIVerb"="System Properties"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\004flyout\command]
+@="SystemPropertiesAdvanced.exe"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\005flyout]
 "Icon"="desk.cpl"
 "MUIVerb"="Desktop Icon Settings"
 
-[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\009flyout\command]
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\005flyout\command]
 @="rundll32.exe shell32.dll,Control_RunDLL desk.cpl,,0"

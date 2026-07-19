@@ -7865,10 +7865,18 @@ function OptionalTweaks {
     if ($checkbox29.Checked) {
       Write-Status -Message 'Excluding Drivers From Windows Update...' -Type Output
    
-      Reg.exe add 'HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' /v 'ExcludeWUDriversInQualityUpdate' /t REG_DWORD /d '1' /f
-      Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'ExcludeWUDriversInQualityUpdate' /t REG_DWORD /d '1' /f
       Reg.exe add 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' /v 'SearchOrderConfig' /t REG_DWORD /d '0' /f
+      Reg.exe add 'HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' /v 'ExcludeWUDriversInQualityUpdate' /t REG_DWORD /d '1' /f
       Reg.exe add 'HKLM\SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\PolicyState' /v 'ExcludeWUDrivers' /t REG_DWORD /d '1' /f
+      Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'SearchOrderConfig' /t REG_DWORD /d '0' /f
+      Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' /v 'EnableFeaturedSoftware' /t REG_DWORD /d '0' /f
+      Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' /v 'IncludeRecommendedUpdates' /t REG_DWORD /d '0' /f
+      Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'SetAllowOptionalContent' /t REG_DWORD /d '0' /f
+      Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'ExcludeWUDriversInQualityUpdate' /t REG_DWORD /d '1' /f
+      Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'AllowTemporaryEnterpriseFeatureControl' /t REG_DWORD /d '0' /f
+      Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Device Metadata' /v 'PreventDeviceMetadataFromNetwork' /t REG_DWORD /d '1' /f
+      Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Settings' /v 'DisableSendGenericDriverNotFoundToWER' /t REG_DWORD /d '1' /f
+      Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Settings' /v 'DisableSendRequestAdditionalSoftwareToWER' /t REG_DWORD /d '1' /f
       Write-Status -Message 'Updating Policy...' -Type Output
     
       gpupdate /force

@@ -2312,18 +2312,42 @@ Windows Registry Editor Version 5.00
     Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -name 'PauseQualityUpdatesStartTime' -Force
     Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -name 'PauseUpdatesStartTime' -Force
 
+    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' /v 'SearchOrderConfig' /f >$null
+    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\PolicyState' /v 'ExcludeWUDrivers' /f >$null
+    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'SearchOrderConfig' /f >$null
+    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' /v 'EnableFeaturedSoftware' /f >$null
+    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' /v 'IncludeRecommendedUpdates' /f >$null
+    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'AllowTemporaryEnterpriseFeatureControl' /f >$null
+    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Settings' /v 'DisableSendGenericDriverNotFoundToWER' /f >$null
+    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Settings' /v 'DisableSendRequestAdditionalSoftwareToWER' /f >$null
     Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'SetAllowOptionalContent' /f >$null
     Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferFeatureUpdates' /f >$null
     Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferFeatureUpdatesPeriodInDays' /f >$null
     Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferQualityUpdates' /f >$null
     Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferQualityUpdatesPeriodInDays' /f >$null 
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferQualityUpdatesPeriodInDays' /f >$null
     Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'ExcludeUpdateClassifications' /f >$null
+    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'ExcludeWUDriversInQualityUpdate' /f >$null
     Reg.exe delete 'HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' /v 'ExcludeWUDriversInQualityUpdate' /f >$null
     Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Device Metadata' /v 'PreventDeviceMetadataFromNetwork' /f >$null
     Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'DontPromptForWindowsUpdate' /f >$null
     Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'DontSearchWindowsUpdate' /f >$null
     Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'DriverUpdateWizardWuSearchEnabled' /f >$null
+
+    Set-Service -Name wuauserv -StartupType Manual -ErrorAction SilentlyContinue
+    Set-Service -Name UsoSvc -StartupType AutomaticDelayedStart -ErrorAction SilentlyContinue
+    Set-Service -Name WaaSMedicSvc -StartupType Manual -ErrorAction SilentlyContinue
+
+    $Tasks =
+    '\Microsoft\Windows\InstallService\*',
+    '\Microsoft\Windows\UpdateOrchestrator\*',
+    '\Microsoft\Windows\UpdateAssistant\*',
+    '\Microsoft\Windows\WaaSMedic\*',
+    '\Microsoft\Windows\WindowsUpdate\*',
+    '\Microsoft\WindowsUpdate\*'
+
+    foreach ($Task in $Tasks) {
+      Get-ScheduledTask -TaskPath $Task | Enable-ScheduledTask -ErrorAction SilentlyContinue
+    }
   }
  
   if ($checkbox10.Checked) {

@@ -37,6 +37,7 @@
     - [Enable Services](#enable-services)
     - [Install Microsoft Store](#install-microsoft-store)
     - [Revert Registry Tweaks](#revert-registry-tweaks)
+    - [Unpause Updates](#unpause-updates)
   - [Ultimate Cleanup](#ultimate-cleanup)
     - [Features](#features-3)
   - [Activate Windows](#activate-windows)
@@ -391,7 +392,13 @@
 - installs the windows 10 store for windows 11 use `wsreset -i`
 ### Revert Registry Tweaks
 - this will revert most registry tweaks   
-  **Note:** not all registry tweaks can be reverted/should be 
+  **Note:** not all registry tweaks can/should be reverted
+### Unpause Updates
+- resumes Windows updates and re-enables driver updates  
+  **Note:** to resume updates but keep driver updates disabled, use `Resume updates` in Windows Update settings instead
+
+
+
 ## Ultimate Cleanup
 - cleans temp files and event logs
 

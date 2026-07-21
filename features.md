@@ -3,33 +3,38 @@
   - [Registry Tweaks](#registry-tweaks)
   - [Group Policy Tweaks](#group-policy-tweaks)
     - [Disable Updates](#disable-updates)
-    - [Disable Windows Defender](#disable-windows-defender)
-    - [Disable Windows Telemetry](#disable-windows-telemetry)
-  - [Remove Scheduled Tasks](#remove-scheduled-tasks)
+    - [Disable Defender](#disable-defender)
+    - [Disable Telemetry](#disable-telemetry)
   - [Disable Services](#disable-services)
       - [Services Disabled](#services-disabled)
+  - [Remove Scheduled Tasks](#remove-scheduled-tasks)
   - [Debloat](#debloat)
     - [Debloat Presets](#debloat-presets)
     - [Features](#features)
     - [Custom Debloat](#custom-debloat)
+  - [Power Tweaks](#power-tweaks)
+    - [Import Plan](#import-plan)
+    - [Remove Plans](#remove-plans)
+    - [Enable Hidden Plans](#enable-hidden-plans)
   - [Optional Tweaks](#optional-tweaks)
     - [General](#general)
     - [Ultimate Context Menu](#ultimate-context-menu)
       - [Add to Menu](#add-to-menu)
       - [Remove from Menu](#remove-from-menu)
-  - [Import and Remove Power Plans](#import-and-remove-power-plans)
-    - [Import Plan](#import-plan)
-    - [Remove Plans](#remove-plans)
-    - [Enable Hidden Plans](#enable-hidden-plans)
   - [Windows 11 Tweaks](#windows-11-tweaks)
     - [Patch Explorer](#patch-explorer)
+    - [Windows 10 Restore Tweaks](#windows-10-restore-tweaks)
     - [Misc Tweaks](#misc-tweaks)
-  - [Install Network Driver](#install-network-driver)
+  - [Install Packages](#install-packages)
+  - [Install Browsers](#install-browsers)
   - [Install Nvidia Driver](#install-nvidia-driver)
     - [Features](#features-1)
       - [Post Install Tweaks](#post-install-tweaks)
-  - [Install Packages](#install-packages)
-  - [Importing and Exporting Tweaks](#importing-and-exporting-tweaks)
+  - [Install Network Driver](#install-network-driver)
+  - [Ultimate Cleanup](#ultimate-cleanup)
+    - [Features](#features-3)
+  - [Activate Windows](#activate-windows)
+  - [Import and Export Config](#import-and-export-config)
     - [Features](#features-2)
   - [Restore Tweaks](#restore-tweaks)
     - [Enable Updates](#enable-updates)
@@ -38,9 +43,6 @@
     - [Install Microsoft Store](#install-microsoft-store)
     - [Revert Registry Tweaks](#revert-registry-tweaks)
     - [Unpause Updates](#unpause-updates)
-  - [Ultimate Cleanup](#ultimate-cleanup)
-    - [Features](#features-3)
-  - [Activate Windows](#activate-windows)
   - [Install Other Scripts](#install-other-scripts)
 
 ## Registry Tweaks
@@ -59,15 +61,14 @@
 ## Group Policy Tweaks
 ### Disable Updates
 - This tweak will disable automatic Windows updates and the related services
-### Disable Windows Defender
+### Disable Defender
 - CAUTION: Disabling Windows defender could leave you vulnerable to malicious attacks!
 - This tweak will disable Windows defender and all related services
-### Disable Windows Telemetry
+### Disable Telemetry
 - This tweak will disable telemetry with group policy however, this only applies to server and enterprise builds
 - Adds telemetry domains to be blocked via hosts file gathered from official microsoft sources
-- **Note:** other telemetry services and settings are disabled as well
-## Remove Scheduled Tasks
-- This tweak will remove all scheduled tasks except for SvcRestart and CtfMonitor to avoid issues
+> [!NOTE]
+> other telemetry services and settings are disabled as well
 
 ## Disable Services
 - This tweak will disable some unwanted services
@@ -101,6 +102,9 @@
 - WSAIFabricSvc
 - Microsoft Usage and Quality Insights (wuqisvc)
 
+## Remove Scheduled Tasks
+- This tweak will remove all scheduled tasks except for SvcRestart and CtfMonitor to avoid issues
+
 ## Debloat
 
 <img width="414" height="307" alt="Screenshot 2026-07-11 174153" src="https://github.com/user-attachments/assets/dd7b61ae-93d2-48e6-9d5c-9d1b32821e70" />
@@ -129,14 +133,13 @@
 
 ### Features
 - Removes all bloat appx packages, Edge, Teams, OneDrive, Remote Desktop, Health Update Tools, etc
-     >[!NOTE]
-      All debloat presets will clean the start menu pinned icons and outdated versions of newer installed packages
+> [!NOTE]
+> All debloat presets will clean the start menu pinned icons and outdated versions of newer installed packages
 
 ### Custom Debloat
 - Choose specific appx packages including locked packages
-  >[!Note] 
-  locked packages are locked for a reason be careful when 
-  > removing these
+> [!NOTE]
+> locked packages are locked for a reason be careful when removing these
 
 ### Remove Extras
 - Microsoft Edge
@@ -166,7 +169,33 @@
 - Remove installed apps with additional brute force cleaning of leftovers.
     - The script will search for leftover files and folders after the uninstaller for the app has been ran, since the script could potentially find items that arent related to the app a popup will appear with the found         items allowing for manual selection.
     - If an item can not be removed with brute force methods a script will run upon the next reboot to remove the file
- 
+
+
+
+ ## Power Tweaks
+
+ <img width="552" height="407" alt="{C47C20BE-F31F-4D8D-8966-B46980B0BA6B}" src="https://github.com/user-attachments/assets/95233c00-5efb-4a9b-bbca-f49550efa188" />
+
+
+<img width="552" height="407" alt="{57E45D56-8025-4E6D-ABD0-05293850B913}" src="https://github.com/user-attachments/assets/e4e57ffa-b9ab-4831-a405-da0de78c6828" />
+
+
+ ### Import Plan
+  - Custom power plan for removing power saving features and core parking
+  ### Remove Plans
+  - A list of current power plans will allow you to remove any and prevent windows from switching back to balanced/other recommended plans
+  
+  ### Enable Hidden Plans
+  - there are 3 hidden power plans in windows `Ultimate Performance`
+  `Max Performance Overlay` and `High Performance Overlay` 
+  - this tweak will allow you to enable any of these to try out
+
+  ### USB Power Tweaks
+  - this section will display the USB hubs and devices connected
+  - Choose any or all devices to disable power saving
+
+
+
 ## Optional Tweaks
 
 <img width="784" height="590" alt="Screenshot 2026-07-11 181630" src="https://github.com/user-attachments/assets/5ae93627-e405-4e09-8888-99a1c4e1ae88" />
@@ -192,7 +221,8 @@
 - **Prevent OS Upgrade** - this will prevent Windows update from updating Windows 10 -> Windows 11 or updating a version such as 24h2 -> 25h2
 - **Remove Open File Security Warning** - When disabling smart screen windows will default to the old file security warning when opening files from another pc
 - **Block Razer and ASUS Download Servers** - this tweak adds all razer and ASUS servers to the hosts file to prevent the download of their bloat software
-   - **Note:** the hosts file is located `[C:\Windows\System32\drivers\etc\hosts]`
+> [!NOTE]
+> the hosts file is located `[C:\Windows\System32\drivers\etc\hosts]`
 - **Apply PBO Curve on Startup** - this tweak will prompt you to enter your pbo curve oc and will apply this when your pc starts up using PBO Tuner
 - **Disable PowerShell Logging** - by default everything put in the powershell terminal is saved in a file in your appdata directory, this will disable that "feature"
 - **Enable No GUI Boot** - this will enable no gui boot in msconfig thus disabling the boot logo, spinning logo and boot messages
@@ -236,28 +266,6 @@
 
  
 
- ## Import and Remove Power Plans
-
- <img width="552" height="407" alt="{C47C20BE-F31F-4D8D-8966-B46980B0BA6B}" src="https://github.com/user-attachments/assets/95233c00-5efb-4a9b-bbca-f49550efa188" />
-
-
-<img width="552" height="407" alt="{57E45D56-8025-4E6D-ABD0-05293850B913}" src="https://github.com/user-attachments/assets/e4e57ffa-b9ab-4831-a405-da0de78c6828" />
-
-
- ### Import Plan
-  - Custom power plan for removing power saving features and core parking
-  ### Remove Plans
-  - A list of current power plans will allow you to remove any and prevent windows from switching back to balanced/other recommended plans
-  
-  ### Enable Hidden Plans
-  - there are 3 hidden power plans in windows `Ultimate Performance`
-  `Max Performance Overlay` and `High Performance Overlay` 
-  - this tweak will allow you to enable any of these to try out
-
-  ### USB Power Tweaks
-  - this section will display the USB hubs and devices connected
-  - Choose any or all devices to disable power saving
-
   ## Windows 11 Tweaks
  
 <img width="500" height="500" alt="Screenshot 2026-07-11 184643" src="https://github.com/user-attachments/assets/6a06ca9a-86fb-4be5-b0aa-5ba95a83067f" />
@@ -276,7 +284,9 @@
   ### Windows 10 Restore Tweaks
 - **Restore Windows 10 Recycle Bin Icon** - this tweak will replace the windows 11 recycle bin icon with the old windows 10 icon
 - **Restore Windows 10 Snipping Tool** - remove uwp snipping tool (screen sketch) and enable windows 10 snipping tool
-- **Restore Windows 10 Task Manager** - this will create a fake taskmgr.exe that runs task manager with the -d command thus disabling the new ui, NOTE this tweak works best with UAC disabled due to the fake wrapper needing to be ran as admin
+- **Restore Windows 10 Task Manager** - this will create a fake taskmgr.exe that runs task manager with the -d command thus disabling the new ui
+> [!NOTE]
+> this tweak works best with UAC disabled due to the fake wrapper needing to be ran as admin
 - **Restore Windows 10 Notepad** - this will enable the legacy windows 10 notepad with the optional feature and automatically set it to be used by default
 - **Restore Windows 10 Icons** - this tweak will replace all the windows 11 icons in file explorer with windows 10, this tweak works best with the windows 10 file explorer making it look exactly like windows 10 without using a third party app
 - **Restore Windows 10 Sounds** - replaces the windows 11 sound scheme with the old windows 10 sounds
@@ -293,8 +303,8 @@
           - NVDisplay.ContainerLocalSystem
           - WlanSvc
 - **Show all Taskbar Tray Icons** - windows 11 makes it difficult to show all taskbar tray icons with this tweak all current apps will be shown and new apps will be enabled upon restarting after installing the app
-     >[!NOTE]
-      this tweak uses a scheduled task to update the registry key responsible for showing the app in the taskbar
+> [!NOTE]
+> this tweak uses a scheduled task to update the registry key responsible for showing the app in the taskbar
 
 
 - **Dark Winver** - this will replace winver.exe with a dark themed version view them here -> [Dark Winver](https://github.com/zoicware/WinverDark)
@@ -313,16 +323,29 @@
 
 - **Revert New Start Menu** - this restores the old 24H2 start menu layout for those who want to revert the tweak above or simply prefer to use the old layout on 25H2
 
-## Install Network Driver
+## Install Packages
+ - This will download the latest DirectX and C++ packages from their source
+     - Included Packages
+          - DirectX
+          - All Visual C++ Redistributables and Runtimes
+          - Net 3.5 from the bootable media used to install windows
+- After they are finished Ngen.exe is ran to cleanup outdated assemblies speeding up some apps launch time
 
-- The script will check for internet connection 
-     - If there is then the script will search google for your network adapter's driver
-     - If no internet then the script will use local drivers : 
-          - Realtek Lan
-          - Intel Lan
-          - Killer Lan
-          - Intel Wifi
-- After installing the driver a popup will ask if you want to enable QoS for upload, this tweak will enable some network settings to attempt to prioritize game network traffic along with some other network tweaks to help with bufferbloat [Credit: @AveYo], NOTE: this can be reverted in "Revert Tweaks" if needed
+## Install Browsers
+- gives you the option to install a web browser such as Chrome, Firefox or Brave
+- this installer will also apply policies to pre-configure recommended browser settings
+> [!NOTE]
+> these policies can be removed by running their associated command below in PowerShell
+> ```powershell
+> Reg.exe delete 'HKLM\SOFTWARE\Policies\Google\Chrome' /f
+> ```
+> ```powershell
+> Reg.exe delete 'HKLM\SOFTWARE\Policies\Mozilla\Firefox' /f
+> ```
+> ```powershell
+> Reg.exe delete 'HKLM\SOFTWARE\Policies\BraveSoftware\Brave' /f
+> ```
+
 
 ## Install Nvidia Driver
 
@@ -336,8 +359,8 @@
 - alternatively you can choose an already downloaded driver file
 - **Strip Driver** - remove the nvidia app and all other bloat leaving only the bare driver
 - **Disable Telemetry** - this tweak runs automatically deleting dll files preventing telemetry to Nvidias Server and reduces memory usage 
-     >[!NOTE]
-      Only applies to Strip Driver setting as this file will break the nvidia app
+> [!NOTE]
+> Only applies to Strip Driver setting as this file will break the nvidia app
 - **Disable HDCP** - disable High-bandwidth Digital Content Protection
 
 
@@ -347,8 +370,8 @@
 
 #### Post Install Tweaks
 - Import optimized Nvidia Control Panel settings and optionally choose to enable GSync,Rebar and/or force latest DLSS version
-  >[!NOTE]
-  You can also choose your own NIP file to import
+> [!NOTE]
+> You can also choose your own NIP file to import
 - Replace the modern `Image Scaling` option with the much more useful `Image Sharpening`
 - Enable MSI Mode to switch supported devices from legacy line-based interrupts to Message Signaled Interrupts (MSI)
 - Disable GPU Idle States only recommended for users that know they need this tweak
@@ -356,47 +379,19 @@
 - Disable Monitor Speakers
 - Enable Nvidia colors to ensure your monitor(s) are running at the highest color depth
 
-## Install Packages
- - This will download the latest DirectX and C++ packages from their source
-     - Included Packages
-          - DirectX
-          - All Visual C++ Redistributables and Runtimes
-          - Net 3.5 from the bootable media used to install windows
-- After they are finished Ngen.exe is ran to cleanup outdated assemblies speeding up some apps launch time
-## Importing and Exporting Tweaks
 
-<img width="365" height="205" alt="{C24651C6-F4FB-4921-A7F9-598E39D8A0EF}" src="https://github.com/user-attachments/assets/c34d7eb6-cf3b-410d-a649-9d073afef286" />
+## Install Network Driver
 
-<img width="289" height="407" alt="{0EE377D2-F202-4FE5-AA26-89A21F9D0895}" src="https://github.com/user-attachments/assets/5e977d0d-960f-4964-9cdd-be04967508ef" />
-
-
-- Upon launching the script for the first time a file ZCONFIG.cfg will be created in `[C:\Users\Username\]`
-
-### Features
-- Build Custom Config with Selected Tweaks
-- All tweaks will be updated in the config upon selecting 
-- Export the config for automated use
-- Import configs and run tweaks automatically with no prompts
-## Restore Tweaks
-
-<img width="496" height="204" alt="{FC59C98B-4849-4066-87F1-AE409422BEC0}" src="https://github.com/user-attachments/assets/7726cd81-7cfc-4d18-ab04-ce3693170a27" />
-
-
-### Enable Updates
-- reverts disable updates tweak and enables all registry keys / services
-### Enable Defender
-- enables all disabled registry keys and services
-### Enable Services
-- enables services disabled by the disable services tweak
-### Install Microsoft Store
-- installs the windows 10 store for windows 11 use `wsreset -i`
-### Revert Registry Tweaks
-- this will revert most registry tweaks   
-  **Note:** not all registry tweaks can/should be reverted
-### Unpause Updates
-- resumes Windows updates and re-enables driver updates  
-  **Note:** to resume updates but keep driver updates disabled, use `Resume updates` in Windows Update settings instead
-
+- The script will check for internet connection 
+     - If there is then the script will search google for your network adapter's driver
+     - If no internet then the script will use local drivers : 
+          - Realtek Lan
+          - Intel Lan
+          - Killer Lan
+          - Intel Wifi
+- After installing the driver a popup will ask if you want to enable QoS for upload, this tweak will enable some network settings to attempt to prioritize game network traffic along with some other network tweaks to help with bufferbloat [Credit: @AveYo]
+> [!NOTE]
+> this can be reverted in "Revert Tweaks" if needed
 
 
 ## Ultimate Cleanup
@@ -440,8 +435,50 @@
           - Device Driver Packages
 ## Activate Windows
 - activates windows 10 and 11 with a generic pro key and public kms server for 180 days
->[!NOTE] 
-recommend using [Massgravel](https://github.com/massgravel/Microsoft-Activation-Scripts) for permanent activation
+> [!NOTE]
+> recommend using [Massgravel](https://github.com/massgravel/Microsoft-Activation-Scripts) for permanent activation
+
+
+
+## Import and Export Config
+
+<img width="365" height="205" alt="{C24651C6-F4FB-4921-A7F9-598E39D8A0EF}" src="https://github.com/user-attachments/assets/c34d7eb6-cf3b-410d-a649-9d073afef286" />
+
+<img width="289" height="407" alt="{0EE377D2-F202-4FE5-AA26-89A21F9D0895}" src="https://github.com/user-attachments/assets/5e977d0d-960f-4964-9cdd-be04967508ef" />
+
+
+- Upon launching the script for the first time a file ZCONFIG.cfg will be created in `[C:\Users\Username\]`
+
+### Features
+- Build Custom Config with Selected Tweaks
+- All tweaks will be updated in the config upon selecting 
+- Export the config for automated use
+- Import configs and run tweaks automatically with no prompts
+## Restore Tweaks
+
+<img width="496" height="204" alt="{FC59C98B-4849-4066-87F1-AE409422BEC0}" src="https://github.com/user-attachments/assets/7726cd81-7cfc-4d18-ab04-ce3693170a27" />
+
+
+### Enable Updates
+- reverts disable updates tweak and enables all registry keys / services
+### Enable Defender
+- enables all disabled registry keys and services
+### Enable Services
+- enables services disabled by the disable services tweak
+### Install Microsoft Store
+- installs the windows 10 store for windows 11 use `wsreset -i`
+### Revert Registry Tweaks
+- this will revert most registry tweaks   
+> [!NOTE]
+> not all registry tweaks can/should be reverted
+### Unpause Updates
+- resumes Windows updates and re-enables driver updates  
+> [!NOTE]
+> to resume updates but keep driver updates disabled, use `Resume updates` in Windows Update settings instead
+
+
+
+
 
 
 ## Install Other Scripts

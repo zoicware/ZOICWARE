@@ -422,7 +422,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GameDVR]
 "AppCaptureEnabled"=dword:00000000
 
-; Disable enable open XBOX game bar using game controller
+; Disable enable open Xbox game bar using game controller
 [HKEY_CURRENT_USER\Software\Microsoft\GameBar]
 "UseNexusForGameBarEnabled"=dword:00000000
 
@@ -430,7 +430,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\GameBar]
 "AutoGameModeEnabled"=dword:00000001
 
-; Disable XBOX capture
+; Disable Xbox capture
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GameDVR]
 "AudioEncodingBitrate"=dword:0001f400
 "AudioCaptureEnabled"=dword:00000000
@@ -1158,7 +1158,7 @@ Windows Registry Editor Version 5.00
 [HKEY_USERS\S-1-5-20\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Settings]
 "DownloadMode"=dword:00000000
 
-; Disable XBOX mode
+; Disable Xbox mode
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GamingConfiguration]
 "GamingHomeApp"=""
 

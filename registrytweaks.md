@@ -66,9 +66,9 @@
 - Adjust for best performance of programs
 - Disable remote assistance
 - Disable game bar
-- Disable enable open XBOX game bar using game controller
+- Disable enable open Xbox game bar using game controller
 - Enable game mode
-- Disable XBOX capture
+- Disable Xbox capture
 - Privacy deny location
 - Privacy deny passkeys
 - Privacy deny camera
@@ -183,6 +183,6 @@
 - Disable notification for sticky, filter or toggle keys
 - Disable USB error notifications
 - Disable delivery optimization
-- Disable XBOX mode
+- Disable Xbox mode
 - Enable last open window in taskbar
 - Hide removable drives from navigation pane

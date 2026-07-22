@@ -1914,7 +1914,7 @@ function debloat {
     $presetDescriptionLabel.ForeColor = 'White'
     $presetDescriptionLabel.BackColor = [System.Drawing.Color]::Transparent
     $presetDescriptionLabel.Font = New-Object System.Drawing.Font('Segoe UI', 10) 
-    $presetDescriptionLabel.Text = "Removes all non-essential apps, including Store, XBOX and Edge.`r`nAlso removes Remote Desktop, Health Update Tools, and cleans Start Menu Pinned Icons + Outdated Store Apps."
+    $presetDescriptionLabel.Text = "Removes all non-essential apps, including Store, Xbox and Edge.`r`nAlso removes Remote Desktop, Health Update Tools, and cleans Start Menu Pinned Icons + Outdated Store Apps."
     $presetsPanel.Controls.Add($presetDescriptionLabel)
 
     $listView2 = New-Object System.Windows.Forms.ListView

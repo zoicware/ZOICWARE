@@ -115,7 +115,7 @@ $checkbox5.AutoSize = $true
 $form.Controls.Add($checkbox5)
 
 $checkbox6 = New-Object System.Windows.Forms.CheckBox
-$checkbox6.Text = 'Repair XBOX Apps'
+$checkbox6.Text = 'Repair Xbox Apps'
 $checkbox6.ForeColor = 'White'
 $checkbox6.BackColor = [System.Drawing.Color]::Transparent
 $checkbox6.Location = New-Object System.Drawing.Point(20, 110)
@@ -2260,7 +2260,7 @@ Windows Registry Editor Version 5.00
   }
 
   if ($checkbox6.Checked) {
-    Write-Status -Message 'Downloading XBOX Game Repair Tool...' -Type Output
+    Write-Status -Message 'Downloading Xbox Game Repair Tool...' -Type Output
     #remove recording policy
     Remove-ItemProperty 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR' 'AllowGameDVR' -force -ea 0
 	#remove gamebar popup block

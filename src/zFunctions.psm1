@@ -1569,8 +1569,8 @@ function debloat {
   $comboBoxPresets = New-Object System.Windows.Forms.ComboBox
   $comboBoxPresets.Items.AddRange(@(
       'Debloat All',
-      'Keep Store, XBOX and Edge',
-      'Keep Store and XBOX',
+      'Keep Store, Xbox and Edge',
+      'Keep Store and Xbox',
       'Keep Edge',
       'Keep Store'
     ))
@@ -1578,8 +1578,8 @@ function debloat {
   #hashtable to loop through later for updating the config
   $settings = @{}
   $settings['debloatAll'] = 'Debloat All'
-  $settings['debloatSXE'] = 'Keep Store, XBOX and Edge'
-  $settings['debloatSX'] = 'Keep Store and XBOX'
+  $settings['debloatSXE'] = 'Keep Store, Xbox and Edge'
+  $settings['debloatSX'] = 'Keep Store and Xbox'
   $settings['debloatE'] = 'Keep Edge'
   $settings['debloatS'] = 'Keep Store'
 
@@ -1901,7 +1901,7 @@ function debloat {
     $comboBoxPresets = New-Object System.Windows.Forms.ComboBox
     $comboBoxPresets.Location = New-Object System.Drawing.Point(20, 40)
     $comboBoxPresets.Size = New-Object System.Drawing.Size(480, 25)
-    $comboBoxPresets.Items.AddRange(@('Debloat All', 'Keep Store, XBOX and Edge', 'Keep Store and XBOX', 'Keep Edge', 'Keep Store'))
+    $comboBoxPresets.Items.AddRange(@('Debloat All', 'Keep Store, Xbox and Edge', 'Keep Store and Xbox', 'Keep Edge', 'Keep Store'))
     $comboBoxPresets.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
     $comboBoxPresets.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $comboBoxPresets.ForeColor = 'White'
@@ -2159,9 +2159,9 @@ function debloat {
 
     $comboBoxPresets.Add_SelectedIndexChanged({
         switch ($comboBoxPresets.SelectedIndex) {
-          0 { $presetDescriptionLabel.Text = "Removes all non-essential apps, including Store, XBOX and Edge.`r`nAlso removes Remote Desktop, Health Update Tools, and cleans Start Menu Pinned Icons + Outdated Store Apps." }
-          1 { $presetDescriptionLabel.Text = "Keeps Microsoft Store, XBOX apps and Edge browser.`r`nAlong with removing Remote Desktop, Health Update Tools and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
-          2 { $presetDescriptionLabel.Text = "Keeps Microsoft Store and XBOX apps, removes Edge.`r`nAlong with removing Remote Desktop, Health Update Tools and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
+          0 { $presetDescriptionLabel.Text = "Removes all non-essential apps, including Store, Xbox and Edge.`r`nAlso removes Remote Desktop, Health Update Tools, and cleans Start Menu Pinned Icons + Outdated Store Apps." }
+          1 { $presetDescriptionLabel.Text = "Keeps Microsoft Store, Xbox apps and Edge browser.`r`nAlong with removing Remote Desktop, Health Update Tools and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
+          2 { $presetDescriptionLabel.Text = "Keeps Microsoft Store and Xbox apps, removes Edge.`r`nAlong with removing Remote Desktop, Health Update Tools and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
           3 { $presetDescriptionLabel.Text = "Removes all non-essential apps except Edge browser.`r`nAlong with removing Remote Desktop, Health Update Tools and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
           4 { $presetDescriptionLabel.Text = "Removes all non-essential apps except Microsoft Store.`r`nAlong with removing Remote Desktop, Health Update Tools and cleaning Start Menu Pinned Icons + Outdated Store Apps" }
         }
@@ -8224,7 +8224,7 @@ function OptionalTweaks {
 
 
     if ($checkbox54.Checked) {
-      Write-Status -Message 'Disabling Game Bar Popup when XBOX App is Uninstalled...' -Type Output
+      Write-Status -Message 'Disabling Game Bar Popup when Xbox App is Uninstalled...' -Type Output
       #hide gamebar popup credits aveyo
 
       Set-ItemProperty 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR' 'AppCaptureEnabled' 0 -type dword -force -ea 0

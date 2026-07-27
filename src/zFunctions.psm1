@@ -12145,6 +12145,7 @@ function Remove-CBS-Apps {
       $szCBSXMLPath = "$szWindowsPath\SystemApps\$($szCBSAppName)\appxmanifest.xml"
       #Write-Host -ForegroundColor White "Reading the Appx manifest file for '$szCBSAppName'..."
       $xmlCBS = [XML]( Get-Content $szCBSXMLPath )
+      $szCBSVersion = $xmlCBS.Package.Identity.Version
       $szCBSNewVersion = Increment-PackageVersion -Name $szCBSName -Attribute 'Version' -XML ($xmlCBS.Package.Identity)
       If ( $szCBSNewVersion -Eq '' ) { Return }
       $szCBSDesc = $xmlCBS.Package.Properties.Description

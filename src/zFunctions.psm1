@@ -645,7 +645,7 @@ function debloat {
       param (
         [string]$Bloat
       )
-      #silentlycontinue doesnt work sometimes so trycatch block is needed to supress errors
+      #silentlycontinue doesnt work sometimes so trycatch block is needed to suppress errors
       try {
         Get-AppXPackage "*$Bloat*" -AllUsers -ErrorAction Stop | ForEach-Object { Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml" -ErrorAction SilentlyContinue; Remove-AppxPackage -Package $_.PackageFullName -AllUsers -ErrorAction Stop } | Out-Null
       }
@@ -827,7 +827,7 @@ function debloat {
       }
 
       $names = $program.meta.attributes.keys.localname
-      #get the index of the names inorder to index into the "values" array
+      #get the index of the names in order to index into the "values" array
       $i = 0
       $foundIndexIcon = $null
       $foundIndexName = $null
@@ -1159,7 +1159,7 @@ function debloat {
 
     )
 
-    #less specfic locations takes more time to search but less opportunity for missed files
+    #less specific locations takes more time to search but less opportunity for missed files
     $installDirsBroad = @(
       $env:ProgramData,
       $env:ProgramFiles,
@@ -1169,7 +1169,7 @@ function debloat {
     )
 
     $filter = '*' + ($app.DisplayName -split ' ')[0] + '*'
-    #if the filter is just microsoft it will be too vauge
+    #if the filter is just microsoft it will be too vague
     if ($filter -eq '*Microsoft*') {
       #get the next two words after microsoft
       $filter = '*' + ($app.DisplayName -split ' ', 4)[1..2] + '*'
@@ -1245,7 +1245,7 @@ function debloat {
     )
 
     $name = ($app.DisplayName -split ' ')[0]
-    #if the filter is just microsoft it will be too vauge
+    #if the filter is just microsoft it will be too vague
     if ($name -eq 'Microsoft') {
       #get the next two words after microsoft
       $name = ($app.DisplayName -split ' ', 4)[1..2] -join ''
@@ -2200,7 +2200,7 @@ function debloat {
         foreach ($item in $listView.CheckedItems) {
           $package = $item.Text
           Write-Status -Message "Trying to Remove $package" -Type Output
-          #silentlycontinue doesnt work sometimes so trycatch block is needed to supress errors
+          #silentlycontinue doesnt work sometimes so trycatch block is needed to suppress errors
           try {
             Get-AppXPackage "*$package*" -AllUsers -ErrorAction Stop | ForEach-Object { Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml" -ErrorAction SilentlyContinue; Remove-AppxPackage -Package $_.PackageFullName -AllUsers -ErrorAction Stop } | Out-Null
           }
@@ -2853,7 +2853,7 @@ function debloat {
           $app = $selectedapp.tag
           Write-Status "Uninstalling $($app.DisplayName)" -Type Output
           Add-Content $logPath -Value "Uninstalling $($app.DisplayName)"
-          #run specfic uninstaller for edge
+          #run specific uninstaller for edge
           if ($app.displayName -like '*Edge*') {
             $edge = Search-File '*EdgeRemove.ps1'
             if ($app.displayName -like '*WebView*') {
@@ -3218,7 +3218,7 @@ function disable-services {
         update-config -setting 'disableServices' -value 1
       }
       
-      #disables some unecessary services 
+      #disables some unnecessary services 
       Write-Status -Message 'Disabling Services...' -Type Output
       Write-Status -Message 'See Full List: [github.com/zoicware/ZOICWARE/blob/main/features.md#disable-services]' -Type Output   
        
@@ -3471,7 +3471,7 @@ function gpTweaks {
 
     if ($checkbox1.Checked) {
       Write-Status -Message 'Disabling Updates...' -Type Output
-      #disables updates through gp edit and servives
+      #disables updates through gp edit and services
       Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'WUServer' /t REG_SZ /d 'https://DoNotUpdateWindows10.com/' /f
       Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'WUStatusServer' /t REG_SZ /d 'https://DoNotUpdateWindows10.com/' /f
       Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'UpdateServiceUrlAlternate' /t REG_SZ /d 'https://DoNotUpdateWindows10.com/' /f
@@ -5518,7 +5518,7 @@ function import-reg {
       #remove any previous custom reg file (just in case)
       Remove-Item "$tempDir\CustomTweaks.reg" -Force -ErrorAction SilentlyContinue | Out-Null
 
-      #get 11 tweaaks
+      #get 11 tweaks
       $removeTweaks11 = @()
       foreach ($item in $checkedListBox11.CheckedItems.GetEnumerator()) {
         $removeTweaks11 += $item
@@ -5625,7 +5625,7 @@ function import-reg {
       Remove-Item "$tempDir\CustomTweaks.reg" -Force -ErrorAction SilentlyContinue | Out-Null
 
      
-      #get 11 tweaaks
+      #get 11 tweaks
       $selectedTweaks11 = @()
       foreach ($item in $checkedListBox11.CheckedItems.GetEnumerator()) {
         $selectedTweaks11 += $item
@@ -6150,7 +6150,7 @@ Windows Registry Editor Version 5.00
       $regContent11 = Get-Content $reg11 -Force
       Set-Content "$tempDir\RegTweaks11.reg" -Value $regContent11 -Force | Out-Null
         
-      #create full reg tweaks on desktop but run win10 and 11 seperate to avoid some keys not applying
+      #create full reg tweaks on desktop but run win10 and 11 separate to avoid some keys not applying
       Set-Content "$([Environment]::GetFolderPath('Desktop'))\RegTweaks.reg" -Value $regContent11 -Force
 
       Write-Status -Message 'Applying Registry Tweaks...' -Type Output
@@ -8308,7 +8308,7 @@ function OptionalTweaks {
       $openWindows = Get-Process | Where-Object { $_.MainWindowTitle -like 'AccentColorizer.exe*' } 
       if ($openWindows) {
         Write-Status -Message 'Visual C++ Packages Not Installed...' -Type Error
-        Write-Status -Message 'Please Install Neccessary Packages Under the Install Section of Zoicware...' -Type Output
+        Write-Status -Message 'Please Install Necessary Packages Under the Install Section of Zoicware...' -Type Output
       }
       else {
         #needs to be applied on startup
@@ -10878,7 +10878,7 @@ function Get-FileFromWeb {
         [Parameter()]
         [string]$ValueSuffix,
         
-        # Enter bar lengh suffix
+        # Enter bar length suffix
         [Parameter()]
         [int]$BarSize = 40,
 
@@ -11230,7 +11230,7 @@ function FixUploadBufferBloat {
         # pci-e adapters in msi-x mode from intel are generally fine with ITR Adaptive - others? not so much
         Set-NetAdapterAdvancedProperty -Name "$key" -RegistryKeyword '*InterruptModeration' -RegistryValue 0 # Off 0 On 1
         Set-NetAdapterAdvancedProperty -Name "$key" -RegistryKeyword 'ITR' -RegistryValue 0 # Off 0 Adaptive 65535
-        # recieve side scaling is always worth it, some adapters feature more queues = cpu threads; not available for wireless   
+        # receive side scaling is always worth it, some adapters feature more queues = cpu threads; not available for wireless   
         Set-NetAdapterAdvancedProperty -Name "$key" -RegistryKeyword '*RSS' -RegistryValue 1
         Set-NetAdapterAdvancedProperty -Name "$key" -RegistryKeyword '*NumRssQueues' -RegistryValue 2
         # priority tag
@@ -11832,7 +11832,7 @@ Export-ModuleMember -Function Restart-Explorer
 function Restart-Bios {
   $result = Custom-MsgBox -message 'Are You Sure You Want to Restart to BIOS?' -type Question
   if ($result -eq 'OK') {
-    #double command to fix enviroment error
+    #double command to fix environment error
     shutdown /r /fw /t 0
     shutdown /r /fw /t 0
   }
@@ -12211,7 +12211,7 @@ function Remove-CBS-Apps {
         $xmlOrigCBS.Package.Identity.SetAttribute( 'Version', $szCBSNewVersion )
         Save-XMLFile -Name $szCBSAppName -Path $szOrigBackFilePath -XML $xmlOrigCBS
         $aclOrigCBSXML = Set-FilePathAdminsFullControl -FilePath $szCBSXMLPath
-        #Write-Host -ForegroundColor White "Restoring the original AppX manifest file for '$szCBSAppName' (with a incremented revision number)..."
+        #Write-Host -ForegroundColor White "Restoring the original AppX manifest file for '$szCBSAppName' (with an incremented revision number)..."
         Move-Item -Force -Path $szOrigBackFilePath -Destination $szCBSXMLPath
         Reset-FilePathACL -FilePath $szCBSXMLPath -ACL $aclOrigCBSXML
       }

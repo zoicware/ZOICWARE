@@ -2238,6 +2238,9 @@ Windows Registry Editor Version 5.00
 [HKEY_USERS\S-1-5-20\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Settings]
 "DownloadMode"=-
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization]
+"DODownloadMode"=-
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GamingConfiguration]
 "GamingHomeApp"=-
 

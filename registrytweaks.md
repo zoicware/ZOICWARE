@@ -186,3 +186,4 @@
 - Disable Xbox mode
 - Enable last open window in taskbar
 - Hide removable drives from navigation pane
+- Minimize keyboard repeat delay

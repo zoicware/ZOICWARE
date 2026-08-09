@@ -42,7 +42,8 @@
  			-  [v1.4.6](#v146)  
 			-  [v1.4.7](#v147)  
 			-  [v1.4.8](#v148)   
-			-  [v1.4.9](#v149)   
+			-  [v1.4.9](#v149)    
+			-  [v1.5.0](#v150)   
 			
 ---
 
@@ -942,3 +943,62 @@ added option to individually customize most hidden disk cleanup options, added c
 - added shortcut to open both startmenu locations
   
 - changed RUN ZOICWARE.exe to c# since defender now blocks the batch script converted to an exe
+
+
+### v1.5.0
+---
+
+- fixed black theme not applying when user has space in username
+  
+- fixed incorrect path when removing telemetry dll from nvidia driver
+  
+- added Enable last open window in taskbar to reg tweaks [iFryno]
+  
+- added Hide removable drives from navigation pane to reg tweaks [iFryno]
+  
+- fixed removing print from context menu [iFryno]
+  
+- added System Properties and Power Options to Legacy Settings tweak [iFryno]
+  
+- fixed system responsiveness value [iFryno]
+  
+- the Do not include drivers in Windows Update tweak now uses policies to fully disable driver updates [iFryno]
+  
+- reg tweaks added [iFryno]
+  - Disable automatic troubleshooting
+  - Disable write with fingertip
+  - Disable share window from taskbar
+  - Disable desktop preview
+  - Disable small taskbar buttons
+  - Disable touch keyboard
+  - Disable auto correction
+  - Disable touch indicator
+  - Disable keyboard shortcut for contrast themes
+  - Disable notification for sticky, filter or toggle keys
+  - Disable USB error notifications
+  - Disable delivery optimization
+  - Disable XBOX mode
+
+- updated reg tweaks [iFryno]
+  - Disable language bar
+  - Set appearance options to custom
+  - Disable show translucent selection rectangle
+  - Disable show window contents while dragging
+
+- revert reg tweaks updated [iFryno]
+  
+- added additional Chrome policy to disable "On-device AI" [iFryno]
+  
+- added disable priority notifications to reg tweaks
+  
+- changed power plan overlay options to power mode (high performance and balanced) in power tweaks
+  
+- added restart to bios and restart explorer and empty recycle bin to context menu [iFryno]
+  
+- switched all vbs to conhost headless since vbs will be depreciated starting 2027
+  
+- added minimal keyboard repeat delay to reg tweaks [iFryno]
+  
+- updated gsync, rebar and dlss latest options in nvidia autoinstall [iFryno]
+  
+- added custom splash screen while nvidia driver is installing

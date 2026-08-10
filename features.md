@@ -58,7 +58,7 @@
 
 ## Registry Tweaks
 
-<img width="773" height="690" alt="Screenshot 2026-07-22 213344" src="https://github.com/user-attachments/assets/8053881a-53fa-4575-b774-17de8cc98a95" />
+<img width="772" height="689" alt="1 Registry Tweaks" src="https://github.com/user-attachments/assets/b29ab392-cf2f-447d-88be-ed90439ce9b2" />
 
 - Apply the registry tweaks to automate most Windows quality-of-life and performance settings.
 - A registry file will be created on the desktop containing all the registry keys, including a comment describing the function of each.
@@ -70,7 +70,8 @@
 
 ## Group Policy Tweaks
 
-<img width="280" height="188" alt="image" src="https://github.com/user-attachments/assets/611e76e7-dec6-4f83-a1c6-0f4001134ce2" />
+<img width="280" height="187" alt="2 Group Policy Tweaks" src="https://github.com/user-attachments/assets/7d12c938-c895-4d77-a4e8-2ebf10e4126d" />
+
 
 ### Disable Updates
 - This tweak will disable automatic Windows updates and the related services.
@@ -134,7 +135,7 @@
 
 ### Debloat Presets
 
-<img width="684" height="540" alt="Screenshot 2026-07-22 211743" src="https://github.com/user-attachments/assets/f1370a14-f33d-409e-a988-cfde68f276be" />
+<img width="681" height="540" alt="3 Debloat Presets" src="https://github.com/user-attachments/assets/2a72742e-e4bf-4e37-95d2-6887261c3f9e" />
 
 - Debloat All
 - Keep Store, Xbox and Edge
@@ -149,7 +150,8 @@
 
 ### Custom Debloat
 
-<img width="682" height="537" alt="Screenshot 2026-07-22 211837" src="https://github.com/user-attachments/assets/34031a9c-ea91-4192-9d47-3999384966fd" />
+<img width="681" height="537" alt="4 Debloat Appx" src="https://github.com/user-attachments/assets/69ce13d1-ad0d-435a-83f6-be6d8e12490b" />
+
 
 - Choose specific appx packages, including locked packages.
 > [!CAUTION]
@@ -157,13 +159,13 @@
 
 ### Remove Optional Features
 
-<img width="683" height="539" alt="Screenshot 2026-07-22 211933" src="https://github.com/user-attachments/assets/12a4a175-1fd7-4e8e-8228-43716d547860" />
+<img width="680" height="537" alt="5 Debloat Optional Features" src="https://github.com/user-attachments/assets/6aeeec07-7486-4516-b121-6f10532f9412" />
 
 - Uninstall Windows capabilities, optional features and Windows packages.
 
 ### Remove Extras
 
-<img width="681" height="539" alt="Screenshot 2026-07-22 212005" src="https://github.com/user-attachments/assets/d5f67855-6865-4776-9a25-ca0857aa6c8c" />
+<img width="680" height="537" alt="6 Debloat Extras" src="https://github.com/user-attachments/assets/04abe853-ed29-4373-94c8-0a388ea5d578" />
 
 #### Remove Win32 Apps
 - Speech App
@@ -188,7 +190,7 @@
 
 ### zUninstaller
 
-<img width="680" height="537" alt="Screenshot 2026-07-22 212119" src="https://github.com/user-attachments/assets/25a32f09-b5f4-4db6-ab24-e52a8bbe2e19" />
+<img width="680" height="536" alt="7 Debloat App Uninstaller" src="https://github.com/user-attachments/assets/b819baaa-f4a4-4d31-b25c-2f0a0843ac68" />
 
 - Remove installed apps with additional brute-force cleaning of leftovers.
   - The script will search for leftover files and folders after the app's uninstaller has run. Since the script could potentially find items that aren't related to the app, a popup will appear with the found items, allowing for manual selection.
@@ -198,7 +200,7 @@
 
 ## Power Tweaks
 
-<img width="732" height="540" alt="Screenshot 2026-07-22 212208" src="https://github.com/user-attachments/assets/a3822942-d294-4d62-b472-0768a49dbe1a" />
+<img width="733" height="540" alt="{86C425ED-62FD-4280-9514-AA5DB0C05DA0}" src="https://github.com/user-attachments/assets/7fdb1b4e-da64-41f6-b93a-44639052fb9a" />
 
 ### Import Plan
 - Custom power plan for removing power-saving features and core parking.
@@ -212,7 +214,8 @@
 
 ### USB Power Tweaks
 
-<img width="730" height="538" alt="Screenshot 2026-07-22 212255" src="https://github.com/user-attachments/assets/aad9a856-6e49-4740-9daf-438663bb004e" />
+<img width="730" height="538" alt="9 USB Power" src="https://github.com/user-attachments/assets/08ca1359-b443-4eb3-88ef-70cfebd8a07d" />
+
 
 - This section will display the USB hubs and devices connected.
 - Choose any or all devices to disable power saving.
@@ -223,7 +226,7 @@
 
 ### General
 
-<img width="783" height="590" alt="Screenshot 2026-07-22 212344" src="https://github.com/user-attachments/assets/1dc71127-ff36-422d-81d7-6d2ddcfa74da" />
+<img width="780" height="587" alt="10 Opt General" src="https://github.com/user-attachments/assets/680d80fb-904f-4139-94cf-2d9b69727949" />
 
 - **Black Theme** - Applies a black color to the taskbar and Start Menu, as well as a dark user picture and black-themed cursors.
 - **Transparent Taskbar** - Makes the taskbar transparent using TranslucentTB.
@@ -255,7 +258,7 @@
 
 ### Ultimate Context Menu
 
-<img width="782" height="588" alt="Screenshot 2026-07-22 212421" src="https://github.com/user-attachments/assets/9b7aeca0-460d-429e-9e46-5d258d4db821" />
+<img width="780" height="587" alt="11 Opt Context Menu" src="https://github.com/user-attachments/assets/ecab5303-6038-499e-881f-ba6c7e4f762b" />
 
 #### Add to Menu
 - **Additional Files to New Menu** - Adds the ability to create new registry files, PowerShell scripts and batch files.
@@ -291,7 +294,7 @@
 
 ### Patch Explorer
 
-<img width="531" height="509" alt="Screenshot 2026-07-22 212504" src="https://github.com/user-attachments/assets/03516b03-9c52-4134-8e1e-70a1257c104c" />
+<img width="529" height="507" alt="12 Win11 Tweaks Patch Explorer" src="https://github.com/user-attachments/assets/9613a23e-59e5-48b0-8c3a-14e4ff516a37" />
 
 - **Remove Rounded Edges** - Removes rounded edges using [toggle-rounded-corners](https://github.com/oberrich/win11-toggle-rounded-corners) and runs at startup.
 - **Enable Windows 10 Taskbar and Start Menu** - Runs ExplorerPatcher and automatically applies settings for the Windows 10 taskbar and Start Menu.
@@ -300,7 +303,7 @@
 
 ### Windows 10 Restore Tweaks
 
-<img width="533" height="510" alt="Screenshot 2026-07-22 212533" src="https://github.com/user-attachments/assets/1711286b-258c-4578-a6e7-3800139dcbdc" />
+<img width="530" height="506" alt="13 Win11 Tweaks Win10" src="https://github.com/user-attachments/assets/91bfbb1c-133f-4829-9613-0c8fe1e8b1a3" />
 
 - **Restore Windows 10 Recycle Bin Icon** - This tweak will replace the Windows 11 Recycle Bin icon with the old Windows 10 icon.
 - **Restore Windows 10 Snipping Tool** - Removes the UWP Snipping Tool (Screen Sketch) and enables the Windows 10 Snipping Tool.
@@ -313,7 +316,7 @@
 
 ### Misc Tweaks
 
-<img width="532" height="510" alt="Screenshot 2026-07-22 212600" src="https://github.com/user-attachments/assets/7136f6c7-8c3c-454f-b12a-40bb29109a59" />
+<img width="530" height="506" alt="14 Win11 Tweaks Misc" src="https://github.com/user-attachments/assets/42892289-e417-4557-bd66-8967283de550" />
 
 - **Set all Services to Manual** - This tweak sets the startup type to Manual for non-essential Windows services.
   - **Services Skipped:**
@@ -351,7 +354,7 @@
 
 ## Install Browsers
 
-<img width="283" height="190" alt="Screenshot 2026-07-22 212644" src="https://github.com/user-attachments/assets/1ba442d8-51d8-4402-bbfa-e8503b7fb192" />
+<img width="281" height="189" alt="15 Browser Install" src="https://github.com/user-attachments/assets/948fc687-aa2b-4326-bb51-17182bca7717" />
 
 - Lets you install a web browser such as Chrome, Firefox or Brave.
 - This installer will also apply policies to pre-configure recommended browser settings.
@@ -371,7 +374,7 @@
 
 ## Install Nvidia Driver
 
-<img width="533" height="459" alt="Screenshot 2026-07-22 212726" src="https://github.com/user-attachments/assets/695c5994-a061-4be7-8b9e-950301fa67ca" />
+<img width="530" height="456" alt="16 NV Install" src="https://github.com/user-attachments/assets/5db64d82-779e-4002-bbdf-182646eafc7e" />
 
 ### Features
 - The script will get the four latest Nvidia drivers to choose from.
@@ -388,7 +391,8 @@
 
 #### General
 
-<img width="382" height="420" alt="Screenshot 2026-07-22 212759" src="https://github.com/user-attachments/assets/13e666d2-3324-4f6e-8724-32b149533f24" />
+<img width="386" height="423" alt="{FBB867DD-B916-4C37-A736-4FFD245F7D7A}" src="https://github.com/user-attachments/assets/c68d5b0c-1490-4756-a848-432aa90f9885" />
+
 
 - Import optimized Nvidia Control Panel settings and optionally enable G-Sync, Resizable BAR and/or override DLSS models with the recommended presets.
 > [!NOTE]
@@ -400,7 +404,7 @@
 
 #### Monitor
 
-<img width="380" height="418" alt="Screenshot 2026-07-22 212849" src="https://github.com/user-attachments/assets/e8b9822e-29a5-4220-b48c-9fddc94a43f6" />
+<img width="382" height="419" alt="18 NV Post Install Monitor" src="https://github.com/user-attachments/assets/882043eb-9ac0-41ee-8e73-dbe782019e59" />
 
 - Apply Digital Vibrance - A slider will let you set digital vibrance for all your monitors. This tweak will apply after restarting.
 - Disable Monitor Speakers.
@@ -424,7 +428,7 @@
 
 ## Ultimate Cleanup
 
-<img width="513" height="410" alt="Screenshot 2026-07-22 212927" src="https://github.com/user-attachments/assets/9a162b3b-97da-40ff-82da-bc2bfce1bbde" />
+<img width="511" height="409" alt="19 Ultimate Cleanup" src="https://github.com/user-attachments/assets/ca7e503c-452f-4ab3-b6e5-7da1fed9065f" />
 
 - Cleans temp files and event logs.
 
@@ -472,9 +476,9 @@
 
 ## Import and Export Config
 
-<img width="482" height="269" alt="Screenshot 2026-07-22 213105" src="https://github.com/user-attachments/assets/332d0d6e-f8bb-490d-aeb3-0c0e48acf3b1" />
+<img width="480" height="267" alt="20 Import Export Config" src="https://github.com/user-attachments/assets/dc8679fa-ce9c-45ad-8ab7-3ab4ebb7f02b" />
 
-<img width="383" height="540" alt="Screenshot 2026-07-22 213121" src="https://github.com/user-attachments/assets/73b171e3-641c-41df-9658-4616fb08c27b" />
+<img width="383" height="539" alt="21 Build Config" src="https://github.com/user-attachments/assets/5359c880-cb10-4a61-95b5-e93b8f43f8fe" />
 
 - Upon launching the script for the first time, a file named ZCONFIG.cfg will be created in `[C:\Users\Username\]`.
 
@@ -488,7 +492,8 @@
 
 ## Restore Tweaks
 
-<img width="657" height="299" alt="Screenshot 2026-07-22 213214" src="https://github.com/user-attachments/assets/bef9ec6a-a1f3-4976-8896-621afd7dde4f" />
+<img width="657" height="299" alt="22 Restore Tweaks" src="https://github.com/user-attachments/assets/349dcf30-e9dc-497a-a378-c8a3e194408e" />
+
 
 ### Enable Updates
 - Reverts the `Disable Updates` tweak and enables all registry keys and services.
@@ -516,7 +521,7 @@
 
 ## Install Other Scripts
 
-<img width="332" height="390" alt="Screenshot 2026-07-22 213250" src="https://github.com/user-attachments/assets/ec9ea14c-b900-4f3e-9ea9-16c74da43c47" />
+<img width="330" height="388" alt="23 Install Scripts" src="https://github.com/user-attachments/assets/9e6cbc49-8beb-4c42-bb5b-2b144da434a8" />
 
 - Creates a desktop shortcut to some of my other useful scripts for Windows tweaking and management.
 - This shortcut will run the code directly from GitHub, so it will always be up to date.

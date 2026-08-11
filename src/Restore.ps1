@@ -1,6 +1,6 @@
-If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
-  Start-Process PowerShell.exe -ArgumentList ("-NoProfile -ExecutionPolicy Bypass -File `"{0}`"" -f $PSCommandPath) -Verb RunAs
-  Exit	
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
+    Start-Process PowerShell.exe -ArgumentList ("-NoProfile -ExecutionPolicy Bypass -File `"{0}`"" -f $PSCommandPath) -Verb RunAs
+    exit	
 }
 
     
@@ -31,17 +31,17 @@ $endColor = [System.Drawing.Color]::FromArgb(0, 0, 0)       #rgb(0, 0, 0)
 
 # Override the form's paint event to apply the gradient
 $form.Add_Paint({
-    param($sender, $e)
-    $rect = New-Object System.Drawing.Rectangle(0, 0, $form.Width, $form.Height)
-    $brush = New-Object System.Drawing.Drawing2D.LinearGradientBrush(
-      $rect, 
-      $startColor, 
-      $endColor, 
-      [System.Drawing.Drawing2D.LinearGradientMode]::ForwardDiagonal
-    )
-    $e.Graphics.FillRectangle($brush, $rect)
-    $brush.Dispose()
-  })
+        param($sender, $e)
+        $rect = New-Object System.Drawing.Rectangle(0, 0, $form.Width, $form.Height)
+        $brush = New-Object System.Drawing.Drawing2D.LinearGradientBrush(
+            $rect, 
+            $startColor, 
+            $endColor, 
+            [System.Drawing.Drawing2D.LinearGradientMode]::ForwardDiagonal
+        )
+        $e.Graphics.FillRectangle($brush, $rect)
+        $brush.Dispose()
+    })
 
 
 $lineStartPoint = New-Object System.Drawing.Point(170, 15)
@@ -50,12 +50,12 @@ $lineColor = [System.Drawing.Color]::Gray
 $lineWidth = 1.5
 
 $form.Add_Paint({
-    $graphics = $form.CreateGraphics()
-    $pen = New-Object System.Drawing.Pen($lineColor, $lineWidth)
-    $graphics.DrawLine($pen, $lineStartPoint, $lineEndPoint)
-    $pen.Dispose()
-    $graphics.Dispose()
-  })
+        $graphics = $form.CreateGraphics()
+        $pen = New-Object System.Drawing.Pen($lineColor, $lineWidth)
+        $graphics.DrawLine($pen, $lineStartPoint, $lineEndPoint)
+        $pen.Dispose()
+        $graphics.Dispose()
+    })
 
 
 $lineStartPoint2 = New-Object System.Drawing.Point(395, 15)
@@ -64,12 +64,12 @@ $lineColor2 = [System.Drawing.Color]::Gray
 $lineWidth2 = 1.5
 
 $form.Add_Paint({
-    $graphics = $form.CreateGraphics()
-    $pen = New-Object System.Drawing.Pen($lineColor2, $lineWidth2)
-    $graphics.DrawLine($pen, $lineStartPoint2, $lineEndPoint2)
-    $pen.Dispose()
-    $graphics.Dispose()
-  })
+        $graphics = $form.CreateGraphics()
+        $pen = New-Object System.Drawing.Pen($lineColor2, $lineWidth2)
+        $graphics.DrawLine($pen, $lineStartPoint2, $lineEndPoint2)
+        $pen.Dispose()
+        $graphics.Dispose()
+    })
 
 
 # Create the checkboxes
@@ -212,45 +212,45 @@ $result = $form.ShowDialog()
 if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
 
 
-  if ($checkbox1.Checked) {
+    if ($checkbox1.Checked) {
 
-    [reflection.assembly]::loadwithpartialname('System.Windows.Forms') | Out-Null 
-    $msgBoxInput = [System.Windows.Forms.MessageBox]::Show('Pause Updates First?', 'Zoic', 'YesNo', 'Question')
+        [reflection.assembly]::loadwithpartialname('System.Windows.Forms') | Out-Null 
+        $msgBoxInput = [System.Windows.Forms.MessageBox]::Show('Pause Updates First?', 'Zoic', 'YesNo', 'Question')
 
-    switch ($msgBoxInput) {
+        switch ($msgBoxInput) {
 
-      'Yes' {
-        #pause for 1 year
-        Write-Status -Message 'Pausing Updates for 1 Year...' -Type Output
-        $pause = (Get-Date).AddDays(365) 
-        $today = Get-Date
-        $today = $today.ToUniversalTime().ToString( 'yyyy-MM-ddTHH:mm:ssZ' )
-        $pause = $pause.ToUniversalTime().ToString( 'yyyy-MM-ddTHH:mm:ssZ' ) 
-        Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseUpdatesExpiryTime' -Value $pause -Force
-        Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseFeatureUpdatesEndTime' -Value $pause -Force
-        Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseFeatureUpdatesStartTime' -Value $today -Force
-        Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseQualityUpdatesEndTime' -Value $pause -Force
-        Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseQualityUpdatesStartTime' -Value $today -Force
-        Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseUpdatesStartTime' -Value $today -Force
-      } 
+            'Yes' {
+                #pause for 1 year
+                Write-Status -Message 'Pausing Updates for 1 Year...' -Type Output
+                $pause = (Get-Date).AddDays(365) 
+                $today = Get-Date
+                $today = $today.ToUniversalTime().ToString( 'yyyy-MM-ddTHH:mm:ssZ' )
+                $pause = $pause.ToUniversalTime().ToString( 'yyyy-MM-ddTHH:mm:ssZ' ) 
+                Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseUpdatesExpiryTime' -Value $pause -Force
+                Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseFeatureUpdatesEndTime' -Value $pause -Force
+                Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseFeatureUpdatesStartTime' -Value $today -Force
+                Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseQualityUpdatesEndTime' -Value $pause -Force
+                Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseQualityUpdatesStartTime' -Value $today -Force
+                Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseUpdatesStartTime' -Value $today -Force
+            } 
 
-      'No' {}
+            'No' {}
 
-    }
-    Write-Status -Message 'Enabling Updates...' -Type Output
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /f *>$null
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\UsoSvc' /v 'Start' /t REG_DWORD /d '2' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\DoSvc' /v 'Start' /t REG_DWORD /d '2' /f
-    Start-Service UsoSvc -ErrorAction SilentlyContinue
+        }
+        Write-Status -Message 'Enabling Updates...' -Type Output
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /f *>$null
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\UsoSvc' /v 'Start' /t REG_DWORD /d '2' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\DoSvc' /v 'Start' /t REG_DWORD /d '2' /f
+        Start-Service UsoSvc -ErrorAction SilentlyContinue
     
-    gpupdate /force 
-  }
+        gpupdate /force 
+    }
 
 
 
-  if ($checkbox2.Checked) {
+    if ($checkbox2.Checked) {
 
-    $file1 = @'
+        $file1 = @'
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender]
@@ -267,7 +267,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Policies\Microsoft\Windows Defender]
 "DisableRoutinelyTakingAction"=-
 '@
-    $file2 = @'
+        $file2 = @'
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowIOAVProtection]
@@ -341,7 +341,7 @@ Windows Registry Editor Version 5.00
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Reporting]
 '@
-    $file3 = @'
+        $file3 = @'
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsDefenderSecurityCenter\DisableEnhancedNotifications]
@@ -360,7 +360,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.SecurityAndMaintenance]
 "Enabled"=-
 '@
-    $file4 = @'
+        $file4 = @'
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\WOW6432Node\CLSID\{2781761E-28E0-4109-99FE-B9D127C57AFE}]
@@ -715,7 +715,7 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000001
 "Status"=dword:00000000
 '@
-    $file5 = @'
+        $file5 = @'
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\DefenderApiLogger]
@@ -846,7 +846,7 @@ Windows Registry Editor Version 5.00
 "EventIdFilterIn"=dword:00000001
 "EventIds"=hex:4e,04,68,00
 '@
-    $file6 = @'
+        $file6 = @'
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\webthreatdefsvc]
@@ -1141,7 +1141,7 @@ Windows Registry Editor Version 5.00
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\App and Browser protection]
 '@
-    $file7 = @'
+        $file7 = @'
 Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\windowsdefender]
@@ -1228,7 +1228,7 @@ Windows Registry Editor Version 5.00
 "WindowsDefender-2"="v2.0|Action=Block|Active=TRUE|Dir=In|App=%ProgramFiles%\\Windows Defender\\MsMpEng.exe|Svc=WinDefend|Name=Block All In traffic to WinDefend|"
 "WindowsDefender-3"="v2.0|Action=Block|Active=TRUE|Dir=Out|App=%ProgramFiles%\\Windows Defender\\MsMpEng.exe|Svc=WinDefend|Name=Block All Out traffic from WinDefend|"
 '@
-    $file8 = @'
+        $file8 = @'
 Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\CLSID\{E48B2549-D510-4A76-8A5F-FC126A6215F0}]
@@ -1298,25 +1298,25 @@ Windows Registry Editor Version 5.00
 '@
 
 
-    #restore defender reg keys
-    Write-Status -Message 'Restoring Defender Registry Keys...' -Type Output
-    New-item -Path "$tempDir\enableReg" -ItemType Directory -Force | Out-Null
-    New-Item -Path "$tempDir\enableReg\enable1.reg" -Value $file1 -Force | Out-Null
-    New-Item -Path "$tempDir\enableReg\enable2.reg" -Value $file2 -Force | Out-Null
-    New-Item -Path "$tempDir\enableReg\enable3.reg" -Value $file3 -Force | Out-Null
-    New-Item -Path "$tempDir\enableReg\enable5.reg" -Value $file5 -Force | Out-Null
-    New-Item -Path "$tempDir\enableReg\enable6.reg" -Value $file6 -Force | Out-Null
-    New-Item -Path "$tempDir\enableReg\enable7.reg" -Value $file7 -Force | Out-Null
-    New-Item -Path "$tempDir\enableReg\enable8.reg" -Value $file8 -Force | Out-Null
+        #restore defender reg keys
+        Write-Status -Message 'Restoring Defender Registry Keys...' -Type Output
+        New-Item -Path "$tempDir\enableReg" -ItemType Directory -Force | Out-Null
+        New-Item -Path "$tempDir\enableReg\enable1.reg" -Value $file1 -Force | Out-Null
+        New-Item -Path "$tempDir\enableReg\enable2.reg" -Value $file2 -Force | Out-Null
+        New-Item -Path "$tempDir\enableReg\enable3.reg" -Value $file3 -Force | Out-Null
+        New-Item -Path "$tempDir\enableReg\enable5.reg" -Value $file5 -Force | Out-Null
+        New-Item -Path "$tempDir\enableReg\enable6.reg" -Value $file6 -Force | Out-Null
+        New-Item -Path "$tempDir\enableReg\enable7.reg" -Value $file7 -Force | Out-Null
+        New-Item -Path "$tempDir\enableReg\enable8.reg" -Value $file8 -Force | Out-Null
 
-    $files = (Get-ChildItem -Path "$tempDir\enableReg").FullName
-    foreach ($file in $files) {
-      $command = "Start-Process regedit.exe -ArgumentList `"/s $file`""
-      Run-Trusted -command $command
-      Start-Sleep 1
-    }
+        $files = (Get-ChildItem -Path "$tempDir\enableReg").FullName
+        foreach ($file in $files) {
+            $command = "Start-Process regedit.exe -ArgumentList `"/s $file`""
+            Run-Trusted -command $command
+            Start-Sleep 1
+        }
 
-    $command = @'
+        $command = @'
 Reg.exe delete "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableAntiSpyware" /f
 Reg.exe delete "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableRealtimeMonitoring" /f
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\SecurityHealthService" /v "Start" /t REG_DWORD /d "3" /f
@@ -1351,13 +1351,13 @@ Reg delete 'HKLM\SYSTEM\ControlSet001\Control\Session Manager\kernel' /v 'Mitiga
 Reg add 'HKLM\SOFTWARE\Microsoft\Windows Defender' /v 'PUAProtection' /t REG_DWORD /d '2' /f
 Reg delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer' /v 'SmartScreenEnabled' /f
 '@
-    New-Item -Path "$tempDir\EnableDefend.bat" -Value $command -Force | Out-Null
+        New-Item -Path "$tempDir\EnableDefend.bat" -Value $command -Force | Out-Null
 
-    Run-Trusted -command "Start-process $tempDir\EnableDefend.bat"
-    Write-Status -Message 'Enabling MsMpEng Service...' -Type Output
+        Run-Trusted -command "Start-process $tempDir\EnableDefend.bat"
+        Write-Status -Message 'Enabling MsMpEng Service...' -Type Output
 
-    function enableMsMpEng {
-      $id = 'Defender'; $key = 'Registry::HKU\S-1-5-21-*\Volatile Environment'; $code = @'
+        function enableMsMpEng {
+            $id = 'Defender'; $key = 'Registry::HKU\S-1-5-21-*\Volatile Environment'; $code = @'
  $I=[int32]; $M=$I.module.gettype("System.Runtime.Interop`Services.Mar`shal"); $P=$I.module.gettype("System.Int`Ptr"); $S=[string]
  $D=@(); $DM=[AppDomain]::CurrentDomain."DefineDynami`cAssembly"(1,1)."DefineDynami`cModule"(1); $U=[uintptr]; $Z=[uintptr]::size 
  0..5|% {$D += $DM."Defin`eType"("AveYo_$_",1179913,[ValueType])}; $D += $U; 4..6|% {$D += $D[$_]."MakeByR`efType"()}; $F=@()
@@ -1419,107 +1419,107 @@ $ENABLE_TAMPER_PROTECTION = 1
  start-service "wscsvc" -ea 0 >'' 2>'' 
  
  ################################################################################################################################
-'@; $V = ''; 'id', 'key' | ForEach-Object { $V += "`n`$$_='$($(Get-Variable $_ -val)-replace"'","''")';" }; Set-ItemProperty $key $id $V, $code -type 7 -force -ea 0
-      Start-Process powershell -args "-nop -c `n$V  `$env:R=(gi `$key -ea 0 |% {`$_.getvalue(`$id)-join''}); iex(`$env:R)" -verb runas -Wait
-    }
-    enableMsMpEng
-    Write-Status -Message 'Enabling Scheduled Tasks...' -Type Output
+'@; $V = ''; 'id', 'key' | ForEach-Object { $V += "`n`$$_='$($(Get-Variable $_ -val)-replace"'","''")';" }; Set-ItemProperty $key $id $V, $code -type 7 -Force -ea 0
+            Start-Process powershell -args "-nop -c `n$V  `$env:R=(gi `$key -ea 0 |% {`$_.getvalue(`$id)-join''}); iex(`$env:R)" -Verb runas -Wait
+        }
+        enableMsMpEng
+        Write-Status -Message 'Enabling Scheduled Tasks...' -Type Output
     
-    $defenderTasks = Get-ScheduledTask 
-    foreach ($task in $defenderTasks) {
-      if ($task.TaskName -like 'Windows Defender*') {
-        Enable-ScheduledTask -TaskName $task.TaskName -ErrorAction SilentlyContinue | Out-Null
-      }
-    }
+        $defenderTasks = Get-ScheduledTask 
+        foreach ($task in $defenderTasks) {
+            if ($task.TaskName -like 'Windows Defender*') {
+                Enable-ScheduledTask -TaskName $task.TaskName -ErrorAction SilentlyContinue | Out-Null
+            }
+        }
 
    
-    #rename smartscreen
-    $command = 'Rename-item -path C:\Windows\System32\smartscreenOFF.exe -newname smartscreen.exe -force -erroraction silentlycontinue' 
-    Run-Trusted -command $command
+        #rename smartscreen
+        $command = 'Rename-item -path C:\Windows\System32\smartscreenOFF.exe -newname smartscreen.exe -force -erroraction silentlycontinue' 
+        Run-Trusted -command $command
 
-    Remove-Item "$tempDir\EnableDefend.bat" -Force -ErrorAction SilentlyContinue
-    Remove-Item "$tempDir\enableReg" -Recurse -Force -ErrorAction SilentlyContinue
+        Remove-Item "$tempDir\EnableDefend.bat" -Force -ErrorAction SilentlyContinue
+        Remove-Item "$tempDir\enableReg" -Recurse -Force -ErrorAction SilentlyContinue
 
-  }
+    }
  
   
 
 
-  if ($checkbox3.Checked) {
-    Write-Status -Message 'Enabling Services...' -Type Output
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\BTAGService' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\BthAvctpSvc' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\bthserv' /v 'Start' /t REG_DWORD /d '3' /f
-    $usersvcs = (Get-Item 'HKLM:\SYSTEM\CurrentControlSet\Services\BluetoothUserService*').Name
-    foreach ($usersvc in $usersvcs) {
-      Reg.exe add $usersvc /v 'Start' /t REG_DWORD /d '3' /f
-    }
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\Fax' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\Spooler' /v 'Start' /t REG_DWORD /d '2' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\PrintWorkflowUserSvc' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\PrintNotify' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\PhoneSvc' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\defragsvc' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\DoSvc' /v 'Start' /t REG_DWORD /d '2' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\RmSvc' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\wisvc' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\diagsvc' /v 'Start' /t REG_DWORD /d '3' /f
-    $command = "Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\DPS' /v 'Start' /t REG_DWORD /d '2' /f
+    if ($checkbox3.Checked) {
+        Write-Status -Message 'Enabling Services...' -Type Output
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\BTAGService' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\BthAvctpSvc' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\bthserv' /v 'Start' /t REG_DWORD /d '3' /f
+        $usersvcs = (Get-Item 'HKLM:\SYSTEM\CurrentControlSet\Services\BluetoothUserService*').Name
+        foreach ($usersvc in $usersvcs) {
+            Reg.exe add $usersvc /v 'Start' /t REG_DWORD /d '3' /f
+        }
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\Fax' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\Spooler' /v 'Start' /t REG_DWORD /d '2' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\PrintWorkflowUserSvc' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\PrintNotify' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\PhoneSvc' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\defragsvc' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\DoSvc' /v 'Start' /t REG_DWORD /d '2' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\RmSvc' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\wisvc' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\diagsvc' /v 'Start' /t REG_DWORD /d '3' /f
+        $command = "Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\DPS' /v 'Start' /t REG_DWORD /d '2' /f
       Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\WdiServiceHost' /v 'Start' /t REG_DWORD /d '3' /f
       Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\WdiSystemHost' /v 'Start' /t REG_DWORD /d '3' /f"
-    Run-Trusted -command $command
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\AssignedAccessManagerSvc' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\MapsBroker' /v 'Start' /t REG_DWORD /d '2' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\lfsvc' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\Netlogon' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\WpcMonSvc' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\SCardSvr' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\ScDeviceEnum' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\SCPolicySvc' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\WbioSrvc' /v 'Start' /t REG_DWORD /d '3' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\WalletService' /v 'Start' /t REG_DWORD /d '3' /f
+        Run-Trusted -command $command
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\AssignedAccessManagerSvc' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\MapsBroker' /v 'Start' /t REG_DWORD /d '2' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\lfsvc' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\Netlogon' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\WpcMonSvc' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\SCardSvr' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\ScDeviceEnum' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\SCPolicySvc' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\WbioSrvc' /v 'Start' /t REG_DWORD /d '3' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Services\WalletService' /v 'Start' /t REG_DWORD /d '3' /f
 
-  }
-
-
-  if ($checkbox4.Checked) {
-    if (Test-Path 'C:\Windows\System32\WSReset.exe') {
-      Write-Status -Message 'Running Wsreset.exe -i...' -Type Output
-      Start-process WSReset.exe -ArgumentList '-i' 
-      Start-Sleep 10
-      while (get-process -Name BackgroundTransferHost -ErrorAction SilentlyContinue) {
-        Start-Sleep 1
-      }
     }
-    #check if it installed
-    if (!(Get-AppxPackage 'Microsoft.WindowsStore')) {
-      Write-Status -Message 'Wsreset Did Not Work, Running Zoicware Store Installer...' -Type Output
-      $storeDir = Search-Directory '*zWindowsStore'
-      $dependencies = @()
-      Get-ChildItem $storeDir | ForEach-Object {
-        if ($_.FullName -like '*.appxbundle') {
-          $Script:storePath = $_.FullName
+
+
+    if ($checkbox4.Checked) {
+        if (Test-Path 'C:\Windows\System32\WSReset.exe') {
+            Write-Status -Message 'Running Wsreset.exe -i...' -Type Output
+            Start-Process WSReset.exe -ArgumentList '-i' 
+            Start-Sleep 10
+            while (Get-Process -Name BackgroundTransferHost -ErrorAction SilentlyContinue) {
+                Start-Sleep 1
+            }
         }
-        else {
-          $dependencies += $_.FullName
+        #check if it installed
+        if (!(Get-AppxPackage 'Microsoft.WindowsStore')) {
+            Write-Status -Message 'Wsreset Did Not Work, Running Zoicware Store Installer...' -Type Output
+            $storeDir = Search-Directory '*zWindowsStore'
+            $dependencies = @()
+            Get-ChildItem $storeDir | ForEach-Object {
+                if ($_.FullName -like '*.appxbundle') {
+                    $Script:storePath = $_.FullName
+                }
+                else {
+                    $dependencies += $_.FullName
+                }
+            }
+            Add-AppPackage -Path $storePath -DependencyPath $dependencies 
         }
-      }
-      Add-AppPackage -Path $storePath -DependencyPath $dependencies 
-    }
   
 
 
     
 
-  }
+    }
 
 
-  if ($checkbox5.Checked) {
-    Write-Status -Message 'Restoring Registry Tweaks...' -Type Output
-    Remove-Item "$tempDir\RevertTweaks.reg" -Force -ErrorAction SilentlyContinue
-    $file = New-Item -Path "$tempDir\RevertTweaks.reg" -ItemType File -Force
+    if ($checkbox5.Checked) {
+        Write-Status -Message 'Restoring Registry Tweaks...' -Type Output
+        Remove-Item "$tempDir\RevertTweaks.reg" -Force -ErrorAction SilentlyContinue
+        $file = New-Item -Path "$tempDir\RevertTweaks.reg" -ItemType File -Force
 
-    $regContent = @'
+        $regContent = @'
 Windows Registry Editor Version 5.00
 
 ;enable uac
@@ -2254,112 +2254,112 @@ Windows Registry Editor Version 5.00
 "DODownloadMode"=-
 '@
 
-    Add-Content -Path $file.FullName -Value $regContent -Force
+        Add-Content -Path $file.FullName -Value $regContent -Force
 
-    $proc = start-process regedit.exe -args "/s $($file.FullName)" -PassThru
-    while (!$proc.HasExited) {
-      Start-Sleep .5
-    }
+        $proc = Start-Process regedit.exe -args "/s $($file.FullName)" -PassThru
+        while (!$proc.HasExited) {
+            Start-Sleep .5
+        }
     
-    Remove-Item -Path $file.FullName -Force -ErrorAction SilentlyContinue
+        Remove-Item -Path $file.FullName -Force -ErrorAction SilentlyContinue
 
-  }
-
-  if ($checkbox6.Checked) {
-    Write-Status -Message 'Downloading XBOX Game Repair Tool...' -Type Output
-    #remove recording policy
-    Remove-ItemProperty 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR' 'AllowGameDVR' -force -ea 0
-    #remove gamebar popup block
-    Set-ItemProperty 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR' 'AppCaptureEnabled' 1 -type dword -force -ea 0
-    Set-ItemProperty 'HKCU:\System\GameConfigStore' 'GameDVR_Enabled' 1 -type dword -force -ea 0
-    'ms-gamebar', 'ms-gamebarservices', 'ms-gamingoverlay' | ForEach-Object {
-      #remove noopenwith and systray.exe to hide popup
-      Remove-ItemProperty "Registry::HKCR\$_" 'NoOpenWith' -force -ea 0
-      Remove-Item "Registry::HKCR\$_\shell" -rec -force -ea 0 
     }
-    $ProgressPreference = 'SilentlyContinue'
-    Invoke-WebRequest -Uri 'https://aka.ms/GamingRepairTool' -UseBasicParsing -OutFile "$tempDir\GamingRepairTool.exe"
-    Start-Process "$tempDir\GamingRepairTool.exe" -Wait -WindowStyle Normal
-    Remove-Item "$tempDir\GamingRepairTool.exe" -Force -ErrorAction SilentlyContinue
-  }
 
-
-  if ($checkbox7.Checked) {
-    Write-Status -Message 'Disabling QoS for Upload and Resetting Network Changes...' -Type Output
-    FixUploadBufferBloat -Disable
-  }
-
-
-  if ($checkbox8.Checked) {
-    Write-Status -Message 'Removing Razer & Asus Servers from Hosts File...' -Type Output
-
-    $hostsPath = 'C:\Windows\System32\drivers\etc\hosts'
-    $content = Get-Content -Path $hostsPath -Raw
-    $contentArray = $content -split "`r`n"
-    $newContent = @()
-    foreach ($line in $contentArray) {
-      if ($line -like '*razer*' -or $line -like '*asus*') {
-        $newContent += $null
-      }
-      else {
-        $newContent += $line
-      }
+    if ($checkbox6.Checked) {
+        Write-Status -Message 'Downloading XBOX Game Repair Tool...' -Type Output
+        #remove recording policy
+        Remove-ItemProperty 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR' 'AllowGameDVR' -Force -ea 0
+        #remove gamebar popup block
+        Set-ItemProperty 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR' 'AppCaptureEnabled' 1 -type dword -Force -ea 0
+        Set-ItemProperty 'HKCU:\System\GameConfigStore' 'GameDVR_Enabled' 1 -type dword -Force -ea 0
+        'ms-gamebar', 'ms-gamebarservices', 'ms-gamingoverlay' | ForEach-Object {
+            #remove noopenwith and systray.exe to hide popup
+            Remove-ItemProperty "Registry::HKCR\$_" 'NoOpenWith' -Force -ea 0
+            Remove-Item "Registry::HKCR\$_\shell" -rec -Force -ea 0 
+        }
+        $ProgressPreference = 'SilentlyContinue'
+        Invoke-WebRequest -Uri 'https://aka.ms/GamingRepairTool' -UseBasicParsing -OutFile "$tempDir\GamingRepairTool.exe"
+        Start-Process "$tempDir\GamingRepairTool.exe" -Wait -WindowStyle Normal
+        Remove-Item "$tempDir\GamingRepairTool.exe" -Force -ErrorAction SilentlyContinue
     }
-    Set-Content -Path $hostsPath -Value $newContent -Force
 
-  }
 
-  if ($checkbox9.Checked) {
-    Write-Status -Message 'Unpausing Updates...' -Type Output
-    Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -name 'PauseUpdatesExpiryTime' -Force
-    Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -name 'PauseFeatureUpdatesEndTime' -Force
-    Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -name 'PauseFeatureUpdatesStartTime' -Force
-    Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -name 'PauseQualityUpdatesEndTime' -Force
-    Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -name 'PauseQualityUpdatesStartTime' -Force
-    Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -name 'PauseUpdatesStartTime' -Force
-
-    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' /v 'SearchOrderConfig' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\PolicyState' /v 'ExcludeWUDrivers' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'SearchOrderConfig' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' /v 'EnableFeaturedSoftware' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' /v 'IncludeRecommendedUpdates' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'AllowTemporaryEnterpriseFeatureControl' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Settings' /v 'DisableSendGenericDriverNotFoundToWER' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Settings' /v 'DisableSendRequestAdditionalSoftwareToWER' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'SetAllowOptionalContent' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferFeatureUpdates' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferFeatureUpdatesPeriodInDays' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferQualityUpdates' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferQualityUpdatesPeriodInDays' /f >$null 
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'ExcludeUpdateClassifications' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'ExcludeWUDriversInQualityUpdate' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' /v 'ExcludeWUDriversInQualityUpdate' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Device Metadata' /v 'PreventDeviceMetadataFromNetwork' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'DontPromptForWindowsUpdate' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'DontSearchWindowsUpdate' /f >$null
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'DriverUpdateWizardWuSearchEnabled' /f >$null
-
-    Set-Service -Name wuauserv -StartupType Manual -ErrorAction SilentlyContinue
-    Set-Service -Name UsoSvc -StartupType AutomaticDelayedStart -ErrorAction SilentlyContinue
-    Set-Service -Name WaaSMedicSvc -StartupType Manual -ErrorAction SilentlyContinue
-
-    $Tasks =
-    '\Microsoft\Windows\InstallService\*',
-    '\Microsoft\Windows\UpdateOrchestrator\*',
-    '\Microsoft\Windows\UpdateAssistant\*',
-    '\Microsoft\Windows\WaaSMedic\*',
-    '\Microsoft\Windows\WindowsUpdate\*',
-    '\Microsoft\WindowsUpdate\*'
-
-    foreach ($Task in $Tasks) {
-      Get-ScheduledTask -TaskPath $Task | Enable-ScheduledTask -ErrorAction SilentlyContinue
+    if ($checkbox7.Checked) {
+        Write-Status -Message 'Disabling QoS for Upload and Resetting Network Changes...' -Type Output
+        FixUploadBufferBloat -Disable
     }
-  }
+
+
+    if ($checkbox8.Checked) {
+        Write-Status -Message 'Removing Razer & Asus Servers from Hosts File...' -Type Output
+
+        $hostsPath = 'C:\Windows\System32\drivers\etc\hosts'
+        $content = Get-Content -Path $hostsPath -Raw
+        $contentArray = $content -split "`r`n"
+        $newContent = @()
+        foreach ($line in $contentArray) {
+            if ($line -like '*razer*' -or $line -like '*asus*') {
+                $newContent += $null
+            }
+            else {
+                $newContent += $line
+            }
+        }
+        Set-Content -Path $hostsPath -Value $newContent -Force
+
+    }
+
+    if ($checkbox9.Checked) {
+        Write-Status -Message 'Unpausing Updates...' -Type Output
+        Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseUpdatesExpiryTime' -Force
+        Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseFeatureUpdatesEndTime' -Force
+        Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseFeatureUpdatesStartTime' -Force
+        Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseQualityUpdatesEndTime' -Force
+        Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseQualityUpdatesStartTime' -Force
+        Remove-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' -Name 'PauseUpdatesStartTime' -Force
+
+        Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' /v 'SearchOrderConfig' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\PolicyState' /v 'ExcludeWUDrivers' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'SearchOrderConfig' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' /v 'EnableFeaturedSoftware' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' /v 'IncludeRecommendedUpdates' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'AllowTemporaryEnterpriseFeatureControl' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Settings' /v 'DisableSendGenericDriverNotFoundToWER' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DeviceInstall\Settings' /v 'DisableSendRequestAdditionalSoftwareToWER' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'SetAllowOptionalContent' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferFeatureUpdates' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferFeatureUpdatesPeriodInDays' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferQualityUpdates' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'DeferQualityUpdatesPeriodInDays' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'ExcludeUpdateClassifications' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' /v 'ExcludeWUDriversInQualityUpdate' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings' /v 'ExcludeWUDriversInQualityUpdate' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Device Metadata' /v 'PreventDeviceMetadataFromNetwork' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'DontPromptForWindowsUpdate' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'DontSearchWindowsUpdate' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching' /v 'DriverUpdateWizardWuSearchEnabled' /f *>$null
+
+        Set-Service -Name UsoSvc -StartupType Automatic -ErrorAction SilentlyContinue
+        Set-Service -Name WaaSMedicSvc -StartupType Manual -ErrorAction SilentlyContinue
+        Set-Service -Name wuauserv -StartupType Manual -ErrorAction SilentlyContinue
+
+        $Tasks =
+        '\Microsoft\Windows\InstallService\*',
+        '\Microsoft\Windows\UpdateOrchestrator\*',
+        '\Microsoft\Windows\UpdateAssistant\*',
+        '\Microsoft\Windows\WaaSMedic\*',
+        '\Microsoft\Windows\WindowsUpdate\*',
+        '\Microsoft\WindowsUpdate\*'
+
+        foreach ($Task in $Tasks) {
+            Get-ScheduledTask -TaskPath $Task | Enable-ScheduledTask -ErrorAction SilentlyContinue
+        }
+    }
  
-  if ($checkbox10.Checked) {
-    Write-Status -Message 'Restoring Default Context Menu...' -Type Output
+    if ($checkbox10.Checked) {
+        Write-Status -Message 'Restoring Default Context Menu...' -Type Output
 
-    $regFile = @'
+        $regFile = @'
   Windows Registry Editor Version 5.00
 
   [-HKEY_LOCAL_MACHINE\Software\Classes\.bat\ShellNew]
@@ -2513,84 +2513,84 @@ Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\DesktopBackground\Shell\EmptyRecycleBin]
 '@
 
-    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer' /v 'NoCustomizeThisFolder' /f *>$null
-    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{9F156763-7844-4DC4-B2B1-901F640F5155}' /f *>$null
-    Reg.exe delete 'HKCR\AppX4ztfk9wxr86nxmzzq47px0nh0e58b8fw\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
-    Reg.exe delete 'HKCR\SystemFileAssociations\image\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null
-    Reg.exe delete 'HKCR\batfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null   
-    Reg.exe delete 'HKCR\cmdfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\docxfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\fonfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\htmlfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\inffile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\inifile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\JSEFile\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\otffile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\pfmfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\regfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\rtffile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\ttcfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\ttffile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\txtfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
-    Reg.exe delete 'HKCR\VBEFile\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
-    Reg.exe delete 'HKCR\VBSFile\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
-    Reg.exe delete 'HKCR\WSFFile\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
-    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{b8cdcb65-b1bf-4b42-9428-1dfdb7ee92af}' /f *>$null
-    Reg.exe delete 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{b8cdcb65-b1bf-4b42-9428-1dfdb7ee92af}' /f *>$null
-    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{EE07CEF5-3441-4CFB-870A-4002C724783A}' /f *>$null
-    Reg.exe delete 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{EE07CEF5-3441-4CFB-870A-4002C724783A}' /f *>$null
-    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{1d27f844-3a1f-4410-85ac-14651078412d}' /f *>$null
-    Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{09A47860-11B0-4DA5-AFA5-26D86198A780}' /f *>$null
-    Reg.exe delete 'HKCR\DesktopBackground\Shell\Personalization' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer' /v 'NoCustomizeThisFolder' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{9F156763-7844-4DC4-B2B1-901F640F5155}' /f *>$null
+        Reg.exe delete 'HKCR\AppX4ztfk9wxr86nxmzzq47px0nh0e58b8fw\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
+        Reg.exe delete 'HKCR\SystemFileAssociations\image\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null
+        Reg.exe delete 'HKCR\batfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null   
+        Reg.exe delete 'HKCR\cmdfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\docxfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\fonfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\htmlfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\inffile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\inifile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\JSEFile\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\otffile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\pfmfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\regfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\rtffile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\ttcfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\ttffile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\txtfile\shell\print' /v 'ProgrammaticAccessOnly' /f *>$null 
+        Reg.exe delete 'HKCR\VBEFile\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
+        Reg.exe delete 'HKCR\VBSFile\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
+        Reg.exe delete 'HKCR\WSFFile\Shell\Print' /v 'ProgrammaticAccessOnly' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{b8cdcb65-b1bf-4b42-9428-1dfdb7ee92af}' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{b8cdcb65-b1bf-4b42-9428-1dfdb7ee92af}' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{EE07CEF5-3441-4CFB-870A-4002C724783A}' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{EE07CEF5-3441-4CFB-870A-4002C724783A}' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{1d27f844-3a1f-4410-85ac-14651078412d}' /f *>$null
+        Reg.exe delete 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked' /v '{09A47860-11B0-4DA5-AFA5-26D86198A780}' /f *>$null
+        Reg.exe delete 'HKCR\DesktopBackground\Shell\Personalization' /f *>$null
 
-    $path = New-Item -Path "$tempDir\RestoreContext.reg" -Value $regFile -Force 
-    Start-Process regedit.exe -ArgumentList "/s $($path.FullName)"
-  }
-
-  if ($checkbox11.Checked) {
-    Write-Status -Message 'Restoring Default Winver...' -Type Output
-    if (Test-Path "$env:USERPROFILE\zBackup\OGwinver.exe") {
-      Move-item 'C:\Windows\System32\winver.exe' -Destination "$folder\W11Files"
-      if (Test-Path "$folder\W11Files\WinverMono.exe") {
-        Rename-Item "$folder\W11Files\winver.exe" -NewName 'WinverStandard.exe'
-      }
-      else {
-        Rename-Item "$folder\W11Files\winver.exe" -NewName 'WinverMono.exe'
-      }
-      Move-item "$env:USERPROFILE\zBackup\OGwinver.exe" -Destination 'C:\Windows\System32'
-      Rename-Item 'C:\Windows\System32\OGwinver.exe' -NewName 'winver.exe' -Force
+        $path = New-Item -Path "$tempDir\RestoreContext.reg" -Value $regFile -Force 
+        Start-Process regedit.exe -ArgumentList "/s $($path.FullName)"
     }
-    else {
-      Write-Status -Message "Winver Not Found in $env:USERPROFILE\zBackup" -Type Error
+
+    if ($checkbox11.Checked) {
+        Write-Status -Message 'Restoring Default Winver...' -Type Output
+        if (Test-Path "$env:USERPROFILE\zBackup\OGwinver.exe") {
+            Move-Item 'C:\Windows\System32\winver.exe' -Destination "$folder\W11Files"
+            if (Test-Path "$folder\W11Files\WinverMono.exe") {
+                Rename-Item "$folder\W11Files\winver.exe" -NewName 'WinverStandard.exe'
+            }
+            else {
+                Rename-Item "$folder\W11Files\winver.exe" -NewName 'WinverMono.exe'
+            }
+            Move-Item "$env:USERPROFILE\zBackup\OGwinver.exe" -Destination 'C:\Windows\System32'
+            Rename-Item 'C:\Windows\System32\OGwinver.exe' -NewName 'winver.exe' -Force
+        }
+        else {
+            Write-Status -Message "Winver Not Found in $env:USERPROFILE\zBackup" -Type Error
+        }
     }
-  }
 
-  if ($checkbox12.Checked) {
-    Write-Status -Message 'Restoring Win 11 Task Manager...' -type output
-    Remove-Item 'C:\Windows\System32\Taskmgr.exe' -Force 
-    Rename-Item 'C:\Windows\System32\Taskmgr_WIN11.exe' -NewName 'Taskmgr.exe' -Force | Out-Null
-  }
+    if ($checkbox12.Checked) {
+        Write-Status -Message 'Restoring Win 11 Task Manager...' -type output
+        Remove-Item 'C:\Windows\System32\Taskmgr.exe' -Force 
+        Rename-Item 'C:\Windows\System32\Taskmgr_WIN11.exe' -NewName 'Taskmgr.exe' -Force | Out-Null
+    }
 
-  if ($checkbox13.Checked) {
-    Write-Status -Message 'Restoring Win 11 File Explorer Ribbon...' -type output
-    Reg.exe delete 'HKCU\Software\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}' /f *>$null
-    Reg.exe delete 'HKCU\Software\Classes\CLSID\{6480100b-5a83-4d1e-9f69-8ae5a88e9a33}' /f *>$null
-  }
+    if ($checkbox13.Checked) {
+        Write-Status -Message 'Restoring Win 11 File Explorer Ribbon...' -type output
+        Reg.exe delete 'HKCU\Software\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}' /f *>$null
+        Reg.exe delete 'HKCU\Software\Classes\CLSID\{6480100b-5a83-4d1e-9f69-8ae5a88e9a33}' /f *>$null
+    }
 
-  if ($checkbox14.Checked) {
-    Write-Status -Message 'Enabling Windows Backup App...' -type output
-    Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\MicrosoftAccount' /v 'DisableUserAuth' /f *>$null
-  }
+    if ($checkbox14.Checked) {
+        Write-Status -Message 'Enabling Windows Backup App...' -type output
+        Reg.exe delete 'HKLM\SOFTWARE\Policies\Microsoft\MicrosoftAccount' /v 'DisableUserAuth' /f *>$null
+    }
 
-  if ($checkbox15.Checked) {
-    Write-Status -Message 'Enabling HVCI/VBS...' -type output
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity' /v 'Enabled' /t REG_DWORD /d '1' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard' /v 'EnableVirtualizationBasedSecurity' /t REG_DWORD /d '1' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard' /v 'RequirePlatformSecurityFeatures' /t REG_DWORD /d '1' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\KernelShadowStacks' /v 'Enabled' /t REG_DWORD /d '1' /f
-    Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard' /v 'Enabled' /t REG_DWORD /d '1' /f
-    Reg.exe delete 'HKLM\SYSTEM\ControlSet001\Control\Session Manager\kernel' /v 'MitigationOptions' /f *>$null
-  }
+    if ($checkbox15.Checked) {
+        Write-Status -Message 'Enabling HVCI/VBS...' -type output
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity' /v 'Enabled' /t REG_DWORD /d '1' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard' /v 'EnableVirtualizationBasedSecurity' /t REG_DWORD /d '1' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard' /v 'RequirePlatformSecurityFeatures' /t REG_DWORD /d '1' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\KernelShadowStacks' /v 'Enabled' /t REG_DWORD /d '1' /f
+        Reg.exe add 'HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard' /v 'Enabled' /t REG_DWORD /d '1' /f
+        Reg.exe delete 'HKLM\SYSTEM\ControlSet001\Control\Session Manager\kernel' /v 'MitigationOptions' /f *>$null
+    }
 
 
 }

@@ -289,9 +289,6 @@ if (!$offlineMode -and !$dontCheck4Updates) {
                         #rename old folder and pack
                         Rename-Item $folder -NewName 'OLD' -Force
                         Rename-Item $pack -NewName 'zoicwareOLD' -Force
-                        #clear cached location
-                        Remove-Item "$env:USERPROFILE\zLocation.tmp" -Force -ErrorAction SilentlyContinue
-                        New-Item "$env:USERPROFILE\zLocation.tmp" -Value "$env:USERPROFILE\Desktop\zoicwareOS$latestver\zoicwareOS\_FOLDERMUSTBEONCDRIVE\ZOICWARE.ps1" -Force | Out-Null
                         #start zoicware
                         Unblock-File "$env:USERPROFILE\Desktop\zoicwareOS$latestver\zoicwareOS\RUN ZOICWARE.exe"
                         Start-Process "$env:USERPROFILE\Desktop\zoicwareOS$latestver\zoicwareOS\RUN ZOICWARE.exe"

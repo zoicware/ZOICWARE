@@ -6,18 +6,16 @@ namespace ZoicwareLauncher
 {
     class Program
     {
-        static readonly string LocationCache = Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-            "zLocation.tmp"
-        );
-
         static int Main(string[] args)
         {
-            string scriptPath = ResolveScriptPath();
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string scriptPath = ResolveScriptPath(baseDirectory);
 
             if (scriptPath == null)
             {
-                Console.Error.WriteLine("ERROR: ZOICWARE.ps1 not found.");
+                Console.Error.WriteLine("ERROR: ZOICWARE.ps1 was not found at the expected release path:");
+                Console.Error.WriteLine(GetExpectedScriptPath(baseDirectory));
+                Console.Error.WriteLine("Extract the complete zoicwareOS release and keep the launcher beside _FOLDERMUSTBEONCDRIVE.");
                 Console.Write("Press any key to exit...");
                 Console.ReadKey(true);
                 return 1;
@@ -26,68 +24,15 @@ namespace ZoicwareLauncher
             return LaunchScript(scriptPath);
         }
 
-        static string ResolveScriptPath()
+        internal static string ResolveScriptPath(string baseDirectory)
         {
-            //check for cached path
-            if (File.Exists(LocationCache))
-            {
-                string cached = File.ReadAllText(LocationCache).Trim();
-                if (File.Exists(cached))
-                {
-                    //Console.WriteLine("Using cached path: " + cached);
-                    return cached;
-                }
-                //delete cached file that has old path
-                try { File.Delete(LocationCache); } catch { }
-                //Console.WriteLine("Cached path invalid, searching...");
-            }
-
-            //check relative to the exe's own location first
-            string exeDir = AppDomain.CurrentDomain.BaseDirectory;
-            string relative = Path.Combine(exeDir, "_FOLDERMUSTBEONCDRIVE", "ZOICWARE.ps1");
-            if (File.Exists(relative))
-            {
-                CacheAndReturn(relative);
-                return relative;
-            }
-
-            //recursive search across all fixed drives
-            foreach (DriveInfo drive in DriveInfo.GetDrives())
-            {
-                if (drive.DriveType != DriveType.Fixed) continue;
-                string found = RecursiveSearch(drive.RootDirectory.FullName, "ZOICWARE.ps1");
-                if (found != null)
-                {
-                    CacheAndReturn(found);
-                    return found;
-                }
-            }
-
-            return null;
+            string scriptPath = GetExpectedScriptPath(baseDirectory);
+            return File.Exists(scriptPath) ? scriptPath : null;
         }
 
-
-        static string RecursiveSearch(string root, string fileName)
+        internal static string GetExpectedScriptPath(string baseDirectory)
         {
-            try
-            {
-                foreach (string file in Directory.EnumerateFiles(root, fileName,
-                    SearchOption.AllDirectories))
-                {
-                    // Skip recycle bin entries
-                    if (file.IndexOf("$Recycle.Bin", StringComparison.OrdinalIgnoreCase) >= 0)
-                        continue;
-                    return file;
-                }
-            }
-            catch { }
-            return null;
-        }
-
-        static void CacheAndReturn(string path)
-        {
-            try { File.WriteAllText(LocationCache, path); }
-            catch { /* ignore if cache write fails */ }
+            return Path.Combine(baseDirectory, "_FOLDERMUSTBEONCDRIVE", "ZOICWARE.ps1");
         }
 
         static int LaunchScript(string scriptPath)

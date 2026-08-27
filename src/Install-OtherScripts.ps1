@@ -178,7 +178,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
             $response = Invoke-RestMethod -Uri $apiUrl -Method Get -Headers $headers -UseBasicParsing -ErrorAction Stop
             $downloadUrl = $response.assets | Where-Object { $_.name -eq 'ServiceManagerPlus.zip' } | Select-Object -ExpandProperty browser_download_url
             Invoke-WebRequest -Uri $downloadUrl -UseBasicParsing -OutFile "$env:USERPROFILE\Desktop\ServiceManagerPlus.zip"
-            Expand-Archive "$env:USERPROFILE\Desktop\ServiceManagerPlus.zip" -DestinationPath "$env:USERPROFILE\Desktop"
+            Expand-Archive "$env:USERPROFILE\Desktop\ServiceManagerPlus.zip" -DestinationPath "$env:USERPROFILE\Desktop" -Force
 
             $WshShell = New-Object -comObject WScript.Shell
             $Shortcut = $WshShell.CreateShortcut("$env:USERPROFILE\Desktop\ServiceManagerPlus.lnk")
@@ -205,7 +205,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
             $WshShell = New-Object -comObject WScript.Shell
             $Shortcut = $WshShell.CreateShortcut("$env:USERPROFILE\Desktop\WindowsUpdateManager.lnk")
             $Shortcut.TargetPath = 'powershell.exe'
-            $Shortcut.Arguments = '-ExecutionPolicy Bypass -c iwr https://raw.githubusercontent.com/zoicware/WindowsUpdateManager/main/WindowsUpdateManager.ps1 | iex'
+            $Shortcut.Arguments = '-ExecutionPolicy Bypass -c irm https://raw.githubusercontent.com/zoicware/WindowsUpdateManager/main/WindowsUpdateManager.ps1 | iex'
             $Shortcut.Save()
             #run as admin
             $bytes = [System.IO.File]::ReadAllBytes($Shortcut.FullName)
@@ -225,7 +225,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
             $WshShell = New-Object -comObject WScript.Shell
             $Shortcut = $WshShell.CreateShortcut("$env:USERPROFILE\Desktop\StripDefender.lnk")
             $Shortcut.TargetPath = 'powershell.exe'
-            $Shortcut.Arguments = '-ExecutionPolicy Bypass -c iwr https://raw.githubusercontent.com/zoicware/DefenderProTools/main/StripDefenderV3.ps1 | iex'
+            $Shortcut.Arguments = '-ExecutionPolicy Bypass -c irm https://raw.githubusercontent.com/zoicware/DefenderProTools/main/StripDefenderV3.ps1 | iex'
             $Shortcut.Save()
             #run as admin
             $bytes = [System.IO.File]::ReadAllBytes($Shortcut.FullName)
@@ -245,7 +245,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
             $WshShell = New-Object -comObject WScript.Shell
             $Shortcut = $WshShell.CreateShortcut("$env:USERPROFILE\Desktop\RepairBadTweaks.lnk")
             $Shortcut.TargetPath = 'powershell.exe'
-            $Shortcut.Arguments = '-ExecutionPolicy Bypass -c iwr https://raw.githubusercontent.com/zoicware/RepairBadTweaks/main/RepairTweaks.ps1 | iex'
+            $Shortcut.Arguments = '-ExecutionPolicy Bypass -c irm https://raw.githubusercontent.com/zoicware/RepairBadTweaks/main/RepairTweaks.ps1 | iex'
             $Shortcut.Save()
             #run as admin
             $bytes = [System.IO.File]::ReadAllBytes($Shortcut.FullName)
@@ -265,7 +265,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
             $WshShell = New-Object -comObject WScript.Shell
             $Shortcut = $WshShell.CreateShortcut("$env:USERPROFILE\Desktop\RemoveWindowsAI.lnk")
             $Shortcut.TargetPath = 'powershell.exe'
-            $Shortcut.Arguments = '-ExecutionPolicy Bypass -c iwr https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1 | iex'
+            $Shortcut.Arguments = '-ExecutionPolicy Bypass -NoProfile -C "& ([scriptblock]::Create((irm ''https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1'')))"'
             $Shortcut.Save()
             #run as admin
             $bytes = [System.IO.File]::ReadAllBytes($Shortcut.FullName)
@@ -275,4 +275,3 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
     }
     
 }
-

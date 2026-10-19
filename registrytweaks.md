@@ -195,3 +195,9 @@
 - Disable accessibility tool shortcut
 - Disable share window from taskbar
 - Set Control Panel view to large icons
+- Small start menu size
+- Disable HelpPane.exe in safemode
+- Hide Network Icon in File Explorer
+- Disable recently added apps in start menu
+- Hide start menu pinned section
+- Disable Turn off HDR on battery

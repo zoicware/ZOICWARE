@@ -2247,6 +2247,39 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel]
 "StartupPage"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start]
+"StartMenuSize"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HelpPane.exe]
+"Debugger"=-
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowSyncProviderNotifications"=-
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"SharingWizardOn"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes]
+"ThemeChangesDesktopIcons"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata]
+"PreventDeviceMetadataFromNetwork"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Device Metadata]
+"PreventDeviceMetadataFromNetwork"=-
+
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}]
+"System.IsPinnedToNameSpaceTree"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start]
+"ShowRecentSection"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start]
+"ShowPinnedSection"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\VideoSettings]
+"DisableHDROnBattery"=-
 '@
 
     Add-Content -Path $file.FullName -Value $regContent -Force

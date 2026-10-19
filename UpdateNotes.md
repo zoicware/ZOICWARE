@@ -43,7 +43,8 @@
 			-  [v1.4.7](#v147)  
 			-  [v1.4.8](#v148)   
 			-  [v1.4.9](#v149)    
-			-  [v1.5.0](#v150)   
+			-  [v1.5.0](#v150)  
+			-  [v1.5.1](#v151)  
 			
 ---
 
@@ -1002,3 +1003,65 @@ added option to individually customize most hidden disk cleanup options, added c
 - updated gsync, rebar and dlss latest options in nvidia autoinstall [iFryno]
   
 - added custom splash screen while nvidia driver is installing
+
+### v1.5.1
+---
+
+- added disable HelpPane.exe to registry tweaks to prevent it from running on boot in safemode
+  
+- switched to using powershell to disable notification senders in reg tweaks
+  
+- fixed netfx3.5 not installing
+  
+- fixed removing scheduled tasks breaking changing the lockscreen image
+  
+- moved restart explorer and restart to bios context menu tweaks to bottom
+  
+- added reg tweaks [@iFryno]
+	- Disable show sync provider notifications
+	- Disable use Sharing Wizard
+	- Disable Toggle Keys shortcut
+	- Disable allow themes to change desktop icons
+	- Disable automatically download maufacturers apps for devices
+	- Disable automatic download of Narrator extensions
+	- Disable auto read/scan in Ease of Access Center
+	- Disable visual warning for Sound Sentry
+	- Disable accessibility tool shortcut
+	- Hide start menu pinned section
+	- Small start menu size
+	- New keys for disable web and store search
+   
+- updated black cursor scheme [@iFryno]
+  
+- changed usb power saving to show all power saving enabled devices this also takes care of network adapter power saving features
+  
+- changed ultimate context menu to checkedlistboxes
+  
+- added more context menu items to remove [@iFryno]
+ 	- Map Network Drive
+	- Move To Onedrive
+	- Pin To Quick Access
+	- Pin To Start
+	- Rotate Image
+	- Set as Deskop Background
+	- Turn On Bitlocker
+   
+- fixed cross device resume still running on startup
+  
+- fixed store search results still showing even when disabled
+  
+- updated disable defender
+  
+- excluded snipping tool from debloat presets
+  
+- added copilot edge integration app and gameinput app to debloat
+  
+- removed custom amd power plan
+  
+- added create start menu or desktop shortcut to run zoicware (zoicware settings)
+  
+- renamed FOLDERMUSTBEONCDRIVE since it hasnt been true in years (RIP)
+  
+- added disable turn off hdr when on battery to regtweaks
+  
+- fixed incorrect path for crosshair cursor in modern cursor scheme [@iFryno]

@@ -194,3 +194,4 @@
 - Disable visual warning for Sound Sentry
 - Disable accessibility tool shortcut
 - Disable share window from taskbar
+- Set Control Panel view to large icons

@@ -8310,25 +8310,25 @@ function OptionalTweaks {
       
     if ($checkbox2.Checked) {
       Write-Status -Message 'Applying Black Theme...' -Type Output
+
       #ensure transparency is disabled since on some new builds it blocks the black color
       Reg.exe add 'HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v 'EnableTransparency' /t REG_DWORD /d '0' /f
 
-    
-      $path = Search-File '*BlackTheme.reg'      
+      $path = Search-File '*BlackTheme.reg'
       Start-Process -filepath "$env:windir\regedit.exe" -Argumentlist @('/s', "`"$path`"")
-      
-      #disable acrylic background to prevent black image from turning grey
+
+      #disable acrylic background to prevent black image from turning gray
       Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\System' -Name 'DisableAcrylicBackgroundOnLogon' -Value 1 -Type DWord -Force
-              
+
       #setting lockscreen to black
       reg.exe delete 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System' /v 'DisableLogonBackgroundImage' /f *>$null
-      
+
       $path = Search-File '*Black.jpg'
-      Move-Item $path -Destination 'C:\Windows' -Force
-      
+      Copy-Item $path -Destination 'C:\Windows' -Force
+
       New-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP' -Force
       Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP' -Name 'LockScreenImagePath' -Value 'C:\Windows\Black.jpg' -Force
-      Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP' -Name 'LockScreenImageStatus' -Value 1
+      Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP' -Name 'LockScreenImageStatus' -Value 1 -Force
 
       #apply black cursors
       $cursorInf = Search-File '*install.inf'
@@ -8359,7 +8359,7 @@ public class WallpaperRefresh {
         $SPIF_UPDATEINIFILE = 0x01
         $SPIF_SENDCHANGE = 0x02
 
-        # set wallpaper blank
+        #set wallpaper blank
         $blankWallpaper = ''
         [WallpaperRefresh]::SystemParametersInfo($SPI_SETDESKWALLPAPER, 0, $blankWallpaper, $SPIF_UPDATEINIFILE -bor $SPIF_SENDCHANGE)
 
@@ -8412,9 +8412,7 @@ public class WallpaperRefresh {
           New-ItemProperty -Path "registry::$($regPath.Name)" -Name "Image$size" -Value $file.FullName -Force
         }
       }
-      
-      
-     
+
     }
 
     
